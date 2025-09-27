@@ -1,0 +1,121 @@
+{
+  "title": "Background Processing",
+  "level": "intermediate",
+  "slug": "background-processing",
+  "description": "Master agents, queues, job schedulers, and asynchronous processing for high-performance PEGA applications",
+  "estimatedTime": "50 min",
+  "prerequisites": ["Case Management Advanced", "Performance Optimization", "Testing & Debugging"],
+  "objectives": [
+    "Configure and manage PEGA agents",
+    "Implement queue-based processing",
+    "Design job schedulers and batch jobs",
+    "Handle asynchronous workflows",
+    "Optimize background processing performance"
+  ],
+  "content": {
+    "introduction": "Background processing is essential for handling long-running tasks, batch operations, and system maintenance without impacting user experience. This lesson covers PEGA's comprehensive background processing capabilities including agents, queues, and job schedulers.",
+    "sections": [
+      {
+        "title": "PEGA Agents Architecture",
+        "content": "Understand PEGA's agent architecture including standard agents, custom agents, agent scheduling, and resource management for background processing.",
+        "agents": [
+          {
+            "type": "Standard Agents",
+            "description": "Built-in agents for system maintenance and cleanup",
+            "examples": ["SystemCleaner", "IndexOptimizer", "LogArchiver"]
+          },
+          {
+            "type": "Custom Agents",
+            "description": "User-defined agents for business processes",
+            "examples": ["EmailProcessor", "ReportGenerator", "DataSyncAgent"]
+          }
+        ]
+      },
+      {
+        "title": "Queue-Based Processing",
+        "content": "Implement queue-based processing for handling high-volume, time-intensive operations. Understand queue management, priority processing, and error handling.",
+        "queues": [
+          {
+            "type": "Standard Queue",
+            "description": "FIFO processing for standard operations",
+            "useCase": "Email notifications and standard reports"
+          },
+          {
+            "type": "Priority Queue",
+            "description": "High-priority processing for urgent tasks",
+            "useCase": "Critical business processes and escalations"
+          },
+          {
+            "type": "Delayed Queue",
+            "description": "Scheduled processing for future tasks",
+            "useCase": "Batch operations and maintenance tasks"
+          }
+        ]
+      },
+      {
+        "title": "Job Schedulers and Batch Jobs",
+        "content": "Design and implement job schedulers for recurring batch operations. Understand cron expressions, dependency management, and failure recovery.",
+        "schedulers": [
+          "Daily batch processing",
+          "Weekly data synchronization",
+          "Monthly report generation",
+          "Real-time data feeds"
+        ]
+      },
+      {
+        "title": "Asynchronous Workflows",
+        "content": "Implement asynchronous workflows that can handle long-running processes without blocking user interfaces. Understand callback mechanisms and status tracking.",
+        "workflows": [
+          "Document processing workflows",
+          "Integration workflows",
+          "Data transformation workflows",
+          "Report generation workflows"
+        ]
+      },
+      {
+        "title": "Performance Optimization",
+        "content": "Optimize background processing performance through efficient resource allocation, parallel processing, and intelligent scheduling.",
+        "optimization": [
+          "Agent pool sizing and tuning",
+          "Queue depth management",
+          "Database connection pooling",
+          "Memory and CPU optimization"
+        ]
+      },
+      {
+        "title": "Monitoring and Troubleshooting",
+        "content": "Monitor background processing performance and troubleshoot common issues including agent failures, queue bottlenecks, and resource constraints.",
+        "monitoring": [
+          "Agent execution logs",
+          "Queue performance metrics",
+          "System resource utilization",
+          "Error handling and recovery"
+        ]
+      }
+    ]
+  },
+  "quiz": {
+    "id": "background-processing-quiz",
+    "title": "Background Processing Quiz",
+    "questions": 8,
+    "passingScore": 70
+  },
+  "resources": {
+    "documentation": [
+      {
+        "title": "PEGA Agents Guide",
+        "url": "https://docs.pega.com/agents"
+      },
+      {
+        "title": "Queue Management",
+        "url": "https://docs.pega.com/queues"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Background Processing Best Practices",
+        "url": "https://academy.pega.com/background-processing"
+      }
+    ]
+  }
+}

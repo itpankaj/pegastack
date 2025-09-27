@@ -1,0 +1,568 @@
+{
+  "pegastack_learning_site_audit": {
+    "last_updated": "2025-07-24",
+    "total_lessons": 24,
+    "total_quizzes": 24,
+    "implementation_status": {
+      "lessons_completed": 5,
+      "lessons_pending": 19,
+      "quizzes_completed": 0,
+      "quizzes_pending": 24
+    },
+    "learning_tracks": {
+      "beginner": {
+        "track_info": {
+          "title": "Beginner PEGA BPM",
+          "description": "Foundation concepts and basic development",
+          "estimated_duration": "4-6 weeks",
+          "prerequisites": "None",
+          "target_audience": "New to PEGA, students, entry-level developers"
+        },
+        "lessons": [
+          {
+            "id": "what-is-pega-bpm",
+            "title": "What is PEGA BPM?",
+            "description": "Introduction to PEGA Platform and Business Process Management",
+            "duration": "45 minutes",
+            "tutorial_url": "/tutorials/beginner/what-is-pega-bpm",
+            "quiz_url": "/quiz/beginner/what-is-pega-bpm",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Understand what PEGA BPM is",
+              "Learn about low-code development",
+              "Explore PEGA's market position",
+              "Understand business process automation"
+            ]
+          },
+          {
+            "id": "prpc-overview",
+            "title": "PRPC Overview",
+            "description": "Understanding PegaRULES Process Commander architecture",
+            "duration": "60 minutes",
+            "tutorial_url": "/tutorials/beginner/prpc-overview",
+            "quiz_url": "/quiz/beginner/prpc-overview",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Learn PRPC architecture",
+              "Understand rule-based development",
+              "Explore system components",
+              "Learn about rule resolution"
+            ]
+          },
+          {
+            "id": "installation-setup",
+            "title": "Installation & Setup",
+            "description": "Setting up PEGA development environment",
+            "duration": "90 minutes",
+            "tutorial_url": "/tutorials/beginner/installation-setup",
+            "quiz_url": "/quiz/beginner/installation-setup",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Install PEGA Personal Edition",
+              "Set up development environment",
+              "Configure database connections",
+              "Understand system requirements"
+            ]
+          },
+          {
+            "id": "app-vs-dev-studio",
+            "title": "App Studio vs Dev Studio",
+            "description": "Understanding the two development interfaces",
+            "duration": "45 minutes",
+            "tutorial_url": "/tutorials/beginner/app-vs-dev-studio",
+            "quiz_url": "/quiz/beginner/app-vs-dev-studio",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Compare App Studio and Dev Studio",
+              "Learn when to use each interface",
+              "Understand citizen developer vs system architect roles",
+              "Navigate both interfaces"
+            ]
+          },
+          {
+            "id": "first-case-app",
+            "title": "Your First Case App",
+            "description": "Building your first case management application",
+            "duration": "120 minutes",
+            "tutorial_url": "/tutorials/beginner/first-case-app",
+            "quiz_url": "/quiz/beginner/first-case-app",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Create a new application",
+              "Build case types and stages",
+              "Design user interfaces",
+              "Test your application"
+            ]
+          },
+          {
+            "id": "data-modeling",
+            "title": "Data Modeling Basics",
+            "description": "Understanding PEGA data model and properties",
+            "duration": "75 minutes",
+            "tutorial_url": "/tutorials/beginner/data-modeling",
+            "quiz_url": "/quiz/beginner/data-modeling",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Learn PEGA data model concepts",
+              "Create and configure properties",
+              "Understand data types",
+              "Work with data pages"
+            ]
+          },
+          {
+            "id": "user-interface-basics",
+            "title": "User Interface Basics",
+            "description": "Creating forms, views, and sections",
+            "duration": "90 minutes",
+            "tutorial_url": "/tutorials/beginner/user-interface-basics",
+            "quiz_url": "/quiz/beginner/user-interface-basics",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Create harnesses and sections",
+              "Design responsive layouts",
+              "Add controls and validation",
+              "Style your interfaces"
+            ]
+          },
+          {
+            "id": "case-lifecycle",
+            "title": "Case Lifecycle Management",
+            "description": "Understanding case stages, processes, and steps",
+            "duration": "105 minutes",
+            "tutorial_url": "/tutorials/beginner/case-lifecycle",
+            "quiz_url": "/quiz/beginner/case-lifecycle",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Design case lifecycle",
+              "Create stages and processes",
+              "Configure case routing",
+              "Handle case resolution"
+            ]
+          }
+        ]
+      },
+      "intermediate": {
+        "track_info": {
+          "title": "Intermediate PEGA BPM",
+          "description": "Advanced development concepts and enterprise patterns",
+          "estimated_duration": "6-8 weeks",
+          "prerequisites": "Beginner track completion",
+          "target_audience": "Developers with basic PEGA knowledge"
+        },
+        "lessons": [
+          {
+            "id": "rules-resolution",
+            "title": "Rules & Rule Resolution",
+            "description": "Deep dive into PEGA's rule resolution algorithm",
+            "duration": "90 minutes",
+            "tutorial_url": "/tutorials/intermediate/rules-resolution",
+            "quiz_url": "/quiz/intermediate/rules-resolution",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Understand rule resolution algorithm",
+              "Learn about inheritance and specialization",
+              "Master rule versioning",
+              "Debug rule resolution issues"
+            ]
+          },
+          {
+            "id": "flow-rules-actions",
+            "title": "Flow Rules & Actions",
+            "description": "Building complex workflows and business processes",
+            "duration": "120 minutes",
+            "tutorial_url": "/tutorials/intermediate/flow-rules-actions",
+            "quiz_url": "/quiz/intermediate/flow-rules-actions",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Create complex flow rules",
+              "Implement flow actions",
+              "Handle parallel processing",
+              "Design approval workflows"
+            ]
+          },
+          {
+            "id": "declarative-rules",
+            "title": "Declarative Rules",
+            "description": "Implementing business logic with declarative rules",
+            "duration": "105 minutes",
+            "tutorial_url": "/tutorials/intermediate/declarative-rules",
+            "quiz_url": "/quiz/intermediate/declarative-rules",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Master declare expressions",
+              "Implement constraints and triggers",
+              "Use declare pages effectively",
+              "Optimize declarative performance"
+            ]
+          },
+          {
+            "id": "integration-basics",
+            "title": "Integration Basics",
+            "description": "Connecting PEGA with external systems",
+            "duration": "135 minutes",
+            "tutorial_url": "/tutorials/intermediate/integration-basics",
+            "quiz_url": "/quiz/intermediate/integration-basics",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Implement REST and SOAP services",
+              "Configure connectors",
+              "Handle data transformations",
+              "Manage integration security"
+            ]
+          },
+          {
+            "id": "reports-dashboards",
+            "title": "Reports & Dashboards",
+            "description": "Creating business intelligence and analytics",
+            "duration": "90 minutes",
+            "tutorial_url": "/tutorials/intermediate/reports-dashboards",
+            "quiz_url": "/quiz/intermediate/reports-dashboards",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Build reports and summaries",
+              "Create interactive dashboards",
+              "Implement drill-down capabilities",
+              "Schedule automated reports"
+            ]
+          },
+          {
+            "id": "security-access-control",
+            "title": "Security & Access Control",
+            "description": "Implementing security and role-based access",
+            "duration": "105 minutes",
+            "tutorial_url": "/tutorials/intermediate/security-access-control",
+            "quiz_url": "/quiz/intermediate/security-access-control",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Configure access groups and roles",
+              "Implement field-level security",
+              "Set up authentication",
+              "Handle authorization patterns"
+            ]
+          },
+          {
+            "id": "mobile-development",
+            "title": "Mobile Development",
+            "description": "Building mobile-responsive PEGA applications",
+            "duration": "120 minutes",
+            "tutorial_url": "/tutorials/intermediate/mobile-development",
+            "quiz_url": "/quiz/intermediate/mobile-development",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Design mobile-first interfaces",
+              "Implement offline capabilities",
+              "Handle mobile-specific patterns",
+              "Test on mobile devices"
+            ]
+          },
+          {
+            "id": "testing-debugging",
+            "title": "Testing & Debugging",
+            "description": "Quality assurance and troubleshooting techniques",
+            "duration": "90 minutes",
+            "tutorial_url": "/tutorials/intermediate/testing-debugging",
+            "quiz_url": "/quiz/intermediate/testing-debugging",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Create unit and integration tests",
+              "Use debugging tools effectively",
+              "Implement automated testing",
+              "Troubleshoot common issues"
+            ]
+          }
+        ]
+      },
+      "advanced": {
+        "track_info": {
+          "title": "Advanced PEGA BPM",
+          "description": "Enterprise architecture and advanced implementation patterns",
+          "estimated_duration": "8-10 weeks",
+          "prerequisites": "Intermediate track completion",
+          "target_audience": "Senior developers, architects, technical leads"
+        },
+        "lessons": [
+          {
+            "id": "performance-tuning",
+            "title": "Performance Tuning",
+            "description": "Optimizing PEGA applications for enterprise scale",
+            "duration": "150 minutes",
+            "tutorial_url": "/tutorials/advanced/performance-tuning",
+            "quiz_url": "/quiz/advanced/performance-tuning",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Identify performance bottlenecks",
+              "Optimize database queries",
+              "Implement caching strategies",
+              "Monitor system performance"
+            ]
+          },
+          {
+            "id": "pega-devops",
+            "title": "PEGA DevOps",
+            "description": "Implementing CI/CD pipelines for PEGA applications",
+            "duration": "180 minutes",
+            "tutorial_url": "/tutorials/advanced/pega-devops",
+            "quiz_url": "/quiz/advanced/pega-devops",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Set up deployment pipelines",
+              "Implement automated testing",
+              "Manage environment promotions",
+              "Handle rollback strategies"
+            ]
+          },
+          {
+            "id": "custom-components",
+            "title": "Custom Components",
+            "description": "Building reusable custom components and extensions",
+            "duration": "165 minutes",
+            "tutorial_url": "/tutorials/advanced/custom-components",
+            "quiz_url": "/quiz/advanced/custom-components",
+            "status": {
+              "tutorial_implemented": true,
+              "quiz_implemented": false,
+              "content_complete": true
+            },
+            "learning_objectives": [
+              "Create custom UI components",
+              "Build JavaScript extensions",
+              "Implement custom activities",
+              "Package and distribute components"
+            ]
+          },
+          {
+            "id": "enterprise-architecture",
+            "title": "Enterprise Architecture Patterns",
+            "description": "Designing scalable enterprise PEGA solutions",
+            "duration": "135 minutes",
+            "tutorial_url": "/tutorials/advanced/enterprise-architecture",
+            "quiz_url": "/quiz/advanced/enterprise-architecture",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Design multi-tier architectures",
+              "Implement microservices patterns",
+              "Handle enterprise integrations",
+              "Plan for scalability"
+            ]
+          },
+          {
+            "id": "advanced-integration",
+            "title": "Advanced Integration Patterns",
+            "description": "Complex integration scenarios and patterns",
+            "duration": "150 minutes",
+            "tutorial_url": "/tutorials/advanced/advanced-integration",
+            "quiz_url": "/quiz/advanced/advanced-integration",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Implement event-driven architectures",
+              "Handle real-time data streaming",
+              "Build API gateways",
+              "Manage complex data transformations"
+            ]
+          },
+          {
+            "id": "ai-machine-learning",
+            "title": "AI & Machine Learning Integration",
+            "description": "Incorporating AI/ML capabilities into PEGA applications",
+            "duration": "120 minutes",
+            "tutorial_url": "/tutorials/advanced/ai-machine-learning",
+            "quiz_url": "/quiz/advanced/ai-machine-learning",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Integrate PEGA AI features",
+              "Implement predictive analytics",
+              "Build decision strategies",
+              "Handle ML model deployment"
+            ]
+          },
+          {
+            "id": "cloud-deployment",
+            "title": "Cloud Deployment & Management",
+            "description": "Deploying and managing PEGA in cloud environments",
+            "duration": "135 minutes",
+            "tutorial_url": "/tutorials/advanced/cloud-deployment",
+            "quiz_url": "/quiz/advanced/cloud-deployment",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Deploy to PEGA Cloud",
+              "Configure cloud infrastructure",
+              "Implement cloud security",
+              "Monitor cloud performance"
+            ]
+          },
+          {
+            "id": "governance-compliance",
+            "title": "Governance & Compliance",
+            "description": "Implementing governance frameworks and compliance controls",
+            "duration": "105 minutes",
+            "tutorial_url": "/tutorials/advanced/governance-compliance",
+            "quiz_url": "/quiz/advanced/governance-compliance",
+            "status": {
+              "tutorial_implemented": false,
+              "quiz_implemented": false,
+              "content_complete": false
+            },
+            "learning_objectives": [
+              "Establish governance frameworks",
+              "Implement compliance controls",
+              "Audit and monitoring setup",
+              "Handle regulatory requirements"
+            ]
+          }
+        ]
+      }
+    },
+    "implementation_plan": {
+      "phase_1_immediate": {
+        "description": "Complete all pending beginner lessons and implement basic quiz structure",
+        "tasks": [
+          "Implement 3 missing beginner lessons (data-modeling, user-interface-basics, case-lifecycle)",
+          "Create quiz data structure and basic quiz components",
+          "Implement quizzes for all 8 beginner lessons",
+          "Test all beginner tutorial and quiz links"
+        ],
+        "estimated_effort": "2-3 days"
+      },
+      "phase_2_intermediate": {
+        "description": "Complete intermediate track lessons and quizzes",
+        "tasks": [
+          "Implement 4 missing intermediate lessons",
+          "Create quizzes for all 8 intermediate lessons",
+          "Add advanced UI components for complex topics",
+          "Test all intermediate tutorial and quiz links"
+        ],
+        "estimated_effort": "3-4 days"
+      },
+      "phase_3_advanced": {
+        "description": "Complete advanced track and specialized features",
+        "tasks": [
+          "Implement 5 missing advanced lessons",
+          "Create quizzes for all 8 advanced lessons",
+          "Add code examples and interactive demos",
+          "Implement progress tracking and certificates"
+        ],
+        "estimated_effort": "4-5 days"
+      },
+      "phase_4_enhancement": {
+        "description": "Add advanced learning features and polish",
+        "tasks": [
+          "Implement progress tracking system",
+          "Add downloadable resources (PDFs, code samples)",
+          "Create learning path recommendations",
+          "Add bookmark and note-taking features",
+          "Implement completion certificates"
+        ],
+        "estimated_effort": "2-3 days"
+      }
+    },
+    "technical_structure": {
+      "data_management": {
+        "tutorial_data": "JSON files in /data/tutorials/ directory",
+        "quiz_data": "JSON files in /data/quizzes/ directory",
+        "progress_tracking": "Local storage + future database integration",
+        "content_structure": "Modular markdown/HTML content chunks"
+      },
+      "url_patterns": {
+        "tutorials": "/tutorials/{level}/{lesson-slug}",
+        "quizzes": "/quiz/{level}/{lesson-slug}",
+        "progress": "/progress/{user-id}",
+        "certificates": "/certificates/{certification-type}"
+      },
+      "components_needed": [
+        "Enhanced quiz component with multiple question types",
+        "Progress tracking component",
+        "Certificate generation component",
+        "Bookmark and notes component",
+        "Learning path recommendation engine"
+      ]
+    }
+  }
+}

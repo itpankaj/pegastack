@@ -1,0 +1,167 @@
+{
+  "id": "microservices-pega",
+  "title": "Microservices Architecture with PEGA",
+  "description": "Design and implement microservices architectures using PEGA Platform capabilities",
+  "duration": "150 minutes",
+  "level": "advanced",
+  "prerequisites": [
+    "Enterprise Architecture Patterns",
+    "Advanced Integration Patterns",
+    "PEGA Platform APIs"
+  ],
+  "learning_objectives": [
+    "Understand microservices architecture principles and patterns",
+    "Design PEGA applications following microservices patterns",
+    "Implement service decomposition strategies in PEGA",
+    "Master inter-service communication patterns",
+    "Handle distributed data management in PEGA microservices",
+    "Implement monitoring and observability for PEGA microservices"
+  ],
+  "sections": [
+    {
+      "title": "Microservices Architecture Fundamentals",
+      "content": [
+        {
+          "type": "text",
+          "data": "Microservices architecture is an approach to developing applications as a suite of small, independent services that communicate over well-defined APIs. In PEGA, microservices can be implemented using Service Packages, Connect Rules, and independent application architectures."
+        },
+        {
+          "type": "text",
+          "data": "Key principles of microservices include: Single Responsibility - each service owns a specific business capability; Decentralized Governance - teams can choose their own technology stack; Failure Isolation - failure of one service doesn't bring down the entire system; and Evolutionary Design - services can be developed and deployed independently."
+        }
+      ]
+    },
+    {
+      "title": "Service Decomposition Strategies",
+      "content": [
+        {
+          "type": "text",
+          "data": "Service decomposition in PEGA involves breaking down monolithic applications into smaller, focused services. Common decomposition patterns include: Decompose by Business Capability, Decompose by Domain-Driven Design Subdomain, and Decompose by Transaction boundaries."
+        },
+        {
+          "type": "text",
+          "data": "In PEGA, service boundaries often align with Case Types and organizational units. Each microservice should encapsulate a complete business capability including its data, business logic, and user interfaces."
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "data": "// Service Decomposition Example\n{\n  \"services\": [\n    {\n      \"name\": \"CustomerService\",\n      \"responsibilities\": [\n        \"Customer profile management\",\n        \"Customer authentication\",\n        \"Customer preferences\"\n      ],\n      \"apis\": [\n        \"/api/customers\",\n        \"/api/customers/{id}/profile\",\n        \"/api/customers/{id}/preferences\"\n      ]\n    },\n    {\n      \"name\": \"OrderService\",\n      \"responsibilities\": [\n        \"Order processing\",\n        \"Order status tracking\",\n        \"Order history\"\n      ],\n      \"apis\": [\n        \"/api/orders\",\n        \"/api/orders/{id}/status\",\n        \"/api/orders/{id}/history\"\n      ]\n    }\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Inter-Service Communication Patterns",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA microservices communicate through various patterns: Synchronous communication using REST APIs via Service Rules and Connect Rules; Asynchronous communication using Event Strategy and Queue Processors; and API composition using Service Packages for aggregating multiple services."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Service Communication Example\n@Component(\"OrderServiceClient\")\npublic class OrderServiceClient extends ConnectRule {\n    \n    public OrderResponse createOrder(OrderRequest request) {\n        try {\n            // Synchronous call to Order Service\n            ConnectHTTP connector = new ConnectHTTP();\n            connector.setURL(\"https://order-service/api/orders\");\n            connector.setMethod(\"POST\");\n            connector.setRequestData(request.toJSON());\n            \n            HTTPResponse response = connector.execute();\n            return OrderResponse.fromJSON(response.getBody());\n            \n        } catch (Exception e) {\n            // Implement circuit breaker pattern\n            return handleServiceFailure(e);\n        }\n    }\n    \n    // Asynchronous event publishing\n    public void publishOrderEvent(OrderEvent event) {\n        EventStrategy eventStrategy = getEventStrategy(\"OrderEvents\");\n        eventStrategy.publishEvent(event);\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Distributed Data Management",
+      "content": [
+        {
+          "type": "text",
+          "data": "In PEGA microservices, each service should own its data and database. This requires implementing patterns like Database per Service, Saga Pattern for distributed transactions, and Event Sourcing for maintaining data consistency across services."
+        },
+        {
+          "type": "text",
+          "data": "The Saga pattern in PEGA can be implemented using Case Management workflows where each step represents a local transaction. If a step fails, compensating transactions are executed to maintain consistency."
+        },
+        {
+          "type": "code",
+          "language": "xml",
+          "data": "<!-- Saga Pattern Implementation -->\n<SagaFlow name=\"OrderProcessingSaga\">\n    <Step name=\"ReserveInventory\">\n        <Service>InventoryService</Service>\n        <Operation>reserveItems</Operation>\n        <CompensateWith>releaseReservation</CompensateWith>\n    </Step>\n    <Step name=\"ProcessPayment\">\n        <Service>PaymentService</Service>\n        <Operation>chargeCard</Operation>\n        <CompensateWith>refundPayment</CompensateWith>\n    </Step>\n    <Step name=\"CreateShipment\">\n        <Service>ShippingService</Service>\n        <Operation>createShipment</Operation>\n        <CompensateWith>cancelShipment</CompensateWith>\n    </Step>\n</SagaFlow>"
+        }
+      ]
+    },
+    {
+      "title": "Service Discovery and Configuration",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA microservices require service discovery mechanisms to locate and communicate with other services. This can be implemented using PEGA's Service Packages with dynamic endpoint configuration, external service registries, or API gateways."
+        },
+        {
+          "type": "text",
+          "data": "Configuration management in PEGA microservices involves externalizing service configurations using Dynamic System Settings, Environment-specific Rule Sets, and integration with external configuration services."
+        }
+      ]
+    },
+    {
+      "title": "Monitoring and Observability",
+      "content": [
+        {
+          "type": "text",
+          "data": "Monitoring PEGA microservices requires implementing distributed tracing, centralized logging, and comprehensive metrics collection. PEGA provides built-in monitoring capabilities through Performance Analyzer (PAL), Service Level Agreements (SLAs), and custom instrumentation."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Custom Monitoring Implementation\n@Component(\"ServiceMonitor\")\npublic class ServiceMonitor {\n    \n    public void trackServiceCall(String serviceName, long duration, boolean success) {\n        // Record metrics\n        MetricsCollector.recordDuration(serviceName, duration);\n        MetricsCollector.recordSuccess(serviceName, success);\n        \n        // Create distributed trace\n        TraceContext trace = TraceManager.getCurrentTrace();\n        trace.addSpan(serviceName, duration, success);\n        \n        // Log service interaction\n        Logger.info(\"Service call: {} - Duration: {}ms - Success: {}\", \n                   serviceName, duration, success);\n    }\n    \n    public HealthStatus checkServiceHealth(String serviceName) {\n        try {\n            // Perform health check\n            ServiceClient client = getServiceClient(serviceName);\n            return client.performHealthCheck();\n        } catch (Exception e) {\n            return HealthStatus.DOWN;\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Deployment and DevOps Patterns",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA microservices deployment involves containerization using Docker, orchestration with Kubernetes, and CI/CD pipelines for independent service deployment. Each service should have its own deployment pipeline and versioning strategy."
+        },
+        {
+          "type": "text",
+          "data": "Blue-Green deployment and Canary deployment patterns ensure zero-downtime deployments and safe rollouts of new service versions. PEGA's Deployment Manager can coordinate complex microservices deployments across multiple environments."
+        }
+      ]
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Service Mesh",
+      "definition": "A dedicated infrastructure layer that handles service-to-service communication, providing features like load balancing, service discovery, and security."
+    },
+    {
+      "term": "Saga Pattern",
+      "definition": "A design pattern for managing distributed transactions across multiple microservices by coordinating local transactions."
+    },
+    {
+      "term": "Circuit Breaker",
+      "definition": "A pattern that prevents cascading failures by monitoring service health and failing fast when a service is unavailable."
+    },
+    {
+      "term": "Event Sourcing",
+      "definition": "A pattern where changes to application state are stored as a sequence of events, enabling replay and reconstruction of state."
+    },
+    {
+      "term": "API Gateway",
+      "definition": "A single entry point for all client requests that routes requests to appropriate microservices and handles cross-cutting concerns."
+    }
+  ],
+  "best_practices": [
+    "Design services around business capabilities, not technical layers",
+    "Implement comprehensive monitoring and distributed tracing",
+    "Use asynchronous communication where possible to reduce coupling",
+    "Implement circuit breaker patterns for resilience",
+    "Maintain separate databases for each service",
+    "Automate deployment and testing for each service",
+    "Implement proper security patterns including service-to-service authentication",
+    "Design for failure and implement graceful degradation"
+  ],
+  "common_pitfalls": [
+    "Creating too many small services (nanoservices) that increase complexity",
+    "Not implementing proper monitoring and observability",
+    "Sharing databases between services, breaking encapsulation",
+    "Over-relying on synchronous communication causing tight coupling",
+    "Inadequate error handling and failure recovery mechanisms",
+    "Not implementing proper security between services",
+    "Ignoring data consistency challenges in distributed systems",
+    "Poor service boundary definition leading to chatty interfaces"
+  ]
+}

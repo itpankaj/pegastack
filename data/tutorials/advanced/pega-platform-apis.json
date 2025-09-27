@@ -1,0 +1,159 @@
+{
+  "id": "pega-platform-apis",
+  "title": "PEGA Platform APIs and Extensions",
+  "description": "Master PEGA Platform APIs, custom extensions, and integration with external systems through comprehensive API usage",
+  "duration": "160 minutes",
+  "level": "advanced",
+  "prerequisites": [
+    "Advanced Integration Patterns",
+    "PEGA DevOps & CI/CD",
+    "Enterprise Architecture Patterns"
+  ],
+  "learning_objectives": [
+    "Master PEGA Platform APIs for system integration and automation",
+    "Implement custom API extensions and endpoints",
+    "Understand PEGA REST and SOAP service architectures",
+    "Design API-first development approaches in PEGA",
+    "Implement API versioning and lifecycle management",
+    "Create comprehensive API documentation and testing strategies"
+  ],
+  "sections": [
+    {
+      "title": "PEGA Platform API Architecture",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA Platform provides comprehensive APIs for system integration, automation, and extension. The platform exposes REST and SOAP services through Service Rules, Connect Rules, and dedicated API packages. Understanding the API architecture is crucial for building scalable integrations."
+        },
+        {
+          "type": "text",
+          "data": "Key API categories include: Case Management APIs for case operations, Data APIs for data manipulation, Authentication APIs for security integration, Workflow APIs for process automation, and Administrative APIs for system management."
+        }
+      ]
+    },
+    {
+      "title": "REST Service Implementation",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA REST services are implemented using Service Rules with REST service types. These services can handle various HTTP methods (GET, POST, PUT, DELETE) and support JSON and XML data formats. Proper REST service design follows RESTful principles and HTTP status codes."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// REST Service Implementation Example\n@ServiceClass(\"CustomerRESTService\")\npublic class CustomerRESTService extends ServiceActivity {\n    \n    @GET\n    @Path(\"/customers/{customerId}\")\n    @Produces(MediaType.APPLICATION_JSON)\n    public Response getCustomer(@PathParam(\"customerId\") String customerId) {\n        try {\n            // Retrieve customer data\n            ClipboardPage customerData = getCustomerById(customerId);\n            \n            if (customerData == null) {\n                return Response.status(404)\n                    .entity(\"{\\\"error\\\":\\\"Customer not found\\\"}\")\n                    .build();\n            }\n            \n            // Transform to JSON response\n            String jsonResponse = transformToJSON(customerData);\n            return Response.ok(jsonResponse).build();\n            \n        } catch (Exception e) {\n            logException(\"Error retrieving customer\", e);\n            return Response.status(500)\n                .entity(\"{\\\"error\\\":\\\"Internal server error\\\"}\")\n                .build();\n        }\n    }\n    \n    @POST\n    @Path(\"/customers\")\n    @Consumes(MediaType.APPLICATION_JSON)\n    @Produces(MediaType.APPLICATION_JSON)\n    public Response createCustomer(String customerJson) {\n        try {\n            // Validate input\n            if (!isValidCustomerData(customerJson)) {\n                return Response.status(400)\n                    .entity(\"{\\\"error\\\":\\\"Invalid customer data\\\"}\")\n                    .build();\n            }\n            \n            // Create customer\n            ClipboardPage newCustomer = createCustomerFromJSON(customerJson);\n            String customerId = saveCustomer(newCustomer);\n            \n            // Return created customer\n            String responseJson = \"{\\\"customerId\\\":\\\"\" + customerId + \"\\\",\\\"status\\\":\\\"created\\\"}\";\n            return Response.status(201).entity(responseJson).build();\n            \n        } catch (Exception e) {\n            logException(\"Error creating customer\", e);\n            return Response.status(500)\n                .entity(\"{\\\"error\\\":\\\"Internal server error\\\"}\")\n                .build();\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "SOAP Service Implementation",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA SOAP services provide enterprise-grade web service capabilities with WSDL generation, XML Schema validation, and WS-Security support. SOAP services are ideal for enterprise integrations requiring formal contracts and advanced security features."
+        },
+        {
+          "type": "code",
+          "language": "xml",
+          "data": "<!-- SOAP Service WSDL Example -->\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<definitions xmlns=\"http://schemas.xmlsoap.org/wsdl/\"\n             xmlns:tns=\"http://pega.com/services/customer\"\n             xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\"\n             targetNamespace=\"http://pega.com/services/customer\">\n             \n    <types>\n        <xsd:schema targetNamespace=\"http://pega.com/services/customer\">\n            <xsd:element name=\"GetCustomerRequest\">\n                <xsd:complexType>\n                    <xsd:sequence>\n                        <xsd:element name=\"customerId\" type=\"xsd:string\"/>\n                    </xsd:sequence>\n                </xsd:complexType>\n            </xsd:element>\n            \n            <xsd:element name=\"GetCustomerResponse\">\n                <xsd:complexType>\n                    <xsd:sequence>\n                        <xsd:element name=\"customer\" type=\"tns:Customer\"/>\n                    </xsd:sequence>\n                </xsd:complexType>\n            </xsd:element>\n            \n            <xsd:complexType name=\"Customer\">\n                <xsd:sequence>\n                    <xsd:element name=\"id\" type=\"xsd:string\"/>\n                    <xsd:element name=\"name\" type=\"xsd:string\"/>\n                    <xsd:element name=\"email\" type=\"xsd:string\"/>\n                    <xsd:element name=\"status\" type=\"xsd:string\"/>\n                </xsd:sequence>\n            </xsd:complexType>\n        </xsd:schema>\n    </types>\n    \n    <message name=\"GetCustomerRequestMessage\">\n        <part name=\"parameters\" element=\"tns:GetCustomerRequest\"/>\n    </message>\n    \n    <message name=\"GetCustomerResponseMessage\">\n        <part name=\"parameters\" element=\"tns:GetCustomerResponse\"/>\n    </message>\n    \n    <portType name=\"CustomerServicePortType\">\n        <operation name=\"GetCustomer\">\n            <input message=\"tns:GetCustomerRequestMessage\"/>\n            <output message=\"tns:GetCustomerResponseMessage\"/>\n        </operation>\n    </portType>\n</definitions>"
+        }
+      ]
+    },
+    {
+      "title": "API Security and Authentication",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA APIs must implement robust security measures including authentication, authorization, input validation, and rate limiting. Security patterns include OAuth 2.0, JWT tokens, API keys, and digital certificates for mutual authentication."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// API Security Filter Implementation\n@Component(\"APISecurityManager\")\npublic class APISecurityManager {\n    \n    public SecurityContext validateAPIRequest(HttpServletRequest request) {\n        // Extract authentication token\n        String authHeader = request.getHeader(\"Authorization\");\n        if (authHeader == null || !authHeader.startsWith(\"Bearer \")) {\n            throw new UnauthorizedException(\"Missing or invalid authorization header\");\n        }\n        \n        String token = authHeader.substring(7); // Remove \"Bearer \" prefix\n        \n        // Validate JWT token\n        JWTValidationResult validation = validateJWT(token);\n        if (!validation.isValid()) {\n            throw new UnauthorizedException(\"Invalid or expired token\");\n        }\n        \n        // Extract user context\n        UserContext user = extractUserContext(validation.getClaims());\n        \n        // Check API permissions\n        String requestedAPI = request.getRequestURI();\n        if (!hasAPIPermission(user, requestedAPI)) {\n            throw new ForbiddenException(\"Insufficient permissions for API access\");\n        }\n        \n        // Rate limiting check\n        if (!rateLimiter.isAllowed(user.getUserId(), requestedAPI)) {\n            throw new RateLimitExceededException(\"API rate limit exceeded\");\n        }\n        \n        return SecurityContext.builder()\n            .user(user)\n            .permissions(getAPIPermissions(user))\n            .rateLimit(getRateLimit(user))\n            .build();\n    }\n    \n    private JWTValidationResult validateJWT(String token) {\n        try {\n            Algorithm algorithm = Algorithm.HMAC256(getJWTSecret());\n            JWTVerifier verifier = JWT.require(algorithm).build();\n            DecodedJWT jwt = verifier.verify(token);\n            \n            return JWTValidationResult.valid(jwt.getClaims());\n        } catch (JWTVerificationException e) {\n            return JWTValidationResult.invalid(e.getMessage());\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "API Versioning and Lifecycle Management",
+      "content": [
+        {
+          "type": "text",
+          "data": "API versioning in PEGA ensures backward compatibility while allowing for evolution and enhancement. Common versioning strategies include URI versioning, header versioning, and parameter versioning. Proper lifecycle management includes deprecation policies and migration paths."
+        },
+        {
+          "type": "text",
+          "data": "Best practices for API versioning include: maintaining multiple versions simultaneously, providing clear migration documentation, implementing deprecation warnings, and establishing version sunset policies with adequate notice periods."
+        }
+      ]
+    },
+    {
+      "title": "Custom API Extensions",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA allows creating custom API extensions through Service Packages, custom activities, and integration with external API management platforms. Extensions can provide specialized functionality, custom data transformations, and integration with third-party services."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Custom API Extension Example\n@ServiceExtension(\"CustomAnalyticsAPI\")\npublic class CustomAnalyticsAPIExtension extends ServiceExtension {\n    \n    @Override\n    public void initialize(ServiceContext context) {\n        // Register custom endpoints\n        registerEndpoint(\"/analytics/dashboard\", this::getDashboardData);\n        registerEndpoint(\"/analytics/reports/{reportId}\", this::getReportData);\n        registerEndpoint(\"/analytics/metrics\", this::getMetrics);\n    }\n    \n    public APIResponse getDashboardData(APIRequest request) {\n        try {\n            // Custom dashboard logic\n            DashboardData dashboard = generateDashboard(request.getParameters());\n            \n            // Transform to API response format\n            return APIResponse.success(dashboard);\n        } catch (Exception e) {\n            return APIResponse.error(\"Failed to generate dashboard\", e);\n        }\n    }\n    \n    public APIResponse getReportData(APIRequest request) {\n        String reportId = request.getPathParameter(\"reportId\");\n        \n        // Validate report access\n        if (!hasReportAccess(request.getUser(), reportId)) {\n            return APIResponse.forbidden(\"Access denied for report\");\n        }\n        \n        // Generate report\n        ReportData report = generateReport(reportId, request.getParameters());\n        return APIResponse.success(report);\n    }\n    \n    public APIResponse getMetrics(APIRequest request) {\n        // Aggregate metrics from multiple sources\n        MetricsAggregator aggregator = new MetricsAggregator();\n        \n        // Add various metric sources\n        aggregator.addSource(new CaseMetricsSource());\n        aggregator.addSource(new PerformanceMetricsSource());\n        aggregator.addSource(new UserMetricsSource());\n        \n        MetricsCollection metrics = aggregator.aggregate(request.getTimeRange());\n        return APIResponse.success(metrics);\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "API Testing and Documentation",
+      "content": [
+        {
+          "type": "text",
+          "data": "Comprehensive API testing includes unit tests for individual endpoints, integration tests for end-to-end scenarios, performance tests for load handling, and security tests for vulnerability assessment. Automated testing ensures API reliability and quality."
+        },
+        {
+          "type": "text",
+          "data": "API documentation should include endpoint descriptions, request/response schemas, authentication requirements, error codes, and usage examples. Tools like OpenAPI/Swagger can generate interactive documentation and client SDKs."
+        }
+      ]
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "RESTful API",
+      "definition": "An API that follows REST (Representational State Transfer) architectural principles, using HTTP methods and status codes for resource manipulation."
+    },
+    {
+      "term": "SOAP Web Services",
+      "definition": "A protocol for exchanging structured information using XML, providing formal contracts through WSDL and advanced security features."
+    },
+    {
+      "term": "JWT (JSON Web Token)",
+      "definition": "A compact, URL-safe means of representing claims to be transferred between two parties, commonly used for API authentication."
+    },
+    {
+      "term": "API Gateway",
+      "definition": "A management tool that sits between clients and backend services, providing features like authentication, rate limiting, and request routing."
+    },
+    {
+      "term": "OpenAPI Specification",
+      "definition": "A specification for describing REST APIs, enabling automatic documentation generation and client SDK creation."
+    }
+  ],
+  "best_practices": [
+    "Follow RESTful principles for API design and HTTP status codes",
+    "Implement comprehensive authentication and authorization",
+    "Use proper API versioning strategies for backward compatibility",
+    "Provide detailed API documentation with examples",
+    "Implement rate limiting and throttling for API protection",
+    "Use consistent error handling and response formats",
+    "Perform thorough testing including security and performance tests",
+    "Monitor API usage and performance metrics"
+  ],
+  "common_pitfalls": [
+    "Not implementing proper authentication and authorization",
+    "Exposing sensitive data without proper filtering",
+    "Poor error handling and generic error messages",
+    "Lack of API versioning leading to breaking changes",
+    "Insufficient input validation and sanitization",
+    "Not implementing rate limiting causing service abuse",
+    "Inadequate API documentation and examples",
+    "Not monitoring API usage and performance"
+  ]
+}

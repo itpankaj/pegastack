@@ -1,0 +1,111 @@
+{
+  "id": "cloud-native-pega",
+  "title": "Cloud-Native PEGA Architecture Quiz",
+  "description": "Test your knowledge of cloud-native PEGA solutions, containerization, orchestration, and cloud-first architectures",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a key principle of cloud-native architecture?",
+      "type": "multiple-choice",
+      "options": [
+        "Monolithic application design",
+        "Manual deployment processes",
+        "Containerization and orchestration for scalability and resilience",
+        "Single server deployment"
+      ],
+      "correct_answer": 2,
+      "explanation": "Cloud-native architecture leverages containerization, orchestration, and automation to build scalable, resilient, and manageable applications that fully exploit cloud computing capabilities."
+    },
+    {
+      "id": 2,
+      "question": "Which tool is commonly used for container orchestration in cloud-native PEGA deployments?",
+      "type": "multiple-choice",
+      "options": [
+        "Docker only",
+        "Kubernetes",
+        "Virtual machines",
+        "Traditional application servers"
+      ],
+      "correct_answer": 1,
+      "explanation": "Kubernetes is the leading container orchestration platform that provides automated deployment, scaling, and management capabilities for containerized PEGA applications."
+    },
+    {
+      "id": 3,
+      "question": "What is the primary benefit of Infrastructure as Code (IaC)?",
+      "type": "multiple-choice",
+      "options": [
+        "Faster application performance",
+        "Reduced database storage requirements",
+        "Consistent and reproducible infrastructure deployments",
+        "Simpler user interface design"
+      ],
+      "correct_answer": 2,
+      "explanation": "Infrastructure as Code ensures consistent and reproducible infrastructure deployments by managing cloud resources through machine-readable definition files rather than manual processes."
+    },
+    {
+      "id": 4,
+      "question": "Which Kubernetes feature automatically adjusts the number of pod replicas based on resource utilization?",
+      "type": "multiple-choice",
+      "options": [
+        "Vertical Pod Autoscaling only",
+        "Horizontal Pod Autoscaling (HPA)",
+        "Pod Disruption Budget",
+        "Network Policies"
+      ],
+      "correct_answer": 1,
+      "explanation": "Horizontal Pod Autoscaling (HPA) automatically scales the number of pod replicas based on observed CPU utilization, memory usage, or custom metrics to handle varying load."
+    },
+    {
+      "id": 5,
+      "question": "What is the purpose of a Pod Disruption Budget in Kubernetes?",
+      "type": "multiple-choice",
+      "options": [
+        "To set resource limits for containers",
+        "To ensure a minimum number of pods remain available during disruptions",
+        "To configure network policies",
+        "To manage container images"
+      ],
+      "correct_answer": 1,
+      "explanation": "Pod Disruption Budget ensures high availability by specifying the minimum number of pods that must remain available during voluntary disruptions like node maintenance or upgrades."
+    },
+    {
+      "id": 6,
+      "question": "Which security practice is essential for cloud-native PEGA applications?",
+      "type": "multiple-choice",
+      "options": [
+        "Running containers as root user",
+        "Implementing network policies and encryption at rest and in transit",
+        "Exposing all services to the internet",
+        "Using default security configurations"
+      ],
+      "correct_answer": 1,
+      "explanation": "Cloud security requires implementing defense-in-depth strategies including network policies for micro-segmentation and encryption to protect data at rest and in transit."
+    },
+    {
+      "id": 7,
+      "question": "What is observability in cloud-native applications?",
+      "type": "multiple-choice",
+      "options": [
+        "Only monitoring CPU and memory usage",
+        "The ability to understand system internal state through metrics, logs, and traces",
+        "Simple error logging",
+        "User interface monitoring only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Observability provides comprehensive understanding of system internal state through metrics, logs, and traces, enabling effective monitoring, debugging, and optimization."
+    },
+    {
+      "id": 8,
+      "question": "Which approach helps optimize cloud costs for PEGA applications?",
+      "type": "multiple-choice",
+      "options": [
+        "Over-provisioning all resources",
+        "Using only the largest instance types",
+        "Right-sizing resources and implementing efficient auto-scaling",
+        "Avoiding monitoring and optimization"
+      ],
+      "correct_answer": 2,
+      "explanation": "Cost optimization involves right-sizing resources based on actual usage patterns, implementing efficient auto-scaling policies, and continuous monitoring of resource utilization and costs."
+    }
+  ]
+}

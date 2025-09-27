@@ -1,0 +1,111 @@
+{
+  "id": "advanced-security-patterns",
+  "title": "Advanced Security Patterns in PEGA Quiz",
+  "description": "Test your knowledge of advanced security patterns, authentication mechanisms, and security architectures in PEGA",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the fundamental principle of Zero-Trust security architecture?",
+      "type": "multiple-choice",
+      "options": [
+        "Trust all internal users and systems by default",
+        "No user or system should be trusted by default, regardless of location",
+        "Only external users require verification",
+        "Trust is based on network location only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Zero-Trust security assumes that no user or system should be trusted by default, requiring verification for every access request regardless of their location within or outside the network perimeter."
+    },
+    {
+      "id": 2,
+      "question": "Which authentication method provides the highest level of security?",
+      "type": "multiple-choice",
+      "options": [
+        "Single-factor password authentication",
+        "Multi-Factor Authentication (MFA) with multiple verification factors",
+        "Basic username/password authentication",
+        "API key authentication only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-Factor Authentication (MFA) provides the highest security by requiring users to provide two or more verification factors, significantly reducing the risk of unauthorized access."
+    },
+    {
+      "id": 3,
+      "question": "What is the primary purpose of OAuth 2.0 in PEGA applications?",
+      "type": "multiple-choice",
+      "options": [
+        "Data encryption",
+        "Authorization framework for secure API access",
+        "Database connection management",
+        "User interface design"
+      ],
+      "correct_answer": 1,
+      "explanation": "OAuth 2.0 is an authorization framework that enables applications to obtain limited access to user accounts by delegating user authentication to an authorization server, providing secure API access."
+    },
+    {
+      "id": 4,
+      "question": "Which encryption approach provides the most granular data protection?",
+      "type": "multiple-choice",
+      "options": [
+        "Database-level encryption",
+        "Network-level encryption",
+        "Field-level encryption",
+        "Application-level encryption"
+      ],
+      "correct_answer": 2,
+      "explanation": "Field-level encryption provides the most granular data protection by encrypting individual data fields within a database or application, allowing for selective encryption of sensitive information."
+    },
+    {
+      "id": 5,
+      "question": "What is the key benefit of implementing behavioral analytics in security monitoring?",
+      "type": "multiple-choice",
+      "options": [
+        "Reduced storage requirements",
+        "Faster database queries",
+        "Detection of anomalous user behavior and potential threats",
+        "Simplified user interface design"
+      ],
+      "correct_answer": 2,
+      "explanation": "Behavioral analytics analyzes user patterns and behaviors to detect anomalies that may indicate security threats, enabling proactive threat detection and response."
+    },
+    {
+      "id": 6,
+      "question": "Which security practice is essential for API protection in PEGA?",
+      "type": "multiple-choice",
+      "options": [
+        "Implementing only basic authentication",
+        "Rate limiting, input validation, and output filtering",
+        "Allowing unlimited API calls",
+        "Exposing all data without filtering"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive API security requires multiple layers including rate limiting to prevent abuse, input validation to prevent injection attacks, and output filtering to protect sensitive data."
+    },
+    {
+      "id": 7,
+      "question": "What is SIEM and why is it important for PEGA security?",
+      "type": "multiple-choice",
+      "options": [
+        "Simple Interface Event Manager for user interfaces",
+        "Security Information and Event Management for comprehensive security monitoring",
+        "System Integration Event Manager for data integration",
+        "Service Interface Event Manager for API management"
+      ],
+      "correct_answer": 1,
+      "explanation": "SIEM (Security Information and Event Management) combines security information management and security event management functions to provide comprehensive security monitoring, correlation, and incident response capabilities."
+    },
+    {
+      "id": 8,
+      "question": "Which principle should guide access control implementation in PEGA applications?",
+      "type": "multiple-choice",
+      "options": [
+        "Maximum privilege for all users",
+        "Least privilege principle - minimal necessary access",
+        "Equal access for all authenticated users",
+        "No access controls needed for internal systems"
+      ],
+      "correct_answer": 1,
+      "explanation": "The principle of least privilege ensures that users and systems are granted only the minimal access necessary to perform their required functions, reducing the potential impact of security breaches."
+    }
+  ]
+}

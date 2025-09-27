@@ -1,0 +1,123 @@
+{
+  "id": "production-support-strategies",
+  "title": "Production Support Strategies - Quiz",
+  "description": "Test your mastery of advanced production support methodologies, incident management, and operational excellence for PEGA applications",
+  "level": "advanced",
+  "lesson_reference": "/tutorials/advanced/production-support-strategies",
+  "passing_score": 80,
+  "time_limit": 35,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the most critical component of enterprise production monitoring frameworks?",
+      "options": [
+        "Basic infrastructure metrics only",
+        "Multi-dimensional monitoring including infrastructure, application, business KPIs, and predictive analytics",
+        "Simple uptime monitoring",
+        "Manual log review processes"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-dimensional monitoring provides comprehensive observability across all layers while predictive analytics enable proactive issue prevention and intelligent alerting.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "For enterprise incident response, what automated triage approach is most effective?",
+      "options": [
+        "Manual classification only",
+        "Intelligent triage combining business impact assessment, technical severity, and knowledge base matching",
+        "Simple severity categorization",
+        "Time-based triage assignment"
+      ],
+      "correct_answer": 1,
+      "explanation": "Intelligent automated triage considers multiple dimensions to ensure appropriate prioritization and resource allocation while leveraging historical knowledge for faster resolution.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "What should trigger escalation in enterprise incident management?",
+      "options": [
+        "Time-based escalation only",
+        "Multi-factor triggers including resolution timeline, business impact, and technical complexity",
+        "Manual escalation decisions exclusively",
+        "Single severity level threshold"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-factor escalation ensures appropriate response levels based on actual impact and resolution progress rather than arbitrary timeframes.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "For proactive maintenance in PEGA environments, what approach provides optimal prevention?",
+      "options": [
+        "Scheduled maintenance windows only",
+        "Predictive maintenance using analytics, automated health checks, and systematic optimization",
+        "Reactive maintenance after issues occur",
+        "Manual system inspection"
+      ],
+      "correct_answer": 1,
+      "explanation": "Predictive maintenance leverages analytics and automated health assessments to prevent issues before they impact production, reducing overall incident frequency.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "What is essential for effective alert management in enterprise environments?",
+      "options": [
+        "Maximum alert generation for complete coverage",
+        "Intelligent correlation and filtering with context-aware prioritization to prevent alert fatigue",
+        "Simple threshold-based alerting",
+        "Manual alert review processes"
+      ],
+      "correct_answer": 1,
+      "explanation": "Intelligent correlation and filtering prevent alert fatigue while ensuring critical issues receive immediate attention through context-aware prioritization.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "For enterprise incident communication, what strategy ensures stakeholder alignment?",
+      "options": [
+        "Ad-hoc communication as needed",
+        "Structured communication protocols with role-based information distribution and automated status updates",
+        "Email-only communication",
+        "Single communication channel for all stakeholders"
+      ],
+      "correct_answer": 1,
+      "explanation": "Structured protocols ensure appropriate stakeholders receive relevant information through preferred channels while automated updates maintain transparency.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "What is the primary benefit of automated containment in incident response?",
+      "options": [
+        "Reduced manual intervention requirements",
+        "Immediate impact limitation and system stabilization while preserving diagnostic evidence",
+        "Faster incident closure",
+        "Simplified reporting processes"
+      ],
+      "correct_answer": 1,
+      "explanation": "Automated containment immediately limits business impact while preserving system state and diagnostic information for effective root cause analysis.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "For enterprise knowledge management in production support, what approach maximizes learning?",
+      "options": [
+        "Static documentation only",
+        "Dynamic knowledge base with automated learning from incidents, pattern recognition, and continuous improvement",
+        "Individual team knowledge silos",
+        "Manual knowledge transfer sessions"
+      ],
+      "correct_answer": 1,
+      "explanation": "Dynamic knowledge bases automatically capture insights from incidents and patterns, enabling continuous learning and faster resolution of similar issues.",
+      "difficulty": "advanced"
+    }
+  ]
+}

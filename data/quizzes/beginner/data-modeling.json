@@ -1,0 +1,141 @@
+{
+  "id": "data-modeling",
+  "title": "Data Modeling Basics - Quiz",
+  "description": "Test your understanding of PEGA data model, properties, and data structures",
+  "level": "beginner",
+  "lesson_reference": "/tutorials/beginner/data-modeling",
+  "total_questions": 10,
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the fundamental building block of PEGA's data model?",
+      "options": [
+        "Tables",
+        "Properties",
+        "Classes",
+        "Rules"
+      ],
+      "correct_answer": 1,
+      "explanation": "Properties are the fundamental building blocks of PEGA's data model. They are individual data fields that store information and can be combined to create complex data structures.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "Which data type would you use to store a customer's age?",
+      "options": [
+        "Text",
+        "Integer",
+        "Boolean",
+        "Page"
+      ],
+      "correct_answer": 1,
+      "explanation": "Integer is the appropriate data type for storing a customer's age since age is a whole number without decimal places.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "question": "A Page property can contain multiple related properties.",
+      "correct_answer": true,
+      "explanation": "True. A Page property is a complex data type that can contain multiple related properties, making it useful for grouping related information like address details or customer information.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "What is the difference between a Page List and a Page Group?",
+      "options": [
+        "There is no difference",
+        "Page List is ordered, Page Group uses unique keys",
+        "Page List is for text, Page Group is for numbers",
+        "Page Group is faster than Page List"
+      ],
+      "correct_answer": 1,
+      "explanation": "Page List is an ordered array of pages (like a list), while Page Group is a collection of pages with unique keys (like a dictionary or map structure).",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q5",
+      "type": "scenario",
+      "question": "You need to store a list of order items, where each item has a product name, quantity, and price. What property type would be most appropriate?",
+      "options": [
+        "Text property",
+        "Page property",
+        "Page List property",
+        "Integer property"
+      ],
+      "correct_answer": 2,
+      "explanation": "Page List is most appropriate because you need to store multiple order items (list), and each item contains multiple related properties (product name, quantity, price).",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "What is the primary purpose of Data Pages in PEGA?",
+      "options": [
+        "To store user passwords",
+        "To provide reusable data structures and caching",
+        "To create user interfaces",
+        "To define business rules"
+      ],
+      "correct_answer": 1,
+      "explanation": "Data Pages provide reusable data structures that can load data from external systems, cache frequently used data, and be shared across multiple cases and applications.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q7",
+      "type": "true-false",
+      "question": "Property names in PEGA should use camelCase naming convention.",
+      "correct_answer": true,
+      "explanation": "True. PEGA follows camelCase naming convention for properties (e.g., customerName, orderDate) to ensure consistency and readability.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "Which validation type would you use to ensure an email field contains a valid email format?",
+      "options": [
+        "Required Field Validation",
+        "Range Validation",
+        "Format Validation",
+        "Custom Validation"
+      ],
+      "correct_answer": 2,
+      "explanation": "Format Validation is used to validate data format such as email addresses, phone numbers, or other structured data patterns.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "scenario",
+      "question": "A company needs to store customer addresses that will be used across multiple applications. What PEGA feature would be most appropriate?",
+      "options": [
+        "Local properties in each application",
+        "Data Page with address structure",
+        "Hard-coded address fields",
+        "External database only"
+      ],
+      "correct_answer": 1,
+      "explanation": "A Data Page with address structure would be most appropriate as it provides reusability across applications, consistent data structure, and can be easily maintained in one place.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q10",
+      "type": "true-false",
+      "question": "Boolean data type can only store true or false values.",
+      "correct_answer": true,
+      "explanation": "True. Boolean data type is specifically designed to store only true/false values, making it perfect for yes/no questions, flags, or binary states.",
+      "difficulty": "easy"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-01-24",
+    "last_updated": "2025-01-24",
+    "version": "1.0",
+    "tags": ["data-modeling", "properties", "data-types", "validation", "beginner"],
+    "estimated_time": 20
+  }
+}

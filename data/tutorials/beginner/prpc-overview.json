@@ -1,0 +1,265 @@
+{
+  "id": "prpc-overview",
+  "title": "PRPC Overview",
+  "level": "beginner",
+  "estimated_time": 20,
+  "prerequisites": ["what-is-pega-bpm"],
+  "learning_objectives": [
+    "Understand what PRPC (PEGA Rules Process Commander) is",
+    "Learn about PRPC architecture and components",
+    "Understand the rule-based development approach",
+    "Recognize different types of rules in PEGA"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Introduction to PRPC",
+      "text": "PEGA Rules Process Commander (PRPC) is the foundational platform that powers all PEGA applications. It provides the runtime environment, development tools, and rule-based architecture that makes PEGA's low-code approach possible. Understanding PRPC is essential for anyone working with PEGA applications."
+    },
+    "sections": [
+      {
+        "title": "What is PRPC?",
+        "content": "PRPC stands for PEGA Rules Process Commander. It is the core platform that provides the infrastructure for building, deploying, and running PEGA applications. Think of PRPC as the engine that powers all PEGA functionality.",
+        "key_points": [
+          "PRPC is the foundational platform for all PEGA applications",
+          "It provides both development and runtime environments",
+          "Everything in PEGA is built using rules stored in PRPC",
+          "It handles process execution, data management, and user interfaces"
+        ]
+      },
+      {
+        "title": "PRPC Architecture",
+        "content": "PRPC follows a multi-tier architecture that separates concerns and provides scalability and maintainability.",
+        "subsections": [
+          {
+            "title": "Presentation Tier",
+            "content": "The presentation tier handles all user interface elements and user interactions. This includes web pages, mobile interfaces, and portal components.",
+            "components": [
+              "User interfaces (harnesses, sections, controls)",
+              "Portal definitions",
+              "Mobile app interfaces",
+              "Web services for external access"
+            ]
+          },
+          {
+            "title": "Business Logic Tier",
+            "content": "This tier contains all the business rules, processes, and decision logic. It's where the core application functionality resides.",
+            "components": [
+              "Business rules and decision logic",
+              "Process flows and case management",
+              "Data validation and transformation",
+              "Integration services"
+            ]
+          },
+          {
+            "title": "Data Tier",
+            "content": "The data tier manages all data storage, retrieval, and persistence. It includes both PEGA's internal database and connections to external systems.",
+            "components": [
+              "PEGA database (PegaDATA, PegaRULES)",
+              "External database connections",
+              "File system storage",
+              "Integration with external data sources"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Rule-Based Development",
+        "content": "PRPC's core philosophy is that everything is a rule. This rule-based approach is what enables PEGA's low-code development model and makes applications highly maintainable.",
+        "key_concepts": [
+          {
+            "concept": "Everything is a Rule",
+            "description": "In PRPC, all application components - from user interfaces to business logic to data structures - are defined as rules stored in the database."
+          },
+          {
+            "concept": "Rule Resolution",
+            "description": "PRPC uses a sophisticated rule resolution algorithm to determine which rule to execute based on context, inheritance, and versioning."
+          },
+          {
+            "concept": "Rule Inheritance",
+            "description": "Rules can inherit from other rules, promoting reusability and consistency across applications."
+          },
+          {
+            "concept": "Rule Versioning",
+            "description": "Multiple versions of rules can coexist, allowing for controlled deployment and rollback capabilities."
+          }
+        ]
+      },
+      {
+        "title": "Types of Rules in PRPC",
+        "content": "PRPC includes many different types of rules, each serving specific purposes in application development.",
+        "rule_categories": [
+          {
+            "category": "Process Rules",
+            "description": "Define business processes and workflows",
+            "examples": [
+              "Flow rules - Define process steps and routing",
+              "Activity rules - Define specific processing tasks",
+              "Decision rules - Define business decision logic"
+            ]
+          },
+          {
+            "category": "User Interface Rules",
+            "description": "Define how users interact with the application",
+            "examples": [
+              "Harness rules - Define page layouts and structure",
+              "Section rules - Define reusable UI components",
+              "Control rules - Define individual form controls"
+            ]
+          },
+          {
+            "category": "Data Rules",
+            "description": "Define data structures and validation",
+            "examples": [
+              "Property rules - Define data fields and attributes",
+              "Data Page rules - Define reusable data structures",
+              "Report Definition rules - Define data queries"
+            ]
+          },
+          {
+            "category": "Integration Rules",
+            "description": "Define connections to external systems",
+            "examples": [
+              "Connector rules - Define external service connections",
+              "Service rules - Define web service interfaces",
+              "Parse rules - Define data transformation logic"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "PRPC Development Environment",
+        "content": "PRPC provides several development environments tailored for different types of users and development scenarios.",
+        "environments": [
+          {
+            "name": "App Studio",
+            "target_users": "Business users, citizen developers",
+            "description": "A simplified, low-code development environment designed for business users to create and modify applications with minimal technical knowledge.",
+            "key_features": [
+              "Drag-and-drop interface design",
+              "Guided application creation",
+              "Business-friendly terminology",
+              "Built-in best practices"
+            ]
+          },
+          {
+            "name": "Dev Studio",
+            "target_users": "Professional developers, system architects",
+            "description": "A comprehensive development environment that provides access to all PEGA capabilities and advanced configuration options.",
+            "key_features": [
+              "Complete rule access and editing",
+              "Advanced debugging tools",
+              "Performance monitoring",
+              "System administration functions"
+            ]
+          },
+          {
+            "name": "Prediction Studio",
+            "target_users": "Data scientists, business analysts",
+            "description": "Specialized environment for creating and managing predictive and adaptive models.",
+            "key_features": [
+              "Machine learning model creation",
+              "Predictive analytics",
+              "A/B testing capabilities",
+              "Performance monitoring"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "PRPC Runtime Environment",
+        "content": "When applications run, PRPC provides the runtime environment that executes rules, manages data, and handles user interactions.",
+        "runtime_features": [
+          {
+            "feature": "Rule Execution Engine",
+            "description": "Interprets and executes rules based on the current context and rule resolution algorithm."
+          },
+          {
+            "feature": "Case Management Engine",
+            "description": "Manages case lifecycle, work routing, and process orchestration."
+          },
+          {
+            "feature": "Database Layer",
+            "description": "Handles data persistence, caching, and database operations."
+          },
+          {
+            "feature": "Integration Layer",
+            "description": "Manages connections to external systems and data sources."
+          },
+          {
+            "feature": "Security Framework",
+            "description": "Enforces authentication, authorization, and data security policies."
+          }
+        ]
+      },
+      {
+        "title": "Benefits of PRPC Architecture",
+        "content": "The PRPC architecture provides several key benefits that make PEGA applications powerful and maintainable.",
+        "benefits": [
+          {
+            "benefit": "Rapid Development",
+            "description": "Rule-based development allows for quick application creation and modification without traditional coding."
+          },
+          {
+            "benefit": "Maintainability",
+            "description": "Rules are stored in a structured format that makes them easy to understand, modify, and maintain."
+          },
+          {
+            "benefit": "Reusability",
+            "description": "Rules can be inherited and reused across different applications and contexts."
+          },
+          {
+            "benefit": "Scalability",
+            "description": "Multi-tier architecture allows applications to scale horizontally and vertically as needed."
+          },
+          {
+            "benefit": "Flexibility",
+            "description": "Rule resolution and inheritance provide flexibility to handle different business scenarios."
+          },
+          {
+            "benefit": "Governance",
+            "description": "Built-in versioning and rule management provide strong governance capabilities."
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "PRPC is the foundational platform that powers all PEGA applications",
+        "It follows a multi-tier architecture separating presentation, business logic, and data",
+        "Everything in PEGA is defined as rules stored in the database",
+        "Rule resolution determines which rules execute based on context",
+        "Different development environments serve different user types",
+        "The runtime environment executes rules and manages application lifecycle"
+      ]
+    },
+    "next_steps": {
+      "title": "What's Next?",
+      "text": "Now that you understand PRPC and its architecture, the next tutorial will guide you through installing and setting up your PEGA development environment.",
+      "recommended_reading": [
+        "Installation & Setup",
+        "App Studio vs Dev Studio",
+        "Your First Case App"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/prpc-overview",
+  "resources": [
+    {
+      "title": "PRPC Architecture Guide",
+      "url": "https://docs.pega.com/bundle/platform/page/platform/engine/prpc-architecture.html",
+      "type": "documentation"
+    },
+    {
+      "title": "Rule Types Reference",
+      "url": "https://docs.pega.com/bundle/platform/page/platform/rules/rule-types.html",
+      "type": "documentation"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["prpc", "architecture", "rules", "development-environment", "runtime"]
+  }
+}

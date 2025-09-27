@@ -1,0 +1,123 @@
+{
+  "id": "deployment-manager",
+  "title": "Deployment Manager - Quiz",
+  "description": "Test your mastery of advanced PEGA Deployment Manager capabilities for enterprise application lifecycle management",
+  "level": "advanced",
+  "lesson_reference": "/tutorials/advanced/deployment-manager",
+  "passing_score": 80,
+  "time_limit": 30,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the most critical component of enterprise Deployment Manager pipeline configuration?",
+      "options": [
+        "Basic deployment automation",
+        "Multi-stage workflows with automated quality gates and comprehensive governance",
+        "Simple approval processes",
+        "Manual deployment steps"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-stage workflows with automated quality gates provide comprehensive deployment governance while maintaining enterprise-grade quality controls and audit capabilities.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "For enterprise quality gates in Deployment Manager, what approach provides optimal decision-making?",
+      "options": [
+        "Fixed threshold criteria for all environments",
+        "Intelligent risk-based assessment with environment-specific criteria and business impact analysis",
+        "Manual quality reviews only",
+        "Basic pass/fail checks"
+      ],
+      "correct_answer": 1,
+      "explanation": "Intelligent risk-based assessment considers deployment context, business impact, and environment-specific requirements for optimal quality decisions.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "What deployment strategy should be configured for production environments in enterprise settings?",
+      "options": [
+        "Direct deployment without validation",
+        "Blue-green deployment with automated rollback triggers and comprehensive monitoring",
+        "Manual deployment processes",
+        "Single-instance deployment"
+      ],
+      "correct_answer": 1,
+      "explanation": "Blue-green deployment with automated rollback provides zero-downtime deployments with immediate rollback capability based on business metrics and system health.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "For enterprise compliance in Deployment Manager, what validation approach is most comprehensive?",
+      "options": [
+        "Basic security scans only",
+        "Multi-dimensional compliance validation including regulatory, security, operational, and business requirements",
+        "Manual compliance checks",
+        "No compliance validation needed"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-dimensional validation ensures comprehensive compliance across all enterprise requirements including regulatory standards and organizational policies.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "What should trigger automated rollback in enterprise deployment configurations?",
+      "options": [
+        "Time-based rollback only",
+        "Error rate thresholds, response time degradation, and business metric impact",
+        "Manual intervention exclusively",
+        "No automatic rollback needed"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multiple trigger types including error rates, performance degradation, and business impact ensure rapid response to deployment issues affecting user experience.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "For enterprise approval workflows in Deployment Manager, what strategy balances governance with velocity?",
+      "options": [
+        "Manual approval for all deployments",
+        "Risk-based approval workflows with automated low-risk deployments and escalated high-risk approvals",
+        "No approval processes",
+        "Single approver for all changes"
+      ],
+      "correct_answer": 1,
+      "explanation": "Risk-based workflows enable automated processing of low-risk changes while ensuring appropriate governance oversight for high-impact deployments.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "What is essential for enterprise audit trail requirements in Deployment Manager?",
+      "options": [
+        "Basic deployment logs only",
+        "Comprehensive audit trails with compliance assessment, decision rationale, and traceability",
+        "No audit documentation needed",
+        "Simple timestamp logging"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive audit trails provide complete traceability for compliance requirements, including decision rationale and assessment details for regulatory compliance.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "For enterprise deployment governance, what policy enforcement approach is most effective?",
+      "options": [
+        "Manual policy checking",
+        "Automated policy enforcement with real-time validation and violation detection",
+        "No policy enforcement needed",
+        "Post-deployment policy review only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Automated policy enforcement ensures consistent adherence to organizational standards while providing immediate feedback on policy violations during the deployment process.",
+      "difficulty": "advanced"
+    }
+  ]
+}

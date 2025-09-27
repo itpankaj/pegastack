@@ -1,0 +1,123 @@
+{
+  "id": "declarative-rules",
+  "title": "Declarative Rules - Quiz",
+  "description": "Test your understanding of declarative rules concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/declarative-rules",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary advantage of declarative rules over procedural logic?",
+      "options": [
+        "They execute faster",
+        "They automatically recalculate when dependencies change",
+        "They require less memory",
+        "They are easier to debug"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Declarative rules automatically recalculate when their dependencies change, eliminating the need for manual updates and ensuring data consistency throughout the application."
+    },
+    {
+      "id": 2,
+      "question": "Which declarative rule type is best for calculating derived values?",
+      "options": [
+        "Declare Trigger",
+        "Declare Expression",
+        "Declare Constraint",
+        "Declare Index"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Declare Expression rules are specifically designed for calculating derived values based on other properties, automatically updating when source values change."
+    },
+    {
+      "id": 3,
+      "question": "When should you use a Declare Constraint rule?",
+      "options": [
+        "To calculate values",
+        "To enforce business rules and validate data",
+        "To trigger activities",
+        "To create indexes"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Declare Constraint rules enforce business rules and validate data by ensuring properties meet specific conditions, automatically checking when values change."
+    },
+    {
+      "id": 4,
+      "question": "What happens when a Declare Trigger rule fires?",
+      "options": [
+        "It creates a new case",
+        "It executes an activity when specified conditions are met",
+        "It updates the database schema",
+        "It sends an email"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Declare Trigger rules execute activities when specified conditions are met, allowing automatic processing when data changes without explicit user action."
+    },
+    {
+      "id": 5,
+      "question": "How do declarative rules improve maintainability?",
+      "options": [
+        "By reducing code duplication",
+        "By centralizing business logic and reducing procedural code",
+        "By increasing processing speed",
+        "By simplifying database queries"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Declarative rules centralize business logic and reduce procedural code, making applications more maintainable by eliminating scattered validation and calculation logic."
+    },
+    {
+      "id": 6,
+      "question": "What is the purpose of Declare Index rules?",
+      "options": [
+        "To create database indexes for performance",
+        "To expose embedded properties for reporting and searching",
+        "To trigger activities",
+        "To validate data"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Declare Index rules expose embedded properties for reporting and searching by creating virtual properties that can be accessed like top-level properties."
+    },
+    {
+      "id": 7,
+      "question": "When should you avoid using declarative rules?",
+      "options": [
+        "For simple calculations",
+        "For complex business logic requiring external system calls",
+        "For data validation",
+        "For property exposure"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Declarative rules should be avoided for complex business logic requiring external system calls, as they are designed for in-memory processing and may impact performance."
+    },
+    {
+      "id": 8,
+      "question": "How do you optimize declarative rule performance?",
+      "options": [
+        "By using more rules",
+        "By carefully designing target properties and avoiding circular dependencies",
+        "By disabling caching",
+        "By using procedural logic instead"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Declarative rule performance is optimized by carefully designing target properties, avoiding circular dependencies, and ensuring rules fire only when necessary."
+    }
+  ]
+}

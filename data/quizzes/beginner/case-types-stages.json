@@ -1,0 +1,136 @@
+{
+  "id": "case-types-stages",
+  "title": "Case Types and Stages Quiz",
+  "description": "Test your understanding of case types, stages, and case lifecycle management in PEGA.",
+  "level": "beginner",
+  "lesson": "case-types-stages",
+  "total_questions": 10,
+  "passing_score": 70,
+  "time_limit": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is a Case Type in PEGA?",
+      "options": [
+        "A template that defines the structure and behavior of cases",
+        "A specific instance of a business process",
+        "A user interface component",
+        "A data storage mechanism"
+      ],
+      "correct_answer": 0,
+      "explanation": "A Case Type is a template that defines the structure, stages, processes, and data model for a specific type of business case, such as a service request or loan application."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "What are Stages in a PEGA case lifecycle?",
+      "options": [
+        "Individual steps within a process",
+        "High-level phases that organize the case progression",
+        "User roles and permissions",
+        "Data validation rules"
+      ],
+      "correct_answer": 1,
+      "explanation": "Stages are high-level phases that organize the case progression from creation to resolution, providing a clear structure for the case lifecycle."
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "A case can only belong to one stage at a time.",
+      "correct_answer": true,
+      "explanation": "Typically, a case is in one primary stage at any given time, although advanced configurations can allow stages to be skipped or revisited based on business logic."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "Which of the following is NOT typically a stage in a service request case?",
+      "options": [
+        "New",
+        "Assignment",
+        "Resolution",
+        "Database"
+      ],
+      "correct_answer": 3,
+      "explanation": "Database is not a stage in a case lifecycle. Typical stages include New, Review, Assignment, and Resolution, representing the progression of work."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "What determines when a case moves from one stage to another?",
+      "options": [
+        "Time-based triggers only",
+        "User manual intervention only",
+        "Stage transition conditions and process completion",
+        "Random system events"
+      ],
+      "correct_answer": 2,
+      "explanation": "Cases move between stages based on defined transition conditions and the completion of processes or activities within the current stage."
+    },
+    {
+      "id": 6,
+      "type": "scenario",
+      "question": "You're designing a loan application case type. The business wants to track applications through Initial Review, Credit Check, Approval Decision, and Funding stages. What should you consider when defining these stages?",
+      "options": [
+        "Only the sequence of stages",
+        "Stage entry/exit conditions, required processes, and SLAs",
+        "Just the stage names",
+        "Only user permissions"
+      ],
+      "correct_answer": 1,
+      "explanation": "When defining stages, you should consider entry/exit conditions, required processes within each stage, service level agreements (SLAs), and any business rules that govern stage transitions."
+    },
+    {
+      "id": 7,
+      "type": "true-false",
+      "question": "Case types can inherit properties and behaviors from parent case types.",
+      "correct_answer": true,
+      "explanation": "Yes, PEGA supports case type inheritance, allowing child case types to inherit properties, stages, and processes from parent case types while adding their own specific features."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "What is the primary benefit of organizing case work into stages?",
+      "options": [
+        "Faster system performance",
+        "Better organization and tracking of case progress",
+        "Reduced storage requirements",
+        "Automatic case resolution"
+      ],
+      "correct_answer": 1,
+      "explanation": "Stages provide better organization and tracking of case progress, making it easier for users to understand where a case stands and what work needs to be done next."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "In PEGA, what can be associated with each stage?",
+      "options": [
+        "Only process flows",
+        "Only SLAs",
+        "Process flows, SLAs, and business rules",
+        "Only user interfaces"
+      ],
+      "correct_answer": 2,
+      "explanation": "Each stage can be associated with process flows that define the work to be done, SLAs that set time expectations, and business rules that govern stage behavior."
+    },
+    {
+      "id": 10,
+      "type": "scenario",
+      "question": "A case is stuck in the 'Review' stage because a required document is missing. What stage design principle would help prevent this situation?",
+      "options": [
+        "Remove all stage requirements",
+        "Define clear entry conditions and validation rules",
+        "Allow unlimited time in each stage",
+        "Skip all validation checks"
+      ],
+      "correct_answer": 1,
+      "explanation": "Defining clear entry conditions and validation rules helps ensure that cases only progress to the next stage when all requirements are met, preventing cases from getting stuck due to missing information."
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-01-24",
+    "last_updated": "2025-01-24",
+    "version": "1.0",
+    "tags": ["case-types", "stages", "case-lifecycle", "business-process"]
+  }
+}

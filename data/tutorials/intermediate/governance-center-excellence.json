@@ -1,0 +1,110 @@
+{
+  "title": "Governance & Center of Excellence",
+  "level": "intermediate",
+  "slug": "governance-center-excellence",
+  "description": "Establish robust governance frameworks, Center of Excellence practices, and enterprise standards for PEGA implementations",
+  "estimatedTime": "50 min",
+  "prerequisites": ["DevOps & Deployment Pipelines", "Security & Access Control", "Case Management Advanced"],
+  "objectives": [
+    "Design enterprise governance frameworks",
+    "Establish Center of Excellence practices",
+    "Implement development standards and guidelines",
+    "Manage enterprise architecture governance",
+    "Ensure compliance and risk management"
+  ],
+  "content": {
+    "introduction": "Enterprise PEGA implementations require robust governance frameworks and Center of Excellence practices to ensure consistency, quality, and strategic alignment. This lesson covers comprehensive governance strategies including standards, compliance, risk management, and organizational excellence.",
+    "sections": [
+      {
+        "title": "Enterprise Governance Framework",
+        "content": "Design comprehensive governance frameworks that encompass architecture standards, development practices, quality assurance, and strategic alignment across the organization.",
+        "framework": [
+          "Architecture governance and standards",
+          "Development lifecycle governance",
+          "Quality assurance and testing standards",
+          "Security and compliance governance",
+          "Performance and scalability governance"
+        ]
+      },
+      {
+        "title": "Center of Excellence Practices",
+        "content": "Establish and manage Center of Excellence practices that drive organizational excellence, knowledge sharing, and continuous improvement in PEGA implementations.",
+        "coe": [
+          "Organizational structure and roles",
+          "Best practices documentation and sharing",
+          "Training and certification programs",
+          "Mentorship and knowledge transfer",
+          "Continuous improvement initiatives"
+        ]
+      },
+      {
+        "title": "Development Standards and Guidelines",
+        "content": "Implement comprehensive development standards and guidelines that ensure consistency, quality, and maintainability across all PEGA applications and projects.",
+        "standards": [
+          "Coding standards and naming conventions",
+          "Design patterns and architecture guidelines",
+          "Testing standards and quality gates",
+          "Documentation requirements and templates",
+          "Code review and approval processes"
+        ]
+      },
+      {
+        "title": "Enterprise Architecture Governance",
+        "content": "Manage enterprise architecture governance including technology standards, integration patterns, data governance, and strategic technology decisions.",
+        "architecture": [
+          "Technology stack standardization",
+          "Integration pattern governance",
+          "Data architecture and governance",
+          "Security architecture standards",
+          "Scalability and performance governance"
+        ]
+      },
+      {
+        "title": "Compliance and Risk Management",
+        "content": "Implement comprehensive compliance and risk management frameworks that address regulatory requirements, security standards, and business continuity.",
+        "compliance": [
+          "Regulatory compliance frameworks",
+          "Security compliance standards",
+          "Risk assessment and mitigation",
+          "Business continuity planning",
+          "Audit and governance reporting"
+        ]
+      },
+      {
+        "title": "Performance Measurement and Optimization",
+        "content": "Establish performance measurement frameworks and optimization strategies that ensure applications meet business objectives and user expectations.",
+        "measurement": [
+          "Key performance indicators (KPIs)",
+          "Application performance monitoring",
+          "User experience measurement",
+          "Business outcome tracking",
+          "Continuous optimization processes"
+        ]
+      }
+    ]
+  },
+  "quiz": {
+    "id": "governance-center-excellence-quiz",
+    "title": "Governance & Center of Excellence Quiz",
+    "questions": 8,
+    "passingScore": 70
+  },
+  "resources": {
+    "documentation": [
+      {
+        "title": "PEGA Governance Framework",
+        "url": "https://docs.pega.com/governance"
+      },
+      {
+        "title": "Center of Excellence Guide",
+        "url": "https://docs.pega.com/coe"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Enterprise Governance Best Practices",
+        "url": "https://academy.pega.com/governance-practices"
+      }
+    ]
+  }
+}

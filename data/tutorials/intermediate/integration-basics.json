@@ -1,0 +1,407 @@
+{
+  "id": "integration-basics",
+  "title": "Integration Basics",
+  "level": "intermediate",
+  "estimated_time": 45,
+  "prerequisites": ["declarative-rules"],
+  "learning_objectives": [
+    "Master PEGA's integration architecture and patterns",
+    "Understand connectors, services, and data integration",
+    "Learn to implement robust integration solutions",
+    "Apply security and error handling best practices"
+  ],
+  "content": {
+    "introduction": {
+      "title": "PEGA Integration Architecture",
+      "text": "Integration is fundamental to modern enterprise applications. PEGA provides comprehensive integration capabilities that enable seamless connectivity with external systems, services, and data sources while maintaining security, performance, and reliability."
+    },
+    "sections": [
+      {
+        "title": "Integration Architecture Overview",
+        "content": "Understanding PEGA's integration architecture is essential for building connected enterprise solutions.",
+        "architecture_components": [
+          {
+            "component": "Connectors",
+            "description": "Reusable integration endpoints that define how to connect to external systems",
+            "types": [
+              "REST connectors for modern web services",
+              "SOAP connectors for traditional web services",
+              "Database connectors for direct database access",
+              "File connectors for file-based integrations",
+              "JMS connectors for message queue systems"
+            ],
+            "key_features": [
+              "Connection pooling and resource management",
+              "Authentication and security handling",
+              "Error handling and retry mechanisms",
+              "Performance monitoring and metrics"
+            ]
+          },
+          {
+            "component": "Services",
+            "description": "Expose PEGA functionality to external systems",
+            "service_types": [
+              "REST services for modern API consumption",
+              "SOAP services for traditional enterprise integration",
+              "Data services for direct data access",
+              "Process services for workflow integration"
+            ],
+            "capabilities": [
+              "Authentication and authorization",
+              "Request/response transformation",
+              "Rate limiting and throttling",
+              "API versioning and lifecycle management"
+            ]
+          },
+          {
+            "component": "Data Integration",
+            "description": "Mechanisms for data synchronization and transformation",
+            "patterns": [
+              "Real-time data synchronization",
+              "Batch data processing and ETL",
+              "Event-driven data replication",
+              "Master data management integration"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "REST Integration Patterns",
+        "content": "REST has become the dominant integration pattern for modern applications.",
+        "rest_patterns": [
+          {
+            "pattern": "Synchronous REST Calls",
+            "description": "Real-time request-response integration with external REST APIs",
+            "implementation": [
+              "Configure REST connector with endpoint details",
+              "Define request and response data mappings",
+              "Implement authentication (OAuth, API keys, basic auth)",
+              "Handle HTTP status codes and error responses"
+            ],
+            "best_practices": [
+              "Use connection pooling for performance",
+              "Implement timeout and retry logic",
+              "Cache responses when appropriate",
+              "Monitor API usage and rate limits"
+            ],
+            "example": {
+              "use_case": "Customer data validation with external CRM",
+              "endpoint": "GET /api/customers/{customerId}",
+              "authentication": "OAuth 2.0 Bearer token",
+              "error_handling": "Handle 404 (not found) and 500 (server error) responses"
+            }
+          },
+          {
+            "pattern": "Asynchronous REST Integration",
+            "description": "Non-blocking integration for improved performance and user experience",
+            "implementation": [
+              "Use background processing for API calls",
+              "Implement callback mechanisms for status updates",
+              "Queue requests for batch processing",
+              "Handle eventual consistency scenarios"
+            ],
+            "use_cases": [
+              "Large file uploads and processing",
+              "Bulk data synchronization",
+              "Long-running external processes",
+              "Non-critical data enrichment"
+            ]
+          },
+          {
+            "pattern": "REST Service Exposure",
+            "description": "Exposing PEGA functionality as REST APIs for external consumption",
+            "design_principles": [
+              "Follow RESTful design patterns and conventions",
+              "Implement proper HTTP methods (GET, POST, PUT, DELETE)",
+              "Use meaningful resource URLs and status codes",
+              "Provide comprehensive API documentation"
+            ],
+            "security_considerations": [
+              "Implement authentication and authorization",
+              "Validate and sanitize input data",
+              "Rate limiting and DDoS protection",
+              "Audit logging for security monitoring"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Database Integration",
+        "content": "Direct database integration for high-performance data access and legacy system connectivity.",
+        "database_patterns": [
+          {
+            "pattern": "Read-Only Data Access",
+            "description": "Accessing external databases for reference data and lookups",
+            "implementation": [
+              "Configure database connector with connection details",
+              "Create optimized SQL queries for data retrieval",
+              "Implement connection pooling and resource management",
+              "Cache frequently accessed reference data"
+            ],
+            "use_cases": [
+              "Product catalog lookups",
+              "Customer reference data",
+              "Geographic and demographic data",
+              "Regulatory and compliance data"
+            ]
+          },
+          {
+            "pattern": "Bidirectional Data Synchronization",
+            "description": "Two-way data synchronization between PEGA and external databases",
+            "considerations": [
+              "Conflict resolution strategies",
+              "Data consistency and integrity",
+              "Transaction management across systems",
+              "Change tracking and audit trails"
+            ],
+            "implementation_strategies": [
+              "Timestamp-based synchronization",
+              "Change log processing",
+              "Event-driven replication",
+              "Master-slave replication patterns"
+            ]
+          },
+          {
+            "pattern": "Bulk Data Processing",
+            "description": "Efficient processing of large datasets",
+            "techniques": [
+              "Batch processing with pagination",
+              "Parallel processing for improved performance",
+              "Incremental data loading",
+              "Error handling and recovery mechanisms"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Message Queue Integration",
+        "content": "Asynchronous messaging for reliable and scalable integration.",
+        "messaging_patterns": [
+          {
+            "pattern": "Point-to-Point Messaging",
+            "description": "Direct message exchange between two systems",
+            "characteristics": [
+              "Guaranteed message delivery",
+              "Message ordering preservation",
+              "Load balancing across consumers",
+              "Dead letter queue handling"
+            ],
+            "use_cases": [
+              "Order processing workflows",
+              "Payment transaction processing",
+              "Document generation requests",
+              "System notification delivery"
+            ]
+          },
+          {
+            "pattern": "Publish-Subscribe Messaging",
+            "description": "Event-driven architecture with multiple subscribers",
+            "benefits": [
+              "Loose coupling between systems",
+              "Scalable event distribution",
+              "Dynamic subscription management",
+              "Event replay capabilities"
+            ],
+            "implementation": [
+              "Define event schemas and contracts",
+              "Implement event publishing logic",
+              "Configure subscription filters",
+              "Handle subscriber failures gracefully"
+            ]
+          },
+          {
+            "pattern": "Request-Reply Messaging",
+            "description": "Asynchronous request-response patterns using messaging",
+            "implementation": [
+              "Correlation ID management",
+              "Timeout handling for responses",
+              "Response routing and delivery",
+              "Error response processing"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Data Transformation and Mapping",
+        "content": "Converting data between different formats and structures during integration.",
+        "transformation_techniques": [
+          {
+            "technique": "Data Transform Rules",
+            "description": "PEGA's built-in data transformation capabilities",
+            "features": [
+              "Visual mapping interface",
+              "Complex transformation logic",
+              "Conditional mapping based on business rules",
+              "Reusable transformation components"
+            ],
+            "best_practices": [
+              "Keep transformations simple and focused",
+              "Use meaningful names and documentation",
+              "Test with various data scenarios",
+              "Handle null and missing data appropriately"
+            ]
+          },
+          {
+            "technique": "Custom Transformation Logic",
+            "description": "Implementing complex transformations using activities and functions",
+            "use_cases": [
+              "Complex mathematical calculations",
+              "Multi-source data aggregation",
+              "Format conversions and validations",
+              "Business rule-based transformations"
+            ]
+          },
+          {
+            "technique": "Schema Validation",
+            "description": "Ensuring data quality and consistency during transformation",
+            "validation_types": [
+              "Data type validation",
+              "Format and pattern validation",
+              "Business rule validation",
+              "Cross-field consistency checks"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Security and Authentication",
+        "content": "Implementing secure integration patterns and protecting sensitive data.",
+        "security_patterns": [
+          {
+            "pattern": "OAuth 2.0 Integration",
+            "description": "Modern authentication and authorization for API access",
+            "implementation": [
+              "Configure OAuth provider settings",
+              "Implement token acquisition and refresh",
+              "Handle scope-based authorization",
+              "Secure token storage and management"
+            ],
+            "flows": [
+              "Authorization Code flow for user-based access",
+              "Client Credentials flow for system-to-system integration",
+              "Resource Owner Password flow for trusted applications"
+            ]
+          },
+          {
+            "pattern": "API Key Management",
+            "description": "Simple authentication using API keys",
+            "best_practices": [
+              "Rotate API keys regularly",
+              "Use different keys for different environments",
+              "Monitor API key usage and abuse",
+              "Implement key revocation mechanisms"
+            ]
+          },
+          {
+            "pattern": "Certificate-Based Authentication",
+            "description": "Strong authentication using digital certificates",
+            "implementation": [
+              "Certificate installation and configuration",
+              "Certificate validation and trust chains",
+              "Certificate lifecycle management",
+              "Mutual TLS (mTLS) implementation"
+            ]
+          },
+          {
+            "pattern": "Data Encryption",
+            "description": "Protecting sensitive data during transmission and storage",
+            "encryption_types": [
+              "Transport encryption (TLS/SSL)",
+              "Field-level encryption for sensitive data",
+              "End-to-end encryption for high-security scenarios",
+              "Key management and rotation"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Error Handling and Resilience",
+        "content": "Building robust integration solutions that handle failures gracefully.",
+        "resilience_patterns": [
+          {
+            "pattern": "Retry Mechanisms",
+            "description": "Automatically retry failed integration attempts",
+            "retry_strategies": [
+              "Fixed interval retry for temporary failures",
+              "Exponential backoff for overloaded systems",
+              "Jittered retry to prevent thundering herd",
+              "Circuit breaker to prevent cascading failures"
+            ]
+          },
+          {
+            "pattern": "Fallback Strategies",
+            "description": "Alternative processing when primary integration fails",
+            "fallback_options": [
+              "Use cached data when real-time data is unavailable",
+              "Switch to alternative service providers",
+              "Degrade functionality gracefully",
+              "Queue requests for later processing"
+            ]
+          },
+          {
+            "pattern": "Monitoring and Alerting",
+            "description": "Proactive monitoring of integration health and performance",
+            "monitoring_aspects": [
+              "Response times and throughput metrics",
+              "Error rates and failure patterns",
+              "System resource utilization",
+              "Business process impact assessment"
+            ]
+          }
+        ]
+      }
+    ],
+    "integration_governance": [
+      {
+        "aspect": "API Design Standards",
+        "description": "Establishing consistent patterns for API design and implementation",
+        "standards": [
+          "RESTful design principles and conventions",
+          "Consistent error response formats",
+          "Standardized authentication mechanisms",
+          "API versioning and lifecycle management"
+        ]
+      },
+      {
+        "aspect": "Performance Management",
+        "description": "Ensuring integration performance meets business requirements",
+        "techniques": [
+          "Load testing and capacity planning",
+          "Performance monitoring and optimization",
+          "Caching strategies for improved response times",
+          "Resource pooling and connection management"
+        ]
+      },
+      {
+        "aspect": "Change Management",
+        "description": "Managing integration changes across environments and systems",
+        "processes": [
+          "Version control for integration artifacts",
+          "Environment promotion procedures",
+          "Backward compatibility considerations",
+          "Impact analysis for integration changes"
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "PEGA provides comprehensive integration capabilities for connecting with external systems",
+        "REST integration patterns enable modern, scalable API connectivity",
+        "Database integration provides high-performance data access for legacy systems",
+        "Message queue integration enables reliable asynchronous communication",
+        "Data transformation and mapping ensure proper data format conversion",
+        "Security patterns protect sensitive data and ensure authorized access",
+        "Error handling and resilience patterns build robust, fault-tolerant integrations",
+        "Integration governance ensures consistency and maintainability across the enterprise"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/intermediate/integration-basics",
+  "metadata": {
+    "created_date": "2025-01-25",
+    "last_updated": "2025-01-25",
+    "version": "1.0",
+    "tags": ["integration", "rest", "database", "messaging", "security", "transformation"]
+  }
+}

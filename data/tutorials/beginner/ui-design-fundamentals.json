@@ -1,0 +1,169 @@
+{
+  "id": "ui-design-fundamentals",
+  "title": "UI Design Fundamentals",
+  "level": "beginner",
+  "estimated_time": 25,
+  "prerequisites": ["user-interface-basics"],
+  "learning_objectives": [
+    "Master advanced UI design principles in PEGA",
+    "Learn to create intuitive and efficient user interfaces",
+    "Understand accessibility and usability best practices",
+    "Apply responsive design principles effectively"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Advanced UI Design in PEGA",
+      "text": "Building on the basics of PEGA UI components, this tutorial explores advanced design principles and best practices for creating exceptional user experiences. You'll learn how to design interfaces that are not only functional but also intuitive, accessible, and efficient for your users."
+    },
+    "sections": [
+      {
+        "title": "UI Design Principles",
+        "content": "Effective UI design follows established principles that ensure usability and user satisfaction.",
+        "principles": [
+          {
+            "principle": "Clarity and Simplicity",
+            "description": "Keep interfaces clean and focused on the user's primary tasks",
+            "implementation": [
+              "Use clear, descriptive labels",
+              "Minimize visual clutter",
+              "Group related elements together",
+              "Use whitespace effectively"
+            ]
+          },
+          {
+            "principle": "Consistency",
+            "description": "Maintain consistent patterns throughout your application",
+            "implementation": [
+              "Use consistent navigation patterns",
+              "Apply uniform styling and colors",
+              "Maintain consistent terminology",
+              "Follow established interaction patterns"
+            ]
+          },
+          {
+            "principle": "User-Centered Design",
+            "description": "Design with your users' needs and workflows in mind",
+            "implementation": [
+              "Understand user roles and tasks",
+              "Optimize for common workflows",
+              "Provide contextual help and guidance",
+              "Minimize cognitive load"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Form Design Best Practices",
+        "content": "Forms are central to most PEGA applications. Well-designed forms improve user efficiency and reduce errors.",
+        "best_practices": [
+          {
+            "practice": "Logical Field Organization",
+            "description": "Organize fields in a logical, task-oriented sequence",
+            "tips": [
+              "Group related fields together",
+              "Follow natural reading patterns (top to bottom, left to right)",
+              "Place most important fields first",
+              "Use progressive disclosure for complex forms"
+            ]
+          },
+          {
+            "practice": "Clear Labels and Instructions",
+            "description": "Provide clear, helpful labels and instructions",
+            "tips": [
+              "Use descriptive, business-friendly labels",
+              "Provide examples for complex fields",
+              "Use inline help for clarification",
+              "Indicate required vs. optional fields clearly"
+            ]
+          },
+          {
+            "practice": "Appropriate Input Controls",
+            "description": "Choose the right input control for each type of data",
+            "examples": [
+              "Dropdowns for predefined options",
+              "Date pickers for date fields",
+              "Checkboxes for multiple selections",
+              "Radio buttons for single selections"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Responsive Design Implementation",
+        "content": "Ensure your PEGA applications work well across all devices and screen sizes.",
+        "responsive_techniques": [
+          {
+            "technique": "Flexible Layouts",
+            "description": "Use PEGA's responsive layout options",
+            "implementation": [
+              "Use percentage-based widths",
+              "Implement flexible grid systems",
+              "Design for mobile-first approach",
+              "Test on various screen sizes"
+            ]
+          },
+          {
+            "technique": "Adaptive Content",
+            "description": "Adjust content presentation based on device capabilities",
+            "implementation": [
+              "Prioritize content for smaller screens",
+              "Use collapsible sections on mobile",
+              "Optimize touch targets for mobile",
+              "Consider device-specific features"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Accessibility Guidelines",
+        "content": "Design inclusive interfaces that work for users with diverse abilities and needs.",
+        "accessibility_practices": [
+          {
+            "area": "Visual Accessibility",
+            "practices": [
+              "Use sufficient color contrast",
+              "Don't rely solely on color to convey information",
+              "Provide alternative text for images",
+              "Use readable fonts and appropriate sizes"
+            ]
+          },
+          {
+            "area": "Keyboard Navigation",
+            "practices": [
+              "Ensure all interactive elements are keyboard accessible",
+              "Provide clear focus indicators",
+              "Implement logical tab order",
+              "Support keyboard shortcuts where appropriate"
+            ]
+          },
+          {
+            "area": "Screen Reader Support",
+            "practices": [
+              "Use semantic HTML elements",
+              "Provide descriptive labels",
+              "Use ARIA attributes when needed",
+              "Test with screen reader software"
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Good UI design follows established principles of clarity, consistency, and user-centered design",
+        "Forms should be logically organized with clear labels and appropriate controls",
+        "Responsive design ensures applications work across all devices",
+        "Accessibility is essential for inclusive user experiences",
+        "Regular testing and user feedback drive continuous improvement"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/ui-design-fundamentals",
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["ui-design", "user-experience", "accessibility", "responsive-design", "forms"]
+  }
+}

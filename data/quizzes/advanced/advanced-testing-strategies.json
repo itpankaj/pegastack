@@ -1,0 +1,111 @@
+{
+  "id": "advanced-testing-strategies",
+  "title": "Advanced Testing Strategies in PEGA Quiz",
+  "description": "Test your knowledge of comprehensive testing approaches, automation frameworks, and testing best practices in PEGA",
+  "questions": [
+    {
+      "id": 1,
+      "question": "According to the test pyramid principle, which type of tests should be most numerous?",
+      "type": "multiple-choice",
+      "options": [
+        "End-to-end tests",
+        "Integration tests",
+        "Unit tests",
+        "Manual tests"
+      ],
+      "correct_answer": 2,
+      "explanation": "The test pyramid principle recommends having the most unit tests at the base (fast, isolated, numerous), fewer integration tests in the middle, and minimal end-to-end tests at the top."
+    },
+    {
+      "id": 2,
+      "question": "Which PEGA framework is primarily used for unit testing?",
+      "type": "multiple-choice",
+      "options": [
+        "PegaUnit",
+        "Selenium",
+        "JMeter",
+        "LoadRunner"
+      ],
+      "correct_answer": 0,
+      "explanation": "PegaUnit is PEGA's built-in framework specifically designed for unit testing individual components and business logic within PEGA applications."
+    },
+    {
+      "id": 3,
+      "question": "What is the primary purpose of test data masking?",
+      "type": "multiple-choice",
+      "options": [
+        "Improving test performance",
+        "Replacing sensitive data with realistic but fictitious data for testing",
+        "Reducing test data storage requirements",
+        "Simplifying test case creation"
+      ],
+      "correct_answer": 1,
+      "explanation": "Test data masking replaces sensitive production data with realistic but fictitious data for testing purposes, maintaining data relationships while protecting privacy and compliance."
+    },
+    {
+      "id": 4,
+      "question": "Which testing approach helps identify security vulnerabilities like SQL injection?",
+      "type": "multiple-choice",
+      "options": [
+        "Performance testing",
+        "Unit testing",
+        "Input validation and security testing",
+        "Load testing"
+      ],
+      "correct_answer": 2,
+      "explanation": "Input validation and security testing specifically target vulnerabilities like SQL injection, XSS attacks, and other security threats by testing how the application handles malicious input."
+    },
+    {
+      "id": 5,
+      "question": "What is a quality gate in CI/CD pipelines?",
+      "type": "multiple-choice",
+      "options": [
+        "A security checkpoint for user authentication",
+        "Predefined criteria that must be met before code can proceed to the next stage",
+        "A performance monitoring tool",
+        "A database backup process"
+      ],
+      "correct_answer": 1,
+      "explanation": "A quality gate consists of predefined criteria (like test pass rates, code coverage, security scans) that must be met before code can proceed to the next stage in the deployment pipeline."
+    },
+    {
+      "id": 6,
+      "question": "Which tool is commonly used for performance and load testing in PEGA applications?",
+      "type": "multiple-choice",
+      "options": [
+        "PegaUnit only",
+        "Apache JMeter",
+        "Selenium WebDriver",
+        "Jest testing framework"
+      ],
+      "correct_answer": 1,
+      "explanation": "Apache JMeter is a popular tool for performance and load testing that can simulate multiple users and measure response times, throughput, and system behavior under load."
+    },
+    {
+      "id": 7,
+      "question": "What is the main benefit of continuous testing in DevOps?",
+      "type": "multiple-choice",
+      "options": [
+        "Reduced testing costs",
+        "Immediate feedback on business risks and quality throughout the delivery pipeline",
+        "Simplified test case management",
+        "Elimination of manual testing"
+      ],
+      "correct_answer": 1,
+      "explanation": "Continuous testing provides immediate feedback on business risks and quality throughout the software delivery pipeline, enabling faster detection and resolution of issues."
+    },
+    {
+      "id": 8,
+      "question": "Which practice helps ensure test reliability and consistency?",
+      "type": "multiple-choice",
+      "options": [
+        "Running tests only in production",
+        "Using shared test data across all tests",
+        "Implementing proper test isolation and environment management",
+        "Avoiding test automation"
+      ],
+      "correct_answer": 2,
+      "explanation": "Proper test isolation ensures tests don't interfere with each other, while consistent environment management ensures tests run reliably across different environments and conditions."
+    }
+  ]
+}

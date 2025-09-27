@@ -1,0 +1,146 @@
+{
+  "id": "installation-setup",
+  "title": "Installation & Setup - Quiz",
+  "description": "Test your knowledge of PEGA deployment options and environment setup",
+  "level": "beginner",
+  "lesson_reference": "/tutorials/beginner/installation-setup",
+  "passing_score": 70,
+  "time_limit": 15,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "Which PEGA deployment option is recommended for beginners and learning?",
+      "options": [
+        "On-Premises Installation",
+        "PEGA Cloud",
+        "PEGA Personal Edition",
+        "Enterprise Server"
+      ],
+      "correct_answer": 2,
+      "explanation": "PEGA Personal Edition is recommended for beginners as it's free, cloud-based, requires no installation, and is perfect for learning and experimentation.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "question": "PEGA Personal Edition requires installation on your local computer.",
+      "correct_answer": false,
+      "explanation": "False. PEGA Personal Edition is completely cloud-based and requires no installation - you access it through a web browser.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "What is the minimum RAM requirement for optimal PEGA performance?",
+      "options": [
+        "2GB",
+        "4GB",
+        "8GB",
+        "16GB"
+      ],
+      "correct_answer": 1,
+      "explanation": "While PEGA can run with less, 4GB RAM is the minimum recommended for optimal performance, with 8GB being preferred for better experience.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "Which web browser is recommended for the best PEGA experience?",
+      "options": [
+        "Internet Explorer",
+        "Google Chrome",
+        "Safari",
+        "Opera"
+      ],
+      "correct_answer": 1,
+      "explanation": "Google Chrome is recommended for the best PEGA performance and compatibility, though Firefox, Edge, and Safari are also supported.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q5",
+      "type": "scenario",
+      "question": "An organization wants complete control over their PEGA environment and has significant IT resources. Which deployment option would be most suitable?",
+      "options": [
+        "PEGA Personal Edition",
+        "PEGA Cloud",
+        "On-Premises Installation",
+        "Shared hosting"
+      ],
+      "correct_answer": 2,
+      "explanation": "On-Premises Installation provides complete control over the environment and infrastructure, making it suitable for organizations with specific requirements and IT resources.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q6",
+      "type": "true-false",
+      "question": "PEGA Personal Edition can be used for production applications.",
+      "correct_answer": false,
+      "explanation": "False. PEGA Personal Edition is limited to personal use and learning - it cannot be used for production applications or commercial purposes.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "What should you do first after accessing your PEGA Personal Edition environment?",
+      "options": [
+        "Start building applications immediately",
+        "Complete the welcome tour and explore sample applications",
+        "Change all system settings",
+        "Delete pre-installed content"
+      ],
+      "correct_answer": 1,
+      "explanation": "It's recommended to complete the welcome tour and explore sample applications first, as they provide valuable learning resources and help you understand the interface.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "If your PEGA environment won't load, what should you try first?",
+      "options": [
+        "Contact support immediately",
+        "Reinstall PEGA",
+        "Clear browser cache and cookies",
+        "Change your password"
+      ],
+      "correct_answer": 2,
+      "explanation": "Clearing browser cache and cookies is often the first troubleshooting step for loading issues, as cached data can sometimes cause conflicts.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "scenario",
+      "question": "A company needs a fully managed PEGA environment with high availability but doesn't want to manage infrastructure. Which option is best?",
+      "options": [
+        "PEGA Personal Edition",
+        "PEGA Cloud",
+        "On-Premises Installation",
+        "Local development environment"
+      ],
+      "correct_answer": 1,
+      "explanation": "PEGA Cloud provides a fully managed, enterprise-grade environment with high availability and scalability, without requiring the organization to manage infrastructure.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q10",
+      "type": "multiple-choice",
+      "question": "What is an important requirement for using PEGA Personal Edition?",
+      "options": [
+        "Local database installation",
+        "VPN connection",
+        "Stable internet connection",
+        "Administrative privileges"
+      ],
+      "correct_answer": 2,
+      "explanation": "A stable internet connection is essential for PEGA Personal Edition since it's completely cloud-based and requires continuous connectivity to function.",
+      "difficulty": "easy"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["installation", "setup", "personal-edition", "deployment", "troubleshooting", "beginner"],
+    "estimated_time": 15
+  }
+}

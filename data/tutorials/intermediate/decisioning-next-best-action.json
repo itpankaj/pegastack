@@ -1,0 +1,104 @@
+{
+  "title": "Decisioning & Next-Best-Action",
+  "level": "intermediate",
+  "slug": "decisioning-next-best-action",
+  "description": "Master PEGA's decisioning engine, predictive analytics, and next-best-action strategies for personalized customer experiences",
+  "estimatedTime": "55 min",
+  "prerequisites": ["Data Pages & Data Sources", "Advanced Data Modeling", "Case Management Advanced"],
+  "objectives": [
+    "Implement predictive decisioning strategies",
+    "Design next-best-action flows",
+    "Configure adaptive models and arbitration",
+    "Optimize customer journeys with AI",
+    "Handle real-time decision scenarios"
+  ],
+  "content": {
+    "introduction": "PEGA's decisioning engine combines predictive analytics, business rules, and real-time data to deliver personalized next-best-actions. This lesson covers the complete decisioning lifecycle from strategy design to AI optimization.",
+    "sections": [
+      {
+        "title": "Decisioning Architecture",
+        "content": "Understand the PEGA decisioning architecture including decision strategies, adaptive models, arbitration engines, and real-time processing capabilities.",
+        "components": [
+          "Decision strategies for business logic",
+          "Adaptive models for learning",
+          "Arbitration for optimal selection",
+          "Real-time processing engines"
+        ]
+      },
+      {
+        "title": "Predictive Analytics",
+        "content": "Leverage PEGA's built-in predictive analytics to anticipate customer needs, predict outcomes, and optimize interactions based on historical data and real-time context.",
+        "models": [
+          "Propensity models for likelihood prediction",
+          "Churn models for retention",
+          "Cross-sell models for product recommendations",
+          "Response models for campaign optimization"
+        ]
+      },
+      {
+        "title": "Next-Best-Action Strategies",
+        "content": "Design comprehensive next-best-action strategies that consider customer context, business objectives, regulatory constraints, and channel preferences.",
+        "strategy": [
+          "Customer context analysis",
+          "Business objective alignment",
+          "Channel optimization",
+          "Regulatory compliance"
+        ]
+      },
+      {
+        "title": "Adaptive Models",
+        "content": "Configure adaptive models that learn from customer interactions and continuously improve decision accuracy. Understand model training, validation, and deployment.",
+        "adaptive": [
+          "Model training with historical data",
+          "Real-time learning from interactions",
+          "Performance monitoring and validation",
+          "Model refresh and deployment"
+        ]
+      },
+      {
+        "title": "Arbitration and Optimization",
+        "content": "Implement arbitration engines that select the optimal action from multiple candidates based on business rules, customer preferences, and predicted outcomes.",
+        "arbitration": [
+          "Multi-criteria decision analysis",
+          "Real-time optimization algorithms",
+          "Business rule enforcement",
+          "Customer preference weighting"
+        ]
+      },
+      {
+        "title": "Real-Time Decision Scenarios",
+        "content": "Handle complex real-time scenarios where decisions must be made instantly based on current context, customer behavior, and business priorities.",
+        "scenarios": [
+          "Website personalization",
+          "Mobile app recommendations",
+          "Call center scripting",
+          "Email campaign optimization"
+        ]
+      }
+    ]
+  },
+  "quiz": {
+    "id": "decisioning-next-best-action-quiz",
+    "title": "Decisioning & Next-Best-Action Quiz",
+    "questions": 8,
+    "passingScore": 70
+  },
+  "resources": {
+    "documentation": [
+      {
+        "title": "PEGA Decisioning Guide",
+        "url": "https://docs.pega.com/decisioning"
+      },
+      {
+        "title": "Next-Best-Action Designer",
+        "url": "https://docs.pega.com/nbad"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Advanced Decisioning Patterns",
+        "url": "https://academy.pega.com/advanced-decisioning"
+      }
+    ]
+  }
+}

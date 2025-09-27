@@ -1,0 +1,111 @@
+{
+  "id": "microservices-pega",
+  "title": "Microservices Architecture with PEGA Quiz",
+  "description": "Test your knowledge of microservices architecture patterns and implementation in PEGA",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which principle is fundamental to microservices architecture?",
+      "type": "multiple-choice",
+      "options": [
+        "Single Responsibility - each service owns a specific business capability",
+        "All services must share the same database",
+        "Services should be tightly coupled for performance",
+        "All services must use the same technology stack"
+      ],
+      "correct_answer": 0,
+      "explanation": "Single Responsibility is a key principle where each microservice owns a specific business capability, enabling independent development and deployment."
+    },
+    {
+      "id": 2,
+      "question": "In PEGA, what is the recommended approach for service decomposition?",
+      "type": "multiple-choice",
+      "options": [
+        "Decompose by technical layers (UI, business logic, data)",
+        "Decompose by business capability and Case Types",
+        "Create one service per database table",
+        "Decompose by team structure only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Service boundaries in PEGA should align with business capabilities and Case Types, encapsulating complete business functionality including data, logic, and interfaces."
+    },
+    {
+      "id": 3,
+      "question": "Which pattern is best for managing distributed transactions across PEGA microservices?",
+      "type": "multiple-choice",
+      "options": [
+        "Two-Phase Commit Protocol",
+        "Saga Pattern with compensating transactions",
+        "Shared database transactions",
+        "Single monolithic transaction"
+      ],
+      "correct_answer": 1,
+      "explanation": "The Saga Pattern manages distributed transactions by coordinating local transactions and using compensating transactions to maintain consistency when failures occur."
+    },
+    {
+      "id": 4,
+      "question": "What is the primary benefit of implementing the Database per Service pattern?",
+      "type": "multiple-choice",
+      "options": [
+        "Reduced storage costs",
+        "Faster query performance",
+        "Service independence and loose coupling",
+        "Simplified backup procedures"
+      ],
+      "correct_answer": 2,
+      "explanation": "Database per Service ensures that each service owns its data, enabling service independence, loose coupling, and independent evolution of data models."
+    },
+    {
+      "id": 5,
+      "question": "Which PEGA component is best suited for implementing service-to-service communication?",
+      "type": "multiple-choice",
+      "options": [
+        "Data Pages only",
+        "Service Rules and Connect Rules",
+        "User Interface rules",
+        "Case Types only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Service Rules and Connect Rules provide the necessary functionality for implementing REST APIs and HTTP-based communication between PEGA microservices."
+    },
+    {
+      "id": 6,
+      "question": "What is the purpose of implementing circuit breaker patterns in microservices?",
+      "type": "multiple-choice",
+      "options": [
+        "To improve database performance",
+        "To prevent cascading failures and provide resilience",
+        "To reduce network bandwidth usage",
+        "To simplify user interface design"
+      ],
+      "correct_answer": 1,
+      "explanation": "Circuit breaker patterns monitor service health and fail fast when services are unavailable, preventing cascading failures and providing system resilience."
+    },
+    {
+      "id": 7,
+      "question": "Which approach is recommended for monitoring PEGA microservices?",
+      "type": "multiple-choice",
+      "options": [
+        "Monitor only the user-facing services",
+        "Implement distributed tracing and centralized logging",
+        "Use only database monitoring",
+        "Monitor services individually without correlation"
+      ],
+      "correct_answer": 1,
+      "explanation": "Distributed tracing and centralized logging provide comprehensive visibility into microservices interactions, enabling effective monitoring and troubleshooting."
+    },
+    {
+      "id": 8,
+      "question": "What is a key consideration for PEGA microservices deployment?",
+      "type": "multiple-choice",
+      "options": [
+        "Deploy all services together as a single unit",
+        "Each service should have its own deployment pipeline and versioning",
+        "Use the same version for all services",
+        "Avoid containerization for PEGA services"
+      ],
+      "correct_answer": 1,
+      "explanation": "Each microservice should have its own independent deployment pipeline and versioning strategy, enabling autonomous development and deployment cycles."
+    }
+  ]
+}

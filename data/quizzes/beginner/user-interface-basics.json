@@ -1,0 +1,146 @@
+{
+  "id": "user-interface-basics",
+  "title": "User Interface Basics - Quiz",
+  "description": "Test your knowledge of PEGA UI components, harnesses, and responsive design",
+  "level": "beginner",
+  "lesson_reference": "/tutorials/beginner/user-interface-basics",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is a harness in PEGA UI architecture?",
+      "options": [
+        "A database connection",
+        "A top-level container that defines the overall page structure",
+        "A business rule",
+        "A data validation method"
+      ],
+      "correct_answer": 1,
+      "explanation": "A harness is a top-level container that defines the overall structure and layout of a page or screen in PEGA applications.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "Which UI component is used to group related fields together?",
+      "options": [
+        "Layout",
+        "Section",
+        "Control",
+        "Harness"
+      ],
+      "correct_answer": 1,
+      "explanation": "Sections are used to group related fields and controls together, providing logical organization and reusability in PEGA UI design.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "question": "PEGA supports responsive design for mobile devices.",
+      "correct_answer": true,
+      "explanation": "True. PEGA provides built-in responsive design capabilities that automatically adapt the UI for different screen sizes and devices.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "What is the purpose of a layout in PEGA UI?",
+      "options": [
+        "To store data",
+        "To define the arrangement of sections and controls",
+        "To create business rules",
+        "To manage user authentication"
+      ],
+      "correct_answer": 1,
+      "explanation": "Layouts define how sections and controls are arranged on the screen, providing structure and visual organization to the user interface.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q5",
+      "type": "scenario",
+      "question": "You need to create a form that displays customer information, order details, and payment options in separate organized groups. Which PEGA UI approach would be most appropriate?",
+      "options": [
+        "Put everything in one large section",
+        "Create separate sections for each group within a layout",
+        "Use only individual controls",
+        "Create separate harnesses for each group"
+      ],
+      "correct_answer": 1,
+      "explanation": "Creating separate sections for each logical group (customer info, order details, payment) within a layout provides the best organization, reusability, and maintainability.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "Which control type would you use for a dropdown list of countries?",
+      "options": [
+        "Text Input",
+        "Dropdown",
+        "Checkbox",
+        "Text Area"
+      ],
+      "correct_answer": 1,
+      "explanation": "A Dropdown control is specifically designed for presenting a list of options where users can select one value, making it perfect for country selection.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q7",
+      "type": "true-false",
+      "question": "PEGA UI components can be styled using custom CSS.",
+      "correct_answer": true,
+      "explanation": "True. PEGA allows custom CSS styling to modify the appearance of UI components while maintaining responsive behavior and accessibility standards.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "What is the main advantage of using sections in PEGA UI design?",
+      "options": [
+        "They are faster to load",
+        "They provide reusability across different harnesses",
+        "They store more data",
+        "They require less memory"
+      ],
+      "correct_answer": 1,
+      "explanation": "Sections provide reusability - once created, they can be used across multiple harnesses and layouts, promoting consistency and reducing development time.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "scenario",
+      "question": "A mobile user is accessing your PEGA application on a smartphone. What feature ensures the interface adapts properly?",
+      "options": [
+        "Custom mobile app development",
+        "PEGA's built-in responsive design",
+        "Separate mobile database",
+        "Manual screen size detection"
+      ],
+      "correct_answer": 1,
+      "explanation": "PEGA's built-in responsive design automatically adapts the interface based on screen size and device capabilities, ensuring optimal user experience across devices.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q10",
+      "type": "multiple-choice",
+      "question": "Which principle is most important when designing PEGA user interfaces?",
+      "options": [
+        "Use as many colors as possible",
+        "Make every field required",
+        "Focus on user experience and task efficiency",
+        "Include all possible features on one screen"
+      ],
+      "correct_answer": 2,
+      "explanation": "Focusing on user experience and task efficiency is crucial - interfaces should be intuitive, help users complete tasks quickly, and reduce cognitive load.",
+      "difficulty": "hard"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["user-interface", "harness", "section", "layout", "responsive-design", "beginner"],
+    "estimated_time": 20
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "id": "enterprise-architecture-patterns",
+  "title": "Enterprise Architecture Patterns - Quiz",
+  "description": "Test your mastery of advanced PEGA enterprise architecture patterns, design principles, and scalable system design methodologies",
+  "level": "advanced",
+  "lesson_reference": "/tutorials/advanced/enterprise-architecture-patterns",
+  "passing_score": 80,
+  "time_limit": 35,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the most critical component of scalable enterprise PEGA architecture design?",
+      "options": [
+        "Single-tier monolithic architecture",
+        "Multi-tier architecture with clear separation of concerns and independent scaling capabilities",
+        "Simple three-tier architecture only",
+        "Client-server architecture exclusively"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-tier architecture with clear separation enables independent scaling, evolution, and maintenance of different system layers while supporting enterprise-scale requirements.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "For enterprise microservices integration with PEGA, what pattern provides optimal resilience?",
+      "options": [
+        "Direct synchronous communication only",
+        "Event-driven architecture with circuit breakers, saga patterns, and graceful degradation",
+        "Simple request-response patterns",
+        "Shared database integration"
+      ],
+      "correct_answer": 1,
+      "explanation": "Event-driven architecture with resilience patterns ensures fault tolerance, loose coupling, and graceful degradation in distributed enterprise systems.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "What is essential for distributed transaction management in enterprise PEGA architectures?",
+      "options": [
+        "Two-phase commit for all transactions",
+        "Saga pattern with compensation logic and eventual consistency",
+        "No transaction management needed",
+        "Database-level distributed transactions only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Saga pattern provides reliable distributed transaction management through orchestrated steps and compensation logic while maintaining system performance.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "For enterprise API gateway implementation, what capabilities are most critical?",
+      "options": [
+        "Simple request routing only",
+        "Authentication, rate limiting, request transformation, monitoring, and circuit breaking",
+        "Basic load balancing",
+        "SSL termination exclusively"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive API gateway capabilities provide centralized cross-cutting concerns while ensuring security, performance, and observability.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "What approach provides optimal data consistency in event-sourced PEGA architectures?",
+      "options": [
+        "Immediate consistency for all operations",
+        "Event sourcing with CQRS and eventual consistency with compensation patterns",
+        "Traditional CRUD operations only",
+        "No consistency management needed"
+      ],
+      "correct_answer": 1,
+      "explanation": "Event sourcing with CQRS enables scalable read/write optimization while eventual consistency with compensation provides reliable data management.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "For enterprise architectural governance, what assessment approach is most comprehensive?",
+      "options": [
+        "Manual design reviews only",
+        "Automated compliance checking with design pattern analysis and quality attribute assessment",
+        "Simple checklists",
+        "No formal governance needed"
+      ],
+      "correct_answer": 1,
+      "explanation": "Automated compliance checking ensures consistent adherence to enterprise standards while comprehensive assessment covers all architectural dimensions.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "What is the primary benefit of implementing circuit breaker patterns in enterprise PEGA integrations?",
+      "options": [
+        "Improved performance only",
+        "Fault isolation, graceful degradation, and system stability during downstream failures",
+        "Reduced infrastructure costs",
+        "Simplified integration logic"
+      ],
+      "correct_answer": 1,
+      "explanation": "Circuit breakers prevent cascading failures and maintain system stability by isolating faults and providing graceful degradation strategies.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "For enterprise architecture quality attributes, what assessment strategy ensures comprehensive evaluation?",
+      "options": [
+        "Performance testing only",
+        "Multi-dimensional assessment covering performance, scalability, security, maintainability, and testability",
+        "Simple functional testing",
+        "No quality assessment needed"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-dimensional quality assessment ensures all non-functional requirements are properly addressed in the architectural design and implementation.",
+      "difficulty": "advanced"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "id": "testing-your-app",
+  "title": "Testing Your App",
+  "level": "beginner",
+  "estimated_time": 25,
+  "prerequisites": ["first-case-app"],
+  "learning_objectives": [
+    "Understand different types of testing in PEGA",
+    "Learn to create and execute test scenarios",
+    "Master debugging techniques and tools",
+    "Apply testing best practices"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Testing PEGA Applications",
+      "text": "Testing ensures your PEGA applications work correctly and meet business requirements. This tutorial covers essential testing approaches, from basic functionality testing to more advanced debugging techniques, helping you deliver reliable applications."
+    },
+    "sections": [
+      {
+        "title": "Types of Testing",
+        "content": "Different testing approaches serve different purposes in ensuring application quality.",
+        "testing_types": [
+          {
+            "type": "Unit Testing",
+            "description": "Testing individual components and rules in isolation",
+            "focus": "Individual rules, data transforms, activities",
+            "tools": ["Rule testing features", "Test cases", "Mock data"]
+          },
+          {
+            "type": "Integration Testing",
+            "description": "Testing how different components work together",
+            "focus": "Process flows, data integration, system connections",
+            "tools": ["End-to-end scenarios", "Integration test suites"]
+          },
+          {
+            "type": "User Acceptance Testing",
+            "description": "Testing from the end user's perspective",
+            "focus": "Business workflows, user experience, requirements validation",
+            "tools": ["User scenarios", "Business test cases"]
+          }
+        ]
+      },
+      {
+        "title": "Creating Test Scenarios",
+        "content": "Well-designed test scenarios ensure comprehensive coverage of your application functionality.",
+        "scenario_types": [
+          {
+            "scenario": "Happy Path Testing",
+            "description": "Test the normal, expected flow through your application",
+            "example": "Create a service request, assign it, resolve it, and close it successfully",
+            "importance": "Ensures core functionality works as designed"
+          },
+          {
+            "scenario": "Error Handling Testing",
+            "description": "Test how your application handles errors and exceptions",
+            "example": "Submit incomplete forms, enter invalid data, test system failures",
+            "importance": "Ensures graceful handling of unexpected situations"
+          },
+          {
+            "scenario": "Edge Case Testing",
+            "description": "Test boundary conditions and unusual scenarios",
+            "example": "Maximum field lengths, minimum values, empty datasets",
+            "importance": "Identifies potential issues in extreme conditions"
+          },
+          {
+            "scenario": "Performance Testing",
+            "description": "Test application performance under various loads",
+            "example": "Multiple concurrent users, large datasets, complex processes",
+            "importance": "Ensures acceptable performance in real-world conditions"
+          }
+        ]
+      },
+      {
+        "title": "PEGA Testing Tools",
+        "content": "PEGA provides built-in tools to help you test and debug your applications.",
+        "testing_tools": [
+          {
+            "tool": "Preview Mode",
+            "description": "Test your application directly in the development environment",
+            "use_cases": ["Quick functionality checks", "UI testing", "Process flow validation"],
+            "how_to_use": [
+              "Click Preview in App Studio",
+              "Navigate through your application",
+              "Test different user scenarios",
+              "Verify data handling and validation"
+            ]
+          },
+          {
+            "tool": "Tracer",
+            "description": "Debug tool that shows detailed execution information",
+            "use_cases": ["Performance analysis", "Rule execution tracking", "Error diagnosis"],
+            "how_to_use": [
+              "Enable Tracer in Dev Studio",
+              "Execute the functionality to trace",
+              "Analyze the execution steps",
+              "Identify performance bottlenecks or errors"
+            ]
+          },
+          {
+            "tool": "Clipboard",
+            "description": "View and modify data during application execution",
+            "use_cases": ["Data verification", "Debugging data issues", "Understanding data flow"],
+            "how_to_use": [
+              "Access Clipboard tool during execution",
+              "Examine property values",
+              "Verify data transformations",
+              "Check page structures"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Test Data Management",
+        "content": "Effective test data management is crucial for reliable and repeatable testing.",
+        "data_strategies": [
+          {
+            "strategy": "Test Data Creation",
+            "description": "Create specific datasets for different testing scenarios",
+            "approaches": [
+              "Manual test data entry",
+              "Automated test data generation",
+              "Copy production data (with privacy considerations)",
+              "Use data pages for reusable test data"
+            ]
+          },
+          {
+            "strategy": "Data Isolation",
+            "description": "Ensure tests don't interfere with each other",
+            "techniques": [
+              "Use unique identifiers for test cases",
+              "Clean up test data after execution",
+              "Use separate test environments",
+              "Implement data rollback mechanisms"
+            ]
+          },
+          {
+            "strategy": "Data Validation",
+            "description": "Verify that data is processed correctly",
+            "checkpoints": [
+              "Input data is captured accurately",
+              "Calculations and transformations are correct",
+              "Data persistence works properly",
+              "Integration data flows correctly"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Debugging Techniques",
+        "content": "When tests fail, effective debugging helps identify and resolve issues quickly.",
+        "debugging_approaches": [
+          {
+            "approach": "Systematic Investigation",
+            "description": "Follow a structured approach to identify root causes",
+            "steps": [
+              "Reproduce the issue consistently",
+              "Isolate the problem area",
+              "Examine relevant rules and data",
+              "Test potential solutions",
+              "Verify the fix resolves the issue"
+            ]
+          },
+          {
+            "approach": "Log Analysis",
+            "description": "Use system logs to understand what happened",
+            "techniques": [
+              "Review error messages and stack traces",
+              "Check system logs for warnings",
+              "Analyze performance metrics",
+              "Look for patterns in log entries"
+            ]
+          },
+          {
+            "approach": "Incremental Testing",
+            "description": "Test changes in small increments",
+            "benefits": [
+              "Easier to identify what caused issues",
+              "Faster problem resolution",
+              "Reduced risk of introducing new problems",
+              "Better understanding of system behavior"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Testing Best Practices",
+        "content": "Follow these practices to ensure effective and efficient testing.",
+        "best_practices": [
+          {
+            "category": "Test Planning",
+            "practices": [
+              "Define clear test objectives and success criteria",
+              "Create comprehensive test scenarios covering all use cases",
+              "Plan for both positive and negative testing",
+              "Document test procedures for repeatability",
+              "Allocate sufficient time for thorough testing"
+            ]
+          },
+          {
+            "category": "Test Execution",
+            "practices": [
+              "Test in environments similar to production",
+              "Use realistic data volumes and scenarios",
+              "Test with different user roles and permissions",
+              "Verify error handling and recovery procedures",
+              "Document all issues and their resolutions"
+            ]
+          },
+          {
+            "category": "Continuous Improvement",
+            "practices": [
+              "Learn from testing results to improve future tests",
+              "Update test scenarios as the application evolves",
+              "Automate repetitive testing tasks where possible",
+              "Share testing knowledge with team members",
+              "Regularly review and optimize testing processes"
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Different types of testing serve different quality assurance purposes",
+        "Well-designed test scenarios ensure comprehensive application coverage",
+        "PEGA provides powerful built-in tools for testing and debugging",
+        "Effective test data management is crucial for reliable testing",
+        "Systematic debugging approaches help resolve issues efficiently",
+        "Following best practices ensures thorough and efficient testing"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/testing-your-app",
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["testing", "debugging", "quality-assurance", "test-scenarios", "troubleshooting"]
+  }
+}

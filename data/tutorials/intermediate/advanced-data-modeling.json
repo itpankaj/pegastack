@@ -1,0 +1,377 @@
+{
+  "id": "advanced-data-modeling",
+  "title": "Advanced Data Modeling",
+  "level": "intermediate",
+  "estimated_time": 35,
+  "prerequisites": ["integration-basics"],
+  "learning_objectives": [
+    "Master complex data relationships and inheritance patterns",
+    "Understand advanced property types and configurations",
+    "Learn to optimize data models for performance and scalability",
+    "Apply enterprise data modeling best practices"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Advanced Data Modeling in PEGA",
+      "text": "Advanced data modeling goes beyond basic property creation to encompass complex relationships, inheritance patterns, performance optimization, and enterprise-scale data architecture. This knowledge is essential for building scalable, maintainable PEGA applications."
+    },
+    "sections": [
+      {
+        "title": "Complex Data Relationships",
+        "content": "Understanding and implementing sophisticated data relationships for enterprise applications.",
+        "relationship_types": [
+          {
+            "type": "One-to-Many Relationships",
+            "description": "Parent objects containing multiple child objects",
+            "implementation": [
+              "Page List properties for embedded child objects",
+              "Page Group properties for keyed collections",
+              "Reference properties with lookup mechanisms",
+              "Embedded vs. referenced storage strategies"
+            ],
+            "use_cases": [
+              "Order with multiple line items",
+              "Customer with multiple addresses",
+              "Case with multiple attachments",
+              "Project with multiple tasks"
+            ],
+            "best_practices": [
+              "Consider performance implications of embedded vs. referenced data",
+              "Implement proper cascade delete strategies",
+              "Use appropriate indexing for lookup performance",
+              "Design for data consistency and integrity"
+            ]
+          },
+          {
+            "type": "Many-to-Many Relationships",
+            "description": "Complex associations between multiple object types",
+            "implementation_patterns": [
+              "Junction tables for pure many-to-many relationships",
+              "Association objects with additional attributes",
+              "Reference lists for simple associations",
+              "Cross-reference tables for performance optimization"
+            ],
+            "examples": [
+              "Students enrolled in multiple courses",
+              "Products associated with multiple categories",
+              "Users assigned to multiple roles",
+              "Cases related to multiple customers"
+            ],
+            "design_considerations": [
+              "Query performance for large datasets",
+              "Data consistency across relationships",
+              "Cascade operations and referential integrity",
+              "Indexing strategies for efficient lookups"
+            ]
+          },
+          {
+            "type": "Hierarchical Relationships",
+            "description": "Parent-child relationships with multiple levels",
+            "patterns": [
+              "Self-referencing structures for organizational hierarchies",
+              "Tree structures for categorization systems",
+              "Nested sets for efficient hierarchy queries",
+              "Adjacency lists for flexible hierarchies"
+            ],
+            "implementation": [
+              "Recursive data structures using self-references",
+              "Path-based hierarchy representation",
+              "Level-based hierarchy flattening",
+              "Closure table patterns for complex queries"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Advanced Property Types",
+        "content": "Leveraging sophisticated property types for complex business scenarios.",
+        "property_types": [
+          {
+            "type": "Calculated Properties",
+            "description": "Properties that derive their values from other properties or external data",
+            "calculation_methods": [
+              "Declare expressions for automatic calculation",
+              "Activities for complex computational logic",
+              "Data transforms for multi-step calculations",
+              "External service calls for real-time data"
+            ],
+            "use_cases": [
+              "Financial calculations (interest, taxes, totals)",
+              "Risk scores based on multiple factors",
+              "Status derivations from business rules",
+              "Performance metrics and KPIs"
+            ],
+            "optimization_strategies": [
+              "Cache calculated values when appropriate",
+              "Use dependency tracking for efficient recalculation",
+              "Consider calculation timing and frequency",
+              "Implement lazy loading for expensive calculations"
+            ]
+          },
+          {
+            "type": "Dynamic Properties",
+            "description": "Properties that change structure or behavior based on runtime conditions",
+            "implementation_approaches": [
+              "Circumstanced properties for conditional behavior",
+              "Property sets for flexible data structures",
+              "JSON properties for schema-less data",
+              "Extension points for customizable attributes"
+            ],
+            "scenarios": [
+              "Multi-tenant applications with tenant-specific fields",
+              "Configurable forms with dynamic field sets",
+              "Product catalogs with varying attributes",
+              "Regulatory forms with jurisdiction-specific requirements"
+            ]
+          },
+          {
+            "type": "Temporal Properties",
+            "description": "Properties that track changes over time",
+            "temporal_patterns": [
+              "Effective dating for time-based validity",
+              "Version history for audit trails",
+              "Snapshot properties for point-in-time data",
+              "Temporal queries for historical analysis"
+            ],
+            "implementation": [
+              "Effective date ranges for validity periods",
+              "Version numbers for change tracking",
+              "Audit trails for compliance requirements",
+              "Temporal indexes for efficient queries"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Data Model Inheritance",
+        "content": "Advanced inheritance patterns for reusable and maintainable data models.",
+        "inheritance_patterns": [
+          {
+            "pattern": "Class-Based Inheritance",
+            "description": "Inheriting data model structure through class hierarchy",
+            "benefits": [
+              "Code reuse and consistency",
+              "Polymorphic behavior support",
+              "Centralized common attribute management",
+              "Simplified maintenance and updates"
+            ],
+            "design_principles": [
+              "Design base classes for maximum reusability",
+              "Use abstract classes for common interfaces",
+              "Implement proper specialization in child classes",
+              "Maintain clear inheritance hierarchies"
+            ],
+            "example": {
+              "base_class": "Work- (base case properties)",
+              "specialized_classes": [
+                "Work-ServiceRequest (service-specific properties)",
+                "Work-Incident (incident-specific properties)",
+                "Work-Change (change management properties)"
+              ]
+            }
+          },
+          {
+            "pattern": "Mixin Patterns",
+            "description": "Composing data models from multiple reusable components",
+            "implementation": [
+              "Interface classes for common behaviors",
+              "Trait classes for shared attributes",
+              "Component-based composition",
+              "Multiple inheritance where supported"
+            ],
+            "use_cases": [
+              "Auditable entities with common audit fields",
+              "Approvable items with approval workflows",
+              "Searchable content with metadata",
+              "Localizable data with multi-language support"
+            ]
+          },
+          {
+            "pattern": "Template-Based Models",
+            "description": "Using templates and patterns for consistent data model design",
+            "template_types": [
+              "Entity templates for common business objects",
+              "Relationship templates for standard associations",
+              "Validation templates for consistent rules",
+              "Integration templates for external data"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Performance Optimization",
+        "content": "Optimizing data models for performance and scalability.",
+        "optimization_strategies": [
+          {
+            "strategy": "Database Design Optimization",
+            "description": "Optimizing the underlying database structure for performance",
+            "techniques": [
+              "Proper indexing strategies for frequently queried properties",
+              "Denormalization for read-heavy scenarios",
+              "Partitioning for large datasets",
+              "Archiving strategies for historical data"
+            ],
+            "indexing_guidelines": [
+              "Index frequently searched properties",
+              "Create composite indexes for multi-property queries",
+              "Consider index maintenance overhead",
+              "Monitor index usage and effectiveness"
+            ]
+          },
+          {
+            "strategy": "Caching Strategies",
+            "description": "Implementing effective caching for improved performance",
+            "caching_levels": [
+              "Property-level caching for expensive calculations",
+              "Object-level caching for frequently accessed data",
+              "Query result caching for complex searches",
+              "Reference data caching for lookup tables"
+            ],
+            "cache_management": [
+              "Cache invalidation strategies",
+              "Cache warming for critical data",
+              "Distributed caching for scalability",
+              "Cache monitoring and optimization"
+            ]
+          },
+          {
+            "strategy": "Lazy Loading Patterns",
+            "description": "Loading data only when needed to improve initial performance",
+            "implementation": [
+              "Lazy loading of large collections",
+              "On-demand calculation of expensive properties",
+              "Progressive data loading for user interfaces",
+              "Asynchronous data population"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Data Validation and Integrity",
+        "content": "Ensuring data quality and consistency through advanced validation patterns.",
+        "validation_strategies": [
+          {
+            "strategy": "Multi-Level Validation",
+            "description": "Implementing validation at multiple levels for comprehensive data quality",
+            "validation_levels": [
+              "Field-level validation for basic data integrity",
+              "Object-level validation for business rules",
+              "Cross-object validation for referential integrity",
+              "System-level validation for global constraints"
+            ]
+          },
+          {
+            "strategy": "Conditional Validation",
+            "description": "Applying validation rules based on context and conditions",
+            "implementation": [
+              "State-based validation for workflow stages",
+              "Role-based validation for user permissions",
+              "Context-sensitive validation for different scenarios",
+              "Dynamic validation based on configuration"
+            ]
+          },
+          {
+            "strategy": "Cross-System Validation",
+            "description": "Validating data consistency across multiple systems",
+            "techniques": [
+              "Real-time validation against external systems",
+              "Batch validation for data synchronization",
+              "Eventual consistency validation patterns",
+              "Conflict resolution strategies"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Enterprise Data Patterns",
+        "content": "Advanced patterns for enterprise-scale data modeling.",
+        "enterprise_patterns": [
+          {
+            "pattern": "Master Data Management",
+            "description": "Managing authoritative data across the enterprise",
+            "implementation": [
+              "Single source of truth for critical entities",
+              "Data governance and stewardship processes",
+              "Data quality monitoring and improvement",
+              "Cross-system data synchronization"
+            ],
+            "entities": [
+              "Customer master data",
+              "Product and service catalogs",
+              "Employee and organizational data",
+              "Geographic and location data"
+            ]
+          },
+          {
+            "pattern": "Data Versioning",
+            "description": "Managing data changes and versions over time",
+            "versioning_strategies": [
+              "Snapshot versioning for point-in-time data",
+              "Delta versioning for change tracking",
+              "Branch versioning for parallel development",
+              "Merge strategies for version consolidation"
+            ]
+          },
+          {
+            "pattern": "Multi-Tenant Data Models",
+            "description": "Supporting multiple tenants with shared infrastructure",
+            "isolation_strategies": [
+              "Tenant-specific databases for complete isolation",
+              "Shared databases with tenant filtering",
+              "Hybrid approaches for different data types",
+              "Security and access control considerations"
+            ]
+          }
+        ]
+      }
+    ],
+    "best_practices": [
+      {
+        "category": "Design Principles",
+        "practices": [
+          "Design for flexibility and future requirements",
+          "Maintain clear separation between logical and physical models",
+          "Use consistent naming conventions and standards",
+          "Document data model decisions and rationale"
+        ]
+      },
+      {
+        "category": "Performance",
+        "practices": [
+          "Consider query patterns when designing relationships",
+          "Implement appropriate indexing strategies",
+          "Use caching effectively for frequently accessed data",
+          "Monitor and optimize data access patterns"
+        ]
+      },
+      {
+        "category": "Maintainability",
+        "practices": [
+          "Keep data models simple and focused",
+          "Use inheritance and composition appropriately",
+          "Implement proper version control for model changes",
+          "Maintain comprehensive documentation"
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Complex data relationships require careful design for performance and maintainability",
+        "Advanced property types enable sophisticated business logic and calculations",
+        "Inheritance patterns promote code reuse and consistent data modeling",
+        "Performance optimization is crucial for enterprise-scale applications",
+        "Multi-level validation ensures comprehensive data quality and integrity",
+        "Enterprise patterns address scalability and governance requirements",
+        "Following best practices leads to robust and maintainable data models"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/intermediate/advanced-data-modeling",
+  "metadata": {
+    "created_date": "2025-01-25",
+    "last_updated": "2025-01-25",
+    "version": "1.0",
+    "tags": ["data-modeling", "relationships", "inheritance", "performance", "validation", "enterprise"]
+  }
+}

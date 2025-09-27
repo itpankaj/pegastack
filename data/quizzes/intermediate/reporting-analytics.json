@@ -1,0 +1,123 @@
+{
+  "id": "reporting-analytics",
+  "title": "Reporting & Analytics - Quiz",
+  "description": "Test your understanding of reporting and analytics concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/reporting-analytics",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of reporting in PEGA applications?",
+      "options": [
+        "To increase database size",
+        "To provide insights and support data-driven decision making",
+        "To slow down processing",
+        "To complicate user interfaces"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Reporting provides insights and supports data-driven decision making by transforming raw data into meaningful information for business users and stakeholders."
+    },
+    {
+      "id": 2,
+      "question": "When should you use summary views vs list views?",
+      "options": [
+        "Interchangeably",
+        "Summary views for aggregated data, list views for detailed records",
+        "Summary views for detailed records",
+        "List views for aggregated data"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Summary views are used for aggregated data and metrics, while list views display detailed records - choosing the appropriate type based on user needs."
+    },
+    {
+      "id": 3,
+      "question": "How do you optimize report performance?",
+      "options": [
+        "By returning all data",
+        "Through selective columns, proper filtering, and indexing",
+        "By avoiding indexes",
+        "By using complex queries"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Report performance is optimized through selective column selection, proper filtering criteria, appropriate indexing, and efficient query design."
+    },
+    {
+      "id": 4,
+      "question": "What is the benefit of real-time dashboards?",
+      "options": [
+        "They increase processing load",
+        "They provide immediate insights and current status visibility",
+        "They reduce data accuracy",
+        "They complicate deployment"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Real-time dashboards provide immediate insights and current status visibility, enabling users to make timely decisions based on up-to-date information."
+    },
+    {
+      "id": 5,
+      "question": "When should you implement drill-down reports?",
+      "options": [
+        "For all reports",
+        "When users need to explore detailed data from summary views",
+        "Never",
+        "Only for static reports"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Drill-down reports should be implemented when users need to explore detailed data from summary views, providing hierarchical navigation from high-level metrics to underlying details."
+    },
+    {
+      "id": 6,
+      "question": "How do you ensure report security?",
+      "options": [
+        "By making all reports public",
+        "Through access control policies and data filtering based on user roles",
+        "By avoiding security controls",
+        "By using hard-coded restrictions"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Report security is ensured through access control policies and data filtering based on user roles, ensuring users only see data appropriate to their permissions."
+    },
+    {
+      "id": 7,
+      "question": "What is crucial for data accuracy in reports?",
+      "options": [
+        "Manual data entry",
+        "Comprehensive data validation, cleansing, and source verification",
+        "No validation needed",
+        "Real-time updates only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data accuracy in reports requires comprehensive data validation, cleansing processes, source verification, and regular quality checks to ensure reliability."
+    },
+    {
+      "id": 8,
+      "question": "How should you handle large dataset reporting?",
+      "options": [
+        "Return all data at once",
+        "Through pagination, aggregation, and incremental loading strategies",
+        "Avoid large datasets",
+        "Use simple queries"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Large dataset reporting should use pagination, aggregation techniques, incremental loading strategies, and efficient query design to maintain performance and usability."
+    }
+  ]
+}

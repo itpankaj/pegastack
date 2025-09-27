@@ -1,0 +1,127 @@
+{
+  "id": "deployment-manager",
+  "title": "Deployment Manager",
+  "description": "Master advanced PEGA Deployment Manager capabilities for enterprise application lifecycle management",
+  "level": "advanced",
+  "category": "Deployment & ALM",
+  "estimated_time": 45,
+  "prerequisites": ["product-rules-deployment", "pega-devops-cicd"],
+  "learning_objectives": [
+    "Implement advanced Deployment Manager workflows and automation",
+    "Design enterprise deployment pipelines with approval workflows",
+    "Configure automated quality gates and validation processes",
+    "Establish deployment governance and compliance tracking"
+  ],
+  "sections": [
+    {
+      "id": "advanced-deployment-workflows",
+      "title": "Advanced Deployment Workflows",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Enterprise Deployment Manager Configuration"
+        },
+        {
+          "type": "paragraph",
+          "text": "Enterprise Deployment Manager implementations require sophisticated workflow configurations that handle complex approval processes, automated quality validation, and comprehensive audit trails. Advanced configurations support multiple deployment patterns while maintaining governance requirements."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Multi-Stage Deployment Pipeline"
+        },
+        {
+          "type": "code",
+          "language": "xml",
+          "text": "<!-- Enterprise Deployment Manager Pipeline Configuration -->\n<deployment-pipeline name=\"Enterprise-ALM-Pipeline\">\n  <environments>\n    <environment name=\"development\" type=\"development\">\n      <auto-deploy>true</auto-deploy>\n      <validation-gates>\n        <gate type=\"guardrails-check\" threshold=\"95\"/>\n        <gate type=\"unit-test-coverage\" threshold=\"70\"/>\n        <gate type=\"security-scan\" severity=\"high\"/>\n      </validation-gates>\n    </environment>\n    \n    <environment name=\"system-test\" type=\"testing\">\n      <approval-required>false</approval-required>\n      <validation-gates>\n        <gate type=\"integration-tests\" required=\"true\"/>\n        <gate type=\"performance-baseline\" threshold=\"2s\"/>\n        <gate type=\"compatibility-check\" required=\"true\"/>\n      </validation-gates>\n      <post-deployment>\n        <action type=\"automated-testing-suite\"/>\n        <action type=\"smoke-tests\"/>\n      </post-deployment>\n    </environment>\n    \n    <environment name=\"user-acceptance\" type=\"staging\">\n      <approval-required>true</approval-required>\n      <approvers>\n        <role>BusinessAnalyst</role>\n        <role>QualityAssurance</role>\n        <role>TechnicalLead</role>\n      </approvers>\n      <validation-gates>\n        <gate type=\"business-validation\" required=\"true\"/>\n        <gate type=\"user-acceptance-tests\" required=\"true\"/>\n        <gate type=\"security-compliance\" required=\"true\"/>\n      </validation-gates>\n      <deployment-window>\n        <schedule type=\"business-hours-only\"/>\n        <maintenance-window excluded=\"true\"/>\n      </deployment-window>\n    </environment>\n    \n    <environment name=\"production\" type=\"production\">\n      <approval-required>true</approval-required>\n      <approvers>\n        <role>ReleaseManager</role>\n        <role>BusinessOwner</role>\n        <role>SecurityOfficer</role>\n      </approvers>\n      <deployment-strategy type=\"blue-green\">\n        <rollback-triggers>\n          <trigger type=\"error-rate\" threshold=\"0.5%\"/>\n          <trigger type=\"response-time\" threshold=\"3s\"/>\n          <trigger type=\"business-metrics\" threshold=\"-5%\"/>\n        </rollback-triggers>\n      </deployment-strategy>\n      <validation-gates>\n        <gate type=\"production-readiness\" required=\"true\"/>\n        <gate type=\"rollback-plan\" required=\"true\"/>\n        <gate type=\"monitoring-setup\" required=\"true\"/>\n      </validation-gates>\n    </environment>\n  </environments>\n  \n  <workflow-automation>\n    <trigger type=\"branch-merge\" branch=\"release/*\">\n      <action>initiate-deployment-pipeline</action>\n    </trigger>\n    <trigger type=\"hotfix-approval\">\n      <action>expedited-deployment-path</action>\n    </trigger>\n    <trigger type=\"scheduled\" cron=\"0 2 * * 1\">\n      <action>weekly-deployment-report</action>\n    </trigger>\n  </workflow-automation>\n  \n  <quality-automation>\n    <pre-deployment>\n      <check type=\"dependency-validation\"/>\n      <check type=\"database-migration-validation\"/>\n      <check type=\"configuration-drift-detection\"/>\n    </pre-deployment>\n    <post-deployment>\n      <verification type=\"health-check-suite\"/>\n      <verification type=\"functional-validation\"/>\n      <verification type=\"performance-monitoring\"/>\n    </post-deployment>\n  </quality-automation>\n</deployment-pipeline>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Multi-stage deployment pipelines provide comprehensive automation while maintaining appropriate governance and quality controls at each stage of the deployment lifecycle."
+        }
+      ]
+    },
+    {
+      "id": "automated-quality-gates",
+      "title": "Automated Quality Gates",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Intelligent Quality Gate Implementation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Advanced quality gates in Deployment Manager provide automated decision-making capabilities that evaluate deployment readiness based on comprehensive criteria including code quality, test results, security compliance, and business impact assessment."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Custom Quality Gate Development"
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "text": "/**\n * Enterprise Quality Gate Implementation\n * Provides intelligent deployment readiness assessment\n */\npublic class EnterpriseQualityGate extends AbstractQualityGate {\n    \n    private QualityMetricsCollector metricsCollector;\n    private RiskAssessmentEngine riskEngine;\n    private ComplianceValidator complianceValidator;\n    \n    @Override\n    public QualityGateResult evaluate(DeploymentCandidate candidate) {\n        QualityGateResult result = new QualityGateResult();\n        \n        // Collect comprehensive quality metrics\n        QualityMetrics metrics = metricsCollector.collectMetrics(candidate);\n        \n        // Perform multi-dimensional quality assessment\n        CodeQualityAssessment codeQuality = evaluateCodeQuality(metrics);\n        TestingAssessment testingQuality = evaluateTestingQuality(metrics);\n        SecurityAssessment securityCompliance = evaluateSecurityCompliance(metrics);\n        PerformanceAssessment performanceImpact = evaluatePerformanceImpact(metrics);\n        \n        // Risk-based decision making\n        RiskProfile riskProfile = riskEngine.assessDeploymentRisk(\n            candidate, codeQuality, testingQuality, securityCompliance\n        );\n        \n        // Apply environment-specific criteria\n        QualityCriteria criteria = getCriteriaForEnvironment(\n            candidate.getTargetEnvironment(), riskProfile\n        );\n        \n        // Generate final assessment\n        result.setApproved(evaluateAgainstCriteria(metrics, criteria));\n        result.setRiskLevel(riskProfile.getLevel());\n        result.setQualityScore(calculateOverallQualityScore(metrics));\n        result.setRecommendations(generateImprovementRecommendations(metrics));\n        \n        // Compliance validation\n        ComplianceResult compliance = complianceValidator.validate(\n            candidate, criteria\n        );\n        result.setComplianceStatus(compliance);\n        \n        return result;\n    }\n    \n    private CodeQualityAssessment evaluateCodeQuality(QualityMetrics metrics) {\n        return CodeQualityAssessment.builder()\n            .guardrailsCompliance(metrics.getGuardrailsScore())\n            .codeComplexity(metrics.getCyclomaticComplexity())\n            .technicalDebt(metrics.getTechnicalDebtRatio())\n            .codeChurn(metrics.getCodeChurnRate())\n            .build();\n    }\n    \n    private TestingAssessment evaluateTestingQuality(QualityMetrics metrics) {\n        return TestingAssessment.builder()\n            .unitTestCoverage(metrics.getUnitTestCoverage())\n            .integrationTestCoverage(metrics.getIntegrationTestCoverage())\n            .testPassRate(metrics.getTestPassRate())\n            .defectDensity(metrics.getDefectDensity())\n            .testAutomationRatio(metrics.getTestAutomationRatio())\n            .build();\n    }\n    \n    private SecurityAssessment evaluateSecurityCompliance(QualityMetrics metrics) {\n        return SecurityAssessment.builder()\n            .vulnerabilityCount(metrics.getSecurityVulnerabilities())\n            .complianceScore(metrics.getComplianceScore())\n            .accessControlValidation(metrics.getAccessControlScore())\n            .dataPrivacyCompliance(metrics.getDataPrivacyScore())\n            .build();\n    }\n    \n    private QualityCriteria getCriteriaForEnvironment(String environment, RiskProfile risk) {\n        QualityCriteria baseCriteria = qualityCriteriaRepository.findByEnvironment(environment);\n        \n        // Adjust criteria based on risk assessment\n        if (risk.getLevel() == RiskLevel.HIGH) {\n            baseCriteria = baseCriteria.withIncreasedStrictness(1.2);\n        } else if (risk.getLevel() == RiskLevel.LOW) {\n            baseCriteria = baseCriteria.withRelaxedCriteria(0.9);\n        }\n        \n        return baseCriteria;\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "deployment-governance",
+      "title": "Deployment Governance & Compliance",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Enterprise Governance Framework"
+        },
+        {
+          "type": "paragraph",
+          "text": "Enterprise deployment governance ensures compliance with organizational policies, regulatory requirements, and industry standards while maintaining deployment velocity. Advanced governance frameworks provide comprehensive audit trails, automated compliance checking, and policy enforcement."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Compliance Automation Framework"
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "text": "# Enterprise Deployment Governance Framework\nclass DeploymentGovernanceFramework:\n    def __init__(self, compliance_rules, audit_logger):\n        self.compliance_rules = compliance_rules\n        self.audit_logger = audit_logger\n        self.policy_engine = PolicyEnforcementEngine()\n        \n    def validate_deployment_compliance(self, deployment_request):\n        \"\"\"Comprehensive compliance validation for deployment requests\"\"\"\n        \n        validation_results = {\n            'regulatory_compliance': self.validate_regulatory_compliance(deployment_request),\n            'security_compliance': self.validate_security_compliance(deployment_request),\n            'operational_compliance': self.validate_operational_compliance(deployment_request),\n            'business_compliance': self.validate_business_compliance(deployment_request)\n        }\n        \n        # Generate comprehensive audit trail\n        self.audit_logger.log_compliance_assessment(\n            deployment_request.id,\n            validation_results,\n            timestamp=datetime.now(),\n            assessor='automated_governance_framework'\n        )\n        \n        return self.generate_compliance_decision(validation_results)\n    \n    def validate_regulatory_compliance(self, deployment_request):\n        \"\"\"Validate against regulatory requirements (SOX, GDPR, HIPAA, etc.)\"\"\"\n        \n        regulatory_checks = {\n            'data_privacy': self.check_data_privacy_compliance(deployment_request),\n            'financial_controls': self.check_financial_controls(deployment_request),\n            'audit_trail': self.check_audit_trail_completeness(deployment_request),\n            'change_management': self.check_change_management_compliance(deployment_request)\n        }\n        \n        return {\n            'status': 'COMPLIANT' if all(regulatory_checks.values()) else 'NON_COMPLIANT',\n            'details': regulatory_checks,\n            'risk_level': self.assess_regulatory_risk(regulatory_checks)\n        }\n    \n    def validate_security_compliance(self, deployment_request):\n        \"\"\"Validate security compliance requirements\"\"\"\n        \n        security_checks = {\n            'vulnerability_scan': self.check_vulnerability_scan_results(deployment_request),\n            'access_controls': self.validate_access_controls(deployment_request),\n            'encryption_compliance': self.check_encryption_standards(deployment_request),\n            'security_testing': self.validate_security_testing(deployment_request)\n        }\n        \n        return {\n            'status': 'COMPLIANT' if all(security_checks.values()) else 'NON_COMPLIANT',\n            'details': security_checks,\n            'security_score': self.calculate_security_score(security_checks)\n        }\n    \n    def enforce_deployment_policies(self, deployment_request):\n        \"\"\"Enforce organizational deployment policies\"\"\"\n        \n        policy_violations = []\n        \n        # Check deployment timing policies\n        if not self.policy_engine.validate_deployment_timing(deployment_request):\n            policy_violations.append('deployment_timing_violation')\n        \n        # Check approval workflow policies\n        if not self.policy_engine.validate_approval_workflow(deployment_request):\n            policy_violations.append('approval_workflow_violation')\n        \n        # Check environment-specific policies\n        if not self.policy_engine.validate_environment_policies(deployment_request):\n            policy_violations.append('environment_policy_violation')\n        \n        # Generate policy enforcement result\n        return {\n            'policy_compliant': len(policy_violations) == 0,\n            'violations': policy_violations,\n            'enforcement_actions': self.determine_enforcement_actions(policy_violations)\n        }\n    \n    def generate_compliance_report(self, deployment_history):\n        \"\"\"Generate comprehensive compliance reporting\"\"\"\n        \n        return {\n            'compliance_metrics': {\n                'overall_compliance_rate': self.calculate_compliance_rate(deployment_history),\n                'regulatory_compliance_trends': self.analyze_regulatory_trends(deployment_history),\n                'security_compliance_trends': self.analyze_security_trends(deployment_history)\n            },\n            'risk_assessment': {\n                'current_risk_level': self.assess_current_risk_level(deployment_history),\n                'risk_trends': self.analyze_risk_trends(deployment_history),\n                'mitigation_recommendations': self.generate_risk_mitigation_recommendations(deployment_history)\n            },\n            'improvement_recommendations': self.generate_process_improvements(deployment_history)\n        }"
+        }
+      ]
+    }
+  ],
+  "hands_on_exercises": [
+    {
+      "title": "Enterprise Deployment Manager Pipeline",
+      "description": "Configure a complete enterprise deployment pipeline with automated quality gates and governance workflows",
+      "steps": [
+        "Configure multi-environment deployment pipeline with approval workflows",
+        "Implement custom quality gates with intelligent decision-making",
+        "Set up automated compliance validation and audit trails",
+        "Configure deployment monitoring and rollback automation",
+        "Test complete deployment lifecycle with governance reporting"
+      ]
+    }
+  ],
+  "best_practices": [
+    "Implement comprehensive quality gates with risk-based decision making",
+    "Maintain complete audit trails for compliance and troubleshooting",
+    "Use automated compliance validation to ensure policy adherence",
+    "Configure intelligent rollback triggers based on business metrics",
+    "Establish clear governance workflows with appropriate approval levels"
+  ],
+  "common_pitfalls": [
+    "Overly complex approval workflows that slow deployment velocity",
+    "Insufficient quality gate automation leading to manual bottlenecks",
+    "Poor integration between deployment tools and monitoring systems",
+    "Inadequate compliance documentation and audit trail maintenance"
+  ],
+  "next_steps": [
+    "Production Support Strategies",
+    "Enterprise Architecture Patterns",
+    "PEGA Cloud Migration"
+  ]
+}

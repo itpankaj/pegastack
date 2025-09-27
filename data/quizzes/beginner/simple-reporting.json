@@ -1,0 +1,135 @@
+{
+  "id": "simple-reporting",
+  "title": "Simple Reporting Quiz",
+  "level": "beginner",
+  "lesson": "simple-reporting",
+  "total_questions": 10,
+  "passing_score": 70,
+  "time_limit": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is the primary purpose of reporting in PEGA applications?",
+      "options": [
+        "To slow down system performance",
+        "To provide visibility into business processes and case data",
+        "To make applications more complex",
+        "To store more data"
+      ],
+      "correct_answer": 1,
+      "explanation": "Reporting provides visibility into business processes and case data, enabling stakeholders to track performance, make informed decisions, and monitor business metrics."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "Which type of report displays data in tabular format with rows and columns?",
+      "options": [
+        "Chart Reports",
+        "Summary Reports",
+        "List Reports",
+        "Dashboard Reports"
+      ],
+      "correct_answer": 2,
+      "explanation": "List Reports display data in tabular format with rows and columns, making them ideal for showing detailed information like case lists or work queues."
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "Summary Reports are used to aggregate data and show totals, counts, and averages.",
+      "correct_answer": true,
+      "explanation": "Yes, Summary Reports aggregate data to show totals, counts, averages, and other calculated metrics, making them perfect for performance tracking and trend analysis."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "What should be the first step when creating a report?",
+      "options": [
+        "Choose colors and formatting",
+        "Define the report purpose and identify the target audience",
+        "Select random data fields",
+        "Create charts immediately"
+      ],
+      "correct_answer": 1,
+      "explanation": "The first step should be defining the report purpose and identifying who will use it, what decisions it will support, and what information is needed."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "Which component shows high-level metrics that indicate business performance?",
+      "options": [
+        "Data Tables",
+        "Progress Bars",
+        "Key Performance Indicators (KPIs)",
+        "Navigation Menus"
+      ],
+      "correct_answer": 2,
+      "explanation": "Key Performance Indicators (KPIs) show high-level metrics that indicate business performance, such as cases resolved today or average resolution time."
+    },
+    {
+      "id": 6,
+      "type": "scenario",
+      "question": "You need to create a report showing the number of cases by status for the last month. What type of report would be most appropriate?",
+      "options": [
+        "List Report showing individual case details",
+        "Summary Report with grouping by status",
+        "Chart Report only",
+        "No report needed"
+      ],
+      "correct_answer": 1,
+      "explanation": "A Summary Report with grouping by status would aggregate the case data and show counts for each status, providing the overview needed for this requirement."
+    },
+    {
+      "id": 7,
+      "type": "true-false",
+      "question": "Dashboards can combine multiple reports and visualizations for comprehensive views.",
+      "correct_answer": true,
+      "explanation": "Yes, dashboards combine multiple reports, charts, and KPIs to provide comprehensive views of business performance and key metrics in a single interface."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "What is a key consideration for report performance?",
+      "options": [
+        "Using as many colors as possible",
+        "Including all available data fields",
+        "Limiting data ranges and optimizing queries",
+        "Making reports as complex as possible"
+      ],
+      "correct_answer": 2,
+      "explanation": "Limiting data ranges and optimizing queries improves report performance, especially when dealing with large datasets or frequently accessed reports."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "Which practice improves the user experience of reports?",
+      "options": [
+        "Removing all filtering capabilities",
+        "Using technical jargon in labels",
+        "Providing filtering and search capabilities",
+        "Making reports difficult to navigate"
+      ],
+      "correct_answer": 2,
+      "explanation": "Providing filtering and search capabilities allows users to find the specific information they need quickly, improving the overall user experience."
+    },
+    {
+      "id": 10,
+      "type": "scenario",
+      "question": "Your report takes 5 minutes to load and users are complaining. What should you consider to improve performance?",
+      "options": [
+        "Add more data to the report",
+        "Remove all formatting",
+        "Limit date ranges, add indexing, and consider caching",
+        "Make the report more complex"
+      ],
+      "correct_answer": 2,
+      "explanation": "To improve performance, you should limit date ranges to reduce data volume, ensure proper indexing on data sources, and consider caching for frequently accessed reports."
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-01-24",
+    "last_updated": "2025-01-24",
+    "version": "1.0",
+    "tags": ["reporting", "dashboards", "analytics", "performance", "kpi"]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "title": "Case Management Advanced",
+  "level": "intermediate",
+  "slug": "case-management-advanced",
+  "description": "Master advanced case patterns, parent-child cases, case relationships, and complex case lifecycles",
+  "estimatedTime": "50 min",
+  "prerequisites": ["Case Lifecycle", "Data Modeling", "Flow Rules & Flow Actions"],
+  "objectives": [
+    "Implement parent-child case patterns",
+    "Design complex case relationships",
+    "Manage case dependencies and inheritance",
+    "Handle case transfers and escalations",
+    "Optimize case lifecycle performance"
+  ],
+  "content": {
+    "introduction": "Advanced case management goes beyond simple case creation and processing. This lesson covers sophisticated case patterns, relationships, and lifecycle optimization techniques used in enterprise PEGA applications.",
+    "sections": [
+      {
+        "title": "Parent-Child Case Patterns",
+        "content": "Parent-child cases allow you to model complex business processes where multiple related cases must be managed together. Child cases inherit properties and behaviors from their parent while maintaining their own lifecycle.",
+        "patterns": [
+          {
+            "name": "Parallel Processing",
+            "description": "Multiple child cases running simultaneously",
+            "useCase": "Loan application with separate child cases for credit check, employment verification, and property appraisal"
+          },
+          {
+            "name": "Sequential Processing",
+            "description": "Child cases triggered in sequence",
+            "useCase": "Insurance claim with sequential child cases for initial review, investigation, and settlement"
+          },
+          {
+            "name": "Conditional Processing",
+            "description": "Child cases created based on conditions",
+            "useCase": "Customer onboarding with conditional child cases for different product types"
+          }
+        ]
+      },
+      {
+        "title": "Case Relationships and Dependencies",
+        "content": "Define relationships between cases to ensure proper sequencing, data sharing, and status synchronization. Use case dependencies to prevent race conditions and ensure data integrity.",
+        "relationships": [
+          "Parent-Child (one-to-many)",
+          "Sibling (many-to-many)",
+          "Predecessor-Successor (sequential)",
+          "Peer (independent but related)"
+        ]
+      },
+      {
+        "title": "Case Inheritance and Data Propagation",
+        "content": "Configure how data flows between parent and child cases. Child cases can inherit properties, attachments, and case data while maintaining their own unique identifiers.",
+        "inheritance": [
+          "Property inheritance from parent",
+          "Attachment sharing across cases",
+          "Status synchronization",
+          "Data validation consistency"
+        ]
+      },
+      {
+        "title": "Case Transfers and Escalations",
+        "content": "Handle complex scenarios where cases need to be transferred between users, departments, or systems. Implement escalation rules and approval workflows.",
+        "scenarios": [
+          "Escalation to senior management",
+          "Transfer between departments",
+          "Handoff to external systems",
+          "Emergency case handling"
+        ]
+      },
+      {
+        "title": "Performance Optimization",
+        "content": "Optimize case lifecycle performance through efficient case management patterns, caching strategies, and resource allocation.",
+        "techniques": [
+          "Lazy loading of case data",
+          "Caching frequently accessed properties",
+          "Batch processing for related cases",
+          "Optimized database queries"
+        ]
+      }
+    ]
+  },
+  "quiz": {
+    "id": "case-management-advanced-quiz",
+    "title": "Case Management Advanced Quiz",
+    "questions": 8,
+    "passingScore": 70
+  },
+  "resources": {
+    "documentation": [
+      {
+        "title": "PEGA Case Management Guide",
+        "url": "https://docs.pega.com/case-management"
+      },
+      {
+        "title": "Parent-Child Case Patterns",
+        "url": "https://docs.pega.com/parent-child-cases"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Advanced Case Patterns",
+        "url": "https://academy.pega.com/advanced-case-patterns"
+      }
+    ]
+  }
+}

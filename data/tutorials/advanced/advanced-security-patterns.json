@@ -1,0 +1,152 @@
+{
+  "id": "advanced-security-patterns",
+  "title": "Advanced Security Patterns in PEGA",
+  "description": "Master advanced security patterns, authentication mechanisms, and security architectures in PEGA applications",
+  "duration": "180 minutes",
+  "level": "advanced",
+  "prerequisites": [
+    "Security & Access Control",
+    "Advanced Integration Patterns",
+    "PEGA Platform APIs"
+  ],
+  "learning_objectives": [
+    "Implement advanced authentication and authorization patterns",
+    "Design secure API architectures with PEGA",
+    "Master OAuth 2.0 and OpenID Connect implementations",
+    "Implement zero-trust security architectures",
+    "Handle advanced encryption and data protection scenarios",
+    "Design security monitoring and threat detection systems"
+  ],
+  "sections": [
+    {
+      "title": "Advanced Authentication Patterns",
+      "content": [
+        {
+          "type": "text",
+          "data": "Advanced authentication in PEGA goes beyond basic username/password mechanisms to include multi-factor authentication (MFA), biometric authentication, risk-based authentication, and federated identity management. These patterns provide enhanced security while maintaining user experience."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Multi-Factor Authentication Implementation\n@Component(\"MFAAuthenticationService\")\npublic class MFAAuthenticationService extends AuthenticationService {\n    \n    @Override\n    public AuthenticationResult authenticate(AuthenticationRequest request) {\n        // First factor - password validation\n        if (!validateCredentials(request.getUsername(), request.getPassword())) {\n            return AuthenticationResult.failed(\"Invalid credentials\");\n        }\n        \n        // Risk assessment\n        RiskScore risk = assessLoginRisk(request);\n        if (risk.getScore() > RISK_THRESHOLD) {\n            // Require additional authentication factors\n            return requireAdditionalFactors(request, risk);\n        }\n        \n        // Generate secure session token\n        SessionToken token = generateSecureToken(request.getUsername());\n        return AuthenticationResult.success(token);\n    }\n    \n    private AuthenticationResult requireAdditionalFactors(AuthenticationRequest request, RiskScore risk) {\n        List<AuthFactor> availableFactors = getAvailableFactors(request.getUsername());\n        \n        if (availableFactors.contains(AuthFactor.SMS)) {\n            sendSMSChallenge(request.getUsername());\n            return AuthenticationResult.pendingMFA(\"SMS_CHALLENGE\");\n        }\n        \n        if (availableFactors.contains(AuthFactor.TOTP)) {\n            return AuthenticationResult.pendingMFA(\"TOTP_CHALLENGE\");\n        }\n        \n        return AuthenticationResult.failed(\"MFA required but no factors available\");\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "OAuth 2.0 and OpenID Connect Implementation",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA supports OAuth 2.0 and OpenID Connect for secure API access and identity federation. Implementation involves configuring OAuth providers, managing tokens, and implementing proper scope-based authorization patterns."
+        },
+        {
+          "type": "code",
+          "language": "xml",
+          "data": "<!-- OAuth 2.0 Provider Configuration -->\n<OAuthProvider>\n    <ProviderName>PegaOAuthProvider</ProviderName>\n    <AuthorizationEndpoint>/oauth/authorize</AuthorizationEndpoint>\n    <TokenEndpoint>/oauth/token</TokenEndpoint>\n    <UserInfoEndpoint>/oauth/userinfo</UserInfoEndpoint>\n    \n    <SupportedGrantTypes>\n        <GrantType>authorization_code</GrantType>\n        <GrantType>client_credentials</GrantType>\n        <GrantType>refresh_token</GrantType>\n    </SupportedGrantTypes>\n    \n    <SupportedScopes>\n        <Scope name=\"read\" description=\"Read access to user data\"/>\n        <Scope name=\"write\" description=\"Write access to user data\"/>\n        <Scope name=\"admin\" description=\"Administrative access\"/>\n    </SupportedScopes>\n    \n    <TokenConfiguration>\n        <AccessTokenLifetime>3600</AccessTokenLifetime>\n        <RefreshTokenLifetime>86400</RefreshTokenLifetime>\n        <AllowRefreshTokenRotation>true</AllowRefreshTokenRotation>\n    </TokenConfiguration>\n</OAuthProvider>"
+        }
+      ]
+    },
+    {
+      "title": "Zero-Trust Security Architecture",
+      "content": [
+        {
+          "type": "text",
+          "data": "Zero-trust security assumes that no user or system should be trusted by default, regardless of their location. In PEGA, this involves implementing continuous authentication, micro-segmentation, least privilege access, and comprehensive monitoring of all interactions."
+        },
+        {
+          "type": "text",
+          "data": "Key components of zero-trust in PEGA include: Identity verification for every access request, device trust assessment, network micro-segmentation, data encryption at rest and in transit, and continuous monitoring with behavior analytics."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Zero-Trust Access Control Implementation\n@Component(\"ZeroTrustAccessControl\")\npublic class ZeroTrustAccessControl {\n    \n    public AccessDecision evaluateAccess(AccessRequest request) {\n        // Continuous identity verification\n        IdentityResult identity = verifyIdentity(request.getUser());\n        if (!identity.isValid()) {\n            return AccessDecision.deny(\"Identity verification failed\");\n        }\n        \n        // Device trust assessment\n        DeviceTrust deviceTrust = assessDevice(request.getDevice());\n        if (deviceTrust.getRiskLevel() > DEVICE_RISK_THRESHOLD) {\n            return AccessDecision.deny(\"Device trust insufficient\");\n        }\n        \n        // Context-aware authorization\n        ContextualFactors context = analyzeContext(request);\n        if (context.isAnomalous()) {\n            logSecurityEvent(\"Anomalous access pattern detected\", request);\n            return requireAdditionalVerification(request);\n        }\n        \n        // Apply least privilege principle\n        Permissions permissions = calculateMinimalPermissions(request);\n        return AccessDecision.allow(permissions);\n    }\n    \n    private ContextualFactors analyzeContext(AccessRequest request) {\n        return ContextualFactors.builder()\n            .location(request.getLocation())\n            .timeOfAccess(request.getTimestamp())\n            .accessPattern(analyzeUserBehavior(request.getUser()))\n            .networkContext(analyzeNetworkContext(request))\n            .build();\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Advanced Encryption and Data Protection",
+      "content": [
+        {
+          "type": "text",
+          "data": "Data protection in PEGA involves multiple layers of encryption including data at rest, data in transit, and data in processing. Advanced patterns include field-level encryption, format-preserving encryption, and homomorphic encryption for sensitive data processing."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Field-Level Encryption Implementation\n@Component(\"AdvancedDataProtection\")\npublic class AdvancedDataProtection {\n    \n    private final EncryptionService encryptionService;\n    private final KeyManagementService keyService;\n    \n    public void protectSensitiveData(ClipboardPage data) {\n        // Identify sensitive fields\n        List<String> sensitiveFields = identifySensitiveFields(data);\n        \n        for (String field : sensitiveFields) {\n            String value = data.getString(field);\n            if (value != null && !value.isEmpty()) {\n                // Get appropriate encryption key\n                EncryptionKey key = keyService.getKeyForField(field);\n                \n                // Apply field-level encryption\n                String encryptedValue = encryptionService.encrypt(value, key);\n                data.putString(field, encryptedValue);\n                \n                // Mark field as encrypted for proper handling\n                data.putString(field + \"_encrypted\", \"true\");\n            }\n        }\n    }\n    \n    public String decryptField(String encryptedValue, String fieldName) {\n        EncryptionKey key = keyService.getKeyForField(fieldName);\n        return encryptionService.decrypt(encryptedValue, key);\n    }\n    \n    // Format-preserving encryption for maintaining data formats\n    public String encryptWithFormatPreservation(String value, String format) {\n        FormatPreservingEncryption fpe = new FormatPreservingEncryption();\n        return fpe.encrypt(value, format, keyService.getFPEKey());\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "API Security Patterns",
+      "content": [
+        {
+          "type": "text",
+          "data": "Securing PEGA APIs involves implementing multiple security layers including API authentication, rate limiting, input validation, output filtering, and threat detection. Advanced patterns include API versioning security, webhook security, and GraphQL security considerations."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Advanced API Security Filter\n@Component(\"APISecurityFilter\")\npublic class APISecurityFilter implements Filter {\n    \n    @Override\n    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) {\n        HttpServletRequest httpRequest = (HttpServletRequest) request;\n        HttpServletResponse httpResponse = (HttpServletResponse) response;\n        \n        try {\n            // Rate limiting check\n            if (!rateLimiter.isRequestAllowed(getClientId(httpRequest))) {\n                sendErrorResponse(httpResponse, 429, \"Rate limit exceeded\");\n                return;\n            }\n            \n            // Input validation and sanitization\n            if (!validateAndSanitizeInput(httpRequest)) {\n                sendErrorResponse(httpResponse, 400, \"Invalid input detected\");\n                return;\n            }\n            \n            // Authentication and authorization\n            AuthenticationContext authContext = authenticateRequest(httpRequest);\n            if (!authContext.isAuthenticated()) {\n                sendErrorResponse(httpResponse, 401, \"Authentication required\");\n                return;\n            }\n            \n            // Set security headers\n            setSecurityHeaders(httpResponse);\n            \n            // Continue with request processing\n            chain.doFilter(request, response);\n            \n            // Post-processing: filter sensitive data in response\n            filterSensitiveDataFromResponse(httpResponse, authContext);\n            \n        } catch (Exception e) {\n            logSecurityIncident(\"API security filter exception\", e, httpRequest);\n            sendErrorResponse(httpResponse, 500, \"Internal server error\");\n        }\n    }\n    \n    private void setSecurityHeaders(HttpServletResponse response) {\n        response.setHeader(\"X-Content-Type-Options\", \"nosniff\");\n        response.setHeader(\"X-Frame-Options\", \"DENY\");\n        response.setHeader(\"X-XSS-Protection\", \"1; mode=block\");\n        response.setHeader(\"Strict-Transport-Security\", \"max-age=31536000; includeSubDomains\");\n        response.setHeader(\"Content-Security-Policy\", \"default-src 'self'\");\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Security Monitoring and Threat Detection",
+      "content": [
+        {
+          "type": "text",
+          "data": "Advanced security monitoring in PEGA involves implementing Security Information and Event Management (SIEM) integration, behavioral analytics, anomaly detection, and automated threat response. This creates a comprehensive security operations capability."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Security Event Monitoring System\n@Component(\"SecurityMonitoringSystem\")\npublic class SecurityMonitoringSystem {\n    \n    private final SIEMIntegration siemIntegration;\n    private final AnomalyDetector anomalyDetector;\n    private final ThreatIntelligence threatIntel;\n    \n    public void monitorSecurityEvent(SecurityEvent event) {\n        // Enrich event with contextual information\n        EnrichedSecurityEvent enrichedEvent = enrichEvent(event);\n        \n        // Perform real-time threat analysis\n        ThreatAssessment assessment = assessThreat(enrichedEvent);\n        \n        if (assessment.getSeverity() >= Severity.HIGH) {\n            // Immediate response for high-severity threats\n            initiateIncidentResponse(enrichedEvent, assessment);\n        }\n        \n        // Send to SIEM for correlation and analysis\n        siemIntegration.sendEvent(enrichedEvent);\n        \n        // Update behavioral baselines\n        updateUserBehaviorProfile(enrichedEvent);\n    }\n    \n    private ThreatAssessment assessThreat(EnrichedSecurityEvent event) {\n        ThreatAssessment assessment = new ThreatAssessment();\n        \n        // Check against threat intelligence feeds\n        if (threatIntel.isKnownThreat(event.getSourceIP())) {\n            assessment.addIndicator(\"Known malicious IP\", Severity.HIGH);\n        }\n        \n        // Anomaly detection\n        if (anomalyDetector.isAnomalous(event)) {\n            assessment.addIndicator(\"Behavioral anomaly detected\", Severity.MEDIUM);\n        }\n        \n        // Pattern-based detection\n        if (detectSuspiciousPatterns(event)) {\n            assessment.addIndicator(\"Suspicious access pattern\", Severity.MEDIUM);\n        }\n        \n        return assessment;\n    }\n    \n    private void initiateIncidentResponse(EnrichedSecurityEvent event, ThreatAssessment assessment) {\n        // Create security incident\n        SecurityIncident incident = createIncident(event, assessment);\n        \n        // Automated containment actions\n        if (assessment.requiresImmediateAction()) {\n            blockSourceIP(event.getSourceIP());\n            disableUserAccount(event.getUserId());\n            alertSecurityTeam(incident);\n        }\n    }\n}"
+        }
+      ]
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Zero-Trust Architecture",
+      "definition": "A security model that assumes no user or system should be trusted by default, requiring verification for every access request regardless of location."
+    },
+    {
+      "term": "Multi-Factor Authentication (MFA)",
+      "definition": "An authentication method that requires users to provide two or more verification factors to gain access to a resource."
+    },
+    {
+      "term": "OAuth 2.0",
+      "definition": "An authorization framework that enables applications to obtain limited access to user accounts by delegating user authentication to an authorization server."
+    },
+    {
+      "term": "Field-Level Encryption",
+      "definition": "A security technique that encrypts individual data fields within a database or application, providing granular data protection."
+    },
+    {
+      "term": "SIEM (Security Information and Event Management)",
+      "definition": "A security management approach that combines security information management (SIM) and security event management (SEM) functions."
+    }
+  ],
+  "best_practices": [
+    "Implement defense in depth with multiple security layers",
+    "Apply the principle of least privilege for all access controls",
+    "Use strong encryption for data at rest and in transit",
+    "Implement comprehensive security monitoring and logging",
+    "Regularly update and patch all security components",
+    "Conduct regular security assessments and penetration testing",
+    "Implement secure coding practices and security code reviews",
+    "Maintain incident response plans and conduct regular drills"
+  ],
+  "common_pitfalls": [
+    "Relying on perimeter security alone without internal controls",
+    "Implementing weak or default authentication mechanisms",
+    "Storing sensitive data without proper encryption",
+    "Insufficient logging and monitoring of security events",
+    "Not implementing proper session management and timeout controls",
+    "Ignoring security updates and patch management",
+    "Poor key management practices leading to key exposure",
+    "Not testing security controls regularly or during incidents"
+  ]
+}

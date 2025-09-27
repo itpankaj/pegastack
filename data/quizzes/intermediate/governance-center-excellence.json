@@ -1,0 +1,123 @@
+{
+  "id": "governance-center-excellence",
+  "title": "Governance & Center of Excellence - Quiz",
+  "description": "Test your understanding of governance and center of excellence concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/governance-center-excellence",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of enterprise governance frameworks in PEGA?",
+      "options": [
+        "To restrict development creativity",
+        "To ensure consistency, quality, and strategic alignment across implementations",
+        "To increase development time",
+        "To complicate processes"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Enterprise governance frameworks ensure consistency, quality, and strategic alignment across all PEGA implementations, maintaining standards while enabling scalable growth."
+    },
+    {
+      "id": 2,
+      "question": "What role does a Center of Excellence play in PEGA implementations?",
+      "options": [
+        "To centralize all development",
+        "To drive organizational excellence through best practices, knowledge sharing, and continuous improvement",
+        "To increase costs",
+        "To slow down development"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Centers of Excellence drive organizational excellence through best practices documentation, knowledge sharing, training programs, mentorship, and continuous improvement initiatives."
+    },
+    {
+      "id": 3,
+      "question": "Which component is essential for development standards?",
+      "options": [
+        "Ad-hoc development practices",
+        "Comprehensive coding standards, design patterns, and quality gates",
+        "No standards",
+        "Manual processes only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Development standards require comprehensive coding standards, design patterns, quality gates, documentation requirements, and code review processes to ensure consistency."
+    },
+    {
+      "id": 4,
+      "question": "How should enterprise architecture governance be managed?",
+      "options": [
+        "Without any governance",
+        "Through standardized technology stacks, integration patterns, and strategic technology decisions",
+        "Individual team decisions",
+        "Vendor-driven choices"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Enterprise architecture governance requires standardized technology stacks, integration patterns, data governance, security standards, and strategic technology decisions aligned with business objectives."
+    },
+    {
+      "id": 5,
+      "question": "What is crucial for compliance and risk management?",
+      "options": [
+        "Ignoring compliance requirements",
+        "Comprehensive frameworks addressing regulatory, security, and business continuity requirements",
+        "Manual compliance checking",
+        "No risk management"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Compliance and risk management require comprehensive frameworks addressing regulatory requirements, security standards, risk assessment, business continuity planning, and audit reporting."
+    },
+    {
+      "id": 6,
+      "question": "How should performance measurement be implemented?",
+      "options": [
+        "Without any measurement",
+        "Through KPIs, application monitoring, user experience tracking, and business outcome measurement",
+        "Manual tracking only",
+        "No optimization processes"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Performance measurement requires comprehensive KPIs, application performance monitoring, user experience tracking, business outcome measurement, and continuous optimization processes."
+    },
+    {
+      "id": 7,
+      "question": "What is essential for training and certification programs?",
+      "options": [
+        "No training needed",
+        "Structured programs with best practices, hands-on experience, and continuous learning",
+        "Ad-hoc learning",
+        "Vendor-only training"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Training and certification programs require structured curricula covering best practices, hands-on experience, continuous learning, mentorship, and knowledge validation."
+    },
+    {
+      "id": 8,
+      "question": "How should continuous improvement be driven?",
+      "options": [
+        "Static processes with no changes",
+        "Through regular retrospectives, feedback loops, metric analysis, and process optimization",
+        "No improvement needed",
+        "Manual changes only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Continuous improvement should be driven through regular retrospectives, feedback loops, metric analysis, process optimization, and adaptation to changing business needs and technology evolution."
+    }
+  ]
+}

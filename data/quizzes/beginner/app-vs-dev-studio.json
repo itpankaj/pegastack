@@ -1,0 +1,140 @@
+{
+  "id": "app-vs-dev-studio",
+  "title": "App Studio vs Dev Studio - Quiz",
+  "description": "Test your understanding of PEGA's two development environments and when to use each",
+  "level": "beginner",
+  "lesson_reference": "/tutorials/beginner/app-vs-dev-studio",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "Which development environment is designed primarily for business users?",
+      "options": [
+        "Dev Studio",
+        "App Studio",
+        "Prediction Studio",
+        "Case Manager"
+      ],
+      "correct_answer": 1,
+      "explanation": "App Studio is designed primarily for business users, citizen developers, and those new to PEGA development with its low-code, visual approach.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "question": "Dev Studio provides access to all PEGA rules and features.",
+      "correct_answer": true,
+      "explanation": "True. Dev Studio is the comprehensive development environment that provides complete access to all PEGA rules and features with advanced configuration options.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "What is a key characteristic of App Studio's approach?",
+      "options": [
+        "Technical terminology and detailed interfaces",
+        "Complete access to all system features",
+        "Guided workflows and wizards",
+        "Advanced debugging capabilities"
+      ],
+      "correct_answer": 2,
+      "explanation": "App Studio uses guided workflows and wizards to help users through development processes, making it accessible to non-technical users.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "scenario",
+      "question": "A business analyst needs to quickly create a prototype application to demonstrate a concept. Which tool should they use?",
+      "options": [
+        "Dev Studio for complete control",
+        "App Studio for rapid prototyping",
+        "Database tools directly",
+        "External development tools"
+      ],
+      "correct_answer": 1,
+      "explanation": "App Studio is ideal for rapid prototyping due to its guided approach, pre-built templates, and business-friendly interface that enables quick application creation.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "When would you need to use Dev Studio instead of App Studio?",
+      "options": [
+        "Creating simple business applications",
+        "Building standard workflows",
+        "Implementing complex integrations",
+        "Basic form design"
+      ],
+      "correct_answer": 2,
+      "explanation": "Dev Studio is necessary for complex integrations that require custom connector development, advanced error handling, and detailed system configuration.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q6",
+      "type": "true-false",
+      "question": "App Studio has a steeper learning curve than Dev Studio.",
+      "correct_answer": false,
+      "explanation": "False. App Studio has a gentler learning curve and is designed for non-technical users, while Dev Studio has a steeper learning curve requiring technical knowledge.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "Which environment provides advanced debugging tools and performance monitoring?",
+      "options": [
+        "App Studio",
+        "Dev Studio",
+        "Both environments equally",
+        "Neither environment"
+      ],
+      "correct_answer": 1,
+      "explanation": "Dev Studio provides advanced debugging tools, performance monitoring, and diagnostic features that are not available in App Studio's simplified interface.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q8",
+      "type": "scenario",
+      "question": "A professional developer needs to configure advanced security settings and system administration tasks. Which tool is appropriate?",
+      "options": [
+        "App Studio only",
+        "Dev Studio only",
+        "Either tool works equally well",
+        "External security tools"
+      ],
+      "correct_answer": 1,
+      "explanation": "Dev Studio is required for advanced security configuration, system administration, and detailed system settings that are not accessible through App Studio.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "multiple-choice",
+      "question": "What is the best practice for tool selection in PEGA development?",
+      "options": [
+        "Always use Dev Studio for everything",
+        "Always use App Studio for everything",
+        "Start with App Studio and switch to Dev Studio when needed",
+        "Use only one tool per project"
+      ],
+      "correct_answer": 2,
+      "explanation": "Best practice is to start with App Studio to leverage guided workflows and best practices, then switch to Dev Studio when you encounter limitations or need advanced features.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q10",
+      "type": "true-false",
+      "question": "Both App Studio and Dev Studio can be used collaboratively in the same project.",
+      "correct_answer": true,
+      "explanation": "True. Both tools can be used collaboratively in the same project, with business users working in App Studio while developers use Dev Studio for advanced features.",
+      "difficulty": "medium"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["app-studio", "dev-studio", "development-environment", "tool-selection", "comparison", "beginner"],
+    "estimated_time": 20
+  }
+}

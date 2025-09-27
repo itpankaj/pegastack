@@ -1,0 +1,288 @@
+{
+  "id": "case-types-stages",
+  "title": "Case Types and Stages",
+  "level": "beginner",
+  "estimated_time": 20,
+  "prerequisites": ["first-case-app"],
+  "learning_objectives": [
+    "Understand what case types are and their purpose",
+    "Learn how to design effective case stages",
+    "Master stage configuration and properties",
+    "Understand stage transitions and conditions"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Understanding Case Types and Stages",
+      "text": "Case types and stages are fundamental concepts in PEGA that define the structure and lifecycle of your business processes. A case type represents a category of work, while stages represent the major phases that work progresses through. Understanding how to design and configure these elements is crucial for building effective PEGA applications."
+    },
+    "sections": [
+      {
+        "title": "What are Case Types?",
+        "content": "A case type is a template that defines the structure, behavior, and lifecycle of a specific category of work in your organization. Think of it as a blueprint that determines how similar pieces of work will be handled.",
+        "key_points": [
+          "Case types define the structure and behavior of work units",
+          "Each case type has its own lifecycle and business rules",
+          "Case types can inherit from other case types",
+          "They include data fields, processes, and user interfaces"
+        ],
+        "examples": [
+          {
+            "case_type": "Service Request",
+            "description": "Handles customer service inquiries and support requests",
+            "typical_stages": ["Submission", "Review", "Assignment", "Resolution", "Closure"]
+          },
+          {
+            "case_type": "Purchase Order",
+            "description": "Manages the procurement process from request to fulfillment",
+            "typical_stages": ["Request", "Approval", "Ordering", "Receiving", "Payment"]
+          },
+          {
+            "case_type": "Employee Onboarding",
+            "description": "Guides new employee setup and orientation process",
+            "typical_stages": ["Pre-boarding", "Documentation", "Training", "Setup", "Completion"]
+          }
+        ]
+      },
+      {
+        "title": "Understanding Case Stages",
+        "content": "Case stages represent the major phases or milestones in a case's lifecycle. They provide a high-level view of where a case stands and help organize the work into logical groupings.",
+        "stage_characteristics": [
+          {
+            "characteristic": "Sequential Progression",
+            "description": "Cases typically move through stages in a logical sequence, though some stages may be skipped or repeated based on business rules."
+          },
+          {
+            "characteristic": "Milestone Tracking",
+            "description": "Stages serve as major milestones that help track progress and provide visibility into case status."
+          },
+          {
+            "characteristic": "Work Organization",
+            "description": "Each stage contains related processes and activities that need to be completed before moving to the next stage."
+          },
+          {
+            "characteristic": "Business Context",
+            "description": "Stages should reflect meaningful business phases that stakeholders can easily understand and relate to."
+          }
+        ]
+      },
+      {
+        "title": "Designing Effective Case Stages",
+        "content": "Good stage design is crucial for creating intuitive and efficient case management processes. Here are key principles for designing effective stages.",
+        "design_principles": [
+          {
+            "principle": "Business-Meaningful Names",
+            "description": "Use stage names that clearly communicate the business purpose and are easily understood by all stakeholders.",
+            "good_examples": ["Request Submission", "Manager Review", "Technical Analysis", "Customer Approval"],
+            "poor_examples": ["Stage 1", "Processing", "Work", "Final"]
+          },
+          {
+            "principle": "Logical Grouping",
+            "description": "Group related activities and processes within the same stage to maintain coherence and efficiency.",
+            "example": "In a loan application, group all verification activities (income, credit, employment) in a 'Verification' stage rather than spreading them across multiple stages."
+          },
+          {
+            "principle": "Clear Entry/Exit Criteria",
+            "description": "Define clear conditions for when a case enters and exits each stage.",
+            "example": "A case enters 'Review' stage when all required documents are submitted, and exits when approval decision is made."
+          },
+          {
+            "principle": "Appropriate Granularity",
+            "description": "Balance between too many stages (overwhelming) and too few stages (not enough visibility).",
+            "recommendation": "Typically 3-7 stages work well for most business processes."
+          }
+        ]
+      },
+      {
+        "title": "Configuring Case Stages in PEGA",
+        "content": "PEGA provides powerful tools for configuring case stages with various properties and behaviors.",
+        "configuration_options": [
+          {
+            "option": "Stage Properties",
+            "description": "Basic stage configuration including name, description, and display settings.",
+            "settings": [
+              "Stage name and identifier",
+              "Display name for user interfaces",
+              "Stage description and purpose",
+              "Stage icon and color coding",
+              "Estimated duration and SLA settings"
+            ]
+          },
+          {
+            "option": "Entry Conditions",
+            "description": "Rules that determine when a case can enter a particular stage.",
+            "examples": [
+              "All required fields are completed",
+              "Previous stage processes are finished",
+              "Specific business conditions are met",
+              "User permissions allow stage entry"
+            ]
+          },
+          {
+            "option": "Exit Conditions",
+            "description": "Rules that determine when a case can leave a stage and move to the next.",
+            "examples": [
+              "All stage processes are completed",
+              "Required approvals are obtained",
+              "Quality checks pass",
+              "Business milestones are achieved"
+            ]
+          },
+          {
+            "option": "Stage Processes",
+            "description": "The workflows and activities that occur within each stage.",
+            "components": [
+              "Primary processes that must be completed",
+              "Optional processes that may be triggered",
+              "Exception handling processes",
+              "Escalation and SLA processes"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stage Transitions and Flow Control",
+        "content": "Understanding how cases move between stages is crucial for designing smooth and efficient processes.",
+        "transition_types": [
+          {
+            "type": "Automatic Transitions",
+            "description": "Cases move to the next stage automatically when exit conditions are met.",
+            "use_cases": [
+              "When all required data is collected",
+              "When automated processing completes",
+              "When time-based conditions are met"
+            ],
+            "benefits": ["Reduces manual intervention", "Ensures consistent processing", "Improves efficiency"]
+          },
+          {
+            "type": "Manual Transitions",
+            "description": "Users explicitly move cases to the next stage through user actions.",
+            "use_cases": [
+              "When human judgment is required",
+              "When quality review is needed",
+              "When business approval is required"
+            ],
+            "benefits": ["Provides human oversight", "Allows for quality control", "Enables business judgment"]
+          },
+          {
+            "type": "Conditional Transitions",
+            "description": "Cases move to different stages based on business conditions or data values.",
+            "use_cases": [
+              "High-value cases go to special review",
+              "Different product types follow different paths",
+              "Error conditions trigger exception handling"
+            ],
+            "benefits": ["Enables business logic", "Supports complex routing", "Handles exceptions gracefully"]
+          }
+        ]
+      },
+      {
+        "title": "Best Practices for Case Types and Stages",
+        "content": "Follow these best practices to create effective and maintainable case type designs.",
+        "best_practices": [
+          {
+            "category": "Design Practices",
+            "practices": [
+              "Start with the business process, not the technology",
+              "Involve business stakeholders in stage design",
+              "Keep stage names business-friendly and intuitive",
+              "Design for the most common scenarios first",
+              "Plan for exceptions and edge cases"
+            ]
+          },
+          {
+            "category": "Implementation Practices",
+            "practices": [
+              "Use consistent naming conventions across case types",
+              "Document stage purposes and criteria clearly",
+              "Test stage transitions thoroughly",
+              "Implement proper error handling",
+              "Monitor stage performance and bottlenecks"
+            ]
+          },
+          {
+            "category": "Maintenance Practices",
+            "practices": [
+              "Regularly review and optimize stage design",
+              "Gather feedback from users and stakeholders",
+              "Monitor case metrics and identify improvements",
+              "Keep documentation up to date",
+              "Plan for future enhancements and changes"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Common Stage Design Patterns",
+        "content": "Learn from common patterns that work well across different types of business processes.",
+        "patterns": [
+          {
+            "pattern": "Linear Progression",
+            "description": "Cases move through stages in a fixed sequence from start to finish.",
+            "example": "Employee Onboarding: Application → Background Check → Documentation → Training → Completion",
+            "when_to_use": "Simple, predictable processes with clear sequential steps",
+            "pros": ["Easy to understand", "Simple to implement", "Clear progress tracking"],
+            "cons": ["Limited flexibility", "May not handle exceptions well"]
+          },
+          {
+            "pattern": "Parallel Processing",
+            "description": "Multiple activities occur simultaneously in the same stage or across different stages.",
+            "example": "Loan Processing: Credit Check and Income Verification happen simultaneously",
+            "when_to_use": "When independent activities can be done concurrently to save time",
+            "pros": ["Faster processing", "Better resource utilization", "Improved efficiency"],
+            "cons": ["More complex coordination", "Potential synchronization issues"]
+          },
+          {
+            "pattern": "Conditional Branching",
+            "description": "Cases follow different paths based on data values or business conditions.",
+            "example": "Insurance Claims: Simple claims go to Auto-Processing, Complex claims go to Manual Review",
+            "when_to_use": "When different types of cases require different handling approaches",
+            "pros": ["Optimized processing", "Better resource allocation", "Handles complexity well"],
+            "cons": ["More complex design", "Requires careful condition management"]
+          },
+          {
+            "pattern": "Review and Rework",
+            "description": "Cases can return to previous stages for corrections or additional work.",
+            "example": "Document Review: Draft → Review → Rework (if needed) → Approval",
+            "when_to_use": "When quality control or iterative refinement is required",
+            "pros": ["Quality assurance", "Handles corrections gracefully", "Supports iteration"],
+            "cons": ["Potential for loops", "May extend processing time"]
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Case types define the structure and behavior of work categories",
+        "Stages represent major phases in a case's lifecycle",
+        "Good stage design uses business-meaningful names and logical grouping",
+        "Entry and exit conditions control stage transitions",
+        "Different transition types serve different business needs",
+        "Common patterns can guide effective stage design"
+      ]
+    },
+    "next_steps": {
+      "title": "What's Next?",
+      "text": "Now that you understand case types and stages, you can explore more advanced topics like user interface design and data validation to create complete, user-friendly applications.",
+      "recommended_reading": [
+        "UI Design Fundamentals",
+        "Basic Validations",
+        "Data Modeling Basics"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/case-types-stages",
+  "resources": [
+    {
+      "title": "Case Type Design Guide",
+      "url": "https://docs.pega.com/bundle/platform/page/platform/case-management/case-type-design.html",
+      "type": "documentation"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["case-types", "stages", "lifecycle", "design-patterns", "best-practices"]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "pega-platform-apis",
+  "title": "PEGA Platform APIs and Extensions Quiz",
+  "description": "Test your knowledge of PEGA Platform APIs, custom extensions, and API development practices",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which PEGA component is primarily used for implementing REST services?",
+      "type": "multiple-choice",
+      "options": [
+        "Data Pages",
+        "Service Rules with REST service types",
+        "Case Types",
+        "Flow Rules"
+      ],
+      "correct_answer": 1,
+      "explanation": "Service Rules with REST service types are the primary component for implementing REST services in PEGA, supporting various HTTP methods and data formats."
+    },
+    {
+      "id": 2,
+      "question": "What is the main advantage of SOAP services over REST services in enterprise environments?",
+      "type": "multiple-choice",
+      "options": [
+        "Faster performance",
+        "Smaller message size",
+        "Formal contracts through WSDL and advanced security features",
+        "Simpler implementation"
+      ],
+      "correct_answer": 2,
+      "explanation": "SOAP services provide formal contracts through WSDL, XML Schema validation, and WS-Security support, making them ideal for enterprise integrations requiring strict contracts and advanced security."
+    },
+    {
+      "id": 3,
+      "question": "Which authentication method is commonly used for securing PEGA APIs?",
+      "type": "multiple-choice",
+      "options": [
+        "Basic authentication only",
+        "JWT (JSON Web Tokens) with Bearer authentication",
+        "No authentication required",
+        "Simple password authentication"
+      ],
+      "correct_answer": 1,
+      "explanation": "JWT tokens with Bearer authentication provide secure, stateless authentication for APIs, allowing for distributed authentication and authorization."
+    },
+    {
+      "id": 4,
+      "question": "What is the purpose of API versioning in PEGA applications?",
+      "type": "multiple-choice",
+      "options": [
+        "To reduce server load",
+        "To ensure backward compatibility while allowing API evolution",
+        "To improve database performance",
+        "To simplify user interfaces"
+      ],
+      "correct_answer": 1,
+      "explanation": "API versioning ensures backward compatibility for existing clients while allowing APIs to evolve with new features and improvements, preventing breaking changes."
+    },
+    {
+      "id": 5,
+      "question": "Which practice is essential for API security in PEGA?",
+      "type": "multiple-choice",
+      "options": [
+        "Exposing all data without filtering",
+        "Implementing authentication, authorization, and input validation",
+        "Allowing unlimited API calls",
+        "Using only GET requests"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive API security requires authentication to verify identity, authorization to control access, and input validation to prevent injection attacks and malformed requests."
+    },
+    {
+      "id": 6,
+      "question": "What is the benefit of implementing rate limiting for PEGA APIs?",
+      "type": "multiple-choice",
+      "options": [
+        "Faster response times",
+        "Prevention of service abuse and ensuring fair resource usage",
+        "Smaller response payloads",
+        "Simplified error handling"
+      ],
+      "correct_answer": 1,
+      "explanation": "Rate limiting prevents API abuse by controlling the number of requests from clients, ensuring fair resource usage and protecting the system from overload."
+    },
+    {
+      "id": 7,
+      "question": "Which tool specification is commonly used for API documentation?",
+      "type": "multiple-choice",
+      "options": [
+        "XML Schema",
+        "OpenAPI/Swagger specification",
+        "JSON Schema only",
+        "HTML documentation"
+      ],
+      "correct_answer": 1,
+      "explanation": "OpenAPI/Swagger specification provides a standard way to describe REST APIs, enabling automatic documentation generation, client SDK creation, and interactive API testing."
+    },
+    {
+      "id": 8,
+      "question": "What should be included in comprehensive API testing?",
+      "type": "multiple-choice",
+      "options": [
+        "Only functional testing",
+        "Unit tests, integration tests, performance tests, and security tests",
+        "Manual testing only",
+        "Database testing only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive API testing includes unit tests for individual endpoints, integration tests for end-to-end scenarios, performance tests for load handling, and security tests for vulnerability assessment."
+    }
+  ]
+}

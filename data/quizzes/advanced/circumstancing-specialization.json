@@ -1,0 +1,123 @@
+{
+  "id": "circumstancing-specialization",
+  "title": "Circumstancing & Specialization - Quiz",
+  "description": "Test your mastery of advanced rule specialization and circumstancing in enterprise PEGA applications",
+  "level": "advanced",
+  "lesson_reference": "/tutorials/advanced/circumstancing-specialization",
+  "passing_score": 80,
+  "time_limit": 30,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "In a multi-dimensional circumstancing strategy, what should be the primary consideration when defining resolution priority?",
+      "options": [
+        "Alphabetical order of dimension names",
+        "Business impact and regulatory compliance requirements",
+        "Technical implementation complexity",
+        "Database performance optimization"
+      ],
+      "correct_answer": 1,
+      "explanation": "Resolution priority should be based on business impact and regulatory compliance requirements, ensuring that the most critical business rules take precedence in rule resolution.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "What is the main advantage of hierarchical rule specialization in enterprise architectures?",
+      "options": [
+        "Reduces the total number of rules",
+        "Enables targeted customizations while maintaining base functionality inheritance",
+        "Improves database query performance",
+        "Simplifies user interface design"
+      ],
+      "correct_answer": 1,
+      "explanation": "Hierarchical specialization allows specialized rules to inherit base functionality while enabling targeted customizations, providing flexibility without sacrificing consistency.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "When implementing dynamic rule selection based on system load, what is the most appropriate strategy?",
+      "options": [
+        "Always use the most complex rule variant",
+        "Switch to performance-optimized rule variants when system load exceeds thresholds",
+        "Disable rule resolution entirely",
+        "Use random rule selection"
+      ],
+      "correct_answer": 1,
+      "explanation": "Performance-optimized rule variants should be used when system load exceeds thresholds, ensuring application responsiveness while maintaining business logic integrity.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "What is the most critical factor in rule cache optimization for enterprise deployments?",
+      "options": [
+        "Cache size maximization",
+        "Intelligent cache warming and partitioning based on business dimensions",
+        "Disabling caching entirely",
+        "Using only memory-based caching"
+      ],
+      "correct_answer": 1,
+      "explanation": "Intelligent cache warming and partitioning based on business dimensions ensures optimal cache performance by pre-loading frequently used rules and organizing cache efficiently.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "In a global financial services application with regional compliance requirements, how should circumstancing be structured?",
+      "options": [
+        "Separate applications for each region",
+        "Multi-layered hierarchy with regulatory tier having highest priority",
+        "Single rule set with runtime checks",
+        "Database-level partitioning only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-layered hierarchy with regulatory compliance having highest priority ensures that legal requirements are always met while allowing regional and business unit customizations.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "What is the primary risk of over-circumstancing in enterprise applications?",
+      "options": [
+        "Improved performance",
+        "Maintenance complexity and inconsistent business logic",
+        "Better user experience",
+        "Enhanced security"
+      ],
+      "correct_answer": 1,
+      "explanation": "Over-circumstancing leads to maintenance complexity and potential inconsistencies in business logic across different circumstances, making the system harder to manage and debug.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "For distributed multi-node PEGA deployments, what caching strategy is most appropriate?",
+      "options": [
+        "Local caching only on each node",
+        "Distributed caching with intelligent cache synchronization",
+        "No caching to avoid consistency issues",
+        "Database-only caching"
+      ],
+      "correct_answer": 1,
+      "explanation": "Distributed caching with intelligent synchronization ensures cache consistency across nodes while maintaining performance benefits in multi-node environments.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "When monitoring rule resolution performance in production, what metric is most critical?",
+      "options": [
+        "Total number of rules",
+        "Cache hit ratio and rule resolution latency",
+        "Database connection count",
+        "User interface response time only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Cache hit ratio and rule resolution latency are critical metrics that directly impact application performance and user experience in production environments.",
+      "difficulty": "advanced"
+    }
+  ]
+}

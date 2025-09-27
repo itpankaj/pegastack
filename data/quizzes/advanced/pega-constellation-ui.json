@@ -1,0 +1,111 @@
+{
+  "id": "pega-constellation-ui",
+  "title": "PEGA Constellation UI Framework Quiz",
+  "description": "Test your knowledge of the next-generation PEGA Constellation UI framework and modern user interface development",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a key architectural component of PEGA Constellation UI?",
+      "type": "multiple-choice",
+      "options": [
+        "Server-side rendering only",
+        "Component Library with reusable UI elements and Design System",
+        "Database-driven templates",
+        "Static HTML pages"
+      ],
+      "correct_answer": 1,
+      "explanation": "PEGA Constellation UI features a Component Library with reusable UI elements, Design System for consistent visual language, and Theme Engine for customizable styling."
+    },
+    {
+      "id": 2,
+      "question": "Which modern web technologies are used for building custom Constellation components?",
+      "type": "multiple-choice",
+      "options": [
+        "Only traditional JavaScript",
+        "React, Web Components, and TypeScript",
+        "Server-side includes only",
+        "Flash and Silverlight"
+      ],
+      "correct_answer": 1,
+      "explanation": "Constellation UI components are built using modern web technologies including React, Web Components, and TypeScript, following a declarative approach with clear separation of concerns."
+    },
+    {
+      "id": 3,
+      "question": "What is the primary purpose of design tokens in Constellation UI?",
+      "type": "multiple-choice",
+      "options": [
+        "Authentication and authorization",
+        "Database connection management",
+        "Named entities that store visual design attributes in a platform-agnostic way",
+        "Network communication protocols"
+      ],
+      "correct_answer": 2,
+      "explanation": "Design tokens are named entities that store visual design attributes like colors, typography, and spacing values in a platform-agnostic way, enabling consistent theming and branding."
+    },
+    {
+      "id": 4,
+      "question": "Which CSS techniques does Constellation UI use for responsive design?",
+      "type": "multiple-choice",
+      "options": [
+        "Table-based layouts only",
+        "CSS Grid, Flexbox, and container queries",
+        "Float-based layouts",
+        "Fixed pixel dimensions"
+      ],
+      "correct_answer": 1,
+      "explanation": "Constellation UI implements responsive design using modern CSS techniques including CSS Grid, Flexbox, and container queries, with built-in breakpoints and fluid typography."
+    },
+    {
+      "id": 5,
+      "question": "What accessibility standard should Constellation UI components follow?",
+      "type": "multiple-choice",
+      "options": [
+        "No accessibility standards required",
+        "WCAG 2.1 guidelines for inclusive design",
+        "Only basic color contrast requirements",
+        "Accessibility is handled automatically"
+      ],
+      "correct_answer": 1,
+      "explanation": "Constellation UI components should follow WCAG 2.1 accessibility guidelines, using semantic HTML elements, proper ARIA attributes, and inclusive design practices."
+    },
+    {
+      "id": 6,
+      "question": "Which performance optimization technique is used for handling large datasets in Constellation UI?",
+      "type": "multiple-choice",
+      "options": [
+        "Loading all data at once",
+        "Virtual scrolling to render only visible items",
+        "Using synchronous data loading",
+        "Disabling all optimizations"
+      ],
+      "correct_answer": 1,
+      "explanation": "Virtual scrolling is a key optimization technique that renders only the visible items in large lists, improving performance by reducing DOM nodes and memory usage."
+    },
+    {
+      "id": 7,
+      "question": "How does Constellation UI support different themes and branding?",
+      "type": "multiple-choice",
+      "options": [
+        "Hardcoded styles only",
+        "CSS custom properties and design tokens for runtime theme switching",
+        "Separate codebases for each theme",
+        "Manual style replacement"
+      ],
+      "correct_answer": 1,
+      "explanation": "Constellation UI's theming system uses CSS custom properties and design tokens to enable comprehensive customization, supporting runtime theme switching and multiple brand variations."
+    },
+    {
+      "id": 8,
+      "question": "Which approach ensures component maintainability in Constellation UI?",
+      "type": "multiple-choice",
+      "options": [
+        "Creating tightly coupled components",
+        "Following consistent design patterns and using reusable component libraries",
+        "Building components for single use cases only",
+        "Avoiding component documentation"
+      ],
+      "correct_answer": 1,
+      "explanation": "Maintainable components require consistent design patterns, reusable component libraries, proper documentation, and following separation of concerns between presentation, logic, and data."
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "pega-constellation-ui",
+  "title": "PEGA Constellation UI Framework",
+  "description": "Master the next-generation PEGA Constellation UI framework for building modern, responsive, and accessible user interfaces",
+  "duration": "140 minutes",
+  "level": "advanced",
+  "prerequisites": [
+    "User Interface Advanced Concepts",
+    "PEGA Platform APIs",
+    "Cloud-Native PEGA"
+  ],
+  "learning_objectives": [
+    "Understand PEGA Constellation UI architecture and design principles",
+    "Build custom components using Constellation framework",
+    "Implement responsive design patterns and accessibility features",
+    "Master theming and branding in Constellation UI",
+    "Integrate with modern JavaScript frameworks and libraries",
+    "Optimize performance and user experience in Constellation applications"
+  ],
+  "sections": [
+    {
+      "title": "Constellation UI Architecture Overview",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA Constellation UI represents a modern, component-based approach to building user interfaces in PEGA applications. It leverages web standards, modern JavaScript frameworks, and responsive design principles to deliver superior user experiences."
+        },
+        {
+          "type": "text",
+          "data": "Key architectural components include: Component Library with reusable UI elements, Design System for consistent visual language, Theme Engine for customizable styling, Accessibility Framework for inclusive design, and Performance Optimization features for fast loading and smooth interactions."
+        }
+      ]
+    },
+    {
+      "title": "Building Custom Components",
+      "content": [
+        {
+          "type": "text",
+          "data": "Custom components in Constellation UI are built using modern web technologies including React, Web Components, and TypeScript. Components follow a declarative approach with clear separation of concerns between presentation, logic, and data."
+        },
+        {
+          "type": "code",
+          "language": "typescript",
+          "data": "// Custom Constellation Component Example\nimport React, { useState, useEffect } from 'react';\nimport { ComponentProps, PegaComponent } from '@pega/constellation-ui';\n\ninterface CustomerCardProps extends ComponentProps {\n  customerId: string;\n  displayMode: 'summary' | 'detailed';\n  onCustomerSelect?: (customerId: string) => void;\n}\n\nconst CustomerCard: PegaComponent<CustomerCardProps> = ({\n  customerId,\n  displayMode = 'summary',\n  onCustomerSelect,\n  ...props\n}) => {\n  const [customerData, setCustomerData] = useState(null);\n  const [isLoading, setIsLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  useEffect(() => {\n    const fetchCustomerData = async () => {\n      try {\n        setIsLoading(true);\n        const response = await fetch(`/api/customers/${customerId}`);\n        if (!response.ok) {\n          throw new Error('Failed to fetch customer data');\n        }\n        const data = await response.json();\n        setCustomerData(data);\n      } catch (err) {\n        setError(err.message);\n      } finally {\n        setIsLoading(false);\n      }\n    };\n\n    if (customerId) {\n      fetchCustomerData();\n    }\n  }, [customerId]);\n\n  const handleCardClick = () => {\n    if (onCustomerSelect) {\n      onCustomerSelect(customerId);\n    }\n  };\n\n  if (isLoading) {\n    return (\n      <div className=\"customer-card loading\" {...props}>\n        <div className=\"skeleton-loader\" />\n      </div>\n    );\n  }\n\n  if (error) {\n    return (\n      <div className=\"customer-card error\" {...props}>\n        <div className=\"error-message\">{error}</div>\n      </div>\n    );\n  }\n\n  return (\n    <div \n      className={`customer-card ${displayMode}`}\n      onClick={handleCardClick}\n      role=\"button\"\n      tabIndex={0}\n      onKeyPress={(e) => e.key === 'Enter' && handleCardClick()}\n      aria-label={`Customer: ${customerData?.name}`}\n      {...props}\n    >\n      <div className=\"customer-avatar\">\n        <img \n          src={customerData?.avatar || '/default-avatar.png'}\n          alt={`${customerData?.name} avatar`}\n          loading=\"lazy\"\n        />\n      </div>\n      \n      <div className=\"customer-info\">\n        <h3 className=\"customer-name\">{customerData?.name}</h3>\n        <p className=\"customer-email\">{customerData?.email}</p>\n        \n        {displayMode === 'detailed' && (\n          <>\n            <div className=\"customer-status\">\n              <span className={`status-badge ${customerData?.status?.toLowerCase()}`}>\n                {customerData?.status}\n              </span>\n            </div>\n            \n            <div className=\"customer-metrics\">\n              <div className=\"metric\">\n                <span className=\"label\">Cases:</span>\n                <span className=\"value\">{customerData?.caseCount || 0}</span>\n              </div>\n              <div className=\"metric\">\n                <span className=\"label\">Last Activity:</span>\n                <span className=\"value\">{customerData?.lastActivity}</span>\n              </div>\n            </div>\n          </>\n        )}\n      </div>\n      \n      <div className=\"customer-actions\">\n        <button \n          className=\"action-button\"\n          aria-label=\"View customer details\"\n        >\n          <i className=\"icon-arrow-right\" />\n        </button>\n      </div>\n    </div>\n  );\n};\n\n// Component registration\nCustomerCard.displayName = 'CustomerCard';\nCustomerCard.defaultProps = {\n  displayMode: 'summary'\n};\n\nexport default CustomerCard;"
+        }
+      ]
+    },
+    {
+      "title": "Responsive Design and Accessibility",
+      "content": [
+        {
+          "type": "text",
+          "data": "Constellation UI implements responsive design using CSS Grid, Flexbox, and container queries. The framework provides built-in breakpoints, fluid typography, and adaptive components that work seamlessly across all device sizes."
+        },
+        {
+          "type": "code",
+          "language": "css",
+          "data": "/* Responsive Design with Constellation UI */\n.customer-card {\n  /* Base mobile-first styles */\n  display: grid;\n  grid-template-columns: 60px 1fr auto;\n  gap: 1rem;\n  padding: 1rem;\n  background: var(--constellation-surface-primary);\n  border-radius: var(--constellation-border-radius-medium);\n  box-shadow: var(--constellation-shadow-card);\n  transition: all 0.2s ease-in-out;\n  \n  /* Accessibility */\n  outline-offset: 2px;\n  \n  /* Focus states */\n  &:focus-visible {\n    outline: 2px solid var(--constellation-focus-color);\n    outline-offset: 2px;\n  }\n  \n  /* Hover states */\n  &:hover {\n    transform: translateY(-2px);\n    box-shadow: var(--constellation-shadow-card-elevated);\n  }\n  \n  /* Loading state */\n  &.loading {\n    pointer-events: none;\n    opacity: 0.7;\n  }\n  \n  /* Error state */\n  &.error {\n    border-left: 4px solid var(--constellation-color-error);\n  }\n}\n\n.customer-avatar {\n  img {\n    width: 100%;\n    height: auto;\n    aspect-ratio: 1;\n    border-radius: 50%;\n    object-fit: cover;\n  }\n}\n\n.customer-info {\n  min-width: 0; /* Prevent flex item overflow */\n  \n  .customer-name {\n    font-size: var(--constellation-font-size-heading-small);\n    font-weight: var(--constellation-font-weight-semibold);\n    margin: 0 0 0.25rem 0;\n    \n    /* Text truncation */\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n  \n  .customer-email {\n    color: var(--constellation-color-text-secondary);\n    font-size: var(--constellation-font-size-body-small);\n    margin: 0;\n  }\n}\n\n/* Tablet and larger screens */\n@media (min-width: 768px) {\n  .customer-card {\n    grid-template-columns: 80px 1fr auto;\n    padding: 1.5rem;\n    \n    &.detailed {\n      grid-template-columns: 80px 2fr 1fr auto;\n    }\n  }\n  \n  .customer-metrics {\n    display: flex;\n    gap: 1rem;\n    margin-top: 0.5rem;\n    \n    .metric {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      \n      .label {\n        font-size: var(--constellation-font-size-caption);\n        color: var(--constellation-color-text-secondary);\n        margin-bottom: 0.25rem;\n      }\n      \n      .value {\n        font-weight: var(--constellation-font-weight-semibold);\n        color: var(--constellation-color-text-primary);\n      }\n    }\n  }\n}\n\n/* Desktop and larger screens */\n@media (min-width: 1200px) {\n  .customer-card {\n    &.detailed {\n      grid-template-columns: 100px 2fr 1fr 1fr auto;\n    }\n  }\n}\n\n/* Accessibility - Reduced motion */\n@media (prefers-reduced-motion: reduce) {\n  .customer-card {\n    transition: none;\n    \n    &:hover {\n      transform: none;\n    }\n  }\n}\n\n/* High contrast mode */\n@media (prefers-contrast: high) {\n  .customer-card {\n    border: 1px solid;\n    \n    &:focus-visible {\n      outline-width: 3px;\n    }\n  }\n}\n\n/* Print styles */\n@media print {\n  .customer-card {\n    box-shadow: none;\n    border: 1px solid #ccc;\n    break-inside: avoid;\n  }\n  \n  .customer-actions {\n    display: none;\n  }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Theming and Branding",
+      "content": [
+        {
+          "type": "text",
+          "data": "Constellation UI's theming system uses CSS custom properties and design tokens to enable comprehensive customization. Themes can be applied at runtime, supporting multiple brand variations and dark/light mode switching."
+        },
+        {
+          "type": "code",
+          "language": "css",
+          "data": "/* Custom Theme Configuration */\n:root {\n  /* Brand Colors */\n  --constellation-brand-primary: #1f4e79;\n  --constellation-brand-secondary: #2d89ef;\n  --constellation-brand-accent: #ff8c00;\n  \n  /* Semantic Color System */\n  --constellation-color-primary: var(--constellation-brand-primary);\n  --constellation-color-primary-hover: #2a5a87;\n  --constellation-color-primary-active: #1a4269;\n  --constellation-color-primary-disabled: #8ba5c1;\n  \n  --constellation-color-secondary: var(--constellation-brand-secondary);\n  --constellation-color-accent: var(--constellation-brand-accent);\n  \n  /* Status Colors */\n  --constellation-color-success: #107c10;\n  --constellation-color-warning: #ff8c00;\n  --constellation-color-error: #d13438;\n  --constellation-color-info: #0078d4;\n  \n  /* Surface Colors */\n  --constellation-surface-primary: #ffffff;\n  --constellation-surface-secondary: #faf9f8;\n  --constellation-surface-tertiary: #f3f2f1;\n  --constellation-surface-elevated: #ffffff;\n  \n  /* Text Colors */\n  --constellation-color-text-primary: #323130;\n  --constellation-color-text-secondary: #605e5c;\n  --constellation-color-text-tertiary: #8a8886;\n  --constellation-color-text-disabled: #a19f9d;\n  --constellation-color-text-on-primary: #ffffff;\n  \n  /* Typography Scale */\n  --constellation-font-size-caption: 0.75rem;\n  --constellation-font-size-body-small: 0.875rem;\n  --constellation-font-size-body: 1rem;\n  --constellation-font-size-body-large: 1.125rem;\n  --constellation-font-size-heading-small: 1.25rem;\n  --constellation-font-size-heading-medium: 1.5rem;\n  --constellation-font-size-heading-large: 2rem;\n  \n  /* Font Weights */\n  --constellation-font-weight-normal: 400;\n  --constellation-font-weight-medium: 500;\n  --constellation-font-weight-semibold: 600;\n  --constellation-font-weight-bold: 700;\n  \n  /* Spacing Scale */\n  --constellation-spacing-xs: 0.25rem;\n  --constellation-spacing-sm: 0.5rem;\n  --constellation-spacing-md: 1rem;\n  --constellation-spacing-lg: 1.5rem;\n  --constellation-spacing-xl: 2rem;\n  --constellation-spacing-xxl: 3rem;\n  \n  /* Border Radius */\n  --constellation-border-radius-small: 4px;\n  --constellation-border-radius-medium: 8px;\n  --constellation-border-radius-large: 12px;\n  --constellation-border-radius-full: 50%;\n  \n  /* Shadows */\n  --constellation-shadow-card: 0 2px 4px rgba(0, 0, 0, 0.1);\n  --constellation-shadow-card-elevated: 0 4px 8px rgba(0, 0, 0, 0.15);\n  --constellation-shadow-modal: 0 8px 24px rgba(0, 0, 0, 0.2);\n  \n  /* Focus */\n  --constellation-focus-color: #0078d4;\n  --constellation-focus-width: 2px;\n}\n\n/* Dark Theme */\n[data-theme=\"dark\"] {\n  /* Dark mode color overrides */\n  --constellation-surface-primary: #1f1f1f;\n  --constellation-surface-secondary: #2d2d2d;\n  --constellation-surface-tertiary: #3d3d3d;\n  --constellation-surface-elevated: #2d2d2d;\n  \n  --constellation-color-text-primary: #ffffff;\n  --constellation-color-text-secondary: #e1dfdd;\n  --constellation-color-text-tertiary: #c8c6c4;\n  --constellation-color-text-disabled: #a19f9d;\n  \n  --constellation-shadow-card: 0 2px 4px rgba(0, 0, 0, 0.3);\n  --constellation-shadow-card-elevated: 0 4px 8px rgba(0, 0, 0, 0.4);\n  --constellation-shadow-modal: 0 8px 24px rgba(0, 0, 0, 0.5);\n}\n\n/* High Contrast Theme */\n[data-theme=\"high-contrast\"] {\n  --constellation-color-primary: #000000;\n  --constellation-color-text-primary: #000000;\n  --constellation-color-text-secondary: #000000;\n  --constellation-surface-primary: #ffffff;\n  --constellation-border-width: 2px;\n}\n\n/* Brand-specific theme variations */\n.theme-healthcare {\n  --constellation-brand-primary: #0078d4;\n  --constellation-brand-secondary: #40e0d0;\n  --constellation-brand-accent: #00bcf2;\n}\n\n.theme-finance {\n  --constellation-brand-primary: #004578;\n  --constellation-brand-secondary: #0078d4;\n  --constellation-brand-accent: #ffd700;\n}\n\n.theme-retail {\n  --constellation-brand-primary: #e74c3c;\n  --constellation-brand-secondary: #f39c12;\n  --constellation-brand-accent: #2ecc71;\n}"
+        }
+      ]
+    },
+    {
+      "title": "Performance Optimization",
+      "content": [
+        {
+          "type": "text",
+          "data": "Constellation UI implements various performance optimization techniques including code splitting, lazy loading, virtual scrolling for large lists, and efficient re-rendering strategies. These optimizations ensure fast load times and smooth user interactions."
+        },
+        {
+          "type": "text",
+          "data": "Key optimization strategies include: Bundle splitting for smaller initial downloads, Component lazy loading for better perceived performance, Virtual scrolling for handling large datasets, Memoization for expensive calculations, and Progressive loading for enhanced user experience."
+        }
+      ]
+    },
+    {
+      "title": "Integration with Modern Frameworks",
+      "content": [
+        {
+          "type": "text",
+          "data": "Constellation UI provides seamless integration with modern JavaScript frameworks and libraries including React, Angular, Vue.js, and vanilla JavaScript. This flexibility allows teams to choose the best tools for their specific requirements."
+        },
+        {
+          "type": "text",
+          "data": "Integration patterns include: Framework-specific wrapper components, Custom hooks for state management, Event handling adapters, and Build tool configurations for optimal bundling and deployment."
+        }
+      ]
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Design System",
+      "definition": "A comprehensive set of design standards, components, and guidelines that ensure consistency across all user interfaces in an application."
+    },
+    {
+      "term": "Design Tokens",
+      "definition": "Named entities that store visual design attributes like colors, typography, and spacing values in a platform-agnostic way."
+    },
+    {
+      "term": "Component Library",
+      "definition": "A collection of reusable UI components that can be composed together to build complex user interfaces efficiently."
+    },
+    {
+      "term": "Progressive Enhancement",
+      "definition": "A design philosophy that emphasizes accessibility and basic functionality first, then adds enhanced features for capable browsers and devices."
+    },
+    {
+      "term": "Virtual Scrolling",
+      "definition": "A technique that renders only the visible items in large lists, improving performance by reducing DOM nodes and memory usage."
+    }
+  ],
+  "best_practices": [
+    "Follow accessibility guidelines (WCAG 2.1) for inclusive design",
+    "Use semantic HTML elements and proper ARIA attributes",
+    "Implement responsive design with mobile-first approach",
+    "Optimize performance with code splitting and lazy loading",
+    "Maintain consistent design patterns across all components",
+    "Use design tokens for maintainable theming",
+    "Test components across different browsers and devices",
+    "Implement proper error handling and loading states"
+  ],
+  "common_pitfalls": [
+    "Not following accessibility best practices leading to exclusion",
+    "Creating inconsistent user experience across different components",
+    "Over-engineering components making them difficult to maintain",
+    "Not optimizing for performance leading to slow user interactions",
+    "Ignoring responsive design principles for mobile users",
+    "Poor error handling and loading state management",
+    "Not testing thoroughly across different browsers and devices",
+    "Creating components that are too tightly coupled to specific use cases"
+  ]
+}

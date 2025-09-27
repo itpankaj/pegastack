@@ -1,0 +1,109 @@
+{
+  "title": "DevOps & Deployment Pipelines",
+  "level": "intermediate",
+  "slug": "devops-deployment-pipelines",
+  "description": "Master modern DevOps practices, CI/CD pipelines, automated testing, and deployment strategies for PEGA applications",
+  "estimatedTime": "60 min",
+  "prerequisites": ["Background Processing", "Testing & Debugging", "Performance Optimization"],
+  "objectives": [
+    "Design comprehensive CI/CD pipelines",
+    "Implement automated testing strategies",
+    "Configure deployment environments",
+    "Manage configuration and secrets",
+    "Monitor and optimize deployment performance"
+  ],
+  "content": {
+    "introduction": "Modern PEGA applications require robust DevOps practices to ensure reliable, scalable, and secure deployments. This lesson covers comprehensive DevOps strategies including CI/CD pipelines, automated testing, deployment automation, and monitoring.",
+    "sections": [
+      {
+        "title": "CI/CD Pipeline Architecture",
+        "content": "Design comprehensive CI/CD pipelines that automate the entire software delivery lifecycle from code commit to production deployment. Understand pipeline stages, quality gates, and deployment strategies.",
+        "pipeline": [
+          "Source code management and version control",
+          "Automated build and compilation",
+          "Unit testing and integration testing",
+          "Security scanning and vulnerability assessment",
+          "Deployment to staging and production environments"
+        ]
+      },
+      {
+        "title": "Automated Testing Strategies",
+        "content": "Implement comprehensive automated testing including unit tests, integration tests, end-to-end tests, and performance tests. Understand testing frameworks and best practices.",
+        "testing": [
+          "Unit testing for individual components",
+          "Integration testing for system interactions",
+          "End-to-end testing for user workflows",
+          "Performance testing for scalability",
+          "Security testing for vulnerability assessment"
+        ]
+      },
+      {
+        "title": "Deployment Environments",
+        "content": "Configure and manage multiple deployment environments including development, testing, staging, and production. Understand environment-specific configurations and data management.",
+        "environments": [
+          "Development environment for daily work",
+          "Testing environment for quality assurance",
+          "Staging environment for pre-production validation",
+          "Production environment for live applications"
+        ]
+      },
+      {
+        "title": "Configuration and Secrets Management",
+        "content": "Manage application configurations and sensitive data across environments. Understand configuration management tools, secrets management, and environment-specific settings.",
+        "management": [
+          "Environment-specific configuration files",
+          "Secrets management with encryption",
+          "Database connection strings",
+          "API keys and service credentials",
+          "Feature flags and toggles"
+        ]
+      },
+      {
+        "title": "Monitoring and Observability",
+        "content": "Implement comprehensive monitoring and observability to track application performance, identify issues, and optimize deployments. Understand logging, metrics, and alerting.",
+        "monitoring": [
+          "Application performance monitoring",
+          "Infrastructure monitoring",
+          "Log aggregation and analysis",
+          "Alerting and notification systems",
+          "Real-time dashboards and reporting"
+        ]
+      },
+      {
+        "title": "Deployment Strategies",
+        "content": "Implement modern deployment strategies including blue-green deployments, canary releases, rolling updates, and rollback mechanisms to ensure reliable deployments.",
+        "strategies": [
+          "Blue-green deployments for zero-downtime",
+          "Canary releases for gradual rollouts",
+          "Rolling updates for incremental changes",
+          "Rollback mechanisms for quick recovery",
+          "A/B testing for feature validation"
+        ]
+      }
+    ]
+  },
+  "quiz": {
+    "id": "devops-deployment-pipelines-quiz",
+    "title": "DevOps & Deployment Pipelines Quiz",
+    "questions": 8,
+    "passingScore": 70
+  },
+  "resources": {
+    "documentation": [
+      {
+        "title": "PEGA DevOps Guide",
+        "url": "https://docs.pega.com/devops"
+      },
+      {
+        "title": "Deployment Automation",
+        "url": "https://docs.pega.com/deployment-automation"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Modern DevOps Practices",
+        "url": "https://academy.pega.com/devops-practices"
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "id": "rules-resolution",
+  "title": "Rules & Rule Resolution - Quiz",
+  "description": "Test your understanding of rules and rule resolution concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/rules-resolution",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of rule resolution in PEGA?",
+      "options": [
+        "To improve application performance",
+        "To determine which rule version to execute at runtime",
+        "To manage user permissions",
+        "To handle database connections"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Rule resolution is PEGA's mechanism for determining which version of a rule to execute at runtime based on factors like class hierarchy, ruleset availability, and circumstances."
+    },
+    {
+      "id": 2,
+      "question": "In the rule resolution algorithm, what factor is evaluated first?",
+      "options": [
+        "Circumstance qualification",
+        "Class hierarchy",
+        "Ruleset availability",
+        "Rule availability"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Class hierarchy is evaluated first in rule resolution. PEGA looks for the rule in the most specific class possible before moving up the inheritance chain."
+    },
+    {
+      "id": 3,
+      "question": "What is the significance of ruleset versions in rule resolution?",
+      "options": [
+        "They determine the order of rule execution",
+        "They control which version of a rule is selected",
+        "They manage user access permissions",
+        "They optimize database queries"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Ruleset versions determine which specific version of a rule is selected during resolution. Higher versions typically override lower versions when other factors are equal."
+    },
+    {
+      "id": 4,
+      "question": "When would you use circumstantial rule resolution?",
+      "options": [
+        "When you need different rule behavior based on runtime conditions",
+        "When optimizing database performance",
+        "When managing user sessions",
+        "When handling security permissions"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Circumstantial rule resolution allows different rule versions to be selected based on runtime conditions like customer type, region, or other business circumstances."
+    },
+    {
+      "id": 5,
+      "question": "What happens when multiple qualified rules are found during resolution?",
+      "options": [
+        "All rules are executed",
+        "The first rule found is selected",
+        "The most specific rule is selected based on resolution criteria",
+        "A random rule is selected"
+      ],
+      "correctAnswer": 2,
+      "explanation": "When multiple qualified rules are found, rule resolution selects the most specific rule based on criteria like class specificity, ruleset version, and circumstance matching."
+    },
+    {
+      "id": 6,
+      "question": "How does rule caching affect rule resolution performance?",
+      "options": [
+        "It has no impact on performance",
+        "It improves performance by avoiding repeated resolution calculations",
+        "It decreases performance due to memory usage",
+        "It only affects database queries"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Rule caching improves performance by storing resolution results, avoiding the need to recalculate which rule to use for frequently accessed rules."
+    },
+    {
+      "id": 7,
+      "question": "What is the role of the 'Availability' setting in rule resolution?",
+      "options": [
+        "It determines when the rule can be executed",
+        "It controls user access to the rule",
+        "It affects whether the rule is considered during resolution",
+        "It manages database connections"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Availability setting determines whether a rule is considered during rule resolution. Rules marked as 'Not Available' or 'Blocked' are excluded from resolution."
+    },
+    {
+      "id": 8,
+      "question": "In what order are the following evaluated during rule resolution: Class, Ruleset, Circumstance?",
+      "options": [
+        "Circumstance, Class, Ruleset",
+        "Class, Ruleset, Circumstance",
+        "Ruleset, Class, Circumstance",
+        "They are evaluated simultaneously"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Rule resolution evaluates factors in this order: Class hierarchy (most specific first), Ruleset availability and version, then Circumstance qualification."
+    }
+  ]
+}

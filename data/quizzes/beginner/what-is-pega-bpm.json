@@ -1,0 +1,168 @@
+{
+  "id": "what-is-pega-bpm",
+  "title": "What is PEGA BPM? - Quiz",
+  "description": "Test your understanding of PEGA BPM fundamentals and core concepts",
+  "level": "beginner",
+  "lesson_reference": "/tutorials/beginner/what-is-pega-bpm",
+  "passing_score": 70,
+  "time_limit": 15,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What does BPM stand for in PEGA BPM?",
+      "options": [
+        "Business Process Management",
+        "Business Performance Monitoring",
+        "Business Process Modeling",
+        "Business Platform Management"
+      ],
+      "correct_answer": 0,
+      "explanation": "BPM stands for Business Process Management. PEGA BPM is a comprehensive platform that enables organizations to design, execute, monitor, and optimize business processes.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "Which of the following is a key advantage of PEGA's low-code approach?",
+      "options": [
+        "Only developers can use it",
+        "It requires extensive programming knowledge",
+        "Business users can participate in application development",
+        "It only works with legacy systems"
+      ],
+      "correct_answer": 2,
+      "explanation": "PEGA's low-code approach makes it accessible to both business users and developers, enabling faster application development and better collaboration between IT and business teams.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "question": "PEGA BPM combines case management capabilities with traditional workflow management.",
+      "correct_answer": true,
+      "explanation": "True. PEGA BPM uniquely combines case management for complex, knowledge-intensive processes with traditional workflow management for structured processes.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "What is the primary focus of case management in PEGA?",
+      "options": [
+        "Simple, repetitive tasks",
+        "Complex, knowledge-intensive processes",
+        "Database management",
+        "User interface design"
+      ],
+      "correct_answer": 1,
+      "explanation": "Case management in PEGA is designed to handle complex, knowledge-intensive processes that require human judgment and decision-making, unlike simple workflow automation.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "Which of the following is NOT a key feature of PEGA BPM?",
+      "options": [
+        "Business Rules Management",
+        "Integration Capabilities",
+        "Built-in Analytics",
+        "Hardware Manufacturing"
+      ],
+      "correct_answer": 3,
+      "explanation": "Hardware Manufacturing is not a feature of PEGA BPM. PEGA is a software platform focused on business process management, not hardware production.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q6",
+      "type": "scenario",
+      "question": "A company wants to automate their customer service process that involves multiple departments, complex decision-making, and integration with various systems. Which PEGA capability would be most relevant?",
+      "options": [
+        "Simple workflow automation",
+        "Case management with business rules",
+        "Database design",
+        "User interface templates"
+      ],
+      "correct_answer": 1,
+      "explanation": "Case management with business rules is most appropriate for complex processes involving multiple departments, decision-making, and system integration. This scenario requires the flexibility and intelligence that PEGA's case management provides.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q7",
+      "type": "true-false",
+      "question": "PEGA applications can only be built by professional developers.",
+      "correct_answer": false,
+      "explanation": "False. PEGA's low-code platform is designed to be accessible to business users, citizen developers, and professional developers alike. This democratization of development is one of PEGA's key advantages.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "What makes PEGA different from traditional workflow management systems?",
+      "options": [
+        "It only handles simple processes",
+        "It requires more coding",
+        "It emphasizes reusability and maintainability",
+        "It cannot integrate with other systems"
+      ],
+      "correct_answer": 2,
+      "explanation": "PEGA emphasizes reusability and maintainability through its rule-based architecture, allowing for rapid application development and easy maintenance compared to traditional systems.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "multiple-choice",
+      "question": "In PEGA BPM, business rules are typically:",
+      "options": [
+        "Hard-coded in programming languages",
+        "Defined declaratively without coding",
+        "Stored in external databases only",
+        "Written in assembly language"
+      ],
+      "correct_answer": 1,
+      "explanation": "PEGA business rules are defined declaratively without traditional coding, making them accessible to business users and easier to maintain and modify.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q10",
+      "type": "scenario",
+      "question": "An organization needs to track the progress of insurance claims from submission to settlement, with different paths based on claim type and amount. What PEGA concept would best address this requirement?",
+      "options": [
+        "Simple data entry forms",
+        "Case lifecycle management",
+        "Static reporting dashboards",
+        "Email automation"
+      ],
+      "correct_answer": 1,
+      "explanation": "Case lifecycle management is perfect for tracking complex processes like insurance claims through multiple stages with different paths based on business conditions.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q11",
+      "type": "true-false",
+      "question": "PEGA BPM includes built-in analytics and reporting capabilities.",
+      "correct_answer": true,
+      "explanation": "True. PEGA BPM includes comprehensive built-in analytics and reporting capabilities, allowing organizations to monitor process performance and make data-driven improvements.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q12",
+      "type": "multiple-choice",
+      "question": "What is the main benefit of PEGA's integration capabilities?",
+      "options": [
+        "It replaces all existing systems",
+        "It connects with existing systems and services",
+        "It only works with PEGA products",
+        "It eliminates the need for databases"
+      ],
+      "correct_answer": 1,
+      "explanation": "PEGA's integration capabilities allow it to connect with existing systems and services, enabling organizations to leverage their current technology investments while adding BPM capabilities.",
+      "difficulty": "medium"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["pega-bpm", "fundamentals", "introduction", "beginner"],
+    "estimated_time": 15
+  }
+}

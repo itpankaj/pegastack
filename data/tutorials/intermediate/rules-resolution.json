@@ -1,0 +1,285 @@
+{
+  "id": "rules-resolution",
+  "title": "Rules & Rule Resolution",
+  "level": "intermediate",
+  "estimated_time": 35,
+  "prerequisites": ["deployment-basics"],
+  "learning_objectives": [
+    "Master PEGA's rule resolution algorithm and hierarchy",
+    "Understand rule inheritance and specialization patterns",
+    "Learn to optimize rule performance and maintainability",
+    "Apply advanced rule organization strategies"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Understanding Rule Resolution in PEGA",
+      "text": "Rule resolution is the sophisticated algorithm PEGA uses to determine which rule to execute when multiple rules with the same name exist. This fundamental concept enables powerful inheritance, specialization, and versioning capabilities that make PEGA applications highly maintainable and scalable."
+    },
+    "sections": [
+      {
+        "title": "Rule Resolution Algorithm",
+        "content": "PEGA's rule resolution follows a precise algorithm that considers multiple factors to determine the best rule to execute.",
+        "resolution_factors": [
+          {
+            "factor": "Class Hierarchy",
+            "description": "Rules in more specific classes take precedence over those in parent classes",
+            "example": "MyApp-Work-ServiceRequest rules override MyApp-Work rules",
+            "importance": "Primary factor - enables object-oriented inheritance"
+          },
+          {
+            "factor": "Ruleset Version",
+            "description": "Higher version numbers take precedence within the same ruleset",
+            "example": "MyApp:01-02-03 overrides MyApp:01-02-02",
+            "importance": "Enables versioning and controlled deployments"
+          },
+          {
+            "factor": "Circumstance",
+            "description": "Circumstanced rules take precedence when conditions are met",
+            "example": "Rules with .Country='US' override base rules for US cases",
+            "importance": "Enables conditional specialization"
+          },
+          {
+            "factor": "Availability",
+            "description": "Available rules take precedence over withdrawn or blocked rules",
+            "example": "Available rules override Withdrawn rules",
+            "importance": "Controls rule lifecycle and deployment"
+          }
+        ]
+      },
+      {
+        "title": "Rule Inheritance Patterns",
+        "content": "Understanding inheritance patterns is crucial for building maintainable PEGA applications.",
+        "inheritance_types": [
+          {
+            "pattern": "Direct Inheritance",
+            "description": "Child classes inherit rules from immediate parent classes",
+            "use_case": "Common functionality shared across related case types",
+            "example": {
+              "parent": "MyApp-Work (base case processing)",
+              "child": "MyApp-Work-ServiceRequest (specific service request logic)",
+              "inherited_rules": ["Process flows", "Data transforms", "Activities"]
+            }
+          },
+          {
+            "pattern": "Pattern Inheritance",
+            "description": "Classes inherit from framework patterns and templates",
+            "use_case": "Leveraging PEGA's built-in capabilities",
+            "example": {
+              "pattern": "Work- (PEGA Work framework)",
+              "benefits": ["Case management", "Assignment routing", "SLA processing"],
+              "customization": "Override specific rules while keeping framework benefits"
+            }
+          },
+          {
+            "pattern": "Interface Inheritance",
+            "description": "Implementing common interfaces across different class hierarchies",
+            "use_case": "Shared behaviors across unrelated case types",
+            "example": {
+              "interface": "Approval interface",
+              "implementations": ["Loan applications", "Purchase orders", "HR requests"],
+              "shared_rules": ["Approval flows", "Notification templates"]
+            }
+          }
+        ]
+      },
+      {
+        "title": "Circumstancing and Specialization",
+        "content": "Circumstancing allows rules to be specialized based on runtime conditions without creating separate rule instances.",
+        "circumstance_types": [
+          {
+            "type": "Property-based Circumstances",
+            "description": "Rules specialized based on property values",
+            "syntax": ".PropertyName=Value",
+            "examples": [
+              ".Country='US' - US-specific processing",
+              ".Priority='High' - High priority case handling",
+              ".CustomerType='Premium' - Premium customer experience"
+            ],
+            "best_practices": [
+              "Use single property circumstances for simple conditions",
+              "Ensure property values are stable and predictable",
+              "Document circumstance logic clearly"
+            ]
+          },
+          {
+            "type": "Multi-property Circumstances",
+            "description": "Complex conditions involving multiple properties",
+            "syntax": ".Property1=Value1 .Property2=Value2",
+            "examples": [
+              ".Country='US' .State='CA' - California-specific rules",
+              ".CustomerType='Premium' .Priority='High' - VIP processing"
+            ],
+            "considerations": [
+              "More complex to maintain and debug",
+              "Can create rule proliferation",
+              "Consider using when conditions for complex logic"
+            ]
+          },
+          {
+            "type": "Date-based Circumstances",
+            "description": "Rules that become effective at specific dates",
+            "use_cases": [
+              "Regulatory changes with effective dates",
+              "Seasonal business rule variations",
+              "Temporary promotional logic"
+            ],
+            "implementation": "Use availability date ranges or date-based circumstances"
+          }
+        ]
+      },
+      {
+        "title": "Ruleset Management and Versioning",
+        "content": "Effective ruleset management is essential for maintaining application integrity and enabling proper deployment strategies.",
+        "versioning_strategies": [
+          {
+            "strategy": "Major.Minor.Patch Versioning",
+            "format": "01-02-03",
+            "usage": {
+              "major": "Significant architectural changes or new major features",
+              "minor": "New features or enhancements within existing architecture",
+              "patch": "Bug fixes and minor adjustments"
+            },
+            "example": "MyApp:01-02-03 → MyApp:01-03-01 for new feature release"
+          },
+          {
+            "strategy": "Environment-based Rulesets",
+            "approach": "Separate rulesets for different environments",
+            "structure": [
+              "MyApp:01-01-01 (Development)",
+              "MyApp:01-01-02 (Testing)",
+              "MyApp:01-01-03 (Production)"
+            ],
+            "benefits": ["Clear environment separation", "Controlled promotion path"]
+          },
+          {
+            "strategy": "Feature-based Rulesets",
+            "approach": "Separate rulesets for different features or modules",
+            "structure": [
+              "MyAppCore:01-01-01 (Core functionality)",
+              "MyAppReports:01-01-01 (Reporting module)",
+              "MyAppIntegration:01-01-01 (Integration layer)"
+            ],
+            "benefits": ["Modular development", "Independent deployment", "Team separation"]
+          }
+        ]
+      },
+      {
+        "title": "Rule Optimization Techniques",
+        "content": "Optimizing rule resolution improves application performance and maintainability.",
+        "optimization_strategies": [
+          {
+            "technique": "Rule Caching",
+            "description": "PEGA caches resolved rules to improve performance",
+            "best_practices": [
+              "Minimize rule changes in production",
+              "Use rule resolution trace to identify performance issues",
+              "Consider rule compilation for frequently used rules"
+            ]
+          },
+          {
+            "technique": "Class Structure Optimization",
+            "description": "Design class hierarchies to minimize resolution complexity",
+            "guidelines": [
+              "Keep inheritance hierarchies shallow when possible",
+              "Group related functionality in appropriate class levels",
+              "Avoid unnecessary class proliferation"
+            ]
+          },
+          {
+            "technique": "Circumstance Optimization",
+            "description": "Design circumstances to be efficient and maintainable",
+            "recommendations": [
+              "Use the minimum number of properties needed",
+              "Order circumstances from most to least specific",
+              "Consider using when conditions for complex logic"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Debugging Rule Resolution",
+        "content": "Understanding how to debug rule resolution issues is crucial for PEGA developers.",
+        "debugging_tools": [
+          {
+            "tool": "Rule Resolution Trace",
+            "purpose": "Shows the complete rule resolution process",
+            "usage": [
+              "Enable in Developer Studio",
+              "Execute the functionality to trace",
+              "Analyze the resolution path and timing",
+              "Identify performance bottlenecks"
+            ]
+          },
+          {
+            "tool": "Rules Inspector",
+            "purpose": "Shows which rules are being used at runtime",
+            "features": [
+              "Real-time rule usage display",
+              "Rule source identification",
+              "Performance metrics",
+              "Rule dependency analysis"
+            ]
+          },
+          {
+            "tool": "Tracer with Rule Resolution",
+            "purpose": "Detailed execution trace including rule resolution",
+            "benefits": [
+              "Step-by-step rule execution",
+              "Parameter values and transformations",
+              "Error identification and diagnosis"
+            ]
+          }
+        ]
+      }
+    ],
+    "advanced_topics": [
+      {
+        "topic": "Rule Delegation",
+        "description": "Allowing business users to modify certain rules without developer intervention",
+        "implementation": [
+          "Create delegated rule types",
+          "Define delegation boundaries and constraints",
+          "Implement approval workflows for rule changes",
+          "Provide user-friendly rule editing interfaces"
+        ]
+      },
+      {
+        "topic": "Dynamic Rule Loading",
+        "description": "Loading rules at runtime based on conditions or external data",
+        "use_cases": [
+          "Multi-tenant applications with tenant-specific rules",
+          "A/B testing with different rule variants",
+          "External system-driven rule selection"
+        ]
+      },
+      {
+        "topic": "Rule Impact Analysis",
+        "description": "Understanding the impact of rule changes across the application",
+        "techniques": [
+          "Use rule dependency analysis tools",
+          "Implement change impact assessment processes",
+          "Maintain rule documentation and relationships"
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Rule resolution follows a predictable algorithm based on class hierarchy, version, circumstance, and availability",
+        "Inheritance patterns enable code reuse and maintainability through object-oriented design",
+        "Circumstancing provides powerful specialization capabilities without rule duplication",
+        "Effective ruleset management and versioning strategies are essential for application lifecycle management",
+        "Rule optimization techniques improve both performance and maintainability",
+        "Debugging tools help identify and resolve rule resolution issues efficiently",
+        "Advanced techniques like delegation and dynamic loading enable sophisticated application architectures"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/intermediate/rules-resolution",
+  "metadata": {
+    "created_date": "2025-01-25",
+    "last_updated": "2025-01-25",
+    "version": "1.0",
+    "tags": ["rules", "resolution", "inheritance", "versioning", "optimization", "debugging"]
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "id": "app-vs-dev-studio",
+  "title": "App Studio vs Dev Studio",
+  "level": "beginner",
+  "estimated_time": 25,
+  "prerequisites": ["installation-setup"],
+  "learning_objectives": [
+    "Understand the differences between App Studio and Dev Studio",
+    "Learn when to use each development environment",
+    "Navigate both interfaces effectively",
+    "Understand the target users for each tool"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Two Development Environments",
+      "text": "PEGA provides two primary development environments: App Studio and Dev Studio. Each is designed for different types of users and development scenarios. Understanding when and how to use each tool is crucial for effective PEGA development. This tutorial will help you understand the differences and choose the right tool for your needs."
+    },
+    "sections": [
+      {
+        "title": "App Studio Overview",
+        "content": "App Studio is PEGA's low-code development environment designed primarily for business users, citizen developers, and those new to PEGA development.",
+        "key_characteristics": [
+          "Low-code, visual development approach",
+          "Business-friendly terminology and interface",
+          "Guided workflows and wizards",
+          "Built-in best practices and guardrails",
+          "Simplified rule creation and editing"
+        ],
+        "target_users": [
+          "Business analysts and subject matter experts",
+          "Citizen developers with limited technical background",
+          "New PEGA developers learning the platform",
+          "Project managers overseeing application development",
+          "Business users who need to make quick changes"
+        ],
+        "main_capabilities": [
+          {
+            "capability": "Case Type Creation",
+            "description": "Create and configure case types using visual designers and guided workflows."
+          },
+          {
+            "capability": "Process Design",
+            "description": "Design business processes using drag-and-drop flow designers with pre-built templates."
+          },
+          {
+            "capability": "UI Design",
+            "description": "Create user interfaces using visual form designers and pre-built components."
+          },
+          {
+            "capability": "Data Modeling",
+            "description": "Define data structures using simplified property editors and data relationship tools."
+          },
+          {
+            "capability": "Business Rules",
+            "description": "Create business rules using guided decision trees and condition builders."
+          }
+        ]
+      },
+      {
+        "title": "Dev Studio Overview",
+        "content": "Dev Studio is PEGA's comprehensive development environment designed for professional developers, system architects, and advanced users who need full access to PEGA's capabilities.",
+        "key_characteristics": [
+          "Complete access to all PEGA rules and features",
+          "Advanced configuration and customization options",
+          "Technical terminology and detailed interfaces",
+          "Powerful debugging and testing tools",
+          "System administration capabilities"
+        ],
+        "target_users": [
+          "Professional PEGA developers",
+          "System architects and technical leads",
+          "DevOps engineers and system administrators",
+          "Advanced business users with technical skills",
+          "Integration specialists"
+        ],
+        "main_capabilities": [
+          {
+            "capability": "Advanced Rule Development",
+            "description": "Create and modify any type of PEGA rule with full configuration options."
+          },
+          {
+            "capability": "System Integration",
+            "description": "Configure complex integrations with external systems and services."
+          },
+          {
+            "capability": "Performance Optimization",
+            "description": "Access performance monitoring tools and optimization features."
+          },
+          {
+            "capability": "Security Configuration",
+            "description": "Configure advanced security settings, access controls, and authentication."
+          },
+          {
+            "capability": "System Administration",
+            "description": "Manage system settings, deployment, and maintenance tasks."
+          }
+        ]
+      },
+      {
+        "title": "Detailed Comparison",
+        "content": "Here's a detailed comparison of App Studio and Dev Studio across various dimensions.",
+        "comparison_table": [
+          {
+            "aspect": "User Interface",
+            "app_studio": "Modern, simplified interface with guided workflows and wizards",
+            "dev_studio": "Comprehensive interface with access to all features and detailed configuration options"
+          },
+          {
+            "aspect": "Learning Curve",
+            "app_studio": "Gentle learning curve, designed for non-technical users",
+            "dev_studio": "Steeper learning curve, requires technical knowledge and PEGA experience"
+          },
+          {
+            "aspect": "Development Speed",
+            "app_studio": "Faster for standard use cases with pre-built templates and guided processes",
+            "dev_studio": "Slower initial development but more flexibility for complex requirements"
+          },
+          {
+            "aspect": "Customization",
+            "app_studio": "Limited customization options, focuses on best practices and standards",
+            "dev_studio": "Unlimited customization with access to all PEGA capabilities"
+          },
+          {
+            "aspect": "Rule Access",
+            "app_studio": "Access to commonly used rules with simplified editors",
+            "dev_studio": "Access to all rule types with full configuration options"
+          },
+          {
+            "aspect": "Debugging",
+            "app_studio": "Basic testing and preview capabilities",
+            "dev_studio": "Advanced debugging tools, performance monitoring, and diagnostic features"
+          },
+          {
+            "aspect": "Collaboration",
+            "app_studio": "Designed for business-IT collaboration with shared terminology",
+            "dev_studio": "Technical collaboration with detailed change tracking and version control"
+          }
+        ]
+      },
+      {
+        "title": "When to Use App Studio",
+        "content": "App Studio is the right choice for specific scenarios and user types.",
+        "use_cases": [
+          {
+            "scenario": "New to PEGA Development",
+            "description": "If you're new to PEGA, App Studio provides a gentler introduction with guided workflows and built-in best practices.",
+            "benefits": [
+              "Reduced learning curve",
+              "Built-in guardrails prevent common mistakes",
+              "Guided workflows ensure proper development practices"
+            ]
+          },
+          {
+            "scenario": "Standard Business Applications",
+            "description": "For typical business applications that follow standard patterns, App Studio provides faster development.",
+            "benefits": [
+              "Pre-built templates for common use cases",
+              "Faster time-to-market",
+              "Consistent application structure"
+            ]
+          },
+          {
+            "scenario": "Business User Involvement",
+            "description": "When business users need to be actively involved in development or make changes themselves.",
+            "benefits": [
+              "Business-friendly interface and terminology",
+              "Self-service capability for business users",
+              "Reduced dependency on IT resources"
+            ]
+          },
+          {
+            "scenario": "Rapid Prototyping",
+            "description": "For quickly creating prototypes or proof-of-concept applications.",
+            "benefits": [
+              "Fast application creation",
+              "Easy to demonstrate concepts",
+              "Quick iteration and changes"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "When to Use Dev Studio",
+        "content": "Dev Studio is necessary for advanced scenarios and complex requirements.",
+        "use_cases": [
+          {
+            "scenario": "Complex Integrations",
+            "description": "When you need to integrate with multiple external systems or implement complex integration patterns.",
+            "requirements": [
+              "Custom connector development",
+              "Complex data transformations",
+              "Advanced error handling",
+              "Performance optimization"
+            ]
+          },
+          {
+            "scenario": "Advanced Customization",
+            "description": "When standard App Studio capabilities aren't sufficient for your requirements.",
+            "requirements": [
+              "Custom rule types",
+              "Advanced UI customization",
+              "Complex business logic",
+              "Performance-critical applications"
+            ]
+          },
+          {
+            "scenario": "System Administration",
+            "description": "For system configuration, maintenance, and administrative tasks.",
+            "requirements": [
+              "Environment configuration",
+              "Security setup",
+              "Performance monitoring",
+              "Deployment management"
+            ]
+          },
+          {
+            "scenario": "Enterprise Applications",
+            "description": "For large-scale enterprise applications with complex requirements.",
+            "requirements": [
+              "Advanced architecture patterns",
+              "Enterprise integration",
+              "Scalability considerations",
+              "Advanced security requirements"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Navigating App Studio",
+        "content": "Understanding App Studio's interface and navigation will help you work more effectively.",
+        "interface_elements": [
+          {
+            "element": "Application Explorer",
+            "description": "The main navigation panel showing your application structure, case types, and development artifacts.",
+            "key_features": [
+              "Hierarchical view of application components",
+              "Quick access to case types and processes",
+              "Visual indicators for completion status",
+              "Search and filter capabilities"
+            ]
+          },
+          {
+            "element": "Canvas Area",
+            "description": "The main work area where you design processes, forms, and configure application components.",
+            "key_features": [
+              "Drag-and-drop designers",
+              "Visual process modeling",
+              "Form and UI designers",
+              "Real-time preview capabilities"
+            ]
+          },
+          {
+            "element": "Property Panels",
+            "description": "Context-sensitive panels that show properties and configuration options for selected elements.",
+            "key_features": [
+              "Dynamic property display",
+              "Guided configuration wizards",
+              "Validation and error checking",
+              "Help and documentation links"
+            ]
+          },
+          {
+            "element": "Toolbar and Actions",
+            "description": "Action buttons and tools for common development tasks.",
+            "key_features": [
+              "Save and publish actions",
+              "Preview and testing tools",
+              "Undo/redo capabilities",
+              "Quick access to common functions"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Navigating Dev Studio",
+        "content": "Dev Studio has a more complex interface that provides access to all PEGA capabilities.",
+        "interface_elements": [
+          {
+            "element": "Navigation Panel",
+            "description": "Comprehensive navigation with access to all PEGA tools and administrative functions.",
+            "key_sections": [
+              "Application - Application development tools",
+              "Process - Process and case management",
+              "Integration - External system connections",
+              "Reports - Analytics and reporting",
+              "SysAdmin - System administration"
+            ]
+          },
+          {
+            "element": "Rule Explorer",
+            "description": "Detailed view of all rules in your application with search and filtering capabilities.",
+            "key_features": [
+              "Complete rule inventory",
+              "Advanced search and filtering",
+              "Rule relationships and dependencies",
+              "Version history and comparison"
+            ]
+          },
+          {
+            "element": "Work Area",
+            "description": "Tabbed interface for editing multiple rules simultaneously.",
+            "key_features": [
+              "Multi-tab editing",
+              "Rule form editors",
+              "Code editors for advanced customization",
+              "Preview and testing interfaces"
+            ]
+          },
+          {
+            "element": "Tools and Utilities",
+            "description": "Advanced development and debugging tools.",
+            "key_features": [
+              "Tracer for debugging",
+              "Performance profiler",
+              "Database trace tools",
+              "System management utilities"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Best Practices for Tool Selection",
+        "content": "Follow these best practices to choose the right tool for your development needs.",
+        "practices": [
+          {
+            "practice": "Start with App Studio",
+            "description": "Begin new projects in App Studio to leverage guided workflows and best practices.",
+            "rationale": "App Studio enforces good development practices and provides a structured approach to application development."
+          },
+          {
+            "practice": "Switch to Dev Studio When Needed",
+            "description": "Move to Dev Studio when you encounter limitations or need advanced features.",
+            "indicators": [
+              "Need for custom rule types",
+              "Complex integration requirements",
+              "Advanced UI customization needs",
+              "Performance optimization requirements"
+            ]
+          },
+          {
+            "practice": "Use Both Tools Collaboratively",
+            "description": "Leverage both tools in the same project based on the task at hand.",
+            "approach": "Business users can work in App Studio while developers use Dev Studio for advanced features."
+          },
+          {
+            "practice": "Consider Your Team's Skills",
+            "description": "Choose tools based on your team's technical expertise and comfort level.",
+            "considerations": [
+              "Technical background of team members",
+              "Available training and support",
+              "Project timeline and complexity",
+              "Long-term maintenance requirements"
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "App Studio is designed for business users and low-code development",
+        "Dev Studio provides complete access to all PEGA capabilities",
+        "Choose tools based on user expertise and project requirements",
+        "Both tools can be used collaboratively in the same project",
+        "Start with App Studio and move to Dev Studio as needed",
+        "Understanding both tools makes you a more effective PEGA developer"
+      ]
+    },
+    "next_steps": {
+      "title": "What's Next?",
+      "text": "Now that you understand the differences between App Studio and Dev Studio, the next tutorial will guide you through creating your first case application using App Studio's guided approach.",
+      "recommended_reading": [
+        "Your First Case App",
+        "Data Modeling Basics",
+        "User Interface Basics"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/app-vs-dev-studio",
+  "resources": [
+    {
+      "title": "App Studio User Guide",
+      "url": "https://docs.pega.com/bundle/app-studio/page/app-studio/app-studio-user-guide.html",
+      "type": "documentation"
+    },
+    {
+      "title": "Dev Studio User Guide",
+      "url": "https://docs.pega.com/bundle/dev-studio/page/dev-studio/dev-studio-user-guide.html",
+      "type": "documentation"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["app-studio", "dev-studio", "development-environment", "comparison", "tool-selection"]
+  }
+}

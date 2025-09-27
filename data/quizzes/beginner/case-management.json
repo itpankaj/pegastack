@@ -1,0 +1,118 @@
+{
+  "id": "case-management",
+  "title": "Case Management Fundamentals - Quiz",
+  "description": "Test your understanding of PEGA case management concepts and principles",
+  "level": "beginner",
+  "lesson_reference": "/tutorials/beginner/case-management",
+  "passing_score": 70,
+  "time_limit": 15,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the primary difference between case management and traditional workflow?",
+      "options": [
+        "Case management is only for simple processes",
+        "Case management handles unpredictable, knowledge-intensive work",
+        "Traditional workflow is more flexible",
+        "There is no difference"
+      ],
+      "correct_answer": 1,
+      "explanation": "Case management is designed for unpredictable, knowledge-intensive work that requires human judgment and can't be fully automated with traditional sequential workflows.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "question": "A case in PEGA represents a unit of work that needs to be completed.",
+      "correct_answer": true,
+      "explanation": "True. A case represents a unit of work (like a loan application, insurance claim, or customer service request) that progresses through various stages until completion.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "Which of the following best describes case lifecycle in PEGA?",
+      "options": [
+        "Cases must follow a rigid sequence",
+        "Cases can have multiple paths and stages",
+        "Cases cannot be modified once created",
+        "Cases are only for customer service"
+      ],
+      "correct_answer": 1,
+      "explanation": "PEGA cases can have multiple paths and stages, allowing flexible process flows that adapt to various scenarios and business requirements within the same case type.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q4",
+      "type": "scenario",
+      "question": "A customer calls to report a damaged product and wants a replacement. This requires verification, approval, and shipping coordination. What PEGA concept best fits this scenario?",
+      "options": [
+        "Simple data entry",
+        "Case management",
+        "Report generation",
+        "User authentication"
+      ],
+      "correct_answer": 1,
+      "explanation": "This scenario involves multiple steps, decision points, and coordination across departments - perfect for case management which can handle the complexity and variations in the process.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "What is a case stage in PEGA?",
+      "options": [
+        "A database table",
+        "A major phase in the case lifecycle",
+        "A user interface element",
+        "A reporting feature"
+      ],
+      "correct_answer": 1,
+      "explanation": "A case stage represents a major phase in the case lifecycle, such as 'Investigation', 'Review', or 'Resolution', helping organize the work into logical groupings.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q6",
+      "type": "true-false",
+      "question": "Case workers can only follow predefined paths in PEGA cases.",
+      "correct_answer": false,
+      "explanation": "False. PEGA's case management allows for ad-hoc actions and flexible paths, enabling case workers to handle exceptions and unique situations as they arise.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "What is the benefit of using case types in PEGA?",
+      "options": [
+        "They limit flexibility",
+        "They provide templates for similar cases",
+        "They are only for reporting",
+        "They replace business rules"
+      ],
+      "correct_answer": 1,
+      "explanation": "Case types provide templates and structures for handling similar types of work, ensuring consistency while maintaining the flexibility to handle variations.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q8",
+      "type": "scenario",
+      "question": "An insurance company needs to handle claims that can vary greatly in complexity - from simple fender benders to complex multi-vehicle accidents. What PEGA feature would be most beneficial?",
+      "options": [
+        "Fixed workflow processes",
+        "Case management with dynamic stages",
+        "Simple form processing",
+        "Static reporting dashboards"
+      ],
+      "correct_answer": 1,
+      "explanation": "Case management with dynamic stages allows the insurance company to handle both simple and complex claims using the same framework, with the ability to adapt to each claim's specific requirements.",
+      "difficulty": "hard"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["case-management", "fundamentals", "lifecycle", "beginner"],
+    "estimated_time": 15
+  }
+}

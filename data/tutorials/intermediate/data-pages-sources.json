@@ -1,0 +1,25 @@
+{
+  "id": "data-pages-sources",
+  "title": "Data Pages & Data Sources",
+  "level": "intermediate",
+  "estimated_time": 35,
+  "prerequisites": ["integration-basics"],
+  "learning_objectives": [
+    "Understand the role of data pages in PEGA",
+    "Configure data sources and connectors",
+    "Leverage data pages for performance and reuse"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Working with Data Pages",
+      "text": "Data pages provide a declarative, cached source of data for your applications. In this lesson you will learn when and how to use them effectively."
+    },
+    "sections": []
+  },
+  "metadata": {
+    "created_date": "2025-07-25",
+    "last_updated": "2025-07-25",
+    "version": "1.0",
+    "tags": ["data-pages", "sources", "intermediate"]
+  }
+}

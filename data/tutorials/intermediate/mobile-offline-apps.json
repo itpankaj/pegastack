@@ -1,0 +1,105 @@
+{
+  "title": "Mobile & Offline Apps",
+  "level": "intermediate",
+  "slug": "mobile-offline-apps",
+  "description": "Build responsive mobile applications with offline capabilities, synchronization, and native device integration",
+  "estimatedTime": "55 min",
+  "prerequisites": ["User Interface Advanced Concepts", "Integration Basics", "Data Pages & Data Sources"],
+  "objectives": [
+    "Design mobile-first responsive interfaces",
+    "Implement offline data synchronization",
+    "Integrate with native device features",
+    "Handle network connectivity issues",
+    "Optimize mobile performance"
+  ],
+  "content": {
+    "introduction": "Modern PEGA applications must provide seamless mobile experiences with offline capabilities. This lesson covers mobile-first design, offline synchronization, native device integration, and performance optimization for mobile environments.",
+    "sections": [
+      {
+        "title": "Mobile-First Design Principles",
+        "content": "Design applications specifically for mobile devices with touch interfaces, limited screen real estate, and varying connectivity. Understand mobile UX patterns and responsive design strategies.",
+        "principles": [
+          "Touch-friendly interface elements",
+          "Simplified navigation patterns",
+          "Optimized content hierarchy",
+          "Gesture-based interactions"
+        ]
+      },
+      {
+        "title": "Offline Data Management",
+        "content": "Implement robust offline data management including local storage, synchronization strategies, conflict resolution, and data consistency across devices.",
+        "strategies": [
+          "Local database storage",
+          "Synchronization queues",
+          "Conflict resolution algorithms",
+          "Data consistency validation"
+        ]
+      },
+      {
+        "title": "Native Device Integration",
+        "content": "Integrate with native device features including camera, GPS, contacts, push notifications, and biometric authentication for enhanced mobile experiences.",
+        "integrations": [
+          "Camera and photo capture",
+          "GPS location services",
+          "Push notifications",
+          "Biometric authentication",
+          "Contact list access"
+        ]
+      },
+      {
+        "title": "Network Connectivity Handling",
+        "content": "Handle varying network conditions gracefully with offline mode detection, automatic synchronization, and user feedback for connectivity issues.",
+        "handling": [
+          "Network status detection",
+          "Automatic retry mechanisms",
+          "User feedback systems",
+          "Graceful degradation strategies"
+        ]
+      },
+      {
+        "title": "Performance Optimization",
+        "content": "Optimize mobile application performance through efficient data loading, image optimization, caching strategies, and battery usage optimization.",
+        "optimization": [
+          "Lazy loading of content",
+          "Image compression and optimization",
+          "Efficient caching strategies",
+          "Battery usage optimization"
+        ]
+      },
+      {
+        "title": "Testing and Deployment",
+        "content": "Test mobile applications across different devices, operating systems, and network conditions. Understand deployment strategies for app stores and enterprise distribution.",
+        "testing": [
+          "Cross-device compatibility testing",
+          "Network condition testing",
+          "Performance testing",
+          "User acceptance testing"
+        ]
+      }
+    ]
+  },
+  "quiz": {
+    "id": "mobile-offline-apps-quiz",
+    "title": "Mobile & Offline Apps Quiz",
+    "questions": 8,
+    "passingScore": 70
+  },
+  "resources": {
+    "documentation": [
+      {
+        "title": "PEGA Mobile Guide",
+        "url": "https://docs.pega.com/mobile"
+      },
+      {
+        "title": "Offline Data Synchronization",
+        "url": "https://docs.pega.com/offline-sync"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Mobile App Development",
+        "url": "https://academy.pega.com/mobile-development"
+      }
+    ]
+  }
+}

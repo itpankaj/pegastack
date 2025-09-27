@@ -1,0 +1,131 @@
+{
+  "id": "database-trace-analysis",
+  "title": "Database Trace Analysis",
+  "description": "Master advanced database performance analysis, query optimization, and trace interpretation for enterprise PEGA applications",
+  "level": "advanced",
+  "category": "Database & Performance",
+  "estimated_time": 45,
+  "prerequisites": ["advanced-performance-tuning", "pal-performance-alerts"],
+  "learning_objectives": [
+    "Perform comprehensive database trace analysis for PEGA applications",
+    "Optimize complex database queries and connection patterns",
+    "Implement advanced database monitoring and alerting strategies",
+    "Design database architectures for high-performance enterprise deployments"
+  ],
+  "sections": [
+    {
+      "id": "advanced-trace-analysis",
+      "title": "Enterprise Database Trace Analysis",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Advanced Trace Collection and Analysis"
+        },
+        {
+          "type": "paragraph",
+          "text": "Database trace analysis in enterprise PEGA environments requires sophisticated techniques to identify performance bottlenecks, optimize query patterns, and ensure scalable database architectures. Advanced trace analysis goes beyond basic query performance to analyze connection patterns, lock contention, and resource utilization across distributed database clusters."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Comprehensive Trace Configuration"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "text": "-- Advanced Database Trace Configuration\n-- Enable comprehensive tracing for PEGA analysis\nALTER SYSTEM SET timed_statistics = TRUE;\nALTER SYSTEM SET sql_trace = TRUE;\nALTER SYSTEM SET max_dump_file_size = '10G';\n\n-- Enable advanced wait event tracking\nALTER SYSTEM SET \"_trace_events\" = '10046 trace name context forever, level 12';\n\n-- Configure PEGA-specific trace parameters\nEXEC DBMS_MONITOR.CLIENT_ID_TRACE_ENABLE(\n  client_id => 'PEGA_APP',\n  waits => TRUE,\n  binds => TRUE,\n  plan_stat => 'ALL_EXECUTIONS'\n);\n\n-- Set up custom trace for PEGA connection patterns\nCREATE OR REPLACE TRIGGER pega_session_trace\n  AFTER LOGON ON DATABASE\n  WHEN (USER = 'PEGA_USER')\nBEGIN\n  EXECUTE IMMEDIATE 'ALTER SESSION SET TRACEFILE_IDENTIFIER = ''PEGA_TRACE''';\n  EXECUTE IMMEDIATE 'ALTER SESSION SET SQL_TRACE = TRUE';\nEND;"
+        },
+        {
+          "type": "paragraph",
+          "text": "Comprehensive trace configuration captures detailed information about PEGA database interactions, enabling deep analysis of query patterns, connection behavior, and resource consumption."
+        }
+      ]
+    },
+    {
+      "id": "query-optimization-strategies",
+      "title": "Advanced Query Optimization",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Enterprise Query Performance Optimization"
+        },
+        {
+          "type": "paragraph",
+          "text": "PEGA applications generate complex query patterns that require specialized optimization techniques. Advanced query optimization involves analyzing execution plans, optimizing join strategies, and implementing intelligent indexing for PEGA-specific access patterns."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "PEGA-Optimized Index Strategies"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "text": "-- Advanced indexing for PEGA performance\n-- Composite indexes for common PEGA query patterns\nCREATE INDEX idx_pega_case_performance ON pr_other (\n  pxobjclass, pxinsname, pxcreatedatetime\n) INCLUDE (pyid, pystatus, pyworkparty)\nWHERE pxobjclass LIKE 'MyOrg-MyApp-Work-%';\n\n-- Partitioned index for high-volume case data\nCREATE INDEX idx_pega_case_partitioned ON pr_other (\n  pxcreatedatetime, pxobjclass, pxinsname\n) \nLOCAL\nPARTITION BY RANGE (pxcreatedatetime) (\n  PARTITION p_2024_q1 VALUES LESS THAN (DATE '2024-04-01'),\n  PARTITION p_2024_q2 VALUES LESS THAN (DATE '2024-07-01'),\n  PARTITION p_current VALUES LESS THAN (MAXVALUE)\n);\n\n-- Function-based index for PEGA rule resolution\nCREATE INDEX idx_pega_rule_resolution ON pr_index_rulebytype (\n  UPPER(pxobjclass), \n  pxinsname,\n  pxruleset,\n  NVL(pzcircumstance, 'DEFAULT')\n) \nCOMPRESS FOR OLTP;"
+        },
+        {
+          "type": "paragraph",
+          "text": "PEGA-optimized indexing strategies account for specific access patterns in case management, rule resolution, and work object processing, providing significant performance improvements."
+        }
+      ]
+    },
+    {
+      "id": "connection-pattern-analysis",
+      "title": "Connection Pattern Optimization",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Enterprise Connection Management"
+        },
+        {
+          "type": "paragraph",
+          "text": "PEGA applications exhibit unique database connection patterns that require specialized analysis and optimization. Understanding these patterns enables optimization of connection pooling, session management, and resource allocation for maximum performance."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Advanced Connection Pool Analysis"
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "text": "# Advanced connection pattern analysis\nclass PegaConnectionAnalyzer:\n    def __init__(self, trace_data):\n        self.trace_data = trace_data\n        self.connection_patterns = {}\n    \n    def analyze_connection_lifecycle(self):\n        \"\"\"Analyze PEGA connection lifecycle patterns\"\"\"\n        patterns = {\n            'requestor_sessions': self.analyze_requestor_patterns(),\n            'batch_processing': self.analyze_batch_connections(),\n            'background_agents': self.analyze_agent_connections(),\n            'interactive_users': self.analyze_user_sessions()\n        }\n        \n        return self.generate_optimization_recommendations(patterns)\n    \n    def analyze_requestor_patterns(self):\n        \"\"\"Analyze PEGA requestor connection patterns\"\"\"\n        requestor_data = self.trace_data.filter_by_session_type('requestor')\n        \n        return {\n            'average_session_duration': requestor_data.avg_duration(),\n            'peak_concurrent_sessions': requestor_data.max_concurrent(),\n            'connection_churn_rate': requestor_data.connection_turnover(),\n            'idle_time_patterns': requestor_data.analyze_idle_periods(),\n            'resource_consumption': requestor_data.resource_usage_profile()\n        }\n    \n    def generate_optimization_recommendations(self, patterns):\n        \"\"\"Generate connection pool optimization recommendations\"\"\"\n        recommendations = []\n        \n        if patterns['requestor_sessions']['connection_churn_rate'] > 0.3:\n            recommendations.append({\n                'type': 'connection_pooling',\n                'priority': 'high',\n                'action': 'Increase pool size and implement connection validation',\n                'expected_improvement': '25-40% reduction in connection overhead'\n            })\n        \n        return recommendations"
+        }
+      ]
+    }
+  ],
+  "hands_on_exercises": [
+    {
+      "title": "Enterprise Database Performance Analysis",
+      "description": "Perform comprehensive database trace analysis for a high-volume PEGA production environment",
+      "steps": [
+        "Configure advanced database tracing for PEGA-specific patterns",
+        "Collect and analyze trace data during peak usage periods",
+        "Identify top performance bottlenecks using advanced analysis techniques",
+        "Design and implement optimized indexing strategies",
+        "Validate performance improvements through before/after analysis"
+      ]
+    }
+  ],
+  "best_practices": [
+    "Use PEGA-specific trace configurations to capture relevant performance data",
+    "Implement partitioned indexing for high-volume case data",
+    "Monitor connection patterns to optimize pool sizing and configuration",
+    "Regular analysis of execution plans to identify query optimization opportunities",
+    "Establish baseline performance metrics for ongoing optimization efforts"
+  ],
+  "common_pitfalls": [
+    "Over-indexing leading to maintenance overhead and slower DML operations",
+    "Inadequate connection pool sizing causing performance bottlenecks",
+    "Ignoring PEGA-specific query patterns when optimizing database schema",
+    "Insufficient trace data collection leading to incomplete analysis"
+  ],
+  "next_steps": [
+    "Product Rules & Deployment",
+    "PEGA DevOps & CI/CD",
+    "Production Support Strategies"
+  ]
+}

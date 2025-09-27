@@ -1,0 +1,123 @@
+{
+  "id": "localization-globalization",
+  "title": "Localization & Globalization - Quiz",
+  "description": "Test your understanding of localization and globalization concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/localization-globalization",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary goal of localization in PEGA applications?",
+      "options": [
+        "Database optimization",
+        "Adapting applications for specific languages, cultures, and regional requirements",
+        "Network performance improvement",
+        "Security enhancement"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Localization adapts applications for specific languages, cultures, and regional requirements including translations, cultural preferences, date formats, and local business practices."
+    },
+    {
+      "id": 2,
+      "question": "Which WCAG guideline level is recommended for enterprise accessibility?",
+      "options": [
+        "Level A",
+        "Level AA",
+        "Level AAA",
+        "Level B"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Level AA is the recommended standard for enterprise applications, providing good accessibility without being overly restrictive for typical business requirements."
+    },
+    {
+      "id": 3,
+      "question": "How should multi-language support be implemented?",
+      "options": [
+        "Hard-coded translations",
+        "Through field value rules, translation catalogs, and dynamic language switching",
+        "Manual string replacement",
+        "Database schema changes"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Multi-language support should use field value rules, translation catalogs, and dynamic language switching mechanisms to enable flexible, maintainable localization."
+    },
+    {
+      "id": 4,
+      "question": "What is crucial for handling international date formats?",
+      "options": [
+        "Hard-coded formats",
+        "Dynamic formatting based on user locale and regional preferences",
+        "US format only",
+        "Manual date entry"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "International date formats require dynamic formatting based on user locale, regional preferences, and cultural conventions to ensure appropriate display for each market."
+    },
+    {
+      "id": 5,
+      "question": "How should currency formatting be handled globally?",
+      "options": [
+        "US dollar format only",
+        "Dynamic currency formatting with symbol placement and decimal handling based on locale",
+        "Manual formatting",
+        "No formatting needed"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Currency formatting requires dynamic handling with appropriate symbol placement, decimal separators, and formatting conventions based on user locale and regional standards."
+    },
+    {
+      "id": 6,
+      "question": "What is essential for timezone management in global applications?",
+      "options": [
+        "Single timezone assumption",
+        "Timezone-aware processing with user preference storage and conversion",
+        "Manual timezone calculation",
+        "Server timezone only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Timezone management requires timezone-aware processing with user preference storage, automatic conversion capabilities, and scheduling that respects regional differences."
+    },
+    {
+      "id": 7,
+      "question": "How should cultural business logic be adapted?",
+      "options": [
+        "Ignore cultural differences",
+        "Through configurable business rules and regional customization frameworks",
+        "Hard-coded cultural assumptions",
+        "No adaptation needed"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Cultural business logic should be adapted through configurable business rules, regional customization frameworks, and flexible process flows that accommodate local business practices."
+    },
+    {
+      "id": 8,
+      "question": "What is required for global deployment optimization?",
+      "options": [
+        "Single region deployment",
+        "Regional data centers, CDN optimization, and performance tuning for each market",
+        "Manual configuration only",
+        "No optimization needed"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Global deployment optimization requires regional data centers, content delivery network optimization, performance tuning for each market, and compliance with local regulations."
+    }
+  ]
+}

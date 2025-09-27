@@ -1,0 +1,93 @@
+{
+  "title": "User Interface Advanced Concepts",
+  "level": "intermediate",
+  "slug": "user-interface-advanced-concepts",
+  "description": "Master advanced UI design patterns, responsive layouts, accessibility, and dynamic interfaces in PEGA",
+  "estimatedTime": "45 min",
+  "prerequisites": ["User Interface Basics", "Data Modeling", "Case Lifecycle"],
+  "objectives": [
+    "Design responsive layouts that adapt to multiple devices",
+    "Implement accessibility standards (WCAG 2.1)",
+    "Create dynamic interfaces with conditional UI",
+    "Master skin rules and CSS frameworks",
+    "Build reusable UI components and templates"
+  ],
+  "content": {
+    "introduction": "Advanced UI concepts in PEGA go beyond basic forms and layouts. This lesson covers responsive design, accessibility, dynamic interfaces, and reusable components that create exceptional user experiences.",
+    "sections": [
+      {
+        "title": "Responsive Design Principles",
+        "content": "Modern applications must work seamlessly across desktop, tablet, and mobile devices. PEGA's responsive design capabilities allow you to create layouts that automatically adapt to different screen sizes and orientations.",
+        "code": [
+          {
+            "language": "javascript",
+            "snippet": "// Responsive layout configuration\nconst responsiveConfig = {\n  mobile: { breakpoint: 768, layout: 'stacked' },\n  tablet: { breakpoint: 1024, layout: 'sidebar' },\n  desktop: { breakpoint: 1440, layout: 'grid' }\n};"
+          }
+        ]
+      },
+      {
+        "title": "Accessibility Standards",
+        "content": "WCAG 2.1 compliance ensures your application is usable by people with disabilities. Key areas include keyboard navigation, screen reader support, color contrast, and focus management.",
+        "list": [
+          "ARIA labels and roles for screen readers",
+          "Keyboard navigation and focus indicators",
+          "Color contrast ratios (4.5:1 minimum)",
+          "Alternative text for images and icons"
+        ]
+      },
+      {
+        "title": "Dynamic Interfaces",
+        "content": "Create interfaces that respond to user actions and data changes without page reloads. Use visibility conditions, refresh actions, and dynamic layouts.",
+        "example": "A loan application form that shows additional fields based on loan type selection, with real-time validation and progress indicators."
+      },
+      {
+        "title": "Skin Rules and CSS",
+        "content": "Master PEGA's skin rules to create consistent, branded interfaces. Understand CSS inheritance, custom styles, and theme overrides.",
+        "bestPractices": [
+          "Use CSS variables for consistent theming",
+          "Create reusable CSS classes for common patterns",
+          "Implement dark mode support",
+          "Optimize for performance with efficient selectors"
+        ]
+      },
+      {
+        "title": "Reusable Components",
+        "content": "Build modular UI components that can be reused across multiple sections and applications. Create templates for common patterns like navigation, forms, and data displays.",
+        "components": [
+          "Navigation templates",
+          "Form field patterns",
+          "Data table layouts",
+          "Modal and dialog templates"
+        ]
+      }
+    ]
+  },
+  "quiz": {
+    "id": "user-interface-advanced-concepts-quiz",
+    "title": "User Interface Advanced Concepts Quiz",
+    "questions": 8,
+    "passingScore": 70
+  },
+  "resources": {
+    "documentation": [
+      {
+        "title": "PEGA UI Gallery",
+        "url": "https://docs.pega.com/ui-gallery"
+      },
+      {
+        "title": "Responsive Design Guide",
+        "url": "https://docs.pega.com/responsive-design"
+      },
+      {
+        "title": "Accessibility Standards",
+        "url": "https://docs.pega.com/accessibility"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Advanced UI Design Patterns",
+        "url": "https://academy.pega.com/advanced-ui-patterns"
+      }
+    ]
+  }
+}

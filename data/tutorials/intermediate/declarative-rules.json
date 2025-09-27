@@ -1,0 +1,356 @@
+{
+  "id": "declarative-rules",
+  "title": "Declarative Rules",
+  "level": "intermediate",
+  "estimated_time": 30,
+  "prerequisites": ["flow-rules-actions"],
+  "learning_objectives": [
+    "Master declarative rule types and their applications",
+    "Understand constraints, validations, and calculations",
+    "Learn to implement business logic without procedural code",
+    "Apply declarative patterns for maintainable solutions"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Declarative Rules in PEGA",
+      "text": "Declarative rules represent one of PEGA's most powerful features, allowing you to express business logic in a declarative manner rather than procedural code. These rules automatically execute when their dependencies change, providing reactive and maintainable business logic implementation."
+    },
+    "sections": [
+      {
+        "title": "Types of Declarative Rules",
+        "content": "PEGA provides several types of declarative rules, each serving specific business logic needs.",
+        "rule_types": [
+          {
+            "type": "Constraints",
+            "description": "Enforce business rules and data integrity requirements",
+            "characteristics": [
+              "Execute automatically when dependent properties change",
+              "Can prevent invalid data entry",
+              "Support complex multi-property validations",
+              "Provide user-friendly error messages"
+            ],
+            "use_cases": [
+              "Data validation (email format, date ranges, numeric limits)",
+              "Business rule enforcement (credit limits, approval thresholds)",
+              "Cross-field validations (start date before end date)",
+              "Conditional requirements (required fields based on other selections)"
+            ],
+            "example": {
+              "rule": "Credit limit cannot exceed customer's annual income",
+              "implementation": ".CreditLimit <= .AnnualIncome",
+              "message": "Credit limit cannot exceed annual income of $X"
+            }
+          },
+          {
+            "type": "Declare Expressions",
+            "description": "Calculate derived values automatically based on other properties",
+            "characteristics": [
+              "Forward chaining - recalculate when dependencies change",
+              "Can reference other calculated properties",
+              "Support complex mathematical and logical operations",
+              "Cached for performance optimization"
+            ],
+            "use_cases": [
+              "Financial calculations (totals, taxes, discounts)",
+              "Derived status values (case priority, risk scores)",
+              "Aggregations (order totals, average ratings)",
+              "Complex business metrics (ROI, conversion rates)"
+            ],
+            "example": {
+              "rule": "Calculate total order amount including tax",
+              "implementation": ".SubTotal * (1 + .TaxRate)",
+              "dependencies": ["SubTotal", "TaxRate"]
+            }
+          },
+          {
+            "type": "Declare Triggers",
+            "description": "Execute activities when specific property changes occur",
+            "characteristics": [
+              "Event-driven execution model",
+              "Can call activities, flows, or other processing",
+              "Support conditional execution based on property values",
+              "Enable reactive programming patterns"
+            ],
+            "use_cases": [
+              "Audit logging when sensitive data changes",
+              "Notification sending when status updates occur",
+              "Integration calls when key properties are modified",
+              "Workflow initiation based on data changes"
+            ],
+            "example": {
+              "rule": "Send notification when case status changes to 'Resolved'",
+              "trigger_condition": ".Status = 'Resolved'",
+              "action": "Call notification activity"
+            }
+          },
+          {
+            "type": "Declare OnChange",
+            "description": "Execute logic immediately when specific properties change",
+            "characteristics": [
+              "Immediate execution upon property change",
+              "Can modify other properties in response",
+              "Support cascading changes across multiple properties",
+              "Useful for real-time data synchronization"
+            ],
+            "use_cases": [
+              "Auto-populate related fields based on selections",
+              "Real-time data validation and correction",
+              "Dynamic UI updates based on user input",
+              "Immediate business rule application"
+            ],
+            "example": {
+              "rule": "Auto-populate city and state when ZIP code changes",
+              "trigger": ".ZipCode",
+              "action": "Lookup and set .City and .State"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Advanced Constraint Patterns",
+        "content": "Sophisticated constraint implementations for complex business scenarios.",
+        "constraint_patterns": [
+          {
+            "pattern": "Multi-Level Validations",
+            "description": "Layered validation logic with different severity levels",
+            "implementation": [
+              "Error constraints that prevent progression",
+              "Warning constraints that alert but allow continuation",
+              "Information constraints that provide guidance"
+            ],
+            "example": {
+              "scenario": "Loan application validation",
+              "error": "Income must be greater than $30,000",
+              "warning": "Debt-to-income ratio exceeds recommended 40%",
+              "info": "Consider providing additional documentation"
+            }
+          },
+          {
+            "pattern": "Conditional Constraints",
+            "description": "Constraints that apply only under specific conditions",
+            "techniques": [
+              "Use when conditions to control constraint execution",
+              "Implement business rule hierarchies",
+              "Create context-sensitive validations"
+            ],
+            "example": {
+              "rule": "SSN required only for US customers",
+              "condition": ".Country = 'US'",
+              "constraint": ".SSN != null"
+            }
+          },
+          {
+            "pattern": "Cross-Object Constraints",
+            "description": "Validations that span multiple objects or cases",
+            "implementation": [
+              "Reference external data sources",
+              "Validate against related case data",
+              "Enforce system-wide business rules"
+            ],
+            "example": {
+              "rule": "Customer cannot have more than 5 active loans",
+              "validation": "Count active loans for customer < 5"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Expression Calculation Strategies",
+        "content": "Advanced techniques for implementing complex calculations using declare expressions.",
+        "calculation_strategies": [
+          {
+            "strategy": "Dependency Chain Management",
+            "description": "Organizing calculations to minimize recalculation overhead",
+            "best_practices": [
+              "Structure calculations in logical dependency layers",
+              "Avoid circular dependencies between expressions",
+              "Use intermediate calculations for complex formulas",
+              "Cache expensive calculations appropriately"
+            ],
+            "example": {
+              "layer1": "Base values (quantity, unit price)",
+              "layer2": "Line totals (quantity * unit price)",
+              "layer3": "Subtotals (sum of line totals)",
+              "layer4": "Final total (subtotal + tax + shipping)"
+            }
+          },
+          {
+            "strategy": "Performance Optimization",
+            "description": "Techniques for optimizing calculation performance",
+            "optimization_techniques": [
+              "Use appropriate data types for calculations",
+              "Minimize database lookups in expressions",
+              "Cache frequently accessed reference data",
+              "Consider calculation timing and frequency"
+            ]
+          },
+          {
+            "strategy": "Error Handling in Calculations",
+            "description": "Robust error handling for calculation failures",
+            "error_scenarios": [
+              "Division by zero protection",
+              "Null value handling",
+              "Data type conversion errors",
+              "External data unavailability"
+            ],
+            "handling_techniques": [
+              "Use null-safe operators and functions",
+              "Implement default values for missing data",
+              "Validate input data before calculations",
+              "Provide meaningful error messages"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Trigger and OnChange Implementation",
+        "content": "Advanced patterns for implementing reactive business logic.",
+        "reactive_patterns": [
+          {
+            "pattern": "Event Cascading",
+            "description": "Managing chains of triggered events and their side effects",
+            "considerations": [
+              "Prevent infinite loops in trigger chains",
+              "Control the order of trigger execution",
+              "Handle performance implications of cascading events",
+              "Implement circuit breakers for runaway processes"
+            ],
+            "example": {
+              "trigger1": "Status change triggers notification",
+              "trigger2": "Notification triggers audit log",
+              "trigger3": "Audit log triggers compliance check"
+            }
+          },
+          {
+            "pattern": "Conditional Triggering",
+            "description": "Smart triggering based on complex business conditions",
+            "implementation": [
+              "Use when conditions to control trigger execution",
+              "Implement state-based triggering logic",
+              "Create context-aware reactive behaviors"
+            ]
+          },
+          {
+            "pattern": "Batch Processing Triggers",
+            "description": "Efficient handling of bulk data changes",
+            "techniques": [
+              "Aggregate multiple changes before triggering",
+              "Use queuing mechanisms for high-volume scenarios",
+              "Implement batch processing for performance"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Integration with Procedural Rules",
+        "content": "Combining declarative and procedural approaches effectively.",
+        "integration_strategies": [
+          {
+            "strategy": "Hybrid Architectures",
+            "description": "Combining declarative and procedural logic appropriately",
+            "guidelines": [
+              "Use declarative rules for business logic and validations",
+              "Use procedural rules for complex algorithms and integrations",
+              "Maintain clear separation between declarative and procedural layers",
+              "Document the interaction patterns between rule types"
+            ]
+          },
+          {
+            "strategy": "Data Flow Management",
+            "description": "Managing data flow between declarative and procedural components",
+            "considerations": [
+              "Ensure data consistency across rule types",
+              "Handle timing issues between declarative and procedural execution",
+              "Implement proper error handling across boundaries",
+              "Optimize performance for mixed rule scenarios"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Testing Declarative Rules",
+        "content": "Comprehensive testing strategies for declarative logic.",
+        "testing_approaches": [
+          {
+            "approach": "Unit Testing",
+            "description": "Testing individual declarative rules in isolation",
+            "techniques": [
+              "Test with various input combinations",
+              "Verify calculation accuracy and precision",
+              "Test error conditions and edge cases",
+              "Validate constraint behavior under different scenarios"
+            ]
+          },
+          {
+            "approach": "Integration Testing",
+            "description": "Testing declarative rules within complete business processes",
+            "focus_areas": [
+              "Verify rule interactions and dependencies",
+              "Test performance under realistic data volumes",
+              "Validate business process outcomes",
+              "Check for unintended side effects"
+            ]
+          },
+          {
+            "approach": "Regression Testing",
+            "description": "Ensuring rule changes don't break existing functionality",
+            "strategies": [
+              "Maintain comprehensive test suites",
+              "Automate testing where possible",
+              "Test with historical data scenarios",
+              "Validate backward compatibility"
+            ]
+          }
+        ]
+      }
+    ],
+    "best_practices": [
+      {
+        "practice": "Rule Design Principles",
+        "guidelines": [
+          "Keep individual rules simple and focused",
+          "Use meaningful names and descriptions",
+          "Document complex business logic clearly",
+          "Consider maintainability and readability"
+        ]
+      },
+      {
+        "practice": "Performance Considerations",
+        "guidelines": [
+          "Minimize expensive operations in frequently executed rules",
+          "Use appropriate caching strategies",
+          "Consider the impact of rule dependencies",
+          "Monitor and optimize rule execution performance"
+        ]
+      },
+      {
+        "practice": "Maintainability",
+        "guidelines": [
+          "Organize rules logically within class hierarchies",
+          "Use consistent naming conventions",
+          "Implement proper version control and change management",
+          "Document business rationale for complex rules"
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Declarative rules provide powerful reactive programming capabilities in PEGA",
+        "Different rule types serve specific purposes: constraints for validation, expressions for calculations, triggers for events",
+        "Advanced patterns enable sophisticated business logic implementation without procedural code",
+        "Proper dependency management and performance optimization are crucial for scalable solutions",
+        "Integration with procedural rules requires careful design and clear boundaries",
+        "Comprehensive testing ensures reliable declarative rule behavior",
+        "Following best practices leads to maintainable and performant declarative solutions"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/intermediate/declarative-rules",
+  "metadata": {
+    "created_date": "2025-01-25",
+    "last_updated": "2025-01-25",
+    "version": "1.0",
+    "tags": ["declarative", "constraints", "expressions", "triggers", "validation", "calculations"]
+  }
+}

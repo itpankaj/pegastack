@@ -1,0 +1,111 @@
+{
+  "id": "advanced-integration-patterns",
+  "title": "Advanced Integration Patterns Quiz",
+  "description": "Test your knowledge of advanced integration patterns and enterprise service architectures in PEGA",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which PEGA framework is primarily used for implementing event-driven architectures?",
+      "type": "multiple-choice",
+      "options": [
+        "Connect Rules",
+        "Event Strategy",
+        "Service Rules",
+        "Data Transform"
+      ],
+      "correct_answer": 1,
+      "explanation": "PEGA Event Strategy framework enables event-driven architectures by allowing applications to publish and subscribe to business events, supporting loose coupling between systems."
+    },
+    {
+      "id": 2,
+      "question": "What is the primary benefit of using asynchronous processing patterns in enterprise integration?",
+      "type": "multiple-choice",
+      "options": [
+        "Reduced memory usage",
+        "Simplified error handling",
+        "Non-blocking operations and improved performance",
+        "Enhanced security"
+      ],
+      "correct_answer": 2,
+      "explanation": "Asynchronous processing patterns enable non-blocking operations, allowing systems to continue processing while waiting for external responses, which significantly improves overall system performance and scalability."
+    },
+    {
+      "id": 3,
+      "question": "Which pattern helps prevent cascading failures in distributed systems?",
+      "type": "multiple-choice",
+      "options": [
+        "API Gateway Pattern",
+        "Circuit Breaker Pattern",
+        "Message Queue Pattern",
+        "Event Sourcing Pattern"
+      ],
+      "correct_answer": 1,
+      "explanation": "The Circuit Breaker Pattern monitors the health of external services and temporarily stops requests when failures are detected, preventing cascading failures across the system."
+    },
+    {
+      "id": 4,
+      "question": "In PEGA, what functionality acts as an API Gateway for centralized API management?",
+      "type": "multiple-choice",
+      "options": [
+        "Service Package",
+        "Connect Rules",
+        "Data Pages",
+        "Agent Rules"
+      ],
+      "correct_answer": 0,
+      "explanation": "PEGA's Service Package functionality acts as an API gateway, providing features like rate limiting, authentication, transformation, and routing for centralized API management."
+    },
+    {
+      "id": 5,
+      "question": "What is the main advantage of using message queuing patterns in PEGA?",
+      "type": "multiple-choice",
+      "options": [
+        "Faster database queries",
+        "Reliable, scalable processing with built-in error handling",
+        "Reduced network bandwidth",
+        "Simplified user interface design"
+      ],
+      "correct_answer": 1,
+      "explanation": "Message queuing patterns using PEGA Queue Processors provide reliable, scalable processing of large volumes of data with built-in error handling and retry mechanisms."
+    },
+    {
+      "id": 6,
+      "question": "Which integration pattern is best suited for handling complex data mapping scenarios with conditional logic?",
+      "type": "multiple-choice",
+      "options": [
+        "Simple Connect Rules",
+        "Advanced Data Transform with custom Java methods",
+        "Basic Service Rules",
+        "Standard Queue Processors"
+      ],
+      "correct_answer": 1,
+      "explanation": "Advanced Data Transform rules with custom Java methods support complex mapping patterns including hierarchical data structures, conditional transformations, and multi-source data aggregation."
+    },
+    {
+      "id": 7,
+      "question": "What security pattern should be implemented for protecting integration endpoints?",
+      "type": "multiple-choice",
+      "options": [
+        "Basic authentication only",
+        "No authentication for internal APIs",
+        "OAuth 2.0, JWT tokens, and mutual TLS authentication",
+        "Simple password protection"
+      ],
+      "correct_answer": 2,
+      "explanation": "Comprehensive security patterns for integration include OAuth 2.0 flows, JWT token validation, mutual TLS authentication, and API key management for robust protection of integration endpoints."
+    },
+    {
+      "id": 8,
+      "question": "Which approach ensures loose coupling in enterprise integration patterns?",
+      "type": "multiple-choice",
+      "options": [
+        "Direct database connections between systems",
+        "Shared memory communication",
+        "Event-driven communication with message channels",
+        "Synchronous API calls with tight dependencies"
+      ],
+      "correct_answer": 2,
+      "explanation": "Event-driven communication with message channels enables loose coupling by allowing systems to interact through events without direct dependencies on each other's internal implementations."
+    }
+  ]
+}

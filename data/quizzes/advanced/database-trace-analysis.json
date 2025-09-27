@@ -1,0 +1,123 @@
+{
+  "id": "database-trace-analysis",
+  "title": "Database Trace Analysis - Quiz",
+  "description": "Test your expertise in advanced database performance analysis and optimization for PEGA applications",
+  "level": "advanced",
+  "lesson_reference": "/tutorials/advanced/database-trace-analysis",
+  "passing_score": 80,
+  "time_limit": 30,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the most comprehensive approach for database trace configuration in enterprise PEGA environments?",
+      "options": [
+        "Basic SQL tracing only",
+        "Comprehensive tracing with wait events, binds, and execution statistics",
+        "Application-level logging only",
+        "Network-level packet capture"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive tracing with wait events, binds, and execution statistics provides complete visibility into database interactions, enabling thorough performance analysis.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "For PEGA case management applications, what indexing strategy provides optimal performance?",
+      "options": [
+        "Single-column indexes on all fields",
+        "Composite indexes matching PEGA query patterns with included columns",
+        "No indexes to avoid maintenance overhead",
+        "Clustered indexes only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Composite indexes matching PEGA query patterns with included columns optimize common access patterns while minimizing index maintenance overhead.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "What is the primary benefit of partitioned indexing for high-volume PEGA case data?",
+      "options": [
+        "Reduced storage requirements",
+        "Improved query performance and maintenance operations on time-based data",
+        "Better security isolation",
+        "Simplified backup procedures"
+      ],
+      "correct_answer": 1,
+      "explanation": "Partitioned indexing improves query performance by enabling partition pruning and makes maintenance operations more efficient on time-based case data.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "In PEGA rule resolution optimization, what type of index provides the best performance?",
+      "options": [
+        "Simple B-tree index",
+        "Function-based index with compressed storage for common patterns",
+        "Hash index",
+        "Bitmap index"
+      ],
+      "correct_answer": 1,
+      "explanation": "Function-based indexes with compression optimize rule resolution queries by handling case-insensitive searches and reducing storage requirements.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "What is the most critical factor in analyzing PEGA requestor connection patterns?",
+      "options": [
+        "Total connection count only",
+        "Session duration, concurrency, churn rate, and resource consumption patterns",
+        "Database version compatibility",
+        "Network bandwidth utilization"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive analysis of session characteristics enables optimal connection pool configuration and resource allocation for PEGA requestor patterns.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "What is the primary risk of over-indexing in PEGA database environments?",
+      "options": [
+        "Improved query performance",
+        "Maintenance overhead and slower DML operations impacting case processing",
+        "Better data integrity",
+        "Enhanced security"
+      ],
+      "correct_answer": 1,
+      "explanation": "Over-indexing creates maintenance overhead during case updates and can significantly slow down DML operations critical to PEGA case processing.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "For enterprise PEGA environments, what should drive connection pool optimization decisions?",
+      "options": [
+        "Maximum possible connections",
+        "Connection pattern analysis showing churn rates and resource consumption",
+        "Database vendor recommendations only",
+        "Minimum connection count for cost savings"
+      ],
+      "correct_answer": 1,
+      "explanation": "Connection pool optimization should be based on actual usage patterns, churn rates, and resource consumption analysis rather than generic recommendations.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "What is the most effective approach for establishing database performance baselines in PEGA environments?",
+      "options": [
+        "Single-point measurements during low usage",
+        "Continuous monitoring across business cycles with peak and off-peak analysis",
+        "Vendor benchmark comparisons only",
+        "Development environment testing results"
+      ],
+      "correct_answer": 1,
+      "explanation": "Baseline establishment requires continuous monitoring across business cycles to understand normal performance variations and identify genuine performance issues.",
+      "difficulty": "advanced"
+    }
+  ]
+}

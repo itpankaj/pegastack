@@ -1,0 +1,404 @@
+{
+  "id": "security-access-control",
+  "title": "Security & Access Control",
+  "level": "intermediate",
+  "estimated_time": 40,
+  "prerequisites": ["advanced-data-modeling"],
+  "learning_objectives": [
+    "Master PEGA's security architecture and access control mechanisms",
+    "Understand authentication, authorization, and role-based security",
+    "Learn to implement secure application designs",
+    "Apply security best practices and compliance requirements"
+  ],
+  "content": {
+    "introduction": {
+      "title": "PEGA Security Architecture",
+      "text": "Security is fundamental to enterprise applications. PEGA provides comprehensive security features including authentication, authorization, role-based access control, and data protection mechanisms that ensure applications meet enterprise security requirements and compliance standards."
+    },
+    "sections": [
+      {
+        "title": "Authentication Mechanisms",
+        "content": "Understanding and implementing various authentication methods in PEGA applications.",
+        "authentication_types": [
+          {
+            "type": "Database Authentication",
+            "description": "Traditional username/password authentication stored in PEGA database",
+            "characteristics": [
+              "User credentials stored in PEGA's operator records",
+              "Password policies and complexity requirements",
+              "Account lockout and security policies",
+              "Password history and expiration management"
+            ],
+            "configuration": [
+              "Configure password policies in security settings",
+              "Set up account lockout thresholds",
+              "Define password complexity requirements",
+              "Implement password expiration rules"
+            ],
+            "use_cases": [
+              "Internal applications with PEGA-managed users",
+              "Development and testing environments",
+              "Small-scale applications with limited user base",
+              "Scenarios requiring complete control over user management"
+            ]
+          },
+          {
+            "type": "LDAP/Active Directory Integration",
+            "description": "Enterprise directory service integration for centralized authentication",
+            "benefits": [
+              "Single sign-on with enterprise credentials",
+              "Centralized user management and provisioning",
+              "Integration with existing security infrastructure",
+              "Automatic user attribute synchronization"
+            ],
+            "implementation": [
+              "Configure LDAP connection settings",
+              "Map LDAP attributes to PEGA operator properties",
+              "Set up group-based role assignments",
+              "Implement user provisioning and deprovisioning"
+            ],
+            "security_considerations": [
+              "Secure LDAP connections (LDAPS)",
+              "Service account management and rotation",
+              "Attribute mapping security and privacy",
+              "Fallback authentication mechanisms"
+            ]
+          },
+          {
+            "type": "SAML Single Sign-On",
+            "description": "Standards-based SSO integration with identity providers",
+            "saml_components": [
+              "Identity Provider (IdP) configuration",
+              "Service Provider (SP) metadata exchange",
+              "Assertion processing and validation",
+              "Attribute mapping and user provisioning"
+            ],
+            "implementation_steps": [
+              "Configure SAML authentication service",
+              "Exchange metadata with identity provider",
+              "Map SAML assertions to PEGA user attributes",
+              "Test authentication flows and error scenarios"
+            ],
+            "advanced_features": [
+              "Just-in-time user provisioning",
+              "Multi-tenant SAML configurations",
+              "Encrypted assertions and signatures",
+              "Logout and session management"
+            ]
+          },
+          {
+            "type": "OAuth 2.0 and OpenID Connect",
+            "description": "Modern authentication protocols for API and web applications",
+            "oauth_flows": [
+              "Authorization Code flow for web applications",
+              "Client Credentials flow for service-to-service",
+              "Resource Owner Password flow for trusted clients",
+              "Implicit flow for single-page applications"
+            ],
+            "implementation": [
+              "Configure OAuth provider settings",
+              "Implement token validation and refresh",
+              "Handle scope-based authorization",
+              "Secure token storage and transmission"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Role-Based Access Control",
+        "content": "Implementing comprehensive role-based security models for enterprise applications.",
+        "rbac_components": [
+          {
+            "component": "Access Roles",
+            "description": "Logical groupings of permissions and capabilities",
+            "role_types": [
+              "Functional roles based on job responsibilities",
+              "Data access roles for information sensitivity",
+              "Administrative roles for system management",
+              "Temporary roles for specific projects or tasks"
+            ],
+            "design_principles": [
+              "Principle of least privilege",
+              "Role separation and segregation of duties",
+              "Hierarchical role inheritance",
+              "Clear role definitions and documentation"
+            ],
+            "examples": [
+              "CustomerServiceRep: View and update customer cases",
+              "Manager: Approve high-value transactions",
+              "Auditor: Read-only access to audit trails",
+              "SystemAdmin: Full system configuration access"
+            ]
+          },
+          {
+            "component": "Access Groups",
+            "description": "Collections of access roles with additional configuration",
+            "group_features": [
+              "Role aggregation and inheritance",
+              "Portal and application access control",
+              "Work queue and assignment configuration",
+              "Default settings and preferences"
+            ],
+            "configuration_aspects": [
+              "Portal access and navigation permissions",
+              "Work basket and queue assignments",
+              "Default landing pages and dashboards",
+              "Locale and personalization settings"
+            ]
+          },
+          {
+            "component": "Privilege Rules",
+            "description": "Granular permissions for specific system capabilities",
+            "privilege_categories": [
+              "Rule execution privileges (activities, flows, etc.)",
+              "Data access privileges (read, write, delete)",
+              "Administrative privileges (user management, configuration)",
+              "Integration privileges (external system access)"
+            ],
+            "privilege_management": [
+              "Assign privileges to access roles",
+              "Use privilege inheritance hierarchies",
+              "Implement conditional privileges",
+              "Monitor and audit privilege usage"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Data Security and Privacy",
+        "content": "Protecting sensitive data through encryption, masking, and access controls.",
+        "data_protection_mechanisms": [
+          {
+            "mechanism": "Field-Level Security",
+            "description": "Controlling access to specific properties and fields",
+            "implementation": [
+              "Configure property-level access controls",
+              "Implement when conditions for dynamic security",
+              "Use privilege-based field visibility",
+              "Apply security to embedded and referenced data"
+            ],
+            "use_cases": [
+              "Hide salary information from non-HR users",
+              "Restrict access to customer SSN/PII data",
+              "Control visibility of financial information",
+              "Implement need-to-know data access"
+            ]
+          },
+          {
+            "mechanism": "Data Encryption",
+            "description": "Encrypting sensitive data at rest and in transit",
+            "encryption_types": [
+              "Database-level encryption for data at rest",
+              "Transport encryption (TLS/SSL) for data in transit",
+              "Application-level encryption for specific fields",
+              "Key management and rotation strategies"
+            ],
+            "implementation_considerations": [
+              "Performance impact of encryption operations",
+              "Key management and secure storage",
+              "Compliance requirements (FIPS, Common Criteria)",
+              "Backup and recovery of encrypted data"
+            ]
+          },
+          {
+            "mechanism": "Data Masking and Anonymization",
+            "description": "Protecting sensitive data in non-production environments",
+            "masking_techniques": [
+              "Static masking for database copies",
+              "Dynamic masking for real-time access",
+              "Format-preserving encryption",
+              "Synthetic data generation"
+            ],
+            "compliance_benefits": [
+              "GDPR compliance for personal data protection",
+              "PCI DSS compliance for payment card data",
+              "HIPAA compliance for healthcare information",
+              "SOX compliance for financial data"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Application Security Patterns",
+        "content": "Implementing secure application architectures and design patterns.",
+        "security_patterns": [
+          {
+            "pattern": "Defense in Depth",
+            "description": "Multiple layers of security controls throughout the application",
+            "security_layers": [
+              "Perimeter security (firewalls, WAF)",
+              "Network security (VPNs, network segmentation)",
+              "Application security (authentication, authorization)",
+              "Data security (encryption, access controls)"
+            ],
+            "implementation": [
+              "Implement security at each architectural layer",
+              "Use redundant security controls",
+              "Apply fail-secure design principles",
+              "Monitor and log security events"
+            ]
+          },
+          {
+            "pattern": "Secure by Design",
+            "description": "Building security into the application from the ground up",
+            "design_principles": [
+              "Principle of least privilege",
+              "Fail-safe defaults",
+              "Complete mediation",
+              "Open design and security through obscurity avoidance"
+            ],
+            "implementation_practices": [
+              "Security requirements gathering and analysis",
+              "Threat modeling and risk assessment",
+              "Secure coding standards and practices",
+              "Security testing and validation"
+            ]
+          },
+          {
+            "pattern": "Zero Trust Architecture",
+            "description": "Never trust, always verify approach to security",
+            "zero_trust_principles": [
+              "Verify explicitly for every access request",
+              "Use least privilege access controls",
+              "Assume breach and limit blast radius",
+              "Continuous monitoring and validation"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Audit and Compliance",
+        "content": "Implementing comprehensive audit trails and compliance monitoring.",
+        "audit_capabilities": [
+          {
+            "capability": "Security Event Logging",
+            "description": "Comprehensive logging of security-related events",
+            "logged_events": [
+              "Authentication attempts (successful and failed)",
+              "Authorization decisions and access denials",
+              "Privilege escalations and role changes",
+              "Data access and modification events"
+            ],
+            "log_management": [
+              "Centralized log collection and storage",
+              "Log retention and archival policies",
+              "Log integrity and tamper protection",
+              "Real-time monitoring and alerting"
+            ]
+          },
+          {
+            "capability": "Compliance Reporting",
+            "description": "Automated reporting for regulatory compliance",
+            "compliance_frameworks": [
+              "SOX (Sarbanes-Oxley) for financial controls",
+              "GDPR for data protection and privacy",
+              "HIPAA for healthcare information protection",
+              "PCI DSS for payment card data security"
+            ],
+            "reporting_features": [
+              "Automated compliance report generation",
+              "Exception reporting and remediation tracking",
+              "Access certification and recertification",
+              "Risk assessment and mitigation reporting"
+            ]
+          },
+          {
+            "capability": "Data Loss Prevention",
+            "description": "Preventing unauthorized data access and exfiltration",
+            "dlp_techniques": [
+              "Content inspection and classification",
+              "Data movement monitoring and blocking",
+              "Endpoint protection and control",
+              "Network traffic analysis and filtering"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Security Testing and Validation",
+        "content": "Comprehensive security testing approaches for PEGA applications.",
+        "testing_approaches": [
+          {
+            "approach": "Authentication Testing",
+            "description": "Validating authentication mechanisms and controls",
+            "test_scenarios": [
+              "Valid and invalid credential testing",
+              "Account lockout and password policy validation",
+              "Session management and timeout testing",
+              "Multi-factor authentication verification"
+            ]
+          },
+          {
+            "approach": "Authorization Testing",
+            "description": "Verifying access controls and privilege enforcement",
+            "test_cases": [
+              "Role-based access control validation",
+              "Privilege escalation prevention testing",
+              "Data access boundary verification",
+              "Administrative function protection"
+            ]
+          },
+          {
+            "approach": "Penetration Testing",
+            "description": "Simulated attacks to identify security vulnerabilities",
+            "testing_areas": [
+              "Web application security (OWASP Top 10)",
+              "API security and endpoint protection",
+              "Database security and injection attacks",
+              "Network security and communication protocols"
+            ]
+          }
+        ]
+      }
+    ],
+    "security_best_practices": [
+      {
+        "category": "Identity and Access Management",
+        "practices": [
+          "Implement strong authentication mechanisms",
+          "Use role-based access control with least privilege",
+          "Regularly review and certify user access",
+          "Implement proper session management"
+        ]
+      },
+      {
+        "category": "Data Protection",
+        "practices": [
+          "Encrypt sensitive data at rest and in transit",
+          "Implement proper data classification and handling",
+          "Use data masking in non-production environments",
+          "Monitor and audit data access patterns"
+        ]
+      },
+      {
+        "category": "Application Security",
+        "practices": [
+          "Follow secure coding standards and practices",
+          "Implement input validation and output encoding",
+          "Use parameterized queries to prevent injection attacks",
+          "Regularly update and patch security vulnerabilities"
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "PEGA provides comprehensive security features for enterprise applications",
+        "Multiple authentication mechanisms support various enterprise integration scenarios",
+        "Role-based access control enables granular permission management",
+        "Data security mechanisms protect sensitive information through encryption and access controls",
+        "Security patterns like defense in depth and secure by design ensure robust protection",
+        "Audit and compliance capabilities support regulatory requirements",
+        "Comprehensive security testing validates protection mechanisms",
+        "Following security best practices ensures robust and compliant applications"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/intermediate/security-access-control",
+  "metadata": {
+    "created_date": "2025-01-25",
+    "last_updated": "2025-01-25",
+    "version": "1.0",
+    "tags": ["security", "authentication", "authorization", "rbac", "encryption", "compliance"]
+  }
+}

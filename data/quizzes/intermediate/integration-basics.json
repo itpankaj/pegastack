@@ -1,0 +1,123 @@
+{
+  "id": "integration-basics",
+  "title": "Integration Basics - Quiz",
+  "description": "Test your understanding of integration basics concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/integration-basics",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of REST connectors in PEGA?",
+      "options": [
+        "To manage user interfaces",
+        "To integrate with external RESTful web services",
+        "To handle database operations",
+        "To create reports"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "REST connectors integrate with external RESTful web services, enabling PEGA applications to consume and interact with external APIs and services."
+    },
+    {
+      "id": 2,
+      "question": "When should you use SOAP connectors instead of REST?",
+      "options": [
+        "For all integrations",
+        "When integrating with legacy systems that only support SOAP",
+        "For performance optimization",
+        "For database connections"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "SOAP connectors should be used when integrating with legacy systems that only support SOAP, as REST is generally preferred for modern integrations."
+    },
+    {
+      "id": 3,
+      "question": "How do you handle authentication in integrations?",
+      "options": [
+        "Hard-code credentials",
+        "Through secure authentication methods like OAuth, JWT, or API keys",
+        "No authentication needed",
+        "Use basic authentication only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Authentication in integrations should use secure methods like OAuth, JWT tokens, or API keys, with proper credential management and security best practices."
+    },
+    {
+      "id": 4,
+      "question": "What is the benefit of connection pooling?",
+      "options": [
+        "It increases connection overhead",
+        "It improves performance by reusing existing connections",
+        "It reduces security",
+        "It complicates configuration"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Connection pooling improves performance by reusing existing connections, reducing connection establishment overhead and improving resource utilization."
+    },
+    {
+      "id": 5,
+      "question": "How should you handle integration failures?",
+      "options": [
+        "Ignore and continue",
+        "Through comprehensive error handling, retry mechanisms, and fallback strategies",
+        "Stop the application",
+        "Show generic error messages"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Integration failures should be handled through comprehensive error handling, retry mechanisms with exponential backoff, and fallback strategies to ensure business continuity."
+    },
+    {
+      "id": 6,
+      "question": "What is the purpose of data mapping in integrations?",
+      "options": [
+        "To complicate integrations",
+        "To transform data between different formats and structures",
+        "To increase processing time",
+        "To reduce data accuracy"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data mapping transforms data between different formats and structures, ensuring compatibility between PEGA and external systems during integration."
+    },
+    {
+      "id": 7,
+      "question": "When should you use file listeners?",
+      "options": [
+        "For real-time integrations",
+        "For batch processing of files and legacy system integration",
+        "For user authentication",
+        "For database operations"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "File listeners are used for batch processing of files and legacy system integration, monitoring directories for new files and processing them automatically."
+    },
+    {
+      "id": 8,
+      "question": "How do you monitor integration performance?",
+      "options": [
+        "Manual checking only",
+        "Through comprehensive logging, metrics, and real-time monitoring",
+        "No monitoring needed",
+        "Database queries only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Integration performance should be monitored through comprehensive logging, metrics collection, real-time dashboards, and alerting systems to ensure reliability."
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "id": "first-case-app",
+  "title": "Your First Case App - Quiz",
+  "description": "Test your understanding of creating PEGA applications using App Studio",
+  "level": "beginner",
+  "lesson_reference": "/tutorials/beginner/first-case-app",
+  "passing_score": 70,
+  "time_limit": 25,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the first step when creating a new PEGA application?",
+      "options": [
+        "Design the user interface",
+        "Plan the application structure and requirements",
+        "Create database tables",
+        "Write business rules"
+      ],
+      "correct_answer": 1,
+      "explanation": "Planning the application structure and understanding requirements is crucial before starting development to ensure you build the right solution.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "question": "A case type represents a unit of work that progresses through various stages until completion.",
+      "correct_answer": true,
+      "explanation": "True. A case type defines the structure and lifecycle of work units, such as service requests, that move through different stages from creation to completion.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "In a Service Request application, which of these would be an appropriate case stage?",
+      "options": [
+        "Customer Database",
+        "Request Submission",
+        "Email Server",
+        "User Authentication"
+      ],
+      "correct_answer": 1,
+      "explanation": "Request Submission is a logical stage in the case lifecycle where initial request information is collected and validated.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "scenario",
+      "question": "You need to collect customer email addresses in your application. What data type should you use?",
+      "options": [
+        "Text",
+        "Email",
+        "Number",
+        "Boolean"
+      ],
+      "correct_answer": 1,
+      "explanation": "Email data type provides built-in validation for email format and ensures data integrity for email addresses.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "What is the purpose of process flows in PEGA applications?",
+      "options": [
+        "To store data permanently",
+        "To define how cases move through different stages",
+        "To create user accounts",
+        "To generate reports"
+      ],
+      "correct_answer": 1,
+      "explanation": "Process flows define the business process and workflow steps that determine how cases progress through different stages and activities.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q6",
+      "type": "true-false",
+      "question": "In App Studio, you can create forms using drag-and-drop visual designers.",
+      "correct_answer": true,
+      "explanation": "True. App Studio provides visual, drag-and-drop form designers that make it easy to create user interfaces without coding.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "When designing forms, what is a best practice for field organization?",
+      "options": [
+        "Put all fields on one long form",
+        "Group related fields together logically",
+        "Use random field ordering",
+        "Hide all field labels"
+      ],
+      "correct_answer": 1,
+      "explanation": "Grouping related fields together logically improves user experience and makes forms easier to understand and complete.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q8",
+      "type": "scenario",
+      "question": "You've created an application but want to test it before deployment. What should you do?",
+      "options": [
+        "Deploy it immediately to production",
+        "Use App Studio's preview feature to test functionality",
+        "Ask users to test the live system",
+        "Skip testing since it's built with App Studio"
+      ],
+      "correct_answer": 1,
+      "explanation": "Using App Studio's preview feature allows you to test your application thoroughly before deployment, identifying and fixing issues early.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "multiple-choice",
+      "question": "What should you test when validating your application?",
+      "options": [
+        "Only the happy path scenarios",
+        "Only error conditions",
+        "Both successful workflows and error handling",
+        "Only the user interface design"
+      ],
+      "correct_answer": 2,
+      "explanation": "Comprehensive testing should include both successful workflows (happy path) and error conditions to ensure the application handles all scenarios properly.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q10",
+      "type": "multiple-choice",
+      "question": "After creating your first case application, what would be a logical next step for learning?",
+      "options": [
+        "Start building enterprise applications immediately",
+        "Learn more about data modeling and advanced UI design",
+        "Switch to a different platform",
+        "Focus only on system administration"
+      ],
+      "correct_answer": 1,
+      "explanation": "Learning more about data modeling and advanced UI design builds naturally on the foundation of creating your first application and prepares you for more complex development.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q11",
+      "type": "true-false",
+      "question": "Process steps in PEGA should have clear, descriptive names that indicate their purpose.",
+      "correct_answer": true,
+      "explanation": "True. Clear, descriptive names for process steps improve maintainability and make it easier for team members to understand the application logic.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q12",
+      "type": "scenario",
+      "question": "Your Service Request application needs to handle different priority levels. What field type would be most appropriate?",
+      "options": [
+        "Text input where users type priority",
+        "Dropdown with predefined priority options",
+        "Checkbox for high priority only",
+        "Date field for priority deadline"
+      ],
+      "correct_answer": 1,
+      "explanation": "A dropdown with predefined priority options (Low, Medium, High, Urgent) ensures data consistency and makes it easy for users to select the appropriate priority level.",
+      "difficulty": "medium"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["first-application", "case-type", "app-studio", "application-development", "testing", "beginner"],
+    "estimated_time": 25
+  }
+}

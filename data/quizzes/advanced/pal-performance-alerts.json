@@ -1,0 +1,123 @@
+{
+  "id": "pal-performance-alerts",
+  "title": "PAL & Performance Alerts - Quiz",
+  "description": "Test your mastery of PEGA Performance Analyzer and advanced monitoring strategies",
+  "level": "advanced",
+  "lesson_reference": "/tutorials/advanced/pal-performance-alerts",
+  "passing_score": 80,
+  "time_limit": 30,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the optimal PAL sampling strategy for high-volume enterprise environments?",
+      "options": [
+        "Maximum sampling rate for complete coverage",
+        "Adaptive sampling rate that balances coverage with performance impact",
+        "Minimum sampling to reduce overhead",
+        "Fixed sampling every 10 minutes"
+      ],
+      "correct_answer": 1,
+      "explanation": "Adaptive sampling rates balance monitoring coverage with performance impact, automatically adjusting based on system load and data quality requirements.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "What is the primary advantage of baseline learning in performance alerting?",
+      "options": [
+        "Reduces storage requirements",
+        "Enables intelligent thresholds that adapt to normal business variations",
+        "Eliminates the need for manual configuration",
+        "Improves application performance"
+      ],
+      "correct_answer": 1,
+      "explanation": "Baseline learning enables intelligent thresholds that automatically adapt to normal business patterns, reducing false positives while maintaining sensitivity to genuine issues.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "In enterprise PAL configuration, what should be the primary consideration for data retention periods?",
+      "options": [
+        "Storage cost minimization",
+        "Balancing historical analysis needs with storage and performance constraints",
+        "Maximum retention for all data",
+        "Regulatory compliance only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Data retention should balance the need for historical trend analysis and capacity planning with storage costs and query performance considerations.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "What is the most effective approach for alert escalation in business-critical environments?",
+      "options": [
+        "Immediate escalation to all stakeholders",
+        "Multi-tiered escalation with defined timeframes and automatic remediation",
+        "Manual escalation only",
+        "No escalation to avoid alert fatigue"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-tiered escalation with defined timeframes ensures appropriate response while automatic remediation handles common issues without human intervention.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "How should predictive performance monitoring be implemented in enterprise PEGA applications?",
+      "options": [
+        "Using only historical data analysis",
+        "Combining trend analysis, machine learning, and leading indicators",
+        "Relying on reactive monitoring only",
+        "Using simple threshold-based alerts"
+      ],
+      "correct_answer": 1,
+      "explanation": "Effective predictive monitoring combines trend analysis, machine learning models, and leading indicators to identify potential issues before they impact business operations.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "What is the primary risk of over-monitoring in production PAL environments?",
+      "options": [
+        "Better performance insights",
+        "Performance degradation and alert fatigue leading to missed critical issues",
+        "Improved system reliability",
+        "Enhanced security"
+      ],
+      "correct_answer": 1,
+      "explanation": "Over-monitoring can degrade application performance through excessive data collection and create alert fatigue, potentially causing operators to miss genuinely critical issues.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "For enterprise PAL dashboards, what design principle should take priority?",
+      "options": [
+        "Maximum data density",
+        "Role-based views with actionable insights for specific stakeholder needs",
+        "Technical complexity to show expertise",
+        "Uniform dashboards for all users"
+      ],
+      "correct_answer": 1,
+      "explanation": "Role-based dashboards provide relevant, actionable insights tailored to specific stakeholder needs, improving decision-making efficiency and reducing information overload.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "What is the most critical factor in PAL threshold configuration for enterprise applications?",
+      "options": [
+        "Using vendor-recommended default values",
+        "Dynamic thresholds based on business patterns and SLA requirements",
+        "Setting all thresholds to maximum sensitivity",
+        "Using the same thresholds across all environments"
+      ],
+      "correct_answer": 1,
+      "explanation": "Dynamic thresholds based on actual business patterns and SLA requirements ensure alerts are meaningful and aligned with business impact rather than arbitrary technical metrics.",
+      "difficulty": "advanced"
+    }
+  ]
+}

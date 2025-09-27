@@ -1,0 +1,417 @@
+{
+  "id": "user-interface-basics",
+  "title": "User Interface Basics",
+  "level": "beginner",
+  "description": "Creating forms, views, and sections to build intuitive user interfaces in PEGA applications",
+  "duration": "90 minutes",
+  "difficulty": "Beginner",
+  "prerequisites": ["Data Modeling Basics"],
+  "learning_objectives": [
+    "Create harnesses and sections",
+    "Design responsive layouts",
+    "Add controls and validation",
+    "Style your interfaces",
+    "Implement user-friendly forms"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Building User Interfaces in PEGA",
+      "text": "User interface design in PEGA focuses on creating intuitive, responsive, and business-friendly interfaces. This lesson covers the fundamental UI components and design principles for building effective PEGA applications."
+    },
+    "sections": [
+      {
+        "title": "PEGA UI Architecture",
+        "content": "Understanding the hierarchical structure of PEGA user interfaces is essential for effective design.",
+        "components": [
+          {
+            "name": "Harness",
+            "description": "Top-level container that defines the overall page structure",
+            "purpose": "Provides the main layout framework for your application"
+          },
+          {
+            "name": "Section",
+            "description": "Reusable UI components that contain form fields and layouts",
+            "purpose": "Modular building blocks for forms and displays"
+          },
+          {
+            "name": "Layout",
+            "description": "Defines how sections and fields are arranged on the screen",
+            "purpose": "Controls responsive design and field positioning"
+          },
+          {
+            "name": "Controls",
+            "description": "Individual input fields, buttons, and display elements",
+            "purpose": "Direct user interaction points"
+          }
+        ]
+      },
+      {
+        "title": "Creating Harnesses",
+        "content": "Harnesses provide the main structure for your application screens.",
+        "types": [
+          {
+            "type": "New Harness",
+            "description": "For creating new work items",
+            "use_case": "Customer registration, order creation"
+          },
+          {
+            "type": "Perform Harness",
+            "description": "For processing existing work items",
+            "use_case": "Case review, approval processes"
+          },
+          {
+            "type": "Review Harness",
+            "description": "For viewing work item details",
+            "use_case": "Case summary, read-only displays"
+          }
+        ],
+        "creation_steps": [
+          {
+            "step": 1,
+            "title": "Access UI Gallery",
+            "instructions": [
+              "Open App Studio",
+              "Navigate to User interface > Harnesses",
+              "Click 'Create harness'",
+              "Choose appropriate harness type"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Configure Harness",
+            "instructions": [
+              "Enter harness name and description",
+              "Select target class",
+              "Choose layout template",
+              "Configure responsive settings"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Design Layout",
+            "instructions": [
+              "Add sections to harness",
+              "Configure section placement",
+              "Set up navigation elements",
+              "Test responsive behavior"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building Sections",
+        "content": "Sections are the building blocks of your user interface, containing the actual form fields and content.",
+        "section_types": [
+          {
+            "type": "Form Section",
+            "description": "Contains input fields for data entry",
+            "best_for": "Data collection, user input forms"
+          },
+          {
+            "type": "Display Section",
+            "description": "Shows read-only information",
+            "best_for": "Summaries, confirmation screens"
+          },
+          {
+            "type": "Dynamic Section",
+            "description": "Content changes based on conditions",
+            "best_for": "Conditional displays, wizard steps"
+          }
+        ],
+        "design_process": [
+          {
+            "step": 1,
+            "title": "Plan Section Content",
+            "tasks": [
+              "Identify required fields",
+              "Group related information",
+              "Consider user workflow",
+              "Plan validation requirements"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Create Section Structure",
+            "tasks": [
+              "Choose appropriate layout",
+              "Add field containers",
+              "Configure field properties",
+              "Set up field relationships"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Configure Field Behavior",
+            "tasks": [
+              "Set required fields",
+              "Add validation rules",
+              "Configure conditional visibility",
+              "Implement field calculations"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Layout Options",
+        "content": "PEGA provides various layout options to create responsive and visually appealing interfaces.",
+        "layout_types": [
+          {
+            "name": "Column Layout",
+            "description": "Arranges fields in columns",
+            "best_for": "Forms with multiple fields, responsive design",
+            "configuration": "1-4 columns, automatic wrapping"
+          },
+          {
+            "name": "Grid Layout",
+            "description": "Precise positioning using rows and columns",
+            "best_for": "Complex forms, exact positioning requirements",
+            "configuration": "Custom rows and columns, span settings"
+          },
+          {
+            "name": "Freestyle Layout",
+            "description": "Complete control over element positioning",
+            "best_for": "Custom designs, unique layouts",
+            "configuration": "Absolute positioning, custom CSS"
+          },
+          {
+            "name": "Stacked Layout",
+            "description": "Vertical arrangement of elements",
+            "best_for": "Mobile interfaces, simple forms",
+            "configuration": "Top-to-bottom flow, full width elements"
+          }
+        ]
+      },
+      {
+        "title": "Form Controls",
+        "content": "Understanding different types of form controls and when to use them.",
+        "control_types": [
+          {
+            "category": "Text Input",
+            "controls": [
+              {"name": "Text Input", "use_for": "Names, descriptions, short text"},
+              {"name": "Text Area", "use_for": "Long text, comments, notes"},
+              {"name": "Rich Text Editor", "use_for": "Formatted text, HTML content"}
+            ]
+          },
+          {
+            "category": "Selection",
+            "controls": [
+              {"name": "Dropdown", "use_for": "Single selection from list"},
+              {"name": "Radio Buttons", "use_for": "Single selection, visible options"},
+              {"name": "Checkboxes", "use_for": "Multiple selections"},
+              {"name": "Autocomplete", "use_for": "Searchable selections"}
+            ]
+          },
+          {
+            "category": "Date/Time",
+            "controls": [
+              {"name": "Date Picker", "use_for": "Date selection"},
+              {"name": "DateTime Picker", "use_for": "Date and time selection"},
+              {"name": "Time Picker", "use_for": "Time-only selection"}
+            ]
+          },
+          {
+            "category": "Numeric",
+            "controls": [
+              {"name": "Number Input", "use_for": "Numeric values"},
+              {"name": "Currency", "use_for": "Money amounts"},
+              {"name": "Percentage", "use_for": "Percentage values"},
+              {"name": "Slider", "use_for": "Range selection"}
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Responsive Design",
+        "content": "Creating interfaces that work well on all device sizes.",
+        "principles": [
+          {
+            "principle": "Mobile-First Design",
+            "description": "Design for mobile devices first, then enhance for larger screens",
+            "implementation": [
+              "Use stacked layouts for mobile",
+              "Ensure touch-friendly controls",
+              "Optimize for thumb navigation",
+              "Test on actual devices"
+            ]
+          },
+          {
+            "principle": "Flexible Layouts",
+            "description": "Use layouts that adapt to different screen sizes",
+            "implementation": [
+              "Use percentage-based widths",
+              "Implement column wrapping",
+              "Configure breakpoints",
+              "Test responsive behavior"
+            ]
+          },
+          {
+            "principle": "Progressive Enhancement",
+            "description": "Start with basic functionality, add enhancements for larger screens",
+            "implementation": [
+              "Ensure core functionality works on all devices",
+              "Add advanced features for desktop",
+              "Use conditional visibility",
+              "Optimize performance for mobile"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Styling and Theming",
+        "content": "Customizing the appearance of your PEGA application.",
+        "styling_options": [
+          {
+            "method": "Built-in Themes",
+            "description": "Use PEGA's predefined themes",
+            "advantages": ["Quick implementation", "Consistent appearance", "Responsive design"],
+            "limitations": ["Limited customization", "Generic appearance"]
+          },
+          {
+            "method": "Custom CSS",
+            "description": "Create custom styles for unique branding",
+            "advantages": ["Complete control", "Brand consistency", "Unique appearance"],
+            "limitations": ["More development time", "Maintenance overhead"]
+          },
+          {
+            "method": "Skin Rules",
+            "description": "PEGA's styling framework",
+            "advantages": ["PEGA-native approach", "Good performance", "Upgrade-safe"],
+            "limitations": ["Learning curve", "Limited flexibility"]
+          }
+        ]
+      }
+    ],
+    "practical_exercise": {
+      "title": "Build a Customer Registration Form",
+      "description": "Create a comprehensive customer registration interface with validation and responsive design.",
+      "requirements": [
+        "Personal information section (Name, Email, Phone)",
+        "Address information section (Street, City, State, ZIP)",
+        "Account preferences section (Newsletter, Notifications)",
+        "Terms and conditions acceptance",
+        "Responsive design for mobile and desktop"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Create the Main Harness",
+          "tasks": [
+            "Create a new 'New' harness named 'CustomerRegistration'",
+            "Choose a responsive layout template",
+            "Configure header with company branding",
+            "Add navigation elements"
+          ]
+        },
+        {
+          "step": 2,
+          "title": "Build Personal Information Section",
+          "tasks": [
+            "Create section with column layout",
+            "Add FirstName and LastName fields (required)",
+            "Add Email field with validation",
+            "Add Phone field with format validation"
+          ]
+        },
+        {
+          "step": 3,
+          "title": "Create Address Section",
+          "tasks": [
+            "Build address section with grid layout",
+            "Add Street Address (text area)",
+            "Add City, State, ZIP fields",
+            "Implement state dropdown with data page"
+          ]
+        },
+        {
+          "step": 4,
+          "title": "Add Preferences Section",
+          "tasks": [
+            "Create preferences section",
+            "Add newsletter subscription checkbox",
+            "Add notification preferences (radio buttons)",
+            "Add communication frequency dropdown"
+          ]
+        },
+        {
+          "step": 5,
+          "title": "Implement Validation and Submission",
+          "tasks": [
+            "Add terms and conditions checkbox (required)",
+            "Configure form validation rules",
+            "Add submit and cancel buttons",
+            "Test form submission workflow"
+          ]
+        }
+      ]
+    },
+    "best_practices": {
+      "title": "UI Design Best Practices",
+      "practices": [
+        {
+          "category": "User Experience",
+          "guidelines": [
+            "Keep forms simple and focused",
+            "Group related fields together",
+            "Use clear, descriptive labels",
+            "Provide helpful error messages",
+            "Implement progressive disclosure"
+          ]
+        },
+        {
+          "category": "Performance",
+          "guidelines": [
+            "Minimize the number of sections per page",
+            "Use lazy loading for complex content",
+            "Optimize images and media",
+            "Test on slow network connections",
+            "Monitor page load times"
+          ]
+        },
+        {
+          "category": "Accessibility",
+          "guidelines": [
+            "Use semantic HTML elements",
+            "Provide alt text for images",
+            "Ensure keyboard navigation works",
+            "Use sufficient color contrast",
+            "Test with screen readers"
+          ]
+        },
+        {
+          "category": "Maintainability",
+          "guidelines": [
+            "Create reusable sections",
+            "Use consistent naming conventions",
+            "Document complex UI logic",
+            "Follow PEGA UI standards",
+            "Regular code reviews"
+          ]
+        }
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/user-interface-basics",
+  "next_lesson": "/tutorials/beginner/case-lifecycle",
+  "previous_lesson": "/tutorials/beginner/data-modeling",
+  "resources": [
+    {
+      "type": "documentation",
+      "title": "PEGA UI Design Guide",
+      "url": "https://docs.pega.com/ui-design"
+    },
+    {
+      "type": "video",
+      "title": "Responsive Design in PEGA",
+      "url": "/resources/videos/responsive-design"
+    },
+    {
+      "type": "download",
+      "title": "UI Design Checklist",
+      "url": "/downloads/ui-design-checklist.pdf"
+    }
+  ],
+  "estimated_completion_time": 90,
+  "tags": ["user-interface", "forms", "responsive-design", "harness", "sections", "beginner"],
+  "last_updated": "2025-07-24"
+}

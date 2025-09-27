@@ -1,0 +1,123 @@
+{
+  "id": "advanced-data-modeling",
+  "title": "Advanced Data Modeling - Quiz",
+  "description": "Test your understanding of advanced data modeling concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/advanced-data-modeling",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary benefit of inheritance in PEGA data modeling?",
+      "options": [
+        "It increases complexity",
+        "It promotes reusability and reduces duplication",
+        "It slows down processing",
+        "It makes debugging harder"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Inheritance promotes reusability and reduces duplication by allowing child classes to inherit properties and methods from parent classes, ensuring consistency across the application."
+    },
+    {
+      "id": 2,
+      "question": "When should you use embedded pages in data models?",
+      "options": [
+        "For all data storage",
+        "To model complex hierarchical relationships and group related data",
+        "For simple scalar values",
+        "To increase database size"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Embedded pages model complex hierarchical relationships and group related data together, providing better organization and logical grouping of information."
+    },
+    {
+      "id": 3,
+      "question": "How do you optimize data model performance?",
+      "options": [
+        "By adding more properties",
+        "Through proper indexing, selective property exposure, and efficient queries",
+        "By using complex inheritance",
+        "By avoiding normalization"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data model performance is optimized through proper database indexing, selective property exposure, efficient queries, and avoiding unnecessary complexity."
+    },
+    {
+      "id": 4,
+      "question": "What is the purpose of data transforms in modeling?",
+      "options": [
+        "To complicate data structures",
+        "To map and transform data between different formats and systems",
+        "To increase processing time",
+        "To reduce data accuracy"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data transforms map and transform data between different formats and systems, ensuring compatibility and proper data flow between integrated systems."
+    },
+    {
+      "id": 5,
+      "question": "When should you use page lists vs page groups?",
+      "options": [
+        "Interchangeably without consideration",
+        "Page lists for ordered collections, page groups for keyed collections",
+        "Page groups for ordered collections",
+        "Page lists for keyed collections"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Page lists are used for ordered collections (like arrays), while page groups are used for keyed collections (like dictionaries) where items are accessed by keys."
+    },
+    {
+      "id": 6,
+      "question": "How should you handle data model versioning?",
+      "options": [
+        "Ignore versioning",
+        "Through careful change management and backward compatibility planning",
+        "By always creating new classes",
+        "By avoiding changes"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data model versioning should be handled through careful change management, backward compatibility planning, and phased rollout strategies to minimize disruption."
+    },
+    {
+      "id": 7,
+      "question": "What is the benefit of data abstraction layers?",
+      "options": [
+        "They increase complexity",
+        "They provide consistent interfaces and hide implementation details",
+        "They reduce performance",
+        "They make debugging harder"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data abstraction layers provide consistent interfaces and hide implementation details, making applications more maintainable and adaptable to changes."
+    },
+    {
+      "id": 8,
+      "question": "How do you ensure data integrity in complex models?",
+      "options": [
+        "By avoiding validation",
+        "Through comprehensive validation rules, constraints, and business logic",
+        "By using simple data types",
+        "By reducing complexity"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data integrity in complex models is ensured through comprehensive validation rules, constraints, business logic, and proper error handling mechanisms."
+    }
+  ]
+}

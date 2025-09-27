@@ -1,0 +1,136 @@
+{
+  "id": "basic-validations",
+  "title": "Basic Validations Quiz",
+  "description": "Test your understanding of validation types, error handling, and data quality best practices in PEGA.",
+  "level": "beginner",
+  "lesson": "basic-validations",
+  "total_questions": 10,
+  "passing_score": 70,
+  "time_limit": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is the primary purpose of validation in PEGA applications?",
+      "options": [
+        "To slow down user input",
+        "To ensure data quality and business rule compliance",
+        "To make forms more complex",
+        "To reduce system performance"
+      ],
+      "correct_answer": 1,
+      "explanation": "Validation ensures data quality by checking that user input meets business requirements and system constraints, preventing invalid data from entering the system."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "Which type of validation checks data format and basic constraints?",
+      "options": [
+        "Business rule validation",
+        "Cross-field validation",
+        "Field-level validation",
+        "Process validation"
+      ],
+      "correct_answer": 2,
+      "explanation": "Field-level (property-level) validation checks individual fields for format, length, data type, and basic constraints like required fields or valid email patterns."
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "Client-side validation should be the only validation performed in a PEGA application.",
+      "correct_answer": false,
+      "explanation": "False. While client-side validation provides immediate feedback, server-side validation is essential for security and data integrity, as client-side validation can be bypassed."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "When should validation messages be displayed to users?",
+      "options": [
+        "Only after form submission",
+        "Never, to avoid confusion",
+        "As soon as possible when errors are detected",
+        "Only in system logs"
+      ],
+      "correct_answer": 2,
+      "explanation": "Validation messages should be displayed as soon as errors are detected to provide immediate feedback and allow users to correct issues quickly."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "What characterizes a good validation error message?",
+      "options": [
+        "Technical jargon and system codes",
+        "Clear, specific, and actionable guidance",
+        "Generic messages for all errors",
+        "Messages only visible to developers"
+      ],
+      "correct_answer": 1,
+      "explanation": "Good validation messages are clear, specific about what's wrong, and provide actionable guidance on how to fix the issue, helping users resolve problems quickly."
+    },
+    {
+      "id": 6,
+      "type": "scenario",
+      "question": "A user enters a birth date that makes them appear to be 150 years old. What type of validation would catch this issue?",
+      "options": [
+        "Format validation only",
+        "Required field validation",
+        "Business rule validation with logical date ranges",
+        "Cross-system validation"
+      ],
+      "correct_answer": 2,
+      "explanation": "Business rule validation would check that the birth date falls within logical ranges based on business logic, catching unrealistic dates that are technically valid formats."
+    },
+    {
+      "id": 7,
+      "type": "true-false",
+      "question": "Validation should prevent users from proceeding until all errors are resolved.",
+      "correct_answer": true,
+      "explanation": "Yes, validation should prevent progression when critical errors exist to ensure data quality and prevent downstream issues in business processes."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "Which validation approach provides the best user experience?",
+      "options": [
+        "Validate only on form submission",
+        "Real-time validation with immediate feedback",
+        "No validation to avoid interrupting users",
+        "Validation only in background processes"
+      ],
+      "correct_answer": 1,
+      "explanation": "Real-time validation with immediate feedback provides the best user experience by catching and highlighting errors as users type, allowing for quick corrections."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "What should happen when validation rules conflict with each other?",
+      "options": [
+        "Ignore all validation",
+        "Apply only the first rule",
+        "Establish clear rule precedence and resolution logic",
+        "Show random error messages"
+      ],
+      "correct_answer": 2,
+      "explanation": "When validation rules conflict, there should be clear precedence rules and resolution logic to determine which validation takes priority and how conflicts are handled."
+    },
+    {
+      "id": 10,
+      "type": "scenario",
+      "question": "You're implementing validation for a credit card number field. What validation layers would you implement?",
+      "options": [
+        "Only check if the field is not empty",
+        "Format validation, length check, and Luhn algorithm verification",
+        "Only visual formatting",
+        "No validation needed"
+      ],
+      "correct_answer": 1,
+      "explanation": "Credit card validation should include multiple layers: format validation (digits only), length checking (appropriate for card type), and Luhn algorithm verification for mathematical validity."
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-01-24",
+    "last_updated": "2025-01-24",
+    "version": "1.0",
+    "tags": ["validation", "data-quality", "error-handling", "user-experience"]
+  }
+}

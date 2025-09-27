@@ -1,0 +1,123 @@
+{
+  "id": "data-pages-sources",
+  "title": "Data Pages & Data Sources - Quiz",
+  "description": "Test your understanding of data pages and data sources concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/data-pages-sources",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of data pages in PEGA?",
+      "options": [
+        "To store user preferences",
+        "To provide structured access to external data sources",
+        "To manage database connections",
+        "To handle user authentication"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data pages provide structured access to external data sources, encapsulating data retrieval logic and providing a consistent interface for applications to access external systems."
+    },
+    {
+      "id": 2,
+      "question": "When should you use a keyed data page?",
+      "options": [
+        "For static data that never changes",
+        "For parameterized data retrieval based on input parameters",
+        "For simple list data",
+        "For user session data"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Keyed data pages are used for parameterized data retrieval where the data returned depends on input parameters, allowing dynamic data loading based on context."
+    },
+    {
+      "id": 3,
+      "question": "How do data transforms improve data integration?",
+      "options": [
+        "By increasing processing time",
+        "By mapping and transforming data between different formats and structures",
+        "By reducing data accuracy",
+        "By complicating integrations"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data transforms improve data integration by mapping and transforming data between different formats and structures, ensuring compatibility between systems."
+    },
+    {
+      "id": 4,
+      "question": "What is the benefit of data page caching?",
+      "options": [
+        "It increases database load",
+        "It improves performance by reducing repeated data source calls",
+        "It makes data stale",
+        "It complicates debugging"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data page caching improves performance by storing retrieved data in memory, reducing repeated calls to external data sources and improving application responsiveness."
+    },
+    {
+      "id": 5,
+      "question": "When should you use report definitions as data sources?",
+      "options": [
+        "For real-time data updates",
+        "For complex queries and aggregations from PEGA database tables",
+        "For external system integration",
+        "For user input validation"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Report definitions are ideal for complex queries and aggregations from PEGA database tables, providing powerful data retrieval capabilities within the PEGA ecosystem."
+    },
+    {
+      "id": 6,
+      "question": "How should you handle data source connection failures?",
+      "options": [
+        "Ignore the failures",
+        "Through comprehensive error handling, retry mechanisms, and fallback strategies",
+        "Disable the integration",
+        "Show generic error messages"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data source connection failures should be handled through comprehensive error handling, retry mechanisms, fallback strategies, and user-friendly error messages."
+    },
+    {
+      "id": 7,
+      "question": "What is the purpose of data access patterns?",
+      "options": [
+        "To complicate data retrieval",
+        "To standardize how applications access and manipulate data",
+        "To reduce data accuracy",
+        "To increase development time"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data access patterns standardize how applications access and manipulate data, providing consistent approaches for data retrieval, updates, and management."
+    },
+    {
+      "id": 8,
+      "question": "How do you optimize data page performance?",
+      "options": [
+        "By loading all data at once",
+        "Through efficient caching strategies, pagination, and selective data loading",
+        "By disabling caching",
+        "By using complex queries"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Data page performance is optimized through efficient caching strategies, pagination for large datasets, selective data loading, and connection pooling."
+    }
+  ]
+}

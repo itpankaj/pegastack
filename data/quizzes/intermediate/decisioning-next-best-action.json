@@ -1,0 +1,123 @@
+{
+  "id": "decisioning-next-best-action",
+  "title": "Decisioning & Next-Best-Action - Quiz",
+  "description": "Test your understanding of decisioning and next-best-action concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/decisioning-next-best-action",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of PEGA's decisioning engine?",
+      "options": [
+        "To manage database connections",
+        "To deliver personalized next-best-actions based on predictive analytics",
+        "To handle user authentication",
+        "To optimize network performance"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "PEGA's decisioning engine combines predictive analytics, business rules, and real-time data to deliver personalized next-best-actions that optimize customer experiences and business outcomes."
+    },
+    {
+      "id": 2,
+      "question": "How do adaptive models improve over time?",
+      "options": [
+        "Through manual configuration updates",
+        "By learning from customer interactions and continuously updating predictions",
+        "Through system restarts",
+        "Via database optimization"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Adaptive models continuously learn from customer interactions, updating their predictions and recommendations based on real-world outcomes and user behavior patterns."
+    },
+    {
+      "id": 3,
+      "question": "What role does arbitration play in next-best-action selection?",
+      "options": [
+        "It manages database connections",
+        "It selects the optimal action from multiple candidates based on business rules and predictions",
+        "It handles user authentication",
+        "It optimizes network bandwidth"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Arbitration engines evaluate multiple candidate actions and select the optimal one based on business rules, customer preferences, predicted outcomes, and strategic priorities."
+    },
+    {
+      "id": 4,
+      "question": "What is required for real-time decision processing?",
+      "options": [
+        "Batch processing capabilities",
+        "Low-latency processing engines and current customer context",
+        "Manual intervention",
+        "Database optimization only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Real-time decision processing requires low-latency processing engines that can instantly analyze current customer context and deliver immediate recommendations."
+    },
+    {
+      "id": 5,
+      "question": "How should customer context be incorporated into decision strategies?",
+      "options": [
+        "Ignored for simplicity",
+        "As a key input for personalization and relevance",
+        "Only used for authentication",
+        "Stored separately from decisions"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Customer context (demographics, behavior, history, preferences) must be incorporated as a key input to ensure decisions are personalized, relevant, and contextually appropriate."
+    },
+    {
+      "id": 6,
+      "question": "What is the benefit of propensity models in decisioning?",
+      "options": [
+        "They handle database connections",
+        "They predict the likelihood of specific customer behaviors and outcomes",
+        "They manage user sessions",
+        "They optimize network performance"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Propensity models predict the likelihood of specific customer behaviors (purchase, churn, response) enabling more accurate and targeted decision recommendations."
+    },
+    {
+      "id": 7,
+      "question": "How should business objectives be aligned with decision strategies?",
+      "options": [
+        "Business objectives should override customer preferences",
+        "Through balanced consideration of customer needs and business priorities",
+        "Business objectives should be ignored",
+        "Only customer preferences matter"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Decision strategies must balance customer needs and preferences with business objectives, regulatory requirements, and strategic priorities to achieve optimal outcomes."
+    },
+    {
+      "id": 8,
+      "question": "What is crucial for decision strategy performance monitoring?",
+      "options": [
+        "Manual tracking only",
+        "Comprehensive metrics, KPIs, and continuous optimization based on outcomes",
+        "Database optimization",
+        "Network bandwidth monitoring"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Decision strategy performance requires comprehensive metrics, KPIs tracking, and continuous optimization based on actual business outcomes and customer feedback."
+    }
+  ]
+}

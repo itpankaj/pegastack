@@ -1,0 +1,123 @@
+{
+  "id": "security-access-control",
+  "title": "Security & Access Control - Quiz",
+  "description": "Test your understanding of security and access control concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/security-access-control",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of Access Control in PEGA?",
+      "options": [
+        "To improve performance",
+        "To manage user permissions and restrict access to sensitive data",
+        "To handle database connections",
+        "To create reports"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Access Control manages user permissions and restricts access to sensitive data, ensuring that users only see and modify data appropriate to their role and responsibilities."
+    },
+    {
+      "id": 2,
+      "question": "When should you use role-based access control (RBAC)?",
+      "options": [
+        "For all users equally",
+        "To organize permissions based on job functions and responsibilities",
+        "To increase complexity",
+        "To reduce security"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Role-based access control organizes permissions based on job functions and responsibilities, providing scalable and maintainable security management."
+    },
+    {
+      "id": 3,
+      "question": "How do you implement field-level security?",
+      "options": [
+        "By hiding all fields",
+        "Through access control policies and conditional visibility rules",
+        "By hard-coding restrictions",
+        "By avoiding security controls"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Field-level security is implemented through access control policies and conditional visibility rules that dynamically show or hide fields based on user permissions."
+    },
+    {
+      "id": 4,
+      "question": "What is the benefit of authentication policies?",
+      "options": [
+        "They increase login time",
+        "They provide centralized user authentication and session management",
+        "They reduce security",
+        "They complicate user experience"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Authentication policies provide centralized user authentication and session management, ensuring consistent security across all application components."
+    },
+    {
+      "id": 5,
+      "question": "How should you handle sensitive data encryption?",
+      "options": [
+        "Store in plain text",
+        "Through comprehensive encryption at rest and in transit",
+        "Only encrypt passwords",
+        "Avoid encryption"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Sensitive data should be protected through comprehensive encryption at rest and in transit, using industry-standard encryption algorithms and key management."
+    },
+    {
+      "id": 6,
+      "question": "What is the purpose of audit trails in security?",
+      "options": [
+        "To increase storage requirements",
+        "To track user actions and maintain compliance records",
+        "To slow down processing",
+        "To complicate debugging"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Audit trails track user actions and maintain compliance records, providing accountability and supporting regulatory requirements and security investigations."
+    },
+    {
+      "id": 7,
+      "question": "How do you implement least privilege access?",
+      "options": [
+        "Give all users full access",
+        "By granting minimum necessary permissions for each role",
+        "Use default permissions",
+        "Avoid access controls"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Least privilege access is implemented by granting minimum necessary permissions for each role, ensuring users only have access to resources required for their job functions."
+    },
+    {
+      "id": 8,
+      "question": "What is crucial for security testing and validation?",
+      "options": [
+        "Manual testing only",
+        "Comprehensive security testing, penetration testing, and regular audits",
+        "No testing needed",
+        "Basic functionality testing"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Security testing requires comprehensive security testing, penetration testing, vulnerability assessments, and regular audits to identify and remediate security issues."
+    }
+  ]
+}

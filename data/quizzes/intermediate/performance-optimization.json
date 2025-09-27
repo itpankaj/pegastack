@@ -1,0 +1,123 @@
+{
+  "id": "performance-optimization",
+  "title": "Performance Optimization - Quiz",
+  "description": "Test your understanding of performance optimization concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/performance-optimization",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the first step in performance optimization?",
+      "options": [
+        "Start optimizing randomly",
+        "Performance analysis and bottleneck identification",
+        "Add more hardware",
+        "Ignore performance issues"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Performance optimization should begin with comprehensive analysis and bottleneck identification to understand where improvements will have the greatest impact."
+    },
+    {
+      "id": 2,
+      "question": "How do database indexes improve performance?",
+      "options": [
+        "They slow down queries",
+        "By reducing query execution time through efficient data retrieval",
+        "They increase storage requirements",
+        "They complicate queries"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Database indexes improve performance by reducing query execution time through efficient data retrieval, allowing the database to quickly locate relevant records."
+    },
+    {
+      "id": 3,
+      "question": "When should you implement caching strategies?",
+      "options": [
+        "Never",
+        "For frequently accessed data and expensive computations",
+        "For all data",
+        "Only for static content"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Caching strategies should be implemented for frequently accessed data and expensive computations to reduce processing time and improve response times."
+    },
+    {
+      "id": 4,
+      "question": "What is the benefit of query optimization?",
+      "options": [
+        "It increases processing time",
+        "It improves database performance through efficient SQL execution",
+        "It reduces data accuracy",
+        "It complicates debugging"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Query optimization improves database performance through efficient SQL execution, reducing resource consumption and improving application responsiveness."
+    },
+    {
+      "id": 5,
+      "question": "How do you identify memory leaks?",
+      "options": [
+        "Ignore memory usage",
+        "Through memory profiling tools and monitoring",
+        "Add more memory",
+        "Restart the application"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Memory leaks are identified through memory profiling tools, monitoring tools, and performance analysis to detect abnormal memory consumption patterns."
+    },
+    {
+      "id": 6,
+      "question": "What is crucial for connection pool optimization?",
+      "options": [
+        "Maximum connections",
+        "Balanced pool sizing based on workload and resource constraints",
+        "Minimum connections",
+        "No pooling"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Connection pool optimization requires balanced sizing based on workload patterns and resource constraints to maximize performance without overwhelming resources."
+    },
+    {
+      "id": 7,
+      "question": "How should you monitor application performance?",
+      "options": [
+        "Manual checking only",
+        "Through comprehensive monitoring tools, metrics, and alerting",
+        "No monitoring needed",
+        "Database queries only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Application performance should be monitored through comprehensive tools, metrics collection, real-time dashboards, and alerting systems to proactively identify issues."
+    },
+    {
+      "id": 8,
+      "question": "What is the benefit of load testing?",
+      "options": [
+        "It increases costs",
+        "It identifies performance bottlenecks under realistic load conditions",
+        "It reduces performance",
+        "It complicates deployment"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Load testing identifies performance bottlenecks under realistic load conditions, helping ensure applications can handle expected user volumes and peak loads."
+    }
+  ]
+}

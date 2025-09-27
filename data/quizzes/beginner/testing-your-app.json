@@ -1,0 +1,135 @@
+{
+  "id": "testing-your-app",
+  "title": "Testing Your App Quiz",
+  "level": "beginner",
+  "lesson": "testing-your-app",
+  "total_questions": 10,
+  "passing_score": 70,
+  "time_limit": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is the primary purpose of testing PEGA applications?",
+      "options": [
+        "To make development take longer",
+        "To ensure applications work correctly and meet business requirements",
+        "To create more documentation",
+        "To increase system complexity"
+      ],
+      "correct_answer": 1,
+      "explanation": "Testing ensures that PEGA applications work correctly, meet business requirements, and deliver reliable functionality to end users."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "Which type of testing focuses on individual components and rules in isolation?",
+      "options": [
+        "Integration Testing",
+        "User Acceptance Testing",
+        "Unit Testing",
+        "Performance Testing"
+      ],
+      "correct_answer": 2,
+      "explanation": "Unit Testing focuses on testing individual components, rules, and functions in isolation to ensure they work correctly before being integrated with other components."
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "Happy path testing involves testing the normal, expected flow through your application.",
+      "correct_answer": true,
+      "explanation": "Yes, happy path testing verifies that the application works correctly when users follow the normal, expected workflow without errors or exceptions."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "What is the purpose of the Tracer tool in PEGA?",
+      "options": [
+        "To create new rules",
+        "To debug and show detailed execution information",
+        "To delete old data",
+        "To manage user permissions"
+      ],
+      "correct_answer": 1,
+      "explanation": "The Tracer tool is used for debugging by showing detailed execution information, helping developers analyze performance and identify errors in rule execution."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "Which testing approach provides the best user experience?",
+      "options": [
+        "No testing to save time",
+        "Testing only after deployment",
+        "Systematic testing with multiple scenarios and user perspectives",
+        "Random testing without planning"
+      ],
+      "correct_answer": 2,
+      "explanation": "Systematic testing with multiple scenarios and user perspectives ensures comprehensive coverage and delivers the best user experience by catching issues before deployment."
+    },
+    {
+      "id": 6,
+      "type": "scenario",
+      "question": "You're testing a loan application process and want to verify how the system handles incomplete applications. What type of testing scenario is this?",
+      "options": [
+        "Happy path testing",
+        "Performance testing",
+        "Error handling testing",
+        "Integration testing"
+      ],
+      "correct_answer": 2,
+      "explanation": "This is error handling testing, which verifies how the application handles errors, exceptions, and incomplete or invalid data inputs."
+    },
+    {
+      "id": 7,
+      "type": "true-false",
+      "question": "Test data should be isolated to ensure tests don't interfere with each other.",
+      "correct_answer": true,
+      "explanation": "Yes, test data isolation is crucial to ensure that tests are independent and don't interfere with each other, providing reliable and repeatable results."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "What should be the first step when debugging a failed test?",
+      "options": [
+        "Immediately change the code",
+        "Ignore the failure",
+        "Reproduce the issue consistently",
+        "Delete the test"
+      ],
+      "correct_answer": 2,
+      "explanation": "The first step in debugging should be to reproduce the issue consistently, which helps isolate the problem and understand the conditions that cause the failure."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "Which tool allows you to view and modify data during application execution?",
+      "options": [
+        "Tracer",
+        "Clipboard",
+        "Preview Mode",
+        "Rule Editor"
+      ],
+      "correct_answer": 1,
+      "explanation": "The Clipboard tool allows you to view and modify property values and data structures during application execution, making it valuable for debugging data issues."
+    },
+    {
+      "id": 10,
+      "type": "scenario",
+      "question": "Your application works fine with 10 users but becomes slow with 100 users. What type of testing would have caught this issue earlier?",
+      "options": [
+        "Unit testing only",
+        "Performance testing with realistic load scenarios",
+        "Happy path testing only",
+        "Error handling testing only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Performance testing with realistic load scenarios would have identified scalability issues by testing the application under various user loads and data volumes."
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-01-24",
+    "last_updated": "2025-01-24",
+    "version": "1.0",
+    "tags": ["testing", "debugging", "quality-assurance", "performance", "validation"]
+  }
+}

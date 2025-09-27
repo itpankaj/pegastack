@@ -1,0 +1,123 @@
+{
+  "id": "case-management-advanced",
+  "title": "Case Management Advanced - Quiz",
+  "description": "Test your understanding of advanced case management concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/case-management-advanced",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary benefit of parent-child case patterns?",
+      "options": [
+        "Improved database performance",
+        "Modeling complex business processes with related cases",
+        "Reduced user interface complexity",
+        "Simplified security management"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Parent-child case patterns allow you to model complex business processes where multiple related cases must be managed together while maintaining their individual lifecycles."
+    },
+    {
+      "id": 2,
+      "question": "In sequential parent-child processing, when are child cases triggered?",
+      "options": [
+        "All at once simultaneously",
+        "In a specific sequence based on business logic",
+        "Randomly based on system load",
+        "Only when manually triggered"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Sequential parent-child processing triggers child cases in a specific sequence based on business logic, ensuring proper workflow dependencies are maintained."
+    },
+    {
+      "id": 3,
+      "question": "How do child cases inherit properties from parent cases?",
+      "options": [
+        "Through direct database copying",
+        "Via inheritance and data propagation mechanisms",
+        "Manual copy-paste operations",
+        "Automatic system synchronization"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Child cases inherit properties from parent cases through inheritance and data propagation mechanisms that maintain data consistency while allowing child-specific overrides."
+    },
+    {
+      "id": 4,
+      "question": "What is the purpose of case relationships in advanced case management?",
+      "options": [
+        "To improve database query performance",
+        "To define dependencies and ensure proper sequencing",
+        "To manage user permissions",
+        "To handle security authentication"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Case relationships define dependencies between cases to ensure proper sequencing, prevent race conditions, and maintain data integrity across related cases."
+    },
+    {
+      "id": 5,
+      "question": "When implementing case transfers, what is the most important consideration?",
+      "options": [
+        "Database connection pooling",
+        "Maintaining case data integrity and audit trails",
+        "User interface design",
+        "Network bandwidth optimization"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Case transfers must maintain case data integrity and provide complete audit trails to ensure business continuity and regulatory compliance."
+    },
+    {
+      "id": 6,
+      "question": "How should case escalation be handled in complex scenarios?",
+      "options": [
+        "Manual intervention only",
+        "Through automated escalation rules and approval workflows",
+        "Random assignment to available users",
+        "System restart and retry"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Case escalation should be handled through automated escalation rules and approval workflows that ensure consistent handling based on business priorities and SLAs."
+    },
+    {
+      "id": 7,
+      "question": "What is the key benefit of performance optimization in case management?",
+      "options": [
+        "Reduced development time",
+        "Improved user experience and system efficiency",
+        "Simplified user interfaces",
+        "Better security"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Performance optimization improves user experience through faster case processing and increases system efficiency by optimizing resource usage and database queries."
+    },
+    {
+      "id": 8,
+      "question": "What mechanism prevents race conditions in case dependencies?",
+      "options": [
+        "Random assignment algorithms",
+        "Proper sequencing and dependency management",
+        "Manual user intervention",
+        "System restart procedures"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Proper sequencing and dependency management prevent race conditions by ensuring cases are processed in the correct order and data dependencies are respected."
+    }
+  ]
+}

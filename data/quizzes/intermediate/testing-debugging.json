@@ -1,0 +1,123 @@
+{
+  "id": "testing-debugging",
+  "title": "Testing & Debugging - Quiz",
+  "description": "Test your understanding of testing and debugging concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/testing-debugging",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary goal of unit testing in PEGA applications?",
+      "options": [
+        "To test the entire application",
+        "To validate individual components and functions work correctly",
+        "To test user interfaces",
+        "To test database connections"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Unit testing validates individual components and functions work correctly in isolation, ensuring each part of the application behaves as expected."
+    },
+    {
+      "id": 2,
+      "question": "When should you implement integration testing?",
+      "options": [
+        "After deployment",
+        "To validate interactions between different components and systems",
+        "Only for user interfaces",
+        "Never"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Integration testing validates interactions between different components and systems, ensuring they work together correctly and data flows properly."
+    },
+    {
+      "id": 3,
+      "question": "How do you effectively debug PEGA applications?",
+      "options": [
+        "By guessing the issues",
+        "Through systematic debugging tools, logs, and step-by-step analysis",
+        "By restarting the application",
+        "By avoiding debugging"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Effective debugging uses systematic debugging tools, comprehensive logging, step-by-step analysis, and proper error handling to identify and resolve issues."
+    },
+    {
+      "id": 4,
+      "question": "What is the benefit of automated testing frameworks?",
+      "options": [
+        "They increase testing time",
+        "They provide consistent, repeatable testing and early issue detection",
+        "They reduce test coverage",
+        "They complicate testing"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Automated testing frameworks provide consistent, repeatable testing with early issue detection, improving quality and reducing manual testing effort."
+    },
+    {
+      "id": 5,
+      "question": "When should you use test data management?",
+      "options": [
+        "Never",
+        "To provide consistent, realistic test data for comprehensive testing",
+        "Only for production",
+        "To reduce test coverage"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Test data management provides consistent, realistic test data for comprehensive testing, ensuring tests are meaningful and cover various scenarios."
+    },
+    {
+      "id": 6,
+      "question": "How do you handle regression testing?",
+      "options": [
+        "Skip it",
+        "Through comprehensive test suites that verify existing functionality after changes",
+        "Manual testing only",
+        "Ignore existing functionality"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Regression testing uses comprehensive test suites to verify existing functionality remains intact after changes, preventing unintended side effects."
+    },
+    {
+      "id": 7,
+      "question": "What is crucial for performance testing?",
+      "options": [
+        "Testing only functionality",
+        "Load testing, stress testing, and performance benchmarking",
+        "No performance testing",
+        "Testing only user interfaces"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Performance testing requires load testing, stress testing, and performance benchmarking to ensure applications can handle expected user loads."
+    },
+    {
+      "id": 8,
+      "question": "How should you document test cases and results?",
+      "options": [
+        "No documentation needed",
+        "Through comprehensive documentation with clear test scenarios and expected results",
+        "Minimal documentation",
+        "Only document failures"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Test cases and results should be documented comprehensively with clear test scenarios, expected results, actual outcomes, and detailed explanations."
+    }
+  ]
+}

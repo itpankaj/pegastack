@@ -1,0 +1,123 @@
+{
+  "id": "pega-devops-cicd",
+  "title": "PEGA DevOps & CI/CD - Quiz",
+  "description": "Test your mastery of enterprise DevOps practices and CI/CD implementation for PEGA applications",
+  "level": "advanced",
+  "lesson_reference": "/tutorials/advanced/pega-devops-cicd",
+  "passing_score": 80,
+  "time_limit": 30,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the most critical component of enterprise PEGA CI/CD pipeline architecture?",
+      "options": [
+        "Simple automated deployment",
+        "Comprehensive quality gates with risk-based decision making and multi-layer testing",
+        "Manual approval processes only",
+        "Basic code compilation"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive quality gates with risk-based decision making ensure deployments meet enterprise standards while multi-layer testing provides thorough validation.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "For enterprise PEGA testing automation, what approach provides optimal coverage?",
+      "options": [
+        "Unit testing only",
+        "Multi-layer testing strategy with unit, integration, performance, and security tests",
+        "Manual testing exclusively",
+        "Integration testing only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-layer testing provides comprehensive coverage of PEGA applications, validating functionality, performance, and security across different levels.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "What should drive intelligent quality gate decisions in enterprise environments?",
+      "options": [
+        "Fixed thresholds for all deployments",
+        "Risk assessment, deployment context, and business impact analysis",
+        "Developer preferences",
+        "Time-based criteria only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Intelligent quality gates consider risk levels, deployment context, and business impact to make appropriate decisions while maintaining quality standards.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "In PEGA performance testing automation, what load profile strategy is most effective?",
+      "options": [
+        "Single load scenario",
+        "Multiple load profiles including normal, peak, and stress testing with SLA validation",
+        "Maximum load testing only",
+        "No performance testing"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multiple load profiles with SLA validation ensure applications perform well under various conditions and meet business requirements.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "What is the optimal approach for PEGA rule extraction in CI/CD pipelines?",
+      "options": [
+        "Manual export processes",
+        "Automated extraction with ruleset integrity validation and dependency checking",
+        "No rule extraction",
+        "Simple file copying"
+      ],
+      "correct_answer": 1,
+      "explanation": "Automated extraction with validation ensures reliable, consistent rule deployment while maintaining integrity and dependency relationships.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "For enterprise PEGA deployments, what approval strategy balances governance with agility?",
+      "options": [
+        "No approvals for speed",
+        "Risk-based approval workflows with automated low-risk deployments",
+        "Manual approval for all changes",
+        "Random approval selection"
+      ],
+      "correct_answer": 1,
+      "explanation": "Risk-based approval workflows enable automated deployment of low-risk changes while ensuring appropriate governance for high-impact deployments.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "What is the primary risk of insufficient test coverage in PEGA CI/CD pipelines?",
+      "options": [
+        "Faster deployment cycles",
+        "Production issues and business disruption due to undetected defects",
+        "Reduced infrastructure costs",
+        "Simplified maintenance procedures"
+      ],
+      "correct_answer": 1,
+      "explanation": "Insufficient test coverage allows defects to reach production, potentially causing significant business disruption in enterprise environments.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "For enterprise PEGA environments, what monitoring strategy should be implemented post-deployment?",
+      "options": [
+        "Basic uptime monitoring only",
+        "Comprehensive monitoring including business metrics, performance, and automated alerting",
+        "No monitoring needed",
+        "Manual log review only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive monitoring with business metrics and automated alerting enables rapid detection and response to deployment issues affecting business operations.",
+      "difficulty": "advanced"
+    }
+  ]
+}

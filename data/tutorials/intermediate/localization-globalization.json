@@ -1,0 +1,109 @@
+{
+  "title": "Localization & Globalization",
+  "level": "intermediate",
+  "slug": "localization-globalization",
+  "description": "Master multi-language support, cultural adaptation, and global deployment strategies for international PEGA applications",
+  "estimatedTime": "45 min",
+  "prerequisites": ["User Interface Advanced Concepts", "Data Pages & Data Sources", "Security & Access Control"],
+  "objectives": [
+    "Implement multi-language support",
+    "Design culturally adapted interfaces",
+    "Handle international data formats",
+    "Manage timezone and currency localization",
+    "Deploy globally distributed applications"
+  ],
+  "content": {
+    "introduction": "Global PEGA applications must support multiple languages, cultural preferences, and regional requirements. This lesson covers comprehensive localization strategies including language support, cultural adaptation, data formatting, and global deployment patterns.",
+    "sections": [
+      {
+        "title": "Multi-Language Architecture",
+        "content": "Design applications that support multiple languages through field value rules, translation catalogs, and dynamic language switching. Understand language detection and user preference management.",
+        "architecture": [
+          "Field value rules for translations",
+          "Translation catalogs and databases",
+          "Language detection and preference storage",
+          "Dynamic language switching mechanisms"
+        ]
+      },
+      {
+        "title": "Cultural Adaptation",
+        "content": "Adapt applications for different cultural contexts including date formats, number formats, color schemes, and cultural preferences. Understand cultural UX patterns and best practices.",
+        "adaptation": [
+          "Date and time format localization",
+          "Number and currency formatting",
+          "Color and imagery cultural preferences",
+          "Layout and navigation patterns",
+          "Cultural business logic adaptation"
+        ]
+      },
+      {
+        "title": "International Data Formats",
+        "content": "Handle international data formats including addresses, phone numbers, postal codes, and personal names across different regions and cultural contexts.",
+        "formats": [
+          "Address formats by country",
+          "Phone number validation and formatting",
+          "Postal code validation",
+          "Personal name formats and ordering",
+          "Currency and decimal formatting"
+        ]
+      },
+      {
+        "title": "Timezone and Currency Management",
+        "content": "Manage timezone differences and currency conversions across global applications. Understand timezone-aware scheduling and currency rate management.",
+        "management": [
+          "Timezone-aware datetime handling",
+          "Currency conversion and rate management",
+          "International pricing strategies",
+          "Cross-timezone scheduling",
+          "Regional compliance requirements"
+        ]
+      },
+      {
+        "title": "Global Deployment Strategies",
+        "content": "Deploy applications across multiple regions with considerations for data sovereignty, performance optimization, and regional compliance requirements.",
+        "strategies": [
+          "Regional data center deployment",
+          "Content delivery network optimization",
+          "Data sovereignty compliance",
+          "Performance optimization by region",
+          "Regional customization strategies"
+        ]
+      },
+      {
+        "title": "Testing and Quality Assurance",
+        "content": "Test localized applications across different languages, cultural contexts, and regional requirements. Understand localization testing strategies and quality assurance processes.",
+        "testing": [
+          "Multi-language functional testing",
+          "Cultural context validation",
+          "Regional compliance testing",
+          "Performance testing across regions",
+          "User acceptance testing by region"
+        ]
+      }
+    ]
+  },
+  "quiz": {
+    "id": "localization-globalization-quiz",
+    "title": "Localization & Globalization Quiz",
+    "questions": 8,
+    "passingScore": 70
+  },
+  "resources": {
+    "documentation": [
+      {
+        "title": "PEGA Localization Guide",
+        "url": "https://docs.pega.com/localization"
+      },
+      {
+        "title": "Global Deployment Strategies",
+        "url": "https://docs.pega.com/global-deployment"
+      }
+    ],
+    "videos": [
+      {
+        "title": "International Application Development",
+        "url": "https://academy.pega.com/international-development"
+      }
+    ]
+  }
+}

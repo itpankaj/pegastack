@@ -1,0 +1,136 @@
+{
+  "id": "ui-design-fundamentals",
+  "title": "UI Design Fundamentals Quiz",
+  "description": "Test your knowledge of UI design principles, accessibility, and user experience best practices in PEGA.",
+  "level": "beginner",
+  "lesson": "ui-design-fundamentals",
+  "total_questions": 10,
+  "passing_score": 70,
+  "time_limit": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is the primary goal of UI design in PEGA applications?",
+      "options": [
+        "To make the interface colorful",
+        "To create user-friendly, efficient, and accessible interfaces",
+        "To use as many features as possible",
+        "To minimize development time"
+      ],
+      "correct_answer": 1,
+      "explanation": "The primary goal of UI design is to create interfaces that are user-friendly, efficient for task completion, and accessible to all users, enhancing the overall user experience."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "Which principle emphasizes that users should be able to complete tasks with minimal effort?",
+      "options": [
+        "Consistency",
+        "Efficiency",
+        "Accessibility",
+        "Feedback"
+      ],
+      "correct_answer": 1,
+      "explanation": "Efficiency emphasizes that users should be able to complete their tasks quickly and with minimal effort, reducing cognitive load and improving productivity."
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "Responsive design ensures that PEGA applications work well on different screen sizes and devices.",
+      "correct_answer": true,
+      "explanation": "Yes, responsive design adapts the interface layout and components to work effectively across various screen sizes, from mobile phones to desktop computers."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "What is the recommended approach for form field organization?",
+      "options": [
+        "Place all fields randomly",
+        "Group related fields logically with clear labels",
+        "Use as few fields as possible",
+        "Make all fields mandatory"
+      ],
+      "correct_answer": 1,
+      "explanation": "Related fields should be grouped logically with clear, descriptive labels to help users understand what information is needed and complete forms efficiently."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "Which accessibility principle ensures that content can be perceived by users with different abilities?",
+      "options": [
+        "Operable",
+        "Perceivable",
+        "Understandable",
+        "Robust"
+      ],
+      "correct_answer": 1,
+      "explanation": "Perceivable means that information and UI components must be presentable to users in ways they can perceive, including support for screen readers and visual impairments."
+    },
+    {
+      "id": 6,
+      "type": "scenario",
+      "question": "You're designing a form for loan applications. Users frequently abandon the form halfway through. What UI design principle would help address this issue?",
+      "options": [
+        "Add more validation rules",
+        "Break the form into logical steps with progress indicators",
+        "Make all fields mandatory",
+        "Remove all help text"
+      ],
+      "correct_answer": 1,
+      "explanation": "Breaking complex forms into logical steps with progress indicators reduces cognitive load, shows users their progress, and makes the process feel more manageable."
+    },
+    {
+      "id": 7,
+      "type": "true-false",
+      "question": "Color should be the only way to convey important information in a UI.",
+      "correct_answer": false,
+      "explanation": "False. Color should never be the only way to convey information, as users with color blindness or visual impairments may not perceive color differences. Always provide alternative indicators."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "What is the purpose of providing immediate feedback in UI design?",
+      "options": [
+        "To slow down user interactions",
+        "To confirm actions and guide users through processes",
+        "To make the interface more complex",
+        "To reduce system performance"
+      ],
+      "correct_answer": 1,
+      "explanation": "Immediate feedback confirms that actions have been registered, provides guidance on next steps, and helps users understand the system's response to their interactions."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "Which element helps users understand where they are in a multi-step process?",
+      "options": [
+        "Error messages",
+        "Progress indicators",
+        "Color schemes",
+        "Font sizes"
+      ],
+      "correct_answer": 1,
+      "explanation": "Progress indicators show users their current position in a multi-step process, how much they've completed, and what steps remain, improving user confidence and completion rates."
+    },
+    {
+      "id": 10,
+      "type": "scenario",
+      "question": "A user reports that they can't distinguish between 'Save' and 'Cancel' buttons on your form. What design improvement would help?",
+      "options": [
+        "Make both buttons the same color",
+        "Use different colors, shapes, and positioning for primary vs secondary actions",
+        "Remove one of the buttons",
+        "Make the text smaller"
+      ],
+      "correct_answer": 1,
+      "explanation": "Primary actions (Save) should be visually prominent with distinct colors, shapes, and positioning compared to secondary actions (Cancel), making the intended action clear to users."
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-01-24",
+    "last_updated": "2025-01-24",
+    "version": "1.0",
+    "tags": ["ui-design", "user-experience", "accessibility", "responsive-design"]
+  }
+}

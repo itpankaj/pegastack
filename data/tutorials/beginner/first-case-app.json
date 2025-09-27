@@ -1,0 +1,602 @@
+{
+  "id": "first-case-app",
+  "title": "Your First Case App",
+  "level": "beginner",
+  "estimated_time": 45,
+  "prerequisites": ["app-vs-dev-studio"],
+  "learning_objectives": [
+    "Create your first PEGA application using App Studio",
+    "Understand the basic structure of a case application",
+    "Learn to define case types and basic processes",
+    "Create simple user interfaces and forms",
+    "Test and preview your application"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Building Your First PEGA Application",
+      "text": "In this tutorial, you'll create your first PEGA application from scratch using App Studio. We'll build a simple 'Service Request' application that demonstrates the fundamental concepts of case management, process design, and user interface creation. This hands-on approach will give you practical experience with PEGA's low-code development capabilities."
+    },
+    "sections": [
+      {
+        "title": "Planning Your Application",
+        "content": "Before jumping into development, it's important to plan your application structure and understand what you're building.",
+        "application_overview": {
+          "name": "Service Request Application",
+          "purpose": "Handle customer service requests from submission to resolution",
+          "main_case_type": "Service Request",
+          "key_stages": [
+            "Request Submission",
+            "Initial Review", 
+            "Assignment and Work",
+            "Resolution and Closure"
+          ],
+          "key_data": [
+            "Customer information",
+            "Request details and category",
+            "Priority and urgency",
+            "Assignment information",
+            "Resolution details"
+          ]
+        },
+        "planning_considerations": [
+          {
+            "aspect": "Business Process",
+            "questions": [
+              "What are the main steps in handling a service request?",
+              "Who are the different users involved?",
+              "What information needs to be collected?",
+              "What are the decision points in the process?"
+            ]
+          },
+          {
+            "aspect": "Data Requirements",
+            "questions": [
+              "What customer information is needed?",
+              "How should requests be categorized?",
+              "What priority levels should be supported?",
+              "What resolution information should be captured?"
+            ]
+          },
+          {
+            "aspect": "User Experience",
+            "questions": [
+              "How should customers submit requests?",
+              "What information do agents need to see?",
+              "How should the work be organized and prioritized?",
+              "What notifications or updates are needed?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Creating Your Application",
+        "content": "Let's start by creating a new application in App Studio using the guided application wizard.",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Launch App Studio",
+            "description": "Access App Studio from your PEGA environment and start the application creation process.",
+            "detailed_steps": [
+              "Log into your PEGA Personal Edition environment",
+              "From the main navigation, click on 'App Studio'",
+              "You'll see the App Studio welcome screen with options to create or open applications",
+              "Click 'Create new app' or the '+' button to start the application wizard"
+            ],
+            "tips": [
+              "If this is your first time in App Studio, take the guided tour",
+              "Make sure you're in the correct environment (Personal Edition)",
+              "Keep your browser window maximized for the best experience"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Configure Application Details",
+            "description": "Use the application wizard to define basic application information and structure.",
+            "detailed_steps": [
+              "Enter 'Service Request' as your application name",
+              "Add a description: 'Customer service request management application'",
+              "Select 'Customer Service' as the application template (if available)",
+              "Choose your organization name or use the default",
+              "Click 'Create' to generate the application structure"
+            ],
+            "configuration_options": {
+              "application_name": "Service Request",
+              "description": "Customer service request management application",
+              "template": "Customer Service (or Generic if not available)",
+              "organization": "Your organization name"
+            }
+          },
+          {
+            "step": 3,
+            "title": "Review Generated Structure",
+            "description": "Examine the application structure that PEGA has created for you.",
+            "what_to_expect": [
+              "Application explorer showing your new application",
+              "Default case type created based on your application name",
+              "Basic application structure with standard components",
+              "Navigation panel showing available development tools"
+            ],
+            "key_components": [
+              "Case types - The main work units in your application",
+              "Processes - The workflow steps for handling cases",
+              "Data model - The information structure for your cases",
+              "User interface - The forms and screens users will interact with"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Defining Your Case Type",
+        "content": "The case type is the heart of your PEGA application. It defines the structure and lifecycle of the work you're managing.",
+        "case_type_basics": {
+          "definition": "A case type represents a unit of work that progresses through various stages until completion. In our example, each service request is a case.",
+          "key_properties": [
+            "Case type name and identifier",
+            "Case lifecycle stages",
+            "Data fields and properties",
+            "Process flows and routing",
+            "User interface layouts"
+          ]
+        },
+        "configuration_steps": [
+          {
+            "step": 1,
+            "title": "Access Case Type Settings",
+            "description": "Navigate to your case type configuration in App Studio.",
+            "actions": [
+              "In the Application Explorer, find your case type (likely named 'Service Request')",
+              "Click on the case type to open its configuration",
+              "You'll see tabs for different aspects: Settings, Stages, Fields, etc."
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Configure Basic Settings",
+            "description": "Set up the fundamental properties of your case type.",
+            "settings": {
+              "case_type_name": "Service Request",
+              "case_id_format": "SR-XXXXXX (where X represents numbers)",
+              "description": "Customer service request case",
+              "icon": "Choose an appropriate icon (e.g., headset or support icon)"
+            }
+          },
+          {
+            "step": 3,
+            "title": "Define Case Stages",
+            "description": "Set up the major phases that cases will progress through.",
+            "recommended_stages": [
+              {
+                "stage": "Request",
+                "description": "Initial request submission and validation",
+                "purpose": "Collect request details and validate information"
+              },
+              {
+                "stage": "Review",
+                "description": "Initial review and categorization",
+                "purpose": "Assess request and determine appropriate handling"
+              },
+              {
+                "stage": "Work",
+                "description": "Active work on resolving the request",
+                "purpose": "Perform necessary actions to address the request"
+              },
+              {
+                "stage": "Resolution",
+                "description": "Finalize and close the request",
+                "purpose": "Confirm resolution and close the case"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Adding Data Fields",
+        "content": "Define the data fields that will store information about each service request case.",
+        "data_modeling_approach": {
+          "principle": "Start with essential fields and add more as needed",
+          "best_practices": [
+            "Use clear, descriptive field names",
+            "Choose appropriate data types",
+            "Set up validation where necessary",
+            "Group related fields logically"
+          ]
+        },
+        "recommended_fields": [
+          {
+            "field_group": "Customer Information",
+            "fields": [
+              {
+                "name": "CustomerName",
+                "type": "Text",
+                "description": "Full name of the customer",
+                "required": true,
+                "validation": "Text length between 2-50 characters"
+              },
+              {
+                "name": "CustomerEmail",
+                "type": "Email",
+                "description": "Customer's email address",
+                "required": true,
+                "validation": "Valid email format"
+              },
+              {
+                "name": "CustomerPhone",
+                "type": "Phone",
+                "description": "Customer's contact phone number",
+                "required": false,
+                "validation": "Valid phone number format"
+              }
+            ]
+          },
+          {
+            "field_group": "Request Details",
+            "fields": [
+              {
+                "name": "RequestCategory",
+                "type": "Dropdown",
+                "description": "Type of service request",
+                "required": true,
+                "options": ["Technical Support", "Billing Inquiry", "Product Information", "Complaint", "Other"]
+              },
+              {
+                "name": "RequestDescription",
+                "type": "Text Area",
+                "description": "Detailed description of the request",
+                "required": true,
+                "validation": "Minimum 10 characters"
+              },
+              {
+                "name": "Priority",
+                "type": "Dropdown",
+                "description": "Request priority level",
+                "required": true,
+                "options": ["Low", "Medium", "High", "Urgent"]
+              }
+            ]
+          },
+          {
+            "field_group": "Work Information",
+            "fields": [
+              {
+                "name": "AssignedTo",
+                "type": "User Reference",
+                "description": "Agent assigned to handle the request",
+                "required": false
+              },
+              {
+                "name": "WorkNotes",
+                "type": "Text Area",
+                "description": "Internal notes about work performed",
+                "required": false
+              },
+              {
+                "name": "ResolutionDetails",
+                "type": "Text Area",
+                "description": "Details about how the request was resolved",
+                "required": false
+              }
+            ]
+          }
+        ],
+        "adding_fields_steps": [
+          {
+            "step": 1,
+            "description": "In your case type configuration, click on the 'Fields' tab",
+            "actions": [
+              "Click 'Add field' to create new data fields",
+              "Enter the field name and select the appropriate type",
+              "Configure validation rules and requirements",
+              "Set default values if applicable"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Organize fields into logical groups",
+            "actions": [
+              "Create field groups for related information",
+              "Drag and drop fields to reorder them",
+              "Set up field dependencies if needed",
+              "Preview how fields will appear in forms"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Designing the Process Flow",
+        "content": "Create the business process that defines how service requests move through the system.",
+        "process_design_principles": [
+          "Keep the initial process simple and straightforward",
+          "Focus on the main path first, add exceptions later",
+          "Use clear, descriptive names for process steps",
+          "Consider who performs each step and what they need"
+        ],
+        "basic_process_flow": {
+          "description": "A simple linear process for handling service requests",
+          "steps": [
+            {
+              "step": "Collect Request",
+              "type": "Assignment",
+              "description": "Customer or agent enters request details",
+              "performer": "Customer or Customer Service Agent",
+              "form": "Request submission form with customer and request fields"
+            },
+            {
+              "step": "Review Request",
+              "type": "Assignment", 
+              "description": "Agent reviews and categorizes the request",
+              "performer": "Customer Service Agent",
+              "form": "Review form showing request details and assignment options"
+            },
+            {
+              "step": "Resolve Request",
+              "type": "Assignment",
+              "description": "Assigned agent works on resolving the request",
+              "performer": "Assigned Agent",
+              "form": "Work form for updating status and adding resolution details"
+            },
+            {
+              "step": "Confirm Resolution",
+              "type": "Assignment",
+              "description": "Final confirmation and case closure",
+              "performer": "Customer Service Agent",
+              "form": "Resolution confirmation form"
+            }
+          ]
+        },
+        "creating_process_steps": [
+          {
+            "step": 1,
+            "title": "Access Process Designer",
+            "description": "Navigate to the process design interface in App Studio.",
+            "actions": [
+              "In your case type, click on the 'Processes' tab",
+              "You'll see a visual process designer with a default flow",
+              "The designer shows the current process steps and connections"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Add Process Steps",
+            "description": "Create the individual steps in your process flow.",
+            "actions": [
+              "Click on the '+' or 'Add step' button",
+              "Choose 'Assignment' as the step type for user tasks",
+              "Enter a descriptive name for each step",
+              "Connect steps using the flow connectors"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Configure Step Details",
+            "description": "Set up the specifics for each process step.",
+            "configuration_items": [
+              "Step name and description",
+              "Who can perform the step (routing)",
+              "What form or interface to use",
+              "Any business rules or conditions",
+              "Service level agreements (SLAs) if needed"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Creating User Interfaces",
+        "content": "Design the forms and screens that users will interact with during the case lifecycle.",
+        "ui_design_principles": [
+          "Keep forms simple and focused on the task at hand",
+          "Group related fields together logically",
+          "Use clear labels and helpful instructions",
+          "Consider the user's workflow and context"
+        ],
+        "form_types_needed": [
+          {
+            "form": "Request Submission Form",
+            "purpose": "Collect initial request information from customer",
+            "fields": ["CustomerName", "CustomerEmail", "CustomerPhone", "RequestCategory", "RequestDescription", "Priority"],
+            "layout": "Single column with logical field grouping"
+          },
+          {
+            "form": "Review Form",
+            "purpose": "Allow agents to review and categorize requests",
+            "fields": ["All customer and request fields (read-only)", "AssignedTo", "WorkNotes"],
+            "layout": "Two-column layout showing request details and work fields"
+          },
+          {
+            "form": "Work Form",
+            "purpose": "Enable agents to work on and update requests",
+            "fields": ["Request summary (read-only)", "WorkNotes", "ResolutionDetails", "Priority"],
+            "layout": "Focus on work fields with request context visible"
+          }
+        ],
+        "creating_forms_steps": [
+          {
+            "step": 1,
+            "title": "Access UI Designer",
+            "description": "Navigate to the user interface design tools.",
+            "actions": [
+              "In your case type, click on the 'Views' or 'UI' tab",
+              "You'll see options to create and edit forms",
+              "App Studio may have created default forms based on your fields"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Design Form Layouts",
+            "description": "Create intuitive and efficient form layouts.",
+            "design_steps": [
+              "Drag fields from the field palette onto the form canvas",
+              "Arrange fields in logical groups and order",
+              "Add section headers to organize related fields",
+              "Configure field properties (required, read-only, etc.)",
+              "Preview the form to see how it will appear to users"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Associate Forms with Process Steps",
+            "description": "Connect your forms to the appropriate process steps.",
+            "actions": [
+              "Go back to your process designer",
+              "Click on each process step to configure it",
+              "Select the appropriate form for each step",
+              "Test the flow to ensure forms appear correctly"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Testing Your Application",
+        "content": "Before deploying your application, it's important to test it thoroughly to ensure it works as expected.",
+        "testing_approach": {
+          "principle": "Test early and test often",
+          "focus_areas": [
+            "Basic functionality - Can you create and process cases?",
+            "Data validation - Are required fields enforced?",
+            "Process flow - Do cases move through stages correctly?",
+            "User experience - Are forms intuitive and efficient?"
+          ]
+        },
+        "testing_steps": [
+          {
+            "step": 1,
+            "title": "Preview Your Application",
+            "description": "Use App Studio's preview feature to test your application.",
+            "actions": [
+              "Look for a 'Preview' or 'Run' button in App Studio",
+              "This will open your application in a new tab or window",
+              "You can interact with your application as an end user would"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Create Test Cases",
+            "description": "Create several test cases to verify functionality.",
+            "test_scenarios": [
+              {
+                "scenario": "Happy Path Test",
+                "description": "Create a case and process it through all stages successfully",
+                "steps": [
+                  "Submit a new service request with all required information",
+                  "Review and assign the request",
+                  "Add work notes and resolution details",
+                  "Complete and close the case"
+                ]
+              },
+              {
+                "scenario": "Validation Test",
+                "description": "Test field validation and error handling",
+                "steps": [
+                  "Try to submit a request with missing required fields",
+                  "Enter invalid data (e.g., malformed email)",
+                  "Verify that appropriate error messages appear"
+                ]
+              },
+              {
+                "scenario": "Different Priority Test",
+                "description": "Test cases with different priority levels",
+                "steps": [
+                  "Create requests with different priority levels",
+                  "Verify that priority affects case handling appropriately",
+                  "Test any priority-based routing or SLAs"
+                ]
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Review and Refine",
+            "description": "Based on testing results, make improvements to your application.",
+            "common_improvements": [
+              "Adjust form layouts for better usability",
+              "Add missing validation rules",
+              "Improve field labels and instructions",
+              "Optimize the process flow",
+              "Add helpful error messages"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deploying and Sharing",
+        "content": "Once you're satisfied with your application, you can deploy it for others to use.",
+        "deployment_options": [
+          {
+            "option": "Personal Testing",
+            "description": "Keep the application in your Personal Edition environment for continued learning and experimentation.",
+            "use_case": "Learning, experimentation, proof of concept"
+          },
+          {
+            "option": "Team Sharing",
+            "description": "If working in a team environment, you can share your application with colleagues for review and collaboration.",
+            "use_case": "Team development, peer review, collaborative improvement"
+          },
+          {
+            "option": "Production Deployment",
+            "description": "For real applications, deploy to a production environment following your organization's deployment processes.",
+            "use_case": "Live business applications, end-user access"
+          }
+        ],
+        "next_development_steps": [
+          "Add more sophisticated business rules",
+          "Implement advanced routing and assignment logic",
+          "Create reports and dashboards for monitoring",
+          "Add integration with external systems",
+          "Implement advanced security and access controls"
+        ]
+      }
+    ],
+    "summary": {
+      "title": "What You've Accomplished",
+      "achievements": [
+        "Created your first PEGA application from scratch",
+        "Defined a case type with appropriate stages and fields",
+        "Designed a basic business process flow",
+        "Created user-friendly forms and interfaces",
+        "Tested your application to ensure it works correctly",
+        "Gained hands-on experience with App Studio's capabilities"
+      ],
+      "key_concepts_learned": [
+        "Case types represent units of work in PEGA",
+        "Process flows define how work moves through the system",
+        "Data fields store the information needed for each case",
+        "User interfaces provide the means for users to interact with cases",
+        "Testing is essential to ensure application quality"
+      ]
+    },
+    "next_steps": {
+      "title": "What's Next?",
+      "text": "Congratulations on creating your first PEGA application! Now that you understand the basics of case application development, you can explore more advanced topics like data modeling, complex user interfaces, and business rules.",
+      "recommended_reading": [
+        "Data Modeling Basics",
+        "User Interface Basics", 
+        "Case Lifecycle Management",
+        "Business Rules Fundamentals"
+      ],
+      "practice_suggestions": [
+        "Enhance your Service Request application with additional features",
+        "Create a different type of application (e.g., Employee Onboarding)",
+        "Experiment with different field types and validation rules",
+        "Try creating more complex process flows with decision points"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/first-case-app",
+  "resources": [
+    {
+      "title": "App Studio Getting Started",
+      "url": "https://docs.pega.com/bundle/app-studio/page/app-studio/getting-started-app-studio.html",
+      "type": "documentation"
+    },
+    {
+      "title": "Case Type Design Guide",
+      "url": "https://docs.pega.com/bundle/platform/page/platform/case-management/case-type-design.html",
+      "type": "documentation"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["first-application", "case-type", "app-studio", "hands-on", "tutorial"]
+  }
+}

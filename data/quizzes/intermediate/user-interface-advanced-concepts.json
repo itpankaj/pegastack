@@ -1,0 +1,121 @@
+{
+  "id": "user-interface-advanced-concepts",
+  "title": "User Interface Advanced Concepts - Quiz",
+  "description": "Test your understanding of advanced user interface concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/user-interface-advanced-concepts",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary benefit of responsive design in PEGA applications?",
+      "options": [
+        "Improved database performance",
+        "Consistent user experience across devices",
+        "Reduced development time",
+        "Better security"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Responsive design ensures consistent user experience across desktop, tablet, and mobile devices by automatically adapting layouts and interfaces."
+    },
+    {
+      "id": 2,
+      "question": "Which WCAG 2.1 guideline level should enterprise applications typically target?",
+      "options": [
+        "Level A",
+        "Level AA",
+        "Level AAA",
+        "Level B"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Level AA is the recommended standard for most enterprise applications, providing good accessibility without being overly restrictive."
+    },
+    {
+      "id": 3,
+      "question": "How do you implement conditional UI visibility in PEGA?",
+      "options": [
+        "Using visibility conditions on sections and layouts",
+        "Modifying database queries",
+        "Changing user permissions",
+        "Updating server configurations"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Conditional UI visibility is implemented using visibility conditions on sections, layouts, and individual UI elements based on data values or user actions."
+    },
+    {
+      "id": 4,
+      "question": "What is the recommended color contrast ratio for normal text under WCAG 2.1?",
+      "options": [
+        "3:1",
+        "4.5:1",
+        "7:1",
+        "2:1"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "WCAG 2.1 requires a minimum color contrast ratio of 4.5:1 for normal text to ensure readability for users with visual impairments."
+    },
+    {
+      "id": 5,
+      "question": "Which approach is best for creating reusable UI components?",
+      "options": [
+        "Copy-pasting UI elements",
+        "Creating templates and fragments",
+        "Using inline styles",
+        "Hard-coding UI elements"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Creating templates and fragments allows you to build reusable UI components that can be consistently applied across multiple sections and applications."
+    },
+    {
+      "id": 6,
+      "question": "How should you handle keyboard navigation for accessibility?",
+      "options": [
+        "Only mouse interactions are needed",
+        "Implement tab order and keyboard shortcuts",
+        "Use voice commands",
+        "Disable keyboard access"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Proper keyboard navigation requires implementing logical tab order, keyboard shortcuts, and focus indicators to support users who cannot use a mouse."
+    },
+    {
+      "id": 7,
+      "question": "What is the purpose of skin rules in PEGA?",
+      "options": [
+        "To manage user authentication",
+        "To define consistent visual styling and themes",
+        "To handle database connections",
+        "To control application logic"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Skin rules define consistent visual styling, themes, and CSS for applications, ensuring uniform appearance across all interfaces."
+    },
+    {
+      "id": 8,
+      "question": "Which CSS technique is most efficient for responsive layouts?",
+      "options": [
+        "Fixed pixel values",
+        "CSS Grid and Flexbox",
+        "Absolute positioning",
+        "Inline styles"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "CSS Grid and Flexbox provide the most efficient and flexible approach for creating responsive layouts that adapt to different screen sizes."
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "id": "deployment-basics",
+  "title": "Deployment Basics",
+  "level": "beginner",
+  "estimated_time": 20,
+  "prerequisites": ["testing-your-app"],
+  "learning_objectives": [
+    "Understand PEGA deployment concepts and processes",
+    "Learn about different deployment environments",
+    "Master basic deployment procedures",
+    "Apply deployment best practices"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Deploying PEGA Applications",
+      "text": "Deployment is the process of moving your PEGA application from development to production environments where end users can access it. This tutorial covers the fundamental concepts and procedures for deploying PEGA applications safely and effectively."
+    },
+    "sections": [
+      {
+        "title": "Deployment Environments",
+        "content": "Understanding different environments is crucial for successful deployment.",
+        "environments": [
+          {
+            "environment": "Development",
+            "purpose": "Where applications are built and initially tested",
+            "characteristics": [
+              "Frequent changes and updates",
+              "Access to all development tools",
+              "May have test data and configurations",
+              "Used by developers and business analysts"
+            ]
+          },
+          {
+            "environment": "Testing/QA",
+            "purpose": "Where applications undergo thorough testing before production",
+            "characteristics": [
+              "Stable environment for testing",
+              "Production-like data and configurations",
+              "Used by testers and business users",
+              "Controlled change management"
+            ]
+          },
+          {
+            "environment": "Production",
+            "purpose": "Live environment where end users access the application",
+            "characteristics": [
+              "High availability and performance requirements",
+              "Real business data and processes",
+              "Strict change control procedures",
+              "Monitoring and backup procedures"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deployment Artifacts",
+        "content": "Understanding what gets deployed helps ensure complete and accurate deployments.",
+        "artifacts": [
+          {
+            "artifact": "Application Rules",
+            "description": "The business logic, processes, and configurations that define your application",
+            "includes": ["Case types", "Process flows", "Business rules", "User interfaces", "Data models"]
+          },
+          {
+            "artifact": "Data Model Changes",
+            "description": "Database schema changes required by your application",
+            "includes": ["New tables", "Column additions", "Index changes", "Constraint modifications"]
+          },
+          {
+            "artifact": "Configuration Settings",
+            "description": "Environment-specific settings and parameters",
+            "includes": ["System settings", "Integration endpoints", "Security configurations", "Performance tuning"]
+          },
+          {
+            "artifact": "Supporting Resources",
+            "description": "Additional files and resources needed by the application",
+            "includes": ["Images and documents", "Style sheets", "JavaScript files", "External libraries"]
+          }
+        ]
+      },
+      {
+        "title": "Deployment Process",
+        "content": "Follow a structured process to ensure successful deployments.",
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Pre-Deployment Preparation",
+            "description": "Prepare for deployment by gathering requirements and planning",
+            "activities": [
+              "Complete thorough testing in development environment",
+              "Document all changes and new features",
+              "Identify dependencies and prerequisites",
+              "Plan deployment timing and communication",
+              "Prepare rollback procedures"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Package Creation",
+            "description": "Create deployment packages containing all necessary components",
+            "activities": [
+              "Export application rules and configurations",
+              "Include data model changes and scripts",
+              "Package supporting resources and files",
+              "Verify package completeness and integrity",
+              "Document package contents and versions"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Deployment Execution",
+            "description": "Execute the deployment following established procedures",
+            "activities": [
+              "Schedule deployment during maintenance windows",
+              "Follow change management procedures",
+              "Deploy to testing environment first",
+              "Verify deployment success and functionality",
+              "Communicate status to stakeholders"
+            ]
+          },
+          {
+            "step": 4,
+            "title": "Post-Deployment Validation",
+            "description": "Verify that the deployment was successful and the application works correctly",
+            "activities": [
+              "Execute smoke tests and basic functionality checks",
+              "Verify data integrity and system performance",
+              "Check integration points and external connections",
+              "Monitor system logs for errors or warnings",
+              "Gather feedback from initial users"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deployment Best Practices",
+        "content": "Follow these practices to ensure safe and successful deployments.",
+        "best_practices": [
+          {
+            "category": "Planning and Preparation",
+            "practices": [
+              "Always test thoroughly before deploying to production",
+              "Document all changes and deployment procedures",
+              "Plan for rollback scenarios and procedures",
+              "Coordinate with all stakeholders and affected teams",
+              "Schedule deployments during low-usage periods"
+            ]
+          },
+          {
+            "category": "Risk Management",
+            "practices": [
+              "Deploy to testing environments first",
+              "Use incremental deployment approaches when possible",
+              "Maintain backup copies of previous versions",
+              "Have rollback procedures ready and tested",
+              "Monitor systems closely after deployment"
+            ]
+          },
+          {
+            "category": "Communication",
+            "practices": [
+              "Notify users of planned deployments and potential impacts",
+              "Provide clear communication about new features and changes",
+              "Establish clear escalation procedures for issues",
+              "Document lessons learned for future deployments",
+              "Celebrate successful deployments with the team"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Common Deployment Challenges",
+        "content": "Be aware of common challenges and how to address them.",
+        "challenges": [
+          {
+            "challenge": "Environment Differences",
+            "description": "Differences between development and production environments",
+            "solutions": [
+              "Use environment-specific configuration files",
+              "Test in production-like environments",
+              "Document environment dependencies",
+              "Use automated deployment tools when possible"
+            ]
+          },
+          {
+            "challenge": "Data Migration Issues",
+            "description": "Problems with moving or transforming data during deployment",
+            "solutions": [
+              "Test data migration procedures thoroughly",
+              "Plan for data backup and recovery",
+              "Use incremental migration approaches",
+              "Validate data integrity after migration"
+            ]
+          },
+          {
+            "challenge": "Integration Failures",
+            "description": "Issues with external system connections after deployment",
+            "solutions": [
+              "Test all integration points before deployment",
+              "Coordinate with external system owners",
+              "Have fallback procedures for integration failures",
+              "Monitor integration health after deployment"
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Different environments serve different purposes in the deployment lifecycle",
+        "Successful deployment requires careful planning and preparation",
+        "Deployment artifacts include rules, data changes, configurations, and resources",
+        "Following a structured deployment process reduces risks and ensures success",
+        "Best practices help avoid common pitfalls and ensure smooth deployments",
+        "Post-deployment validation is crucial for confirming success"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/deployment-basics",
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["deployment", "environments", "change-management", "best-practices", "production"]
+  }
+}

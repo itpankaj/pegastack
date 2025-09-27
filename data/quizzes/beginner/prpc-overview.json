@@ -1,0 +1,146 @@
+{
+  "id": "prpc-overview",
+  "title": "PRPC Overview - Quiz",
+  "description": "Test your understanding of PEGA Rules Process Commander architecture and concepts",
+  "level": "beginner",
+  "lesson_reference": "/tutorials/beginner/prpc-overview",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What does PRPC stand for?",
+      "options": [
+        "PEGA Rules Process Commander",
+        "PEGA Rapid Process Creator",
+        "PEGA Rules Programming Center",
+        "PEGA Runtime Process Controller"
+      ],
+      "correct_answer": 0,
+      "explanation": "PRPC stands for PEGA Rules Process Commander, which is the foundational platform that powers all PEGA applications.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "question": "In PRPC, everything is defined as a rule stored in the database.",
+      "correct_answer": true,
+      "explanation": "True. PRPC's core philosophy is that everything - from user interfaces to business logic to data structures - is defined as rules stored in the database.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "Which tier of PRPC architecture handles user interfaces and user interactions?",
+      "options": [
+        "Data Tier",
+        "Business Logic Tier",
+        "Presentation Tier",
+        "Integration Tier"
+      ],
+      "correct_answer": 2,
+      "explanation": "The Presentation Tier handles all user interface elements and user interactions, including web pages, mobile interfaces, and portal components.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "What is the primary purpose of rule resolution in PRPC?",
+      "options": [
+        "To store rules in the database",
+        "To determine which rule to execute based on context",
+        "To create new rules automatically",
+        "To delete outdated rules"
+      ],
+      "correct_answer": 1,
+      "explanation": "Rule resolution is PRPC's sophisticated algorithm that determines which rule to execute based on context, inheritance, and versioning.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q5",
+      "type": "scenario",
+      "question": "A business user needs to create simple applications with minimal technical knowledge. Which PRPC development environment would be most appropriate?",
+      "options": [
+        "Dev Studio",
+        "App Studio",
+        "Prediction Studio",
+        "Database Studio"
+      ],
+      "correct_answer": 1,
+      "explanation": "App Studio is designed for business users and citizen developers, providing a simplified, low-code development environment with business-friendly terminology.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "Which type of rules define business processes and workflows in PRPC?",
+      "options": [
+        "User Interface Rules",
+        "Data Rules",
+        "Process Rules",
+        "Integration Rules"
+      ],
+      "correct_answer": 2,
+      "explanation": "Process Rules define business processes and workflows, including Flow rules, Activity rules, and Decision rules.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q7",
+      "type": "true-false",
+      "question": "Dev Studio provides access to all PEGA capabilities and advanced configuration options.",
+      "correct_answer": true,
+      "explanation": "True. Dev Studio is the comprehensive development environment that provides complete rule access, advanced debugging tools, and system administration functions.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "What is a key benefit of PRPC's rule-based architecture?",
+      "options": [
+        "Rules cannot be changed once created",
+        "Only developers can create rules",
+        "Rules promote reusability and maintainability",
+        "Rules require traditional programming languages"
+      ],
+      "correct_answer": 2,
+      "explanation": "PRPC's rule-based architecture promotes reusability and maintainability, allowing rules to be inherited, versioned, and easily modified without traditional coding.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "scenario",
+      "question": "An organization needs to create predictive models and perform advanced analytics. Which PRPC environment would be most suitable?",
+      "options": [
+        "App Studio",
+        "Dev Studio",
+        "Prediction Studio",
+        "Case Manager"
+      ],
+      "correct_answer": 2,
+      "explanation": "Prediction Studio is specialized for creating and managing predictive and adaptive models, machine learning, and advanced analytics.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q10",
+      "type": "multiple-choice",
+      "question": "In PRPC runtime environment, what manages case lifecycle and work routing?",
+      "options": [
+        "Rule Execution Engine",
+        "Case Management Engine",
+        "Database Layer",
+        "Security Framework"
+      ],
+      "correct_answer": 1,
+      "explanation": "The Case Management Engine manages case lifecycle, work routing, and process orchestration in the PRPC runtime environment.",
+      "difficulty": "medium"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["prpc", "architecture", "rules", "development-environment", "beginner"],
+    "estimated_time": 20
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "id": "basic-validations",
+  "title": "Basic Validations",
+  "level": "beginner",
+  "estimated_time": 20,
+  "prerequisites": ["data-modeling"],
+  "learning_objectives": [
+    "Understand different types of data validation in PEGA",
+    "Learn to implement field-level validations",
+    "Master validation rules and error messaging",
+    "Apply validation best practices"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Data Validation in PEGA",
+      "text": "Data validation ensures that information entered into your PEGA applications is accurate, complete, and follows business rules. This tutorial covers the essential validation techniques that help maintain data quality and provide users with helpful feedback when errors occur."
+    },
+    "sections": [
+      {
+        "title": "Types of Validation",
+        "content": "PEGA provides several types of validation to ensure data quality at different levels.",
+        "validation_types": [
+          {
+            "type": "Required Field Validation",
+            "description": "Ensures that essential fields are not left empty",
+            "use_cases": ["Customer name", "Email address", "Order quantity"],
+            "implementation": "Set the 'Required' property on field definitions"
+          },
+          {
+            "type": "Format Validation",
+            "description": "Verifies that data follows specific patterns or formats",
+            "use_cases": ["Email addresses", "Phone numbers", "Postal codes"],
+            "implementation": "Use format rules or regular expressions"
+          },
+          {
+            "type": "Range Validation",
+            "description": "Ensures numeric values fall within acceptable ranges",
+            "use_cases": ["Age limits", "Price ranges", "Quantity limits"],
+            "implementation": "Set minimum and maximum value constraints"
+          },
+          {
+            "type": "Business Rule Validation",
+            "description": "Enforces complex business logic and cross-field dependencies",
+            "use_cases": ["Credit limits", "Approval thresholds", "Eligibility criteria"],
+            "implementation": "Create custom validation rules using when conditions"
+          }
+        ]
+      },
+      {
+        "title": "Implementing Field Validations",
+        "content": "Learn how to configure different types of field validations in PEGA.",
+        "implementation_steps": [
+          {
+            "step": "Required Field Setup",
+            "description": "Configure fields that must be completed",
+            "actions": [
+              "Open the property definition",
+              "Check the 'Required' checkbox",
+              "Set appropriate error message",
+              "Test the validation behavior"
+            ]
+          },
+          {
+            "step": "Format Validation Setup",
+            "description": "Define format requirements for text fields",
+            "actions": [
+              "Select appropriate field type (Email, Phone, etc.)",
+              "Define custom format patterns if needed",
+              "Configure format-specific error messages",
+              "Test with valid and invalid inputs"
+            ]
+          },
+          {
+            "step": "Range Validation Setup",
+            "description": "Set numeric limits and boundaries",
+            "actions": [
+              "Define minimum and maximum values",
+              "Set inclusive or exclusive range boundaries",
+              "Configure range-specific error messages",
+              "Consider edge cases and boundary values"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Error Messaging Best Practices",
+        "content": "Effective error messages help users understand and correct validation failures.",
+        "messaging_principles": [
+          {
+            "principle": "Clear and Specific",
+            "description": "Messages should clearly explain what went wrong",
+            "good_example": "Email address must include @ symbol and domain (e.g., user@company.com)",
+            "poor_example": "Invalid input"
+          },
+          {
+            "principle": "Actionable Guidance",
+            "description": "Tell users how to fix the problem",
+            "good_example": "Password must be at least 8 characters with one number and one special character",
+            "poor_example": "Password requirements not met"
+          },
+          {
+            "principle": "User-Friendly Language",
+            "description": "Use business terminology, not technical jargon",
+            "good_example": "Please enter your phone number with area code",
+            "poor_example": "Field validation rule PH_001 failed"
+          }
+        ]
+      },
+      {
+        "title": "Validation Timing",
+        "content": "Understanding when validations occur helps create better user experiences.",
+        "timing_options": [
+          {
+            "timing": "Real-time Validation",
+            "description": "Validates as users type or leave fields",
+            "pros": ["Immediate feedback", "Prevents error accumulation"],
+            "cons": ["Can be distracting", "May interrupt user flow"],
+            "best_for": "Format validations, required fields"
+          },
+          {
+            "timing": "Form Submission Validation",
+            "description": "Validates when users submit the entire form",
+            "pros": ["Less disruptive", "Allows completion of thought"],
+            "cons": ["Delayed feedback", "May require rework"],
+            "best_for": "Complex business rules, cross-field validations"
+          },
+          {
+            "timing": "Progressive Validation",
+            "description": "Validates sections as users complete them",
+            "pros": ["Balanced approach", "Section-level feedback"],
+            "cons": ["More complex to implement"],
+            "best_for": "Multi-step forms, complex applications"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Different validation types serve different data quality needs",
+        "Field-level validations should be configured based on data requirements",
+        "Error messages should be clear, specific, and actionable",
+        "Validation timing affects user experience significantly",
+        "Testing validations with various inputs ensures reliability"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/basic-validations",
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["validation", "data-quality", "error-handling", "user-experience"]
+  }
+}

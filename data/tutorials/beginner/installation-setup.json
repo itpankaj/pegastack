@@ -1,0 +1,359 @@
+{
+  "id": "installation-setup",
+  "title": "Installation & Setup",
+  "level": "beginner",
+  "estimated_time": 30,
+  "prerequisites": ["prpc-overview"],
+  "learning_objectives": [
+    "Understand different PEGA deployment options",
+    "Learn how to access PEGA Personal Edition",
+    "Set up your development environment",
+    "Navigate the PEGA interface for the first time"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Getting Started with PEGA",
+      "text": "Before you can start building PEGA applications, you need access to a PEGA environment. This tutorial will guide you through the different options available and help you set up your development environment. For beginners, we'll focus on the easiest and most accessible option: PEGA Personal Edition."
+    },
+    "sections": [
+      {
+        "title": "PEGA Deployment Options",
+        "content": "PEGA offers several deployment options to suit different needs, from learning and development to enterprise production environments.",
+        "options": [
+          {
+            "name": "PEGA Personal Edition (Recommended for Beginners)",
+            "description": "A free, cloud-based PEGA environment perfect for learning and experimentation.",
+            "pros": [
+              "Completely free to use",
+              "No installation required",
+              "Always up-to-date with latest features",
+              "Accessible from anywhere with internet",
+              "Pre-configured with sample applications"
+            ],
+            "cons": [
+              "Limited to personal use and learning",
+              "Cannot be used for production applications",
+              "Has usage limitations",
+              "Requires internet connection"
+            ],
+            "best_for": "Students, beginners, individual learning, certification preparation"
+          },
+          {
+            "name": "PEGA Cloud",
+            "description": "Enterprise-grade cloud deployment managed by PEGA.",
+            "pros": [
+              "Fully managed by PEGA",
+              "High availability and scalability",
+              "Regular updates and maintenance",
+              "Enterprise security features"
+            ],
+            "cons": [
+              "Subscription-based pricing",
+              "Requires enterprise contract",
+              "Less control over infrastructure"
+            ],
+            "best_for": "Enterprise production environments, organizations wanting managed services"
+          },
+          {
+            "name": "On-Premises Installation",
+            "description": "PEGA installed on your organization's own servers and infrastructure.",
+            "pros": [
+              "Complete control over environment",
+              "Can customize infrastructure",
+              "Data stays within organization",
+              "Can integrate with existing systems"
+            ],
+            "cons": [
+              "Requires significant IT resources",
+              "Complex installation and maintenance",
+              "Higher upfront costs",
+              "Responsibility for updates and security"
+            ],
+            "best_for": "Large enterprises with specific security requirements, organizations with existing infrastructure"
+          }
+        ]
+      },
+      {
+        "title": "Setting Up PEGA Personal Edition",
+        "content": "PEGA Personal Edition is the easiest way to get started with PEGA development. Follow these steps to set up your free account.",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Create a PEGA Account",
+            "description": "Visit the PEGA website and create a free account to access Personal Edition.",
+            "details": [
+              "Go to https://www.pega.com/products/pega-platform/personal-edition",
+              "Click 'Get Started' or 'Sign Up'",
+              "Fill in your personal information (name, email, etc.)",
+              "Verify your email address when prompted",
+              "Complete the registration process"
+            ],
+            "tips": [
+              "Use a professional email address if possible",
+              "Keep your login credentials secure",
+              "Check your spam folder for verification emails"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Access Your Environment",
+            "description": "Once registered, you can access your personal PEGA environment through the web browser.",
+            "details": [
+              "Log in to your PEGA account",
+              "Navigate to Personal Edition from your dashboard",
+              "Click 'Launch' to open your PEGA environment",
+              "Wait for the environment to initialize (may take a few minutes)",
+              "You'll be redirected to the PEGA portal"
+            ],
+            "tips": [
+              "Bookmark your PEGA environment URL for easy access",
+              "The environment may take time to start if it's been idle",
+              "Use a modern web browser (Chrome, Firefox, Edge) for best experience"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Initial Environment Setup",
+            "description": "Configure your PEGA environment for optimal learning experience.",
+            "details": [
+              "Complete the welcome tour if prompted",
+              "Explore the pre-installed sample applications",
+              "Set your user preferences (timezone, language, etc.)",
+              "Familiarize yourself with the navigation menu",
+              "Create your first application workspace"
+            ],
+            "tips": [
+              "Take the guided tour to understand the interface",
+              "Don't skip the sample applications - they're great learning resources",
+              "Set up your profile with accurate information"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "System Requirements",
+        "content": "Ensure your system meets the minimum requirements for optimal PEGA Personal Edition experience.",
+        "requirements": {
+          "browser": {
+            "title": "Supported Browsers",
+            "details": [
+              "Google Chrome (recommended) - version 90 or later",
+              "Mozilla Firefox - version 88 or later",
+              "Microsoft Edge - version 90 or later",
+              "Safari - version 14 or later (Mac only)"
+            ],
+            "notes": [
+              "Chrome is recommended for best performance",
+              "Ensure JavaScript is enabled",
+              "Disable ad blockers that might interfere with PEGA"
+            ]
+          },
+          "hardware": {
+            "title": "Minimum Hardware Requirements",
+            "details": [
+              "RAM: 4GB minimum, 8GB recommended",
+              "Processor: Dual-core 2.0 GHz or faster",
+              "Screen Resolution: 1024x768 minimum, 1920x1080 recommended",
+              "Internet Connection: Broadband connection required"
+            ],
+            "notes": [
+              "More RAM improves performance with complex applications",
+              "Higher resolution screens provide better development experience",
+              "Stable internet connection is essential for cloud-based Personal Edition"
+            ]
+          },
+          "software": {
+            "title": "Additional Software",
+            "details": [
+              "PDF viewer for documentation and reports",
+              "Text editor for external file editing (optional)",
+              "Screen capture tool for documentation (optional)",
+              "VPN client if accessing from restricted networks"
+            ]
+          }
+        }
+      },
+      {
+        "title": "Navigating the PEGA Interface",
+        "content": "Once you have access to PEGA, it's important to understand the main interface components and navigation patterns.",
+        "interface_components": [
+          {
+            "component": "Header Navigation",
+            "description": "The top navigation bar provides access to main PEGA functions and user settings.",
+            "elements": [
+              "PEGA logo and home link",
+              "Application switcher",
+              "Search functionality",
+              "User menu and settings",
+              "Help and documentation links"
+            ]
+          },
+          {
+            "component": "Left Navigation Panel",
+            "description": "The main navigation menu for accessing different PEGA tools and applications.",
+            "elements": [
+              "App Studio - for low-code development",
+              "Dev Studio - for advanced development",
+              "Case Manager - for case work",
+              "Reports - for analytics and reporting",
+              "Admin - for system administration"
+            ]
+          },
+          {
+            "component": "Main Content Area",
+            "description": "The central workspace where you'll do most of your development and configuration work.",
+            "elements": [
+              "Form designers and editors",
+              "Rule editors and configuration screens",
+              "Preview and testing interfaces",
+              "Documentation and help content"
+            ]
+          },
+          {
+            "component": "Context Panels",
+            "description": "Side panels that provide additional information and tools based on your current activity.",
+            "elements": [
+              "Property panels for editing object properties",
+              "Help panels with contextual assistance",
+              "History panels showing recent changes",
+              "Clipboard for temporary data storage"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "First Steps in PEGA",
+        "content": "Once your environment is set up, here are the recommended first steps to get familiar with PEGA.",
+        "recommended_actions": [
+          {
+            "action": "Explore Sample Applications",
+            "description": "PEGA Personal Edition comes with pre-built sample applications that demonstrate key concepts.",
+            "steps": [
+              "Navigate to the Applications section",
+              "Open the 'Customer Service' sample application",
+              "Run through a sample case from start to finish",
+              "Examine the case types and processes",
+              "Look at the user interface components"
+            ]
+          },
+          {
+            "action": "Take a Guided Tour",
+            "description": "Use PEGA's built-in guided tours to learn the interface and basic concepts.",
+            "steps": [
+              "Look for 'Getting Started' or 'Tour' options in the interface",
+              "Follow the interactive tutorials",
+              "Complete the basic navigation exercises",
+              "Practice creating simple rules",
+              "Explore the help documentation"
+            ]
+          },
+          {
+            "action": "Create Your First Application",
+            "description": "Start with a simple application to understand the development process.",
+            "steps": [
+              "Use the Application Wizard in App Studio",
+              "Create a basic case type (e.g., 'Request')",
+              "Add a few simple fields",
+              "Create a basic process flow",
+              "Test your application"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Common Setup Issues and Solutions",
+        "content": "Here are common issues you might encounter during setup and their solutions.",
+        "issues": [
+          {
+            "issue": "Environment Won't Load",
+            "symptoms": [
+              "Blank screen after login",
+              "Loading screen that never completes",
+              "Error messages about connectivity"
+            ],
+            "solutions": [
+              "Clear your browser cache and cookies",
+              "Try a different browser",
+              "Check your internet connection",
+              "Disable browser extensions temporarily",
+              "Contact PEGA support if issues persist"
+            ]
+          },
+          {
+            "issue": "Slow Performance",
+            "symptoms": [
+              "Pages load slowly",
+              "Interface feels sluggish",
+              "Timeouts when saving work"
+            ],
+            "solutions": [
+              "Close unnecessary browser tabs",
+              "Ensure you have sufficient RAM available",
+              "Check your internet connection speed",
+              "Try accessing during off-peak hours",
+              "Consider upgrading your hardware if consistently slow"
+            ]
+          },
+          {
+            "issue": "Access Denied Errors",
+            "symptoms": [
+              "Cannot access certain features",
+              "Permission denied messages",
+              "Missing menu options"
+            ],
+            "solutions": [
+              "Verify your account is properly activated",
+              "Check that you're using the correct login credentials",
+              "Ensure your account hasn't expired",
+              "Contact PEGA support for access issues"
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "PEGA Personal Edition is the best option for beginners and learning",
+        "No installation is required - it's completely cloud-based",
+        "Modern web browsers and stable internet connection are essential",
+        "The PEGA interface has consistent navigation patterns across tools",
+        "Sample applications are valuable learning resources",
+        "Start with simple applications and gradually increase complexity"
+      ]
+    },
+    "next_steps": {
+      "title": "What's Next?",
+      "text": "Now that you have PEGA set up and understand the basic interface, the next tutorial will help you understand the differences between App Studio and Dev Studio, and when to use each tool.",
+      "recommended_reading": [
+        "App Studio vs Dev Studio",
+        "Your First Case App",
+        "Data Modeling Basics"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/installation-setup",
+  "resources": [
+    {
+      "title": "PEGA Personal Edition",
+      "url": "https://www.pega.com/products/pega-platform/personal-edition",
+      "type": "platform"
+    },
+    {
+      "title": "System Requirements",
+      "url": "https://docs.pega.com/bundle/platform/page/platform/systemrequirements/system-requirements.html",
+      "type": "documentation"
+    },
+    {
+      "title": "Getting Started Guide",
+      "url": "https://docs.pega.com/bundle/platform/page/platform/gettingstarted/getting-started.html",
+      "type": "documentation"
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["installation", "setup", "personal-edition", "environment", "getting-started"]
+  }
+}

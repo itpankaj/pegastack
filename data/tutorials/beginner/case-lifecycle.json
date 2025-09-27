@@ -1,0 +1,458 @@
+{
+  "id": "case-lifecycle",
+  "title": "Case Lifecycle Management",
+  "level": "beginner",
+  "description": "Understanding case stages, processes, and steps to design effective case management workflows",
+  "duration": "105 minutes",
+  "difficulty": "Beginner",
+  "prerequisites": ["User Interface Basics"],
+  "learning_objectives": [
+    "Design case lifecycle workflows",
+    "Create stages and processes",
+    "Configure case routing and assignment",
+    "Handle case resolution and closure",
+    "Implement SLA and escalation rules"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Understanding Case Lifecycle in PEGA",
+      "text": "Case lifecycle management is at the heart of PEGA BPM applications. This lesson covers how to design and implement comprehensive case management workflows that guide work from creation to resolution, ensuring efficient processing and optimal business outcomes."
+    },
+    "sections": [
+      {
+        "title": "Case Management Fundamentals",
+        "content": "Case management in PEGA provides a structured approach to handling work items throughout their entire lifecycle.",
+        "key_concepts": [
+          {
+            "concept": "Case",
+            "definition": "A unit of work that represents a business transaction or request",
+            "examples": ["Customer service request", "Insurance claim", "Loan application"]
+          },
+          {
+            "concept": "Stage",
+            "definition": "Major phases in the case lifecycle",
+            "examples": ["Intake", "Processing", "Review", "Resolution"]
+          },
+          {
+            "concept": "Process",
+            "definition": "Detailed workflows within each stage",
+            "examples": ["Data collection", "Validation", "Approval", "Notification"]
+          },
+          {
+            "concept": "Step",
+            "definition": "Individual tasks or activities within a process",
+            "examples": ["Fill form", "Manager approval", "Send email"]
+          }
+        ]
+      },
+      {
+        "title": "Case Lifecycle Design Principles",
+        "content": "Effective case lifecycle design follows proven principles that ensure optimal user experience and business efficiency.",
+        "principles": [
+          {
+            "principle": "User-Centric Design",
+            "description": "Design workflows around user needs and capabilities",
+            "guidelines": [
+              "Minimize user effort and clicks",
+              "Provide clear guidance at each step",
+              "Group related tasks together",
+              "Offer contextual help and information"
+            ]
+          },
+          {
+            "principle": "Business Value Focus",
+            "description": "Prioritize activities that deliver maximum business value",
+            "guidelines": [
+              "Front-load critical decisions",
+              "Automate routine tasks",
+              "Parallel process independent activities",
+              "Minimize handoffs between teams"
+            ]
+          },
+          {
+            "principle": "Flexibility and Adaptability",
+            "description": "Design for changing business requirements",
+            "guidelines": [
+              "Use configurable business rules",
+              "Implement exception handling",
+              "Allow for process variations",
+              "Enable dynamic routing"
+            ]
+          },
+          {
+            "principle": "Transparency and Auditability",
+            "description": "Ensure visibility into case progress and decisions",
+            "guidelines": [
+              "Log all significant actions",
+              "Provide status dashboards",
+              "Enable progress tracking",
+              "Maintain decision audit trails"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Designing Case Stages",
+        "content": "Stages represent the major phases of your case lifecycle and provide structure for organizing processes.",
+        "stage_design_process": [
+          {
+            "step": 1,
+            "title": "Identify Business Phases",
+            "description": "Map out the natural phases of your business process",
+            "activities": [
+              "Interview business stakeholders",
+              "Document current state processes",
+              "Identify decision points",
+              "Map value-adding activities"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Define Stage Objectives",
+            "description": "Clearly define what each stage accomplishes",
+            "activities": [
+              "Set stage completion criteria",
+              "Define required inputs and outputs",
+              "Identify success metrics",
+              "Document business rules"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Configure Stage Properties",
+            "description": "Set up stages in PEGA with appropriate configurations",
+            "activities": [
+              "Create stage in Case Designer",
+              "Configure stage instructions",
+              "Set up stage-level SLAs",
+              "Define stage completion conditions"
+            ]
+          }
+        ],
+        "common_stage_patterns": [
+          {
+            "pattern": "Linear Progression",
+            "description": "Sequential stages that must be completed in order",
+            "use_case": "Loan application, employee onboarding",
+            "advantages": ["Simple to understand", "Clear progression"],
+            "considerations": ["May not handle exceptions well", "Can be inflexible"]
+          },
+          {
+            "pattern": "Parallel Processing",
+            "description": "Multiple stages that can run simultaneously",
+            "use_case": "Insurance claims, product development",
+            "advantages": ["Faster processing", "Resource optimization"],
+            "considerations": ["Complex coordination", "Dependency management"]
+          },
+          {
+            "pattern": "Conditional Branching",
+            "description": "Different stage paths based on case characteristics",
+            "use_case": "Customer service, regulatory compliance",
+            "advantages": ["Flexible routing", "Optimized processing"],
+            "considerations": ["Complex logic", "Testing challenges"]
+          }
+        ]
+      },
+      {
+        "title": "Building Processes",
+        "content": "Processes define the detailed workflows within each stage, specifying the exact sequence of activities.",
+        "process_types": [
+          {
+            "type": "Primary Process",
+            "description": "Main workflow for the stage",
+            "characteristics": ["Always executed", "Contains core business logic", "Defines stage completion"]
+          },
+          {
+            "type": "Alternate Process",
+            "description": "Alternative workflow for special conditions",
+            "characteristics": ["Conditionally executed", "Handles exceptions", "Provides flexibility"]
+          },
+          {
+            "type": "Optional Process",
+            "description": "Additional workflow that may be triggered",
+            "characteristics": ["User or system triggered", "Adds functionality", "Not required for completion"]
+          }
+        ],
+        "process_design_steps": [
+          {
+            "step": 1,
+            "title": "Map Process Flow",
+            "tasks": [
+              "Identify process start and end points",
+              "Map all required activities",
+              "Define decision points",
+              "Identify parallel activities"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Configure Process Steps",
+            "tasks": [
+              "Add steps to process flow",
+              "Configure step properties",
+              "Set up routing conditions",
+              "Define step completion criteria"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Implement Business Logic",
+            "tasks": [
+              "Add validation rules",
+              "Configure calculations",
+              "Set up notifications",
+              "Implement error handling"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Step Configuration",
+        "content": "Steps are the individual tasks that users or systems perform within a process.",
+        "step_types": [
+          {
+            "type": "Assignment",
+            "description": "Tasks assigned to users or work queues",
+            "configuration": ["Set assignment routing", "Configure work forms", "Define completion actions"]
+          },
+          {
+            "type": "Utility",
+            "description": "Automated system activities",
+            "configuration": ["Select utility function", "Configure parameters", "Handle exceptions"]
+          },
+          {
+            "type": "Integration",
+            "description": "External system interactions",
+            "configuration": ["Set up connectors", "Configure data mapping", "Handle timeouts"]
+          },
+          {
+            "type": "Decision",
+            "description": "Automated decision points",
+            "configuration": ["Define decision logic", "Set routing rules", "Configure outcomes"]
+          }
+        ],
+        "assignment_routing": [
+          {
+            "method": "Work Queue",
+            "description": "Assign to a shared queue for any qualified user",
+            "best_for": "High-volume, routine tasks",
+            "configuration": "Select work queue, set skills requirements"
+          },
+          {
+            "method": "Specific User",
+            "description": "Assign to a particular individual",
+            "best_for": "Specialized tasks, relationship management",
+            "configuration": "Select user, set backup assignments"
+          },
+          {
+            "method": "Business Logic",
+            "description": "Dynamic assignment based on rules",
+            "best_for": "Complex routing scenarios",
+            "configuration": "Create routing rules, test scenarios"
+          }
+        ]
+      },
+      {
+        "title": "SLA and Escalation Management",
+        "content": "Service Level Agreements ensure timely case processing and provide escalation mechanisms when deadlines are missed.",
+        "sla_components": [
+          {
+            "component": "Goal Time",
+            "description": "Target completion time for optimal performance",
+            "purpose": "Performance measurement and reporting"
+          },
+          {
+            "component": "Deadline Time",
+            "description": "Maximum acceptable completion time",
+            "purpose": "Escalation trigger and compliance monitoring"
+          },
+          {
+            "component": "Late Time",
+            "description": "Time after which case is considered overdue",
+            "purpose": "Exception reporting and management attention"
+          }
+        ],
+        "escalation_strategies": [
+          {
+            "strategy": "Notification Escalation",
+            "description": "Send alerts to managers or stakeholders",
+            "implementation": ["Configure email notifications", "Set up dashboard alerts", "Define recipient lists"]
+          },
+          {
+            "strategy": "Assignment Escalation",
+            "description": "Reassign work to higher-level resources",
+            "implementation": ["Define escalation hierarchy", "Configure automatic reassignment", "Set up approval workflows"]
+          },
+          {
+            "strategy": "Process Escalation",
+            "description": "Trigger alternative or expedited processes",
+            "implementation": ["Create escalation processes", "Configure trigger conditions", "Define expedited workflows"]
+          }
+        ]
+      },
+      {
+        "title": "Case Resolution and Closure",
+        "content": "Proper case resolution ensures business objectives are met and provides closure for all stakeholders.",
+        "resolution_types": [
+          {
+            "type": "Resolved-Completed",
+            "description": "Case successfully completed with desired outcome",
+            "requirements": ["All objectives met", "Stakeholder satisfaction", "Documentation complete"]
+          },
+          {
+            "type": "Resolved-Cancelled",
+            "description": "Case cancelled before completion",
+            "requirements": ["Cancellation reason documented", "Stakeholder notification", "Resource cleanup"]
+          },
+          {
+            "type": "Resolved-Duplicate",
+            "description": "Case identified as duplicate of existing case",
+            "requirements": ["Link to original case", "Transfer relevant information", "Notify stakeholders"]
+          }
+        ],
+        "closure_checklist": [
+          "Verify all required information is captured",
+          "Confirm stakeholder satisfaction",
+          "Complete documentation and audit trail",
+          "Update related systems and records",
+          "Send closure notifications",
+          "Archive case data appropriately"
+        ]
+      }
+    ],
+    "practical_exercise": {
+      "title": "Design a Customer Service Case Lifecycle",
+      "description": "Create a comprehensive case lifecycle for handling customer service requests from intake to resolution.",
+      "business_scenario": {
+        "description": "A telecommunications company needs to handle various customer service requests including billing inquiries, technical support, and service changes.",
+        "requirements": [
+          "Multiple request types with different processing paths",
+          "Skill-based routing to appropriate agents",
+          "Escalation for complex or urgent issues",
+          "Customer communication throughout the process",
+          "SLA compliance and reporting"
+        ]
+      },
+      "implementation_steps": [
+        {
+          "step": 1,
+          "title": "Design Case Structure",
+          "tasks": [
+            "Create CustomerServiceRequest case type",
+            "Define case properties (RequestType, Priority, Customer, etc.)",
+            "Set up case categories (Billing, Technical, Service)",
+            "Configure case creation form"
+          ]
+        },
+        {
+          "step": 2,
+          "title": "Create Intake Stage",
+          "tasks": [
+            "Build customer information capture process",
+            "Implement request categorization logic",
+            "Set up priority assignment rules",
+            "Configure initial routing decisions"
+          ]
+        },
+        {
+          "step": 3,
+          "title": "Design Processing Stage",
+          "tasks": [
+            "Create skill-based assignment routing",
+            "Build agent work forms for each request type",
+            "Implement escalation triggers",
+            "Set up customer communication processes"
+          ]
+        },
+        {
+          "step": 4,
+          "title": "Configure Resolution Stage",
+          "tasks": [
+            "Create resolution capture forms",
+            "Implement customer satisfaction survey",
+            "Set up closure validation rules",
+            "Configure case archival process"
+          ]
+        },
+        {
+          "step": 5,
+          "title": "Implement SLA Management",
+          "tasks": [
+            "Define SLA goals by request type and priority",
+            "Configure escalation rules and notifications",
+            "Set up management dashboards",
+            "Create performance reporting"
+          ]
+        }
+      ]
+    },
+    "best_practices": {
+      "title": "Case Lifecycle Best Practices",
+      "categories": [
+        {
+          "category": "Design Principles",
+          "practices": [
+            "Keep stages focused on business outcomes",
+            "Minimize handoffs between stages",
+            "Design for the most common scenarios first",
+            "Build in flexibility for exceptions",
+            "Consider mobile and offline scenarios"
+          ]
+        },
+        {
+          "category": "Performance Optimization",
+          "practices": [
+            "Parallel process independent activities",
+            "Front-load critical decisions",
+            "Automate routine determinations",
+            "Cache frequently accessed data",
+            "Monitor and optimize bottlenecks"
+          ]
+        },
+        {
+          "category": "User Experience",
+          "practices": [
+            "Provide clear progress indicators",
+            "Minimize required user inputs",
+            "Offer contextual guidance",
+            "Enable easy navigation between stages",
+            "Implement intuitive error handling"
+          ]
+        },
+        {
+          "category": "Governance and Compliance",
+          "practices": [
+            "Maintain comprehensive audit trails",
+            "Implement proper access controls",
+            "Document all business rules",
+            "Regular review and optimization",
+            "Ensure regulatory compliance"
+          ]
+        }
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/case-lifecycle",
+  "next_lesson": "/tutorials/intermediate/rules-resolution",
+  "previous_lesson": "/tutorials/beginner/user-interface-basics",
+  "resources": [
+    {
+      "type": "documentation",
+      "title": "PEGA Case Management Guide",
+      "url": "https://docs.pega.com/case-management"
+    },
+    {
+      "type": "video",
+      "title": "Case Lifecycle Design Patterns",
+      "url": "/resources/videos/case-lifecycle-patterns"
+    },
+    {
+      "type": "download",
+      "title": "Case Design Template",
+      "url": "/downloads/case-design-template.xlsx"
+    }
+  ],
+  "estimated_completion_time": 105,
+  "tags": ["case-management", "lifecycle", "stages", "processes", "sla", "escalation", "beginner"],
+  "last_updated": "2025-07-24"
+}

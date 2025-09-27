@@ -1,0 +1,123 @@
+{
+  "id": "product-rules-deployment",
+  "title": "Product Rules & Deployment - Quiz",
+  "description": "Test your mastery of enterprise PEGA product rule management and deployment strategies",
+  "level": "advanced",
+  "lesson_reference": "/tutorials/advanced/product-rules-deployment",
+  "passing_score": 80,
+  "time_limit": 30,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the primary advantage of multi-tier product architecture in enterprise PEGA implementations?",
+      "options": [
+        "Reduced development complexity",
+        "Independent evolution of system layers while maintaining compatibility",
+        "Lower infrastructure costs",
+        "Simplified testing procedures"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-tier architecture enables independent evolution of different system layers while maintaining compatibility, allowing teams to develop and deploy at different cadences.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "In enterprise environments, what deployment strategy provides the best zero-downtime capability?",
+      "options": [
+        "Rolling updates only",
+        "Blue-green deployment with automated health checks and rollback triggers",
+        "Direct production deployment",
+        "Scheduled maintenance windows"
+      ],
+      "correct_answer": 1,
+      "explanation": "Blue-green deployment with automated health checks provides true zero-downtime capability by maintaining parallel environments and intelligent switching based on application health.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "What is the most critical factor in enterprise backward compatibility strategy?",
+      "options": [
+        "Supporting all previous versions indefinitely",
+        "Guaranteed compatibility for at least two major versions with clear deprecation timelines",
+        "No backward compatibility to reduce complexity",
+        "Supporting only the immediate previous version"
+      ],
+      "correct_answer": 1,
+      "explanation": "Supporting at least two major versions with clear deprecation timelines provides stability for dependent applications while enabling evolution and preventing technical debt accumulation.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "For enterprise PEGA deployments, what should trigger automated rollback?",
+      "options": [
+        "Any deployment completion",
+        "Business metric degradation, error rate thresholds, and performance impact",
+        "Manual intervention only",
+        "Time-based rollback regardless of performance"
+      ],
+      "correct_answer": 1,
+      "explanation": "Intelligent rollback triggers based on business metrics, error rates, and performance impact ensure rapid response to deployment issues that affect user experience.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "What is the optimal approach for managing complex ruleset dependencies in enterprise environments?",
+      "options": [
+        "Avoiding dependencies entirely",
+        "Semantic versioning with automated dependency validation and compatibility checking",
+        "Manual dependency tracking",
+        "Latest version dependencies only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Semantic versioning with automated validation ensures clear dependency management while preventing compatibility issues during deployment.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "In Git-flow integration for PEGA development, how should feature branches be managed?",
+      "options": [
+        "Direct commits to master",
+        "Feature branches with corresponding PEGA development rulesets and structured merge processes",
+        "Individual developer repositories",
+        "No branching strategy"
+      ],
+      "correct_answer": 1,
+      "explanation": "Feature branches with corresponding PEGA rulesets enable parallel development while maintaining traceability and structured integration processes.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "What is the primary risk of insufficient testing automation in enterprise deployment pipelines?",
+      "options": [
+        "Faster deployments",
+        "Production issues and extended recovery times due to undetected problems",
+        "Reduced development costs",
+        "Simplified maintenance"
+      ],
+      "correct_answer": 1,
+      "explanation": "Insufficient testing automation leads to undetected issues reaching production, resulting in business impact and extended recovery times in enterprise environments.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "For enterprise hotfix deployment, what strategy ensures minimal risk and rapid deployment?",
+      "options": [
+        "Full regression testing suite",
+        "Dedicated hotfix rulesets with accelerated but comprehensive validation",
+        "Skip testing for speed",
+        "Wait for next regular release"
+      ],
+      "correct_answer": 1,
+      "explanation": "Dedicated hotfix rulesets with accelerated validation enable rapid deployment while maintaining appropriate testing for critical production fixes.",
+      "difficulty": "advanced"
+    }
+  ]
+}

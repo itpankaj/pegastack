@@ -1,0 +1,123 @@
+{
+  "id": "mobile-offline-apps",
+  "title": "Mobile & Offline Apps - Quiz",
+  "description": "Test your understanding of mobile and offline app concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/mobile-offline-apps",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary consideration for mobile-first design?",
+      "options": [
+        "Desktop compatibility",
+        "Touch-friendly interfaces and simplified navigation",
+        "Database optimization",
+        "Network bandwidth"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Mobile-first design prioritizes touch-friendly interfaces, simplified navigation, and optimized layouts specifically for mobile devices and touch interactions."
+    },
+    {
+      "id": 2,
+      "question": "How should offline data synchronization be implemented?",
+      "options": [
+        "Manual data entry only",
+        "Through robust synchronization queues and conflict resolution mechanisms",
+        "Real-time database replication",
+        "No synchronization needed"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Offline data synchronization requires robust synchronization queues, conflict resolution mechanisms, and data consistency validation to handle network interruptions gracefully."
+    },
+    {
+      "id": 3,
+      "question": "Which native device feature is most commonly integrated in mobile apps?",
+      "options": [
+        "Server configuration",
+        "Camera and GPS location services",
+        "Database schema",
+        "Network protocols"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Camera and GPS location services are most commonly integrated native device features, enabling photo capture, location tracking, and location-based functionality."
+    },
+    {
+      "id": 4,
+      "question": "How should network connectivity issues be handled?",
+      "options": [
+        "Ignore and fail gracefully",
+        "Through automatic retry mechanisms and user feedback systems",
+        "Require constant connectivity",
+        "Disable all functionality"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Network connectivity issues should be handled through automatic retry mechanisms, offline mode detection, and user feedback systems that inform users of connectivity status."
+    },
+    {
+      "id": 5,
+      "question": "What is crucial for mobile performance optimization?",
+      "options": [
+        "Maximum feature implementation",
+        "Efficient data loading, image optimization, and caching strategies",
+        "Complex animations",
+        "Database normalization"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Mobile performance optimization requires efficient data loading, image compression, intelligent caching strategies, and battery usage optimization for mobile environments."
+    },
+    {
+      "id": 6,
+      "question": "How should cross-device compatibility be tested?",
+      "options": [
+        "Only on one device type",
+        "Comprehensive testing across different devices, OS versions, and screen sizes",
+        "Manual testing only",
+        "Database testing only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Cross-device compatibility requires comprehensive testing across different devices, operating system versions, screen sizes, and network conditions to ensure consistent functionality."
+    },
+    {
+      "id": 7,
+      "question": "What is the benefit of push notifications in mobile apps?",
+      "options": [
+        "Database optimization",
+        "Real-time user engagement and timely updates",
+        "Server configuration",
+        "Network bandwidth reduction"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Push notifications provide real-time user engagement and timely updates, keeping users informed of important events and maintaining app relevance."
+    },
+    {
+      "id": 8,
+      "question": "How should mobile app deployment be managed?",
+      "options": [
+        "Direct production deployment",
+        "Through comprehensive testing, app store submission, and staged rollouts",
+        "Manual file copying",
+        "Database migration only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Mobile app deployment should be managed through comprehensive testing, proper app store submission processes, staged rollouts, and user acceptance testing."
+    }
+  ]
+}

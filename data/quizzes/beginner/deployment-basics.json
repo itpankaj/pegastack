@@ -1,0 +1,135 @@
+{
+  "id": "deployment-basics",
+  "title": "Deployment Basics Quiz",
+  "level": "beginner",
+  "lesson": "deployment-basics",
+  "total_questions": 10,
+  "passing_score": 70,
+  "time_limit": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is deployment in the context of PEGA applications?",
+      "options": [
+        "Creating new rules in development",
+        "Moving applications from development to production environments",
+        "Testing applications locally",
+        "Writing documentation"
+      ],
+      "correct_answer": 1,
+      "explanation": "Deployment is the process of moving PEGA applications from development environments to production environments where end users can access and use them."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "Which environment is typically used for thorough testing before production?",
+      "options": [
+        "Development",
+        "Testing/QA",
+        "Production",
+        "Personal"
+      ],
+      "correct_answer": 1,
+      "explanation": "Testing/QA environments are used for thorough testing with production-like data and configurations before deploying to the live production environment."
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "Production environments should have the same change control procedures as development environments.",
+      "correct_answer": false,
+      "explanation": "False. Production environments require much stricter change control procedures due to their impact on live business operations and end users."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "What should be included in deployment artifacts?",
+      "options": [
+        "Only application rules",
+        "Only database changes",
+        "Application rules, data model changes, configurations, and supporting resources",
+        "Only user documentation"
+      ],
+      "correct_answer": 2,
+      "explanation": "Deployment artifacts should include all components needed: application rules, data model changes, configuration settings, and supporting resources like images and files."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "What is the recommended first step in the deployment process?",
+      "options": [
+        "Deploy directly to production",
+        "Pre-deployment preparation and planning",
+        "Create user documentation",
+        "Schedule maintenance windows"
+      ],
+      "correct_answer": 1,
+      "explanation": "Pre-deployment preparation and planning is crucial, including thorough testing, documentation, dependency identification, and rollback planning."
+    },
+    {
+      "id": 6,
+      "type": "scenario",
+      "question": "You're about to deploy a major application update to production. What should you do first?",
+      "options": [
+        "Deploy immediately to save time",
+        "Test thoroughly in a production-like environment and prepare rollback procedures",
+        "Skip testing to meet deadlines",
+        "Deploy during peak business hours"
+      ],
+      "correct_answer": 1,
+      "explanation": "Always test thoroughly in production-like environments and prepare rollback procedures before deploying major updates to minimize risks and ensure business continuity."
+    },
+    {
+      "id": 7,
+      "type": "true-false",
+      "question": "Post-deployment validation is unnecessary if pre-deployment testing was thorough.",
+      "correct_answer": false,
+      "explanation": "False. Post-deployment validation is essential to verify that the deployment was successful and the application works correctly in the production environment."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "When should deployments typically be scheduled?",
+      "options": [
+        "During peak business hours",
+        "During low-usage periods or maintenance windows",
+        "Randomly throughout the day",
+        "Only on weekends"
+      ],
+      "correct_answer": 1,
+      "explanation": "Deployments should be scheduled during low-usage periods or planned maintenance windows to minimize impact on business operations and users."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "What is a key challenge when deploying to different environments?",
+      "options": [
+        "Too much documentation",
+        "Environment differences and configuration variations",
+        "Having too many developers",
+        "Lack of testing tools"
+      ],
+      "correct_answer": 1,
+      "explanation": "Environment differences and configuration variations between development, testing, and production can cause deployment issues, requiring careful environment management."
+    },
+    {
+      "id": 10,
+      "type": "scenario",
+      "question": "After deployment, users report that a critical integration is not working. What should be your immediate response?",
+      "options": [
+        "Wait and see if it fixes itself",
+        "Implement the prepared rollback procedures",
+        "Try to fix it in production",
+        "Blame the integration team"
+      ],
+      "correct_answer": 1,
+      "explanation": "When critical functionality fails after deployment, the immediate response should be to implement prepared rollback procedures to restore service, then investigate and fix the issue."
+    }
+  ],
+  "metadata": {
+    "created_date": "2025-01-24",
+    "last_updated": "2025-01-24",
+    "version": "1.0",
+    "tags": ["deployment", "environments", "change-management", "production", "rollback"]
+  }
+}

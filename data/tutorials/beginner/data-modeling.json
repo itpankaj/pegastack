@@ -1,0 +1,316 @@
+{
+  "id": "data-modeling",
+  "title": "Data Modeling Basics",
+  "level": "beginner",
+  "description": "Understanding PEGA data model, properties, and data structures for building robust applications",
+  "duration": "75 minutes",
+  "difficulty": "Beginner",
+  "prerequisites": ["Your First Case App"],
+  "learning_objectives": [
+    "Learn PEGA data model concepts",
+    "Create and configure properties",
+    "Understand data types and structures",
+    "Work with data pages and transforms",
+    "Implement data validation rules"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Understanding PEGA Data Model",
+      "text": "Data modeling in PEGA is fundamental to building robust applications. This lesson covers how to design and implement data structures that support your business processes. Unlike traditional databases, PEGA uses a property-based data model that is flexible and business-friendly."
+    },
+    "sections": [
+      {
+        "title": "What is Data Modeling in PEGA?",
+        "content": "Data modeling in PEGA involves defining the structure and relationships of data that your application will use. The PEGA data model is built around properties, which are individual data fields that can be combined to create complex data structures.",
+        "key_points": [
+          "Property-based data model",
+          "Business-friendly approach",
+          "Flexible and scalable",
+          "No traditional database schema required"
+        ]
+      },
+      {
+        "title": "Core Data Concepts",
+        "content": "Understanding these fundamental concepts is essential for effective data modeling in PEGA.",
+        "subsections": [
+          {
+            "title": "Properties",
+            "content": "Individual data fields that store information. Properties are the building blocks of your data model.",
+            "examples": ["CustomerName", "OrderDate", "TotalAmount"]
+          },
+          {
+            "title": "Data Types",
+            "content": "Define what kind of data a property can hold and how it behaves.",
+            "types": [
+              {"name": "Text", "description": "For storing text data (names, descriptions)", "example": "CustomerName"},
+              {"name": "Integer", "description": "For whole numbers", "example": "Age, Quantity"},
+              {"name": "Decimal", "description": "For numbers with decimal places", "example": "Price, Percentage"},
+              {"name": "Date", "description": "For date values", "example": "BirthDate, OrderDate"},
+              {"name": "DateTime", "description": "For date and time values", "example": "CreatedDateTime"},
+              {"name": "Boolean", "description": "For true/false values", "example": "IsActive, IsApproved"}
+            ]
+          },
+          {
+            "title": "Complex Properties",
+            "content": "Advanced property types for handling structured data.",
+            "types": [
+              {"name": "Page", "description": "Contains multiple related properties", "use_case": "Customer details, Address information"},
+              {"name": "Page List", "description": "An array of pages", "use_case": "Order items, Contact list"},
+              {"name": "Page Group", "description": "Collection of pages with unique keys", "use_case": "Product catalog, Employee directory"}
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Creating Properties",
+        "content": "Step-by-step guide to creating properties in your PEGA application.",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Access Data Model",
+            "instructions": [
+              "Open your application in App Studio",
+              "Navigate to the Data tab",
+              "Click on 'Data model'",
+              "View existing properties or create new ones"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Define Property Details",
+            "instructions": [
+              "Enter a meaningful property name (use camelCase)",
+              "Select the appropriate data type",
+              "Add a user-friendly label",
+              "Set whether the field is required",
+              "Configure validation rules if needed"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Configure Advanced Settings",
+            "instructions": [
+              "Set default values if applicable",
+              "Configure field validation",
+              "Add help text for users",
+              "Set field behavior (read-only, hidden, etc.)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Data Pages",
+        "content": "Data pages are reusable data structures that provide efficient data access and caching.",
+        "benefits": [
+          "Load data from external systems",
+          "Cache frequently used data",
+          "Provide lookup values for dropdowns",
+          "Share data across multiple cases",
+          "Improve application performance"
+        ],
+        "creation_steps": [
+          {
+            "step": 1,
+            "title": "Create Data Page",
+            "instructions": [
+              "Navigate to Data > Data pages",
+              "Click 'Create data page'",
+              "Enter a descriptive name",
+              "Select the appropriate class"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Configure Data Source",
+            "instructions": [
+              "Choose data source type (Database, Service, etc.)",
+              "Configure connection parameters",
+              "Define data retrieval logic",
+              "Set up data transformation if needed"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Set Caching Options",
+            "instructions": [
+              "Choose cache scope (Thread, Node, System)",
+              "Set refresh strategy",
+              "Configure cache expiration",
+              "Test data page functionality"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Data Validation",
+        "content": "Implementing validation rules to ensure data quality and integrity.",
+        "validation_types": [
+          {
+            "type": "Required Field Validation",
+            "description": "Ensure mandatory fields are not empty",
+            "implementation": "Set 'Required' property to true"
+          },
+          {
+            "type": "Format Validation",
+            "description": "Validate data format (email, phone, etc.)",
+            "implementation": "Use edit validate rules"
+          },
+          {
+            "type": "Range Validation",
+            "description": "Ensure values fall within acceptable ranges",
+            "implementation": "Configure min/max values"
+          },
+          {
+            "type": "Custom Validation",
+            "description": "Business-specific validation logic",
+            "implementation": "Create custom validation rules"
+          }
+        ]
+      }
+    ],
+    "practical_exercise": {
+      "title": "Hands-on Exercise: Customer Service Data Model",
+      "description": "Create a comprehensive data model for a customer service case management system.",
+      "requirements": [
+        "Customer information (Name, Email, Phone, Address)",
+        "Case details (Subject, Description, Priority, Category)",
+        "Resolution information (Status, Resolution, AssignedTo, CloseDate)",
+        "Communication log (Messages, Timestamps, Authors)"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Create Customer Properties",
+          "tasks": [
+            "CustomerName (Text, Required)",
+            "CustomerEmail (Text, Required, Email format)",
+            "CustomerPhone (Text, Phone format)",
+            "CustomerAddress (Page with Street, City, State, ZIP)"
+          ]
+        },
+        {
+          "step": 2,
+          "title": "Create Case Properties",
+          "tasks": [
+            "CaseSubject (Text, Required)",
+            "CaseDescription (Text, Large text area)",
+            "Priority (Text, Dropdown: High/Medium/Low)",
+            "Category (Text, Dropdown from data page)"
+          ]
+        },
+        {
+          "step": 3,
+          "title": "Create Resolution Properties",
+          "tasks": [
+            "CaseStatus (Text, Dropdown: Open/In Progress/Resolved/Closed)",
+            "Resolution (Text, Large text area)",
+            "AssignedTo (Text, User reference)",
+            "CloseDate (DateTime, Auto-populated)"
+          ]
+        },
+        {
+          "step": 4,
+          "title": "Create Communication Log",
+          "tasks": [
+            "CommunicationLog (Page List)",
+            "Each entry: Message, Timestamp, Author, Type",
+            "Configure automatic logging for case updates"
+          ]
+        }
+      ]
+    },
+    "best_practices": {
+      "title": "Data Modeling Best Practices",
+      "practices": [
+        {
+          "practice": "Naming Conventions",
+          "description": "Use clear, consistent naming for properties",
+          "guidelines": [
+            "Use camelCase for property names",
+            "Be descriptive but concise",
+            "Avoid abbreviations unless commonly understood",
+            "Use consistent prefixes for related properties"
+          ]
+        },
+        {
+          "practice": "Data Types Selection",
+          "description": "Choose appropriate data types for optimal performance",
+          "guidelines": [
+            "Use Integer for whole numbers, not Text",
+            "Use Date/DateTime for temporal data",
+            "Use Boolean for true/false values",
+            "Consider data size and performance implications"
+          ]
+        },
+        {
+          "practice": "Property Organization",
+          "description": "Structure properties logically for maintainability",
+          "guidelines": [
+            "Group related properties using Pages",
+            "Use Page Lists for repeating data",
+            "Keep property hierarchies shallow when possible",
+            "Document complex data structures"
+          ]
+        },
+        {
+          "practice": "Performance Optimization",
+          "description": "Design for optimal application performance",
+          "guidelines": [
+            "Use data pages for frequently accessed data",
+            "Implement appropriate caching strategies",
+            "Avoid deep property nesting",
+            "Consider database indexing for large datasets"
+          ]
+        }
+      ]
+    },
+    "common_mistakes": {
+      "title": "Common Data Modeling Mistakes",
+      "mistakes": [
+        {
+          "mistake": "Over-normalization",
+          "description": "Creating too many small, fragmented data structures",
+          "solution": "Balance normalization with usability and performance"
+        },
+        {
+          "mistake": "Inconsistent Naming",
+          "description": "Using different naming conventions across the application",
+          "solution": "Establish and follow consistent naming standards"
+        },
+        {
+          "mistake": "Ignoring Validation",
+          "description": "Not implementing proper data validation rules",
+          "solution": "Add validation at property and business rule levels"
+        },
+        {
+          "mistake": "Poor Performance Planning",
+          "description": "Not considering data access patterns and volume",
+          "solution": "Design with performance and scalability in mind"
+        }
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/data-modeling",
+  "next_lesson": "/tutorials/beginner/user-interface-basics",
+  "previous_lesson": "/tutorials/beginner/first-case-app",
+  "resources": [
+    {
+      "type": "documentation",
+      "title": "PEGA Data Model Documentation",
+      "url": "https://docs.pega.com/data-model"
+    },
+    {
+      "type": "video",
+      "title": "Data Modeling Best Practices",
+      "url": "/resources/videos/data-modeling-best-practices"
+    },
+    {
+      "type": "download",
+      "title": "Data Modeling Cheat Sheet",
+      "url": "/downloads/data-modeling-cheat-sheet.pdf"
+    }
+  ],
+  "estimated_completion_time": 75,
+  "tags": ["data-modeling", "properties", "data-types", "validation", "beginner"],
+  "last_updated": "2025-07-24"
+}

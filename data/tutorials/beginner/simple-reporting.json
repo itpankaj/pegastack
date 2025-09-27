@@ -1,0 +1,169 @@
+{
+  "id": "simple-reporting",
+  "title": "Simple Reporting",
+  "level": "beginner",
+  "estimated_time": 20,
+  "prerequisites": ["case-types-stages"],
+  "learning_objectives": [
+    "Understand PEGA reporting capabilities",
+    "Learn to create basic reports and dashboards",
+    "Master report configuration and formatting",
+    "Apply reporting best practices"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Reporting in PEGA",
+      "text": "Reporting provides visibility into your business processes and case data. PEGA offers powerful reporting tools that allow you to create dashboards, track performance metrics, and generate insights from your application data. This tutorial covers the fundamentals of creating and configuring reports."
+    },
+    "sections": [
+      {
+        "title": "Types of Reports",
+        "content": "PEGA provides several types of reports to meet different business needs.",
+        "report_types": [
+          {
+            "type": "List Reports",
+            "description": "Display data in tabular format with rows and columns",
+            "use_cases": ["Case lists", "Work queues", "Data exports"],
+            "features": ["Sorting", "Filtering", "Pagination", "Column customization"]
+          },
+          {
+            "type": "Summary Reports",
+            "description": "Aggregate data and show totals, counts, and averages",
+            "use_cases": ["Performance metrics", "Volume tracking", "Trend analysis"],
+            "features": ["Grouping", "Calculations", "Charts", "Drill-down capabilities"]
+          },
+          {
+            "type": "Chart Reports",
+            "description": "Visual representation of data using graphs and charts",
+            "use_cases": ["Dashboards", "Executive summaries", "Trend visualization"],
+            "features": ["Multiple chart types", "Interactive elements", "Real-time updates"]
+          }
+        ]
+      },
+      {
+        "title": "Creating Basic Reports",
+        "content": "Learn the step-by-step process for creating reports in PEGA.",
+        "creation_steps": [
+          {
+            "step": 1,
+            "title": "Define Report Purpose",
+            "description": "Clearly identify what information the report should provide",
+            "considerations": [
+              "Who will use the report?",
+              "What decisions will it support?",
+              "How often will it be accessed?",
+              "What level of detail is needed?"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Select Data Source",
+            "description": "Choose the appropriate data source for your report",
+            "options": [
+              "Case data from specific case types",
+              "Work item data from assignments",
+              "Historical data from completed cases",
+              "External data through connectors"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Configure Columns and Filters",
+            "description": "Select the data fields and filtering criteria",
+            "actions": [
+              "Choose relevant data columns",
+              "Set up filtering conditions",
+              "Define sorting preferences",
+              "Configure grouping if needed"
+            ]
+          },
+          {
+            "step": 4,
+            "title": "Format and Style",
+            "description": "Apply formatting to make the report readable and professional",
+            "formatting_options": [
+              "Column headers and labels",
+              "Data formatting (dates, numbers, currency)",
+              "Conditional formatting for highlighting",
+              "Color schemes and branding"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Dashboard Creation",
+        "content": "Dashboards combine multiple reports and visualizations for comprehensive views.",
+        "dashboard_components": [
+          {
+            "component": "Key Performance Indicators (KPIs)",
+            "description": "High-level metrics that show business performance",
+            "examples": ["Cases resolved today", "Average resolution time", "Customer satisfaction score"]
+          },
+          {
+            "component": "Charts and Graphs",
+            "description": "Visual representations of trends and patterns",
+            "types": ["Bar charts", "Line graphs", "Pie charts", "Trend lines"]
+          },
+          {
+            "component": "Data Tables",
+            "description": "Detailed information in tabular format",
+            "uses": ["Work queues", "Exception lists", "Detailed case information"]
+          }
+        ]
+      },
+      {
+        "title": "Report Best Practices",
+        "content": "Follow these practices to create effective and useful reports.",
+        "best_practices": [
+          {
+            "category": "Design Principles",
+            "practices": [
+              "Keep reports focused on specific business needs",
+              "Use clear, descriptive titles and labels",
+              "Organize information logically",
+              "Avoid information overload",
+              "Ensure data accuracy and timeliness"
+            ]
+          },
+          {
+            "category": "Performance Considerations",
+            "practices": [
+              "Limit data ranges for better performance",
+              "Use appropriate indexing on data sources",
+              "Consider caching for frequently accessed reports",
+              "Optimize queries for large datasets",
+              "Schedule resource-intensive reports for off-peak hours"
+            ]
+          },
+          {
+            "category": "User Experience",
+            "practices": [
+              "Make reports easy to navigate and understand",
+              "Provide filtering and search capabilities",
+              "Enable drill-down for detailed analysis",
+              "Support export capabilities when needed",
+              "Ensure mobile-friendly design"
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Different report types serve different business purposes",
+        "Report creation follows a structured process from purpose to formatting",
+        "Dashboards provide comprehensive views by combining multiple visualizations",
+        "Best practices ensure reports are useful, performant, and user-friendly",
+        "Regular review and optimization keep reports relevant and efficient"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/beginner/simple-reporting",
+  "metadata": {
+    "created_date": "2025-07-24",
+    "last_updated": "2025-07-24",
+    "version": "1.0",
+    "tags": ["reporting", "dashboards", "analytics", "data-visualization", "kpi"]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "id": "flow-rules-actions",
+  "title": "Flow Rules & Flow Actions - Quiz",
+  "description": "Test your understanding of flow rules and flow actions concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/flow-rules-actions",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of flow rules in PEGA?",
+      "options": [
+        "To manage database connections",
+        "To model and execute business processes and workflows",
+        "To handle user authentication",
+        "To create reports"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Flow rules model and execute business processes and workflows, providing a visual representation of business logic and case progression through various stages."
+    },
+    {
+      "id": 2,
+      "question": "When should you use subflows in process modeling?",
+      "options": [
+        "For all process steps",
+        "To modularize complex processes and promote reusability",
+        "To increase complexity",
+        "To reduce performance"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Subflows modularize complex processes and promote reusability by breaking down large processes into manageable, reusable components."
+    },
+    {
+      "id": 3,
+      "question": "How do flow actions interact with user interfaces?",
+      "options": [
+        "They don't interact with UIs",
+        "They provide user interaction points within flow processing",
+        "They only handle database operations",
+        "They manage system configurations"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Flow actions provide user interaction points within flow processing, presenting forms and collecting user input at specific steps in the workflow."
+    },
+    {
+      "id": 4,
+      "question": "What is the benefit of parallel processing in flows?",
+      "options": [
+        "It increases complexity",
+        "It improves efficiency by executing multiple tasks simultaneously",
+        "It reduces performance",
+        "It makes debugging harder"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Parallel processing in flows improves efficiency by executing multiple tasks simultaneously, reducing overall processing time for independent operations."
+    },
+    {
+      "id": 5,
+      "question": "How should you handle flow exceptions?",
+      "options": [
+        "Ignore them",
+        "Through comprehensive error handling, alternative paths, and user notifications",
+        "Stop the entire process",
+        "Show generic error messages"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Flow exceptions should be handled through comprehensive error handling, alternative paths, user notifications, and proper logging to ensure business continuity."
+    },
+    {
+      "id": 6,
+      "question": "What is the purpose of decision shapes in flows?",
+      "options": [
+        "To complicate processes",
+        "To implement conditional logic and branching based on business rules",
+        "To increase processing time",
+        "To reduce flexibility"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Decision shapes implement conditional logic and branching based on business rules, allowing flows to take different paths based on data values and conditions."
+    },
+    {
+      "id": 7,
+      "question": "How do you optimize flow performance?",
+      "options": [
+        "By adding more shapes",
+        "Through efficient process design, proper data handling, and resource optimization",
+        "By avoiding validation",
+        "By using complex expressions"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Flow performance is optimized through efficient process design, proper data handling, resource optimization, and avoiding unnecessary processing steps."
+    },
+    {
+      "id": 8,
+      "question": "What is crucial for flow maintainability?",
+      "options": [
+        "Complex nested flows",
+        "Clear documentation, consistent naming conventions, and modular design",
+        "Hard-coded values",
+        "Minimal error handling"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Flow maintainability requires clear documentation, consistent naming conventions, modular design, proper error handling, and comprehensive testing."
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "cloud-native-pega",
+  "title": "Cloud-Native PEGA Architecture",
+  "description": "Design and implement cloud-native PEGA solutions with containerization, orchestration, and cloud-first architectures",
+  "duration": "180 minutes",
+  "level": "advanced",
+  "prerequisites": [
+    "Deployment Manager",
+    "PEGA DevOps & CI/CD",
+    "Microservices Architecture"
+  ],
+  "learning_objectives": [
+    "Design cloud-native architectures for PEGA applications",
+    "Implement containerization strategies using Docker and Kubernetes",
+    "Master cloud deployment patterns and infrastructure as code",
+    "Implement auto-scaling and resilience patterns",
+    "Design cloud security and compliance architectures",
+    "Optimize cloud costs and resource utilization"
+  ],
+  "sections": [
+    {
+      "title": "Cloud-Native Architecture Principles",
+      "content": [
+        {
+          "type": "text",
+          "data": "Cloud-native architecture leverages cloud computing capabilities to build scalable, resilient, and manageable applications. For PEGA applications, this involves containerization, microservices decomposition, API-first design, and infrastructure automation."
+        },
+        {
+          "type": "text",
+          "data": "Key principles include: Containerization for consistent deployment environments, Orchestration for automated scaling and management, Resilience patterns for fault tolerance, Observability for comprehensive monitoring, and Infrastructure as Code for reproducible deployments."
+        }
+      ]
+    },
+    {
+      "title": "Containerization with Docker",
+      "content": [
+        {
+          "type": "text",
+          "data": "Containerizing PEGA applications involves creating Docker images with optimized layers, managing configuration through environment variables, and implementing security best practices for container deployment."
+        },
+        {
+          "type": "code",
+          "language": "dockerfile",
+          "data": "# Multi-stage Dockerfile for PEGA Application\nFROM openjdk:11-jdk-slim as build\nWORKDIR /build\n\n# Copy source code and build application\nCOPY src/ ./src/\nCOPY pom.xml ./\nRUN mvn clean package -DskipTests\n\n# Runtime stage\nFROM pegasystems/pega:8.7.2\n\n# Set environment variables\nENV PEGA_HEAP=\"4096m\"\nENV PEGA_DIAGNOSTIC_USER=\"diagnostic\"\nENV JDBC_CONNECTION_POOL_SIZE=\"50\"\n\n# Create application user\nRUN groupadd -r pegaapp && useradd -r -g pegaapp pegaapp\n\n# Copy application artifacts\nCOPY --from=build /build/target/pega-app.ear /opt/pega/deployment/\nCOPY --from=build /build/config/ /opt/pega/config/\n\n# Copy startup scripts\nCOPY scripts/startup.sh /opt/pega/bin/\nRUN chmod +x /opt/pega/bin/startup.sh\n\n# Configure security\nRUN chown -R pegaapp:pegaapp /opt/pega/\nUSER pegaapp\n\n# Health check\nHEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \\\n    CMD curl -f http://localhost:8080/prweb/PRRestService/ping || exit 1\n\n# Expose ports\nEXPOSE 8080 8443\n\n# Start application\nCMD [\"/opt/pega/bin/startup.sh\"]"
+        }
+      ]
+    },
+    {
+      "title": "Kubernetes Orchestration",
+      "content": [
+        {
+          "type": "text",
+          "data": "Kubernetes orchestration for PEGA involves creating deployment manifests, configuring services and ingress controllers, implementing persistent storage, and managing secrets and configuration maps."
+        },
+        {
+          "type": "code",
+          "language": "yaml",
+          "data": "# PEGA Application Kubernetes Deployment\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: pega-app\n  namespace: pega-production\n  labels:\n    app: pega-app\n    version: v1.0.0\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: pega-app\n  template:\n    metadata:\n      labels:\n        app: pega-app\n        version: v1.0.0\n    spec:\n      serviceAccountName: pega-service-account\n      securityContext:\n        runAsNonRoot: true\n        runAsUser: 1000\n        fsGroup: 1000\n      containers:\n      - name: pega-app\n        image: registry.company.com/pega-app:v1.0.0\n        ports:\n        - containerPort: 8080\n          name: http\n        - containerPort: 8443\n          name: https\n        env:\n        - name: PEGA_HEAP\n          value: \"4096m\"\n        - name: DATABASE_URL\n          valueFrom:\n            secretKeyRef:\n              name: pega-secrets\n              key: database-url\n        - name: DATABASE_USERNAME\n          valueFrom:\n            secretKeyRef:\n              name: pega-secrets\n              key: database-username\n        - name: DATABASE_PASSWORD\n          valueFrom:\n            secretKeyRef:\n              name: pega-secrets\n              key: database-password\n        resources:\n          requests:\n            memory: \"2Gi\"\n            cpu: \"1\"\n          limits:\n            memory: \"6Gi\"\n            cpu: \"2\"\n        livenessProbe:\n          httpGet:\n            path: /prweb/PRRestService/ping\n            port: 8080\n          initialDelaySeconds: 120\n          periodSeconds: 30\n        readinessProbe:\n          httpGet:\n            path: /prweb/PRRestService/ping\n            port: 8080\n          initialDelaySeconds: 60\n          periodSeconds: 10\n        volumeMounts:\n        - name: pega-config\n          mountPath: /opt/pega/config\n        - name: pega-logs\n          mountPath: /opt/pega/logs\n      volumes:\n      - name: pega-config\n        configMap:\n          name: pega-config\n      - name: pega-logs\n        persistentVolumeClaim:\n          claimName: pega-logs-pvc\n---\napiVersion: v1\nkind: Service\nmetadata:\n  name: pega-app-service\n  namespace: pega-production\nspec:\n  selector:\n    app: pega-app\n  ports:\n  - name: http\n    port: 80\n    targetPort: 8080\n  - name: https\n    port: 443\n    targetPort: 8443\n  type: ClusterIP\n---\napiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: pega-app-ingress\n  namespace: pega-production\n  annotations:\n    nginx.ingress.kubernetes.io/ssl-redirect: \"true\"\n    nginx.ingress.kubernetes.io/backend-protocol: \"HTTP\"\n    cert-manager.io/cluster-issuer: \"letsencrypt-prod\"\nspec:\n  tls:\n  - hosts:\n    - pega-app.company.com\n    secretName: pega-tls-secret\n  rules:\n  - host: pega-app.company.com\n    http:\n      paths:\n      - path: /\n        pathType: Prefix\n        backend:\n          service:\n            name: pega-app-service\n            port:\n              number: 80"
+        }
+      ]
+    },
+    {
+      "title": "Infrastructure as Code",
+      "content": [
+        {
+          "type": "text",
+          "data": "Infrastructure as Code (IaC) for PEGA deployments uses tools like Terraform, AWS CloudFormation, or Azure Resource Manager to define and manage cloud infrastructure programmatically, ensuring consistent and reproducible deployments."
+        },
+        {
+          "type": "code",
+          "language": "hcl",
+          "data": "# Terraform configuration for PEGA on AWS\nterraform {\n  required_version = \">= 1.0\"\n  required_providers {\n    aws = {\n      source  = \"hashicorp/aws\"\n      version = \"~> 4.0\"\n    }\n    kubernetes = {\n      source  = \"hashicorp/kubernetes\"\n      version = \"~> 2.0\"\n    }\n  }\n}\n\n# VPC Configuration\nresource \"aws_vpc\" \"pega_vpc\" {\n  cidr_block           = \"10.0.0.0/16\"\n  enable_dns_hostnames = true\n  enable_dns_support   = true\n  \n  tags = {\n    Name = \"pega-vpc\"\n    Environment = var.environment\n  }\n}\n\n# EKS Cluster\nresource \"aws_eks_cluster\" \"pega_cluster\" {\n  name     = \"pega-cluster-${var.environment}\"\n  role_arn = aws_iam_role.cluster_role.arn\n  version  = \"1.24\"\n  \n  vpc_config {\n    subnet_ids              = aws_subnet.private[*].id\n    endpoint_private_access = true\n    endpoint_public_access  = true\n    public_access_cidrs    = var.allowed_cidr_blocks\n  }\n  \n  encryption_config {\n    resources = [\"secrets\"]\n    provider {\n      key_id = aws_kms_key.eks_secrets.arn\n    }\n  }\n  \n  depends_on = [\n    aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy,\n  ]\n}\n\n# RDS Database for PEGA\nresource \"aws_db_instance\" \"pega_database\" {\n  identifier = \"pega-db-${var.environment}\"\n  \n  engine         = \"postgres\"\n  engine_version = \"13.7\"\n  instance_class = var.db_instance_class\n  \n  allocated_storage     = var.db_allocated_storage\n  max_allocated_storage = var.db_max_allocated_storage\n  storage_encrypted     = true\n  kms_key_id           = aws_kms_key.rds_encryption.arn\n  \n  db_name  = \"pegadb\"\n  username = var.db_username\n  password = var.db_password\n  \n  vpc_security_group_ids = [aws_security_group.rds.id]\n  db_subnet_group_name   = aws_db_subnet_group.pega_db.name\n  \n  backup_retention_period = 7\n  backup_window          = \"03:00-04:00\"\n  maintenance_window     = \"sun:04:00-sun:05:00\"\n  \n  skip_final_snapshot = false\n  final_snapshot_identifier = \"pega-db-final-snapshot-${var.environment}\"\n  \n  tags = {\n    Name = \"pega-database\"\n    Environment = var.environment\n  }\n}\n\n# ElastiCache for Session Management\nresource \"aws_elasticache_cluster\" \"pega_cache\" {\n  cluster_id           = \"pega-cache-${var.environment}\"\n  engine               = \"redis\"\n  node_type            = var.cache_node_type\n  num_cache_nodes      = 1\n  parameter_group_name = \"default.redis6.x\"\n  port                 = 6379\n  subnet_group_name    = aws_elasticache_subnet_group.pega_cache.name\n  security_group_ids   = [aws_security_group.elasticache.id]\n  \n  tags = {\n    Name = \"pega-cache\"\n    Environment = var.environment\n  }\n}\n\n# Application Load Balancer\nresource \"aws_lb\" \"pega_alb\" {\n  name               = \"pega-alb-${var.environment}\"\n  internal           = false\n  load_balancer_type = \"application\"\n  security_groups    = [aws_security_group.alb.id]\n  subnets            = aws_subnet.public[*].id\n  \n  enable_deletion_protection = var.enable_deletion_protection\n  \n  tags = {\n    Name = \"pega-alb\"\n    Environment = var.environment\n  }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Auto-scaling and Resilience Patterns",
+      "content": [
+        {
+          "type": "text",
+          "data": "Auto-scaling in cloud-native PEGA implementations includes Horizontal Pod Autoscaling (HPA) based on CPU/memory metrics, Vertical Pod Autoscaling (VPA) for right-sizing resources, and Cluster Autoscaling for node management."
+        },
+        {
+          "type": "code",
+          "language": "yaml",
+          "data": "# Horizontal Pod Autoscaler\napiVersion: autoscaling/v2\nkind: HorizontalPodAutoscaler\nmetadata:\n  name: pega-app-hpa\n  namespace: pega-production\nspec:\n  scaleTargetRef:\n    apiVersion: apps/v1\n    kind: Deployment\n    name: pega-app\n  minReplicas: 3\n  maxReplicas: 20\n  metrics:\n  - type: Resource\n    resource:\n      name: cpu\n      target:\n        type: Utilization\n        averageUtilization: 70\n  - type: Resource\n    resource:\n      name: memory\n      target:\n        type: Utilization\n        averageUtilization: 80\n  - type: Pods\n    pods:\n      metric:\n        name: active_users\n      target:\n        type: AverageValue\n        averageValue: \"1000\"\n  behavior:\n    scaleDown:\n      stabilizationWindowSeconds: 300\n      policies:\n      - type: Percent\n        value: 50\n        periodSeconds: 60\n    scaleUp:\n      stabilizationWindowSeconds: 60\n      policies:\n      - type: Percent\n        value: 100\n        periodSeconds: 30\n---\n# Pod Disruption Budget\napiVersion: policy/v1\nkind: PodDisruptionBudget\nmetadata:\n  name: pega-app-pdb\n  namespace: pega-production\nspec:\n  selector:\n    matchLabels:\n      app: pega-app\n  minAvailable: 2\n---\n# Network Policy for Security\napiVersion: networking.k8s.io/v1\nkind: NetworkPolicy\nmetadata:\n  name: pega-network-policy\n  namespace: pega-production\nspec:\n  podSelector:\n    matchLabels:\n      app: pega-app\n  policyTypes:\n  - Ingress\n  - Egress\n  ingress:\n  - from:\n    - namespaceSelector:\n        matchLabels:\n          name: ingress-nginx\n    ports:\n    - protocol: TCP\n      port: 8080\n  egress:\n  - to:\n    - namespaceSelector:\n        matchLabels:\n          name: database\n    ports:\n    - protocol: TCP\n      port: 5432\n  - to: []\n    ports:\n    - protocol: TCP\n      port: 443\n    - protocol: TCP\n      port: 80"
+        }
+      ]
+    },
+    {
+      "title": "Cloud Security and Compliance",
+      "content": [
+        {
+          "type": "text",
+          "data": "Cloud security for PEGA applications involves implementing defense-in-depth strategies, including network security, identity and access management, encryption at rest and in transit, and compliance with industry standards."
+        },
+        {
+          "type": "text",
+          "data": "Key security patterns include: Pod Security Standards for container security, Service Mesh for encrypted communication, Secrets management with rotation policies, Network policies for micro-segmentation, and Security scanning in CI/CD pipelines."
+        }
+      ]
+    },
+    {
+      "title": "Cost Optimization and Monitoring",
+      "content": [
+        {
+          "type": "text",
+          "data": "Cloud cost optimization involves right-sizing resources, implementing efficient auto-scaling policies, using spot instances where appropriate, and comprehensive monitoring of resource utilization and costs."
+        },
+        {
+          "type": "text",
+          "data": "Monitoring strategies include comprehensive observability with metrics, logs, and traces, setting up alerts for performance and cost thresholds, and implementing capacity planning based on usage patterns."
+        }
+      ]
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Cloud-Native",
+      "definition": "An approach to building and running applications that fully exploits the advantages of cloud computing, including scalability, resilience, and agility."
+    },
+    {
+      "term": "Infrastructure as Code (IaC)",
+      "definition": "The practice of managing and provisioning cloud infrastructure through machine-readable definition files rather than manual processes."
+    },
+    {
+      "term": "Horizontal Pod Autoscaling",
+      "definition": "Automatic scaling of the number of pod replicas based on observed CPU utilization, memory usage, or custom metrics."
+    },
+    {
+      "term": "Service Mesh",
+      "definition": "A dedicated infrastructure layer that handles service-to-service communication, providing features like load balancing, service discovery, and security."
+    },
+    {
+      "term": "Observability",
+      "definition": "The ability to understand the internal state of a system by examining its external outputs, including metrics, logs, and traces."
+    }
+  ],
+  "best_practices": [
+    "Design applications with cloud-native principles from the start",
+    "Implement comprehensive monitoring and observability",
+    "Use Infrastructure as Code for all resource provisioning",
+    "Implement proper security controls including network policies and encryption",
+    "Design for failure with resilience patterns and chaos engineering",
+    "Optimize costs through right-sizing and efficient resource usage",
+    "Implement automated scaling based on application metrics",
+    "Use container security scanning and compliance tools"
+  ],
+  "common_pitfalls": [
+    "Lifting and shifting without cloud-native redesign",
+    "Not implementing proper monitoring and alerting",
+    "Ignoring security best practices for container and cloud environments",
+    "Over-provisioning resources leading to high costs",
+    "Not implementing proper backup and disaster recovery strategies",
+    "Lack of proper networking and service discovery configuration",
+    "Not considering compliance requirements in cloud deployment",
+    "Inadequate testing of scaling and resilience patterns"
+  ]
+}

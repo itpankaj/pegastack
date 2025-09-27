@@ -1,0 +1,378 @@
+{
+  "id": "flow-rules-actions",
+  "title": "Flow Rules & Actions",
+  "level": "intermediate",
+  "estimated_time": 40,
+  "prerequisites": ["rules-resolution"],
+  "learning_objectives": [
+    "Master advanced flow design patterns and best practices",
+    "Understand complex flow actions and their applications",
+    "Learn to implement sophisticated business logic in flows",
+    "Apply error handling and exception management in flows"
+  ],
+  "content": {
+    "introduction": {
+      "title": "Advanced Flow Rules and Actions",
+      "text": "Flow rules are the backbone of PEGA's process automation capabilities. At the intermediate level, we explore sophisticated flow patterns, advanced actions, and complex business logic implementation that enables robust, scalable, and maintainable business processes."
+    },
+    "sections": [
+      {
+        "title": "Advanced Flow Patterns",
+        "content": "Understanding sophisticated flow patterns is essential for building complex business processes.",
+        "flow_patterns": [
+          {
+            "pattern": "Parallel Processing",
+            "description": "Execute multiple flow branches simultaneously for improved performance",
+            "use_cases": [
+              "Independent data gathering from multiple sources",
+              "Parallel approval processes",
+              "Concurrent validation checks"
+            ],
+            "implementation": {
+              "split_join": "Use Split-Join shapes to create parallel branches",
+              "synchronization": "Join shapes wait for all branches to complete",
+              "error_handling": "Handle errors in individual branches appropriately"
+            },
+            "best_practices": [
+              "Ensure branches are truly independent",
+              "Implement proper timeout handling",
+              "Consider resource utilization and system load"
+            ]
+          },
+          {
+            "pattern": "Conditional Routing",
+            "description": "Dynamic flow routing based on runtime conditions and business rules",
+            "techniques": [
+              "Decision shapes with complex when conditions",
+              "Router shapes for multi-way branching",
+              "Dynamic connector selection based on properties"
+            ],
+            "advanced_scenarios": [
+              "Multi-tier approval routing based on amount and department",
+              "Geographic routing based on customer location",
+              "Skill-based routing for specialized processing"
+            ]
+          },
+          {
+            "pattern": "Subprocess Integration",
+            "description": "Modular flow design using subprocesses and flow actions",
+            "benefits": [
+              "Reusability across multiple parent flows",
+              "Simplified maintenance and testing",
+              "Clear separation of concerns"
+            ],
+            "implementation_strategies": [
+              "Create generic subprocesses for common operations",
+              "Pass parameters effectively between parent and child flows",
+              "Handle return values and status appropriately"
+            ]
+          },
+          {
+            "pattern": "Loop and Iteration Patterns",
+            "description": "Implementing repetitive processing within flows",
+            "loop_types": [
+              {
+                "type": "For Each Loops",
+                "usage": "Process collections of data or objects",
+                "example": "Process each line item in an order"
+              },
+              {
+                "type": "While Loops",
+                "usage": "Continue processing until a condition is met",
+                "example": "Retry external service calls until successful"
+              },
+              {
+                "type": "Recursive Patterns",
+                "usage": "Self-calling flows for complex hierarchical processing",
+                "example": "Process organizational hierarchies or nested approvals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Advanced Flow Actions",
+        "content": "Flow actions provide the building blocks for sophisticated user interactions and system operations.",
+        "action_categories": [
+          {
+            "category": "Assignment Actions",
+            "description": "Advanced assignment creation and routing capabilities",
+            "advanced_features": [
+              {
+                "feature": "Dynamic Assignment Routing",
+                "description": "Route assignments based on complex business logic",
+                "implementation": [
+                  "Use router data transforms for dynamic routing",
+                  "Implement skill-based routing algorithms",
+                  "Consider workload balancing factors"
+                ]
+              },
+              {
+                "feature": "Conditional Assignment Creation",
+                "description": "Create assignments only when specific conditions are met",
+                "use_cases": [
+                  "Skip approvals for low-value transactions",
+                  "Bypass reviews for trusted customers",
+                  "Conditional escalation based on SLA status"
+                ]
+              },
+              {
+                "feature": "Multi-step Assignment Flows",
+                "description": "Complex assignment sequences with dependencies",
+                "patterns": [
+                  "Sequential approvals with escalation",
+                  "Parallel reviews with consensus requirements",
+                  "Conditional re-routing based on outcomes"
+                ]
+              }
+            ]
+          },
+          {
+            "category": "Integration Actions",
+            "description": "Advanced integration patterns within flow processing",
+            "integration_types": [
+              {
+                "type": "Synchronous Service Calls",
+                "description": "Real-time integration with external systems",
+                "considerations": [
+                  "Timeout handling and retry logic",
+                  "Error response processing",
+                  "Performance impact on flow execution"
+                ],
+                "best_practices": [
+                  "Implement circuit breaker patterns",
+                  "Use connection pooling for performance",
+                  "Cache responses when appropriate"
+                ]
+              },
+              {
+                "type": "Asynchronous Processing",
+                "description": "Non-blocking integration for improved performance",
+                "implementation": [
+                  "Queue-based messaging systems",
+                  "Event-driven architecture patterns",
+                  "Callback mechanisms for status updates"
+                ],
+                "use_cases": [
+                  "Large file processing",
+                  "Batch data synchronization",
+                  "Long-running external processes"
+                ]
+              },
+              {
+                "type": "Bulk Operations",
+                "description": "Efficient processing of large datasets",
+                "techniques": [
+                  "Batch processing with pagination",
+                  "Parallel processing of data chunks",
+                  "Progress tracking and resumption"
+                ]
+              }
+            ]
+          },
+          {
+            "category": "Data Manipulation Actions",
+            "description": "Advanced data processing within flows",
+            "data_operations": [
+              {
+                "operation": "Complex Data Transformations",
+                "description": "Sophisticated data mapping and transformation logic",
+                "techniques": [
+                  "Multi-source data aggregation",
+                  "Conditional data transformation based on business rules",
+                  "Data validation and cleansing operations"
+                ]
+              },
+              {
+                "operation": "Dynamic Object Creation",
+                "description": "Runtime creation of objects based on flow context",
+                "scenarios": [
+                  "Create child cases based on parent case data",
+                  "Generate documents from templates",
+                  "Initialize objects from external data sources"
+                ]
+              },
+              {
+                "operation": "Data Persistence Strategies",
+                "description": "Optimized data saving and retrieval patterns",
+                "strategies": [
+                  "Batch commits for performance",
+                  "Selective property updates",
+                  "Transaction management across multiple objects"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Error Handling and Exception Management",
+        "content": "Robust error handling is crucial for production-ready flows.",
+        "error_handling_strategies": [
+          {
+            "strategy": "Graceful Degradation",
+            "description": "Continue processing with reduced functionality when errors occur",
+            "implementation": [
+              "Catch specific exceptions and provide alternative processing paths",
+              "Use default values when external data is unavailable",
+              "Implement fallback mechanisms for failed integrations"
+            ],
+            "example": "If credit check service fails, use manual review process"
+          },
+          {
+            "strategy": "Retry Mechanisms",
+            "description": "Automatically retry failed operations with intelligent backoff",
+            "retry_patterns": [
+              {
+                "pattern": "Exponential Backoff",
+                "description": "Increase delay between retries exponentially",
+                "use_case": "Network-related failures and temporary service unavailability"
+              },
+              {
+                "pattern": "Circuit Breaker",
+                "description": "Stop retrying after consecutive failures",
+                "use_case": "Prevent cascading failures in distributed systems"
+              },
+              {
+                "pattern": "Jittered Retry",
+                "description": "Add randomness to retry intervals",
+                "use_case": "Prevent thundering herd problems"
+              }
+            ]
+          },
+          {
+            "strategy": "Compensation Patterns",
+            "description": "Undo operations when later steps fail",
+            "implementation": [
+              "Maintain transaction logs for rollback operations",
+              "Implement compensating actions for each major operation",
+              "Use saga patterns for long-running transactions"
+            ],
+            "example": "Cancel reservation if payment processing fails"
+          }
+        ]
+      },
+      {
+        "title": "Flow Performance Optimization",
+        "content": "Optimizing flow performance is essential for scalable applications.",
+        "optimization_techniques": [
+          {
+            "technique": "Minimize Database Operations",
+            "description": "Reduce database round trips for better performance",
+            "strategies": [
+              "Batch multiple operations together",
+              "Use efficient data access patterns",
+              "Cache frequently accessed data",
+              "Optimize database queries and indexes"
+            ]
+          },
+          {
+            "technique": "Asynchronous Processing",
+            "description": "Use background processing for non-critical operations",
+            "applications": [
+              "Audit logging and reporting",
+              "Email notifications and communications",
+              "Data synchronization with external systems",
+              "Analytics and metrics collection"
+            ]
+          },
+          {
+            "technique": "Resource Management",
+            "description": "Efficient use of system resources",
+            "considerations": [
+              "Memory usage in large data processing",
+              "Connection pooling for external services",
+              "Thread management for parallel processing",
+              "Cleanup of temporary objects and resources"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Flow Testing and Debugging",
+        "content": "Comprehensive testing strategies for complex flows.",
+        "testing_approaches": [
+          {
+            "approach": "Unit Testing",
+            "description": "Test individual flow actions and components",
+            "techniques": [
+              "Mock external service calls",
+              "Test with various input scenarios",
+              "Validate error handling paths",
+              "Verify data transformations"
+            ]
+          },
+          {
+            "approach": "Integration Testing",
+            "description": "Test complete flow execution with real dependencies",
+            "focus_areas": [
+              "End-to-end flow execution",
+              "External system integration",
+              "Performance under load",
+              "Error recovery scenarios"
+            ]
+          },
+          {
+            "approach": "Flow Debugging",
+            "description": "Tools and techniques for troubleshooting flow issues",
+            "debugging_tools": [
+              "Flow execution tracer for step-by-step analysis",
+              "Breakpoints for pausing execution at specific steps",
+              "Variable inspection and modification",
+              "Performance profiling and bottleneck identification"
+            ]
+          }
+        ]
+      }
+    ],
+    "advanced_concepts": [
+      {
+        "concept": "Dynamic Flow Generation",
+        "description": "Creating flows at runtime based on business rules or external configuration",
+        "use_cases": [
+          "Multi-tenant applications with tenant-specific processes",
+          "Configurable workflows for different business units",
+          "A/B testing with different process variants"
+        ]
+      },
+      {
+        "concept": "Flow Orchestration",
+        "description": "Coordinating multiple flows across different applications or systems",
+        "patterns": [
+          "Master-slave flow coordination",
+          "Event-driven flow triggering",
+          "Cross-application process management"
+        ]
+      },
+      {
+        "concept": "Flow Analytics and Monitoring",
+        "description": "Tracking flow performance and business metrics",
+        "metrics": [
+          "Flow execution times and bottlenecks",
+          "Error rates and failure patterns",
+          "Business process KPIs and outcomes",
+          "Resource utilization and capacity planning"
+        ]
+      }
+    ],
+    "summary": {
+      "title": "Key Takeaways",
+      "points": [
+        "Advanced flow patterns enable sophisticated business process automation",
+        "Complex flow actions provide powerful capabilities for user interaction and system integration",
+        "Robust error handling and exception management are essential for production systems",
+        "Performance optimization techniques ensure scalable and responsive applications",
+        "Comprehensive testing strategies validate flow behavior under various conditions",
+        "Advanced concepts like dynamic generation and orchestration enable enterprise-scale solutions",
+        "Monitoring and analytics provide insights for continuous process improvement"
+      ]
+    }
+  },
+  "quiz_reference": "/quiz/intermediate/flow-rules-actions",
+  "metadata": {
+    "created_date": "2025-01-25",
+    "last_updated": "2025-01-25",
+    "version": "1.0",
+    "tags": ["flows", "actions", "patterns", "error-handling", "performance", "testing"]
+  }
+}

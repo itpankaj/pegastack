@@ -1,0 +1,123 @@
+{
+  "id": "background-processing",
+  "title": "Background Processing - Quiz",
+  "description": "Test your understanding of background processing concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/background-processing",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of PEGA agents in background processing?",
+      "options": [
+        "To handle user interface interactions",
+        "To execute background tasks and system maintenance automatically",
+        "To manage database connections",
+        "To handle user authentication"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "PEGA agents execute background tasks and system maintenance automatically, handling operations like data processing, system cleanup, and scheduled jobs without user intervention."
+    },
+    {
+      "id": 2,
+      "question": "How do queue-based processing systems improve application performance?",
+      "options": [
+        "By executing all tasks immediately",
+        "By decoupling task generation from execution and enabling scalable processing",
+        "By reducing database queries",
+        "By eliminating network latency"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Queue-based processing decouples task generation from execution, enabling scalable processing, load balancing, and efficient resource utilization for high-volume operations."
+    },
+    {
+      "id": 3,
+      "question": "What is the role of job schedulers in batch processing?",
+      "options": [
+        "To handle real-time user requests",
+        "To execute recurring batch operations on predefined schedules",
+        "To manage user sessions",
+        "To optimize network bandwidth"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Job schedulers execute recurring batch operations on predefined schedules (daily, weekly, monthly) ensuring consistent processing of large data volumes or system maintenance tasks."
+    },
+    {
+      "id": 4,
+      "question": "When should asynchronous workflows be implemented?",
+      "options": [
+        "Only for simple tasks",
+        "For long-running processes that shouldn't block user interfaces",
+        "Never in production applications",
+        "Only for database operations"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Asynchronous workflows should be implemented for long-running processes that shouldn't block user interfaces, allowing users to continue working while background processing occurs."
+    },
+    {
+      "id": 5,
+      "question": "What is crucial for agent pool sizing optimization?",
+      "options": [
+        "Maximum possible agents",
+        "Balanced resource allocation based on workload patterns",
+        "Minimum possible agents",
+        "Random agent assignment"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Agent pool sizing requires balanced resource allocation based on workload patterns, considering CPU, memory, and processing requirements to optimize performance."
+    },
+    {
+      "id": 6,
+      "question": "How should background processing failures be handled?",
+      "options": [
+        "Ignore and continue",
+        "Through comprehensive error handling, retry mechanisms, and monitoring",
+        "Restart the entire system",
+        "Manual intervention only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Background processing failures should be handled through comprehensive error handling, retry mechanisms, and monitoring to ensure business continuity and data integrity."
+    },
+    {
+      "id": 7,
+      "question": "What is the benefit of lazy loading in background processing?",
+      "options": [
+        "It increases memory usage",
+        "It optimizes resource usage by loading data only when needed",
+        "It slows down processing",
+        "It complicates error handling"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Lazy loading optimizes resource usage by loading data only when needed, reducing memory consumption and improving overall system efficiency."
+    },
+    {
+      "id": 8,
+      "question": "What is essential for monitoring background processing performance?",
+      "options": [
+        "Manual checking only",
+        "Comprehensive metrics, logs, and real-time monitoring dashboards",
+        "Database optimization",
+        "Network bandwidth monitoring"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Background processing performance requires comprehensive metrics, logs, and real-time monitoring dashboards to track efficiency, identify bottlenecks, and ensure optimal operation."
+    }
+  ]
+}

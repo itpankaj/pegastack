@@ -1,0 +1,147 @@
+{
+  "id": "advanced-testing-strategies",
+  "title": "Advanced Testing Strategies in PEGA",
+  "description": "Master comprehensive testing approaches including unit testing, integration testing, performance testing, and automated testing in PEGA applications",
+  "duration": "170 minutes",
+  "level": "advanced",
+  "prerequisites": [
+    "Testing & Debugging",
+    "PEGA DevOps & CI/CD",
+    "Performance Optimization"
+  ],
+  "learning_objectives": [
+    "Design comprehensive testing strategies for PEGA applications",
+    "Implement automated testing frameworks and continuous testing",
+    "Master performance testing and load testing techniques",
+    "Create effective test data management strategies",
+    "Implement testing in DevOps pipelines and CI/CD processes",
+    "Design security testing and vulnerability assessment approaches"
+  ],
+  "sections": [
+    {
+      "title": "Testing Strategy Framework",
+      "content": [
+        {
+          "type": "text",
+          "data": "A comprehensive testing strategy for PEGA applications encompasses multiple testing levels: unit testing for individual components, integration testing for system interactions, system testing for end-to-end scenarios, and acceptance testing for business requirements validation."
+        },
+        {
+          "type": "text",
+          "data": "The testing pyramid principle applies to PEGA applications with unit tests forming the foundation (fast, isolated, numerous), integration tests in the middle (moderate speed, component interactions), and end-to-end tests at the top (slower, full system validation, fewer in number)."
+        }
+      ]
+    },
+    {
+      "title": "Automated Testing Framework Implementation",
+      "content": [
+        {
+          "type": "text",
+          "data": "PEGA supports automated testing through various frameworks including PegaUnit for unit testing, web automation tools like Selenium for UI testing, and REST API testing tools for service validation. Implementing automated testing requires setting up test harnesses, data preparation, and result validation."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Automated Test Framework Example\n@TestSuite(\"CustomerManagementTests\")\npublic class CustomerManagementTestSuite extends PegaUnitTestCase {\n    \n    @BeforeEach\n    public void setupTestData() {\n        // Create test customer data\n        createTestCustomer(\"CUST001\", \"John Doe\", \"john@example.com\");\n        createTestCustomer(\"CUST002\", \"Jane Smith\", \"jane@example.com\");\n    }\n    \n    @Test\n    public void testCreateCustomerCase() {\n        // Arrange\n        CustomerData customerData = new CustomerData()\n            .setName(\"Test Customer\")\n            .setEmail(\"test@example.com\")\n            .setPhoneNumber(\"555-0123\");\n        \n        // Act\n        CaseResult result = createCustomerCase(customerData);\n        \n        // Assert\n        assertNotNull(result.getCaseId(), \"Case ID should be generated\");\n        assertEquals(\"Open-New\", result.getStatus(), \"Case should be in Open-New status\");\n        assertTrue(result.isValidationPassed(), \"All validations should pass\");\n    }\n    \n    @Test\n    public void testCustomerValidationRules() {\n        // Test email validation\n        CustomerData invalidCustomer = new CustomerData()\n            .setName(\"Test Customer\")\n            .setEmail(\"invalid-email\"); // Invalid email format\n        \n        ValidationResult validation = validateCustomerData(invalidCustomer);\n        assertFalse(validation.isValid(), \"Validation should fail for invalid email\");\n        assertTrue(validation.hasError(\"EMAIL_FORMAT\"), \"Should have email format error\");\n    }\n    \n    @Test\n    @DataProvider(\"customerScenarios\")\n    public void testMultipleCustomerScenarios(CustomerTestScenario scenario) {\n        // Data-driven testing with multiple scenarios\n        CaseResult result = processCustomerScenario(scenario.getInputData());\n        \n        assertEquals(scenario.getExpectedStatus(), result.getStatus());\n        assertEquals(scenario.getExpectedOutcome(), result.getOutcome());\n    }\n    \n    @AfterEach\n    public void cleanupTestData() {\n        // Clean up test data\n        deleteTestCustomers();\n        resetSystemState();\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Performance and Load Testing",
+      "content": [
+        {
+          "type": "text",
+          "data": "Performance testing in PEGA involves load testing, stress testing, volume testing, and endurance testing. Tools like Apache JMeter, LoadRunner, and PEGA's built-in Performance Analyzer (PAL) help identify performance bottlenecks and validate system scalability."
+        },
+        {
+          "type": "code",
+          "language": "xml",
+          "data": "<!-- JMeter Load Test Configuration -->\n<TestPlan>\n    <ThreadGroup>\n        <name>Customer Case Load Test</name>\n        <numThreads>100</numThreads>\n        <rampTime>60</rampTime>\n        <duration>300</duration>\n        \n        <HTTPSampler>\n            <name>Create Customer Case</name>\n            <protocol>https</protocol>\n            <domain>pega-app.company.com</domain>\n            <port>443</port>\n            <path>/api/cases/customer</path>\n            <method>POST</method>\n            \n            <HTTPArguments>\n                <HTTPArgument>\n                    <name>customerName</name>\n                    <value>${customerName}</value>\n                </HTTPArgument>\n                <HTTPArgument>\n                    <name>customerEmail</name>\n                    <value>${customerEmail}</value>\n                </HTTPArgument>\n            </HTTPArguments>\n        </HTTPSampler>\n        \n        <ResponseAssertion>\n            <name>Success Response</name>\n            <testField>Assertion.response_code</testField>\n            <stringToTest>200</stringToTest>\n        </ResponseAssertion>\n        \n        <DurationAssertion>\n            <name>Response Time SLA</name>\n            <duration>2000</duration> <!-- 2 seconds max -->\n        </DurationAssertion>\n    </ThreadGroup>\n    \n    <ResultCollector>\n        <name>Performance Results</name>\n        <filename>load-test-results.jtl</filename>\n        <saveAssertionResults>true</saveAssertionResults>\n        <saveResponseTime>true</saveResponseTime>\n    </ResultCollector>\n</TestPlan>"
+        }
+      ]
+    },
+    {
+      "title": "Test Data Management",
+      "content": [
+        {
+          "type": "text",
+          "data": "Effective test data management involves creating realistic, consistent, and maintainable test data sets. Strategies include data masking for sensitive information, synthetic data generation, test data versioning, and automated data setup/teardown processes."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Test Data Management Framework\n@Component(\"TestDataManager\")\npublic class TestDataManager {\n    \n    private final DataMaskingService dataMasking;\n    private final SyntheticDataGenerator dataGenerator;\n    \n    public TestDataSet createCustomerTestData(TestScenario scenario) {\n        TestDataSet dataSet = new TestDataSet(scenario.getName());\n        \n        // Generate synthetic customer data\n        List<Customer> customers = dataGenerator.generateCustomers(\n            scenario.getCustomerCount(),\n            scenario.getCustomerProfile()\n        );\n        \n        // Apply data masking for sensitive fields\n        customers = customers.stream()\n            .map(this::maskSensitiveData)\n            .collect(Collectors.toList());\n        \n        dataSet.addCustomers(customers);\n        \n        // Generate related test data\n        generateRelatedCases(dataSet, customers, scenario);\n        generateTransactionHistory(dataSet, customers, scenario);\n        \n        // Version and store test data\n        versionTestData(dataSet);\n        storeTestData(dataSet);\n        \n        return dataSet;\n    }\n    \n    private Customer maskSensitiveData(Customer customer) {\n        return customer.toBuilder()\n            .socialSecurityNumber(dataMasking.maskSSN(customer.getSocialSecurityNumber()))\n            .creditCardNumber(dataMasking.maskCreditCard(customer.getCreditCardNumber()))\n            .bankAccountNumber(dataMasking.maskBankAccount(customer.getBankAccountNumber()))\n            .build();\n    }\n    \n    public void setupTestEnvironment(String environmentId, TestDataSet dataSet) {\n        try {\n            // Clean existing test data\n            cleanupTestData(environmentId);\n            \n            // Load test data\n            loadCustomers(environmentId, dataSet.getCustomers());\n            loadCases(environmentId, dataSet.getCases());\n            loadTransactions(environmentId, dataSet.getTransactions());\n            \n            // Verify data integrity\n            verifyDataIntegrity(environmentId, dataSet);\n            \n            log.info(\"Test environment {} setup completed with {} customers\", \n                    environmentId, dataSet.getCustomers().size());\n                    \n        } catch (Exception e) {\n            log.error(\"Failed to setup test environment: {}\", e.getMessage());\n            throw new TestDataException(\"Environment setup failed\", e);\n        }\n    }\n    \n    public void cleanupTestData(String environmentId) {\n        // Remove test data in reverse dependency order\n        deleteTransactions(environmentId);\n        deleteCases(environmentId);\n        deleteCustomers(environmentId);\n        \n        // Reset system state\n        resetCounters(environmentId);\n        clearCaches(environmentId);\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Security Testing and Vulnerability Assessment",
+      "content": [
+        {
+          "type": "text",
+          "data": "Security testing for PEGA applications includes authentication testing, authorization testing, input validation testing, session management testing, and vulnerability scanning. Automated security testing tools can be integrated into CI/CD pipelines for continuous security validation."
+        },
+        {
+          "type": "code",
+          "language": "java",
+          "data": "// Security Testing Framework\n@TestSuite(\"SecurityTests\")\npublic class SecurityTestSuite extends PegaSecurityTestCase {\n    \n    @Test\n    public void testAuthenticationSecurity() {\n        // Test weak password policy\n        AuthenticationResult weakPassword = attemptLogin(\"user\", \"123\");\n        assertFalse(weakPassword.isSuccessful(), \"Weak passwords should be rejected\");\n        \n        // Test account lockout after failed attempts\n        for (int i = 0; i < 5; i++) {\n            attemptLogin(\"user\", \"wrongpassword\");\n        }\n        \n        AuthenticationResult lockedAccount = attemptLogin(\"user\", \"correctpassword\");\n        assertFalse(lockedAccount.isSuccessful(), \"Account should be locked\");\n        assertTrue(lockedAccount.isAccountLocked(), \"Account lockout should be triggered\");\n    }\n    \n    @Test\n    public void testAuthorizationControls() {\n        // Create user with limited permissions\n        TestUser limitedUser = createTestUser(\"limited\", Arrays.asList(\"READ_ONLY\"));\n        \n        // Attempt unauthorized operation\n        SecurityContext context = authenticateUser(limitedUser);\n        AccessResult result = attemptCreateCase(context, \"CustomerCase\");\n        \n        assertFalse(result.isAllowed(), \"Limited user should not create cases\");\n        assertEquals(\"INSUFFICIENT_PRIVILEGES\", result.getErrorCode());\n    }\n    \n    @Test\n    public void testInputValidationSecurity() {\n        // SQL injection testing\n        String maliciousInput = \"'; DROP TABLE Customers; --\";\n        ValidationResult result = validateCustomerName(maliciousInput);\n        assertFalse(result.isValid(), \"Malicious input should be rejected\");\n        \n        // XSS testing\n        String xssInput = \"<script>alert('xss')</script>\";\n        ValidationResult xssResult = validateCustomerComment(xssInput);\n        assertFalse(xssResult.isValid(), \"XSS attempts should be blocked\");\n        \n        // Path traversal testing\n        String pathTraversal = \"../../../etc/passwd\";\n        ValidationResult pathResult = validateFileName(pathTraversal);\n        assertFalse(pathResult.isValid(), \"Path traversal should be prevented\");\n    }\n    \n    @Test\n    public void testSessionSecurity() {\n        // Test session timeout\n        UserSession session = createUserSession(\"testuser\");\n        Thread.sleep(SESSION_TIMEOUT_MS + 1000);\n        \n        AccessResult timeoutResult = accessSecureResource(session);\n        assertFalse(timeoutResult.isAllowed(), \"Expired session should be invalid\");\n        \n        // Test session hijacking protection\n        UserSession originalSession = createUserSession(\"testuser\");\n        UserSession hijackedSession = cloneSession(originalSession);\n        \n        AccessResult hijackResult = accessSecureResource(hijackedSession);\n        assertFalse(hijackResult.isAllowed(), \"Cloned sessions should be rejected\");\n    }\n    \n    @Test\n    public void testDataEncryptionInTransit() {\n        // Test HTTPS enforcement\n        HTTPResponse httpResponse = makeHTTPRequest(\"http://app.company.com/secure\");\n        assertEquals(301, httpResponse.getStatusCode(), \"HTTP should redirect to HTTPS\");\n        assertTrue(httpResponse.getLocation().startsWith(\"https://\"), \"Should redirect to HTTPS\");\n        \n        // Test TLS configuration\n        SSLConnectionInfo sslInfo = getSSLInfo(\"https://app.company.com\");\n        assertTrue(sslInfo.isSecureProtocol(), \"Should use secure TLS version\");\n        assertFalse(sslInfo.hasWeakCiphers(), \"Should not use weak cipher suites\");\n    }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Continuous Testing in CI/CD Pipelines",
+      "content": [
+        {
+          "type": "text",
+          "data": "Integrating testing into CI/CD pipelines ensures continuous quality validation. This includes automated test execution, parallel test running, test result reporting, and quality gates that prevent deployment of failing builds."
+        },
+        {
+          "type": "code",
+          "language": "yaml",
+          "data": "# CI/CD Pipeline with Comprehensive Testing\nname: PEGA Application CI/CD\n\non:\n  push:\n    branches: [main, develop]\n  pull_request:\n    branches: [main]\n\njobs:\n  unit-tests:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - name: Setup PEGA Environment\n        uses: ./setup-pega-action\n      - name: Run Unit Tests\n        run: |\n          pega-test-runner --suite unit --format junit --output test-results/\n      - name: Publish Unit Test Results\n        uses: dorny/test-reporter@v1\n        with:\n          name: Unit Test Results\n          path: test-results/unit-tests.xml\n          reporter: java-junit\n\n  integration-tests:\n    needs: unit-tests\n    runs-on: ubuntu-latest\n    services:\n      postgres:\n        image: postgres:13\n        env:\n          POSTGRES_PASSWORD: postgres\n    steps:\n      - uses: actions/checkout@v3\n      - name: Setup Test Environment\n        run: |\n          docker-compose -f docker-compose.test.yml up -d\n          ./wait-for-services.sh\n      - name: Load Test Data\n        run: |\n          pega-data-loader --environment test --dataset integration-tests\n      - name: Run Integration Tests\n        run: |\n          pega-test-runner --suite integration --parallel 4\n      - name: Cleanup Test Environment\n        run: docker-compose -f docker-compose.test.yml down\n\n  performance-tests:\n    needs: integration-tests\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - name: Setup Performance Environment\n        run: |\n          ./setup-performance-env.sh\n      - name: Run Performance Tests\n        run: |\n          jmeter -n -t performance-tests/load-test.jmx -l results/performance.jtl\n      - name: Generate Performance Report\n        run: |\n          jmeter -g results/performance.jtl -o reports/performance/\n      - name: Check Performance SLA\n        run: |\n          python check-performance-sla.py --results results/performance.jtl\n\n  security-tests:\n    needs: integration-tests\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - name: Run Security Scan\n        run: |\n          # Static security analysis\n          pega-security-scanner --type static --output security-report.json\n          \n          # Dynamic security testing\n          ./run-security-tests.sh\n      - name: Upload Security Results\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: security-report.sarif\n\n  deploy:\n    needs: [unit-tests, integration-tests, performance-tests, security-tests]\n    runs-on: ubuntu-latest\n    if: github.ref == 'refs/heads/main'\n    steps:\n      - name: Deploy to Staging\n        run: |\n          pega-deploy --environment staging --version ${{ github.sha }}\n      - name: Run Smoke Tests\n        run: |\n          pega-test-runner --suite smoke --environment staging\n      - name: Deploy to Production\n        run: |\n          pega-deploy --environment production --version ${{ github.sha }}"
+        }
+      ]
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Test Pyramid",
+      "definition": "A testing strategy that emphasizes having many fast unit tests at the base, fewer integration tests in the middle, and minimal end-to-end tests at the top."
+    },
+    {
+      "term": "Shift-Left Testing",
+      "definition": "The practice of moving testing activities earlier in the development lifecycle to find and fix defects sooner."
+    },
+    {
+      "term": "Test Data Masking",
+      "definition": "The process of replacing sensitive data with realistic but fictitious data for testing purposes while maintaining data relationships."
+    },
+    {
+      "term": "Continuous Testing",
+      "definition": "The practice of executing automated tests throughout the software delivery pipeline to provide immediate feedback on business risks."
+    },
+    {
+      "term": "Quality Gate",
+      "definition": "Predefined criteria that must be met before code can proceed to the next stage in the deployment pipeline."
+    }
+  ],
+  "best_practices": [
+    "Implement comprehensive test automation covering unit, integration, and end-to-end scenarios",
+    "Use the test pyramid approach with more unit tests than integration tests",
+    "Maintain clean, maintainable test code with proper documentation",
+    "Implement effective test data management with realistic test datasets",
+    "Integrate security testing into the development lifecycle",
+    "Use parallel test execution to reduce feedback time",
+    "Implement proper test reporting and metrics collection",
+    "Maintain test environment consistency and isolation"
+  ],
+  "common_pitfalls": [
+    "Over-reliance on end-to-end tests leading to slow feedback cycles",
+    "Poor test data management resulting in unreliable tests",
+    "Inadequate test environment management causing inconsistent results",
+    "Not implementing proper test isolation leading to test dependencies",
+    "Ignoring security testing until late in the development cycle",
+    "Insufficient performance testing coverage",
+    "Not maintaining test code quality leading to technical debt",
+    "Lack of proper test documentation and knowledge sharing"
+  ]
+}

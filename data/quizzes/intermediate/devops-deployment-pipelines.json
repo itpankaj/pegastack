@@ -1,0 +1,123 @@
+{
+  "id": "devops-deployment-pipelines",
+  "title": "DevOps & Deployment Pipelines - Quiz",
+  "description": "Test your understanding of DevOps and deployment pipeline concepts in PEGA",
+  "level": "intermediate",
+  "lesson_reference": "/tutorials/intermediate/devops-deployment-pipelines",
+  "passing_score": 70,
+  "time_limit": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary benefit of CI/CD pipelines in PEGA applications?",
+      "options": [
+        "Manual deployment processes",
+        "Automated software delivery from code commit to production",
+        "Database optimization",
+        "User interface design"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "CI/CD pipelines provide automated software delivery from code commit to production deployment, ensuring consistent, reliable, and rapid application delivery."
+    },
+    {
+      "id": 2,
+      "question": "Which testing approach is most comprehensive for automated pipelines?",
+      "options": [
+        "Unit testing only",
+        "Multi-layer testing including unit, integration, and end-to-end tests",
+        "Manual testing",
+        "Database testing only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Comprehensive automated testing includes unit tests, integration tests, end-to-end tests, and performance tests to ensure quality across all application layers."
+    },
+    {
+      "id": 3,
+      "question": "How should deployment environments be configured?",
+      "options": [
+        "Single environment for all purposes",
+        "Multiple environments (dev, test, staging, production) with appropriate configurations",
+        "Production only",
+        "Manual configuration only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Multiple deployment environments (development, testing, staging, production) should be configured with appropriate settings, data, and security configurations for each stage."
+    },
+    {
+      "id": 4,
+      "question": "What is crucial for secrets management in CI/CD?",
+      "options": [
+        "Hard-coded credentials",
+        "Encrypted secrets management with environment-specific access controls",
+        "Public repositories",
+        "Manual password sharing"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Secrets management requires encrypted storage with environment-specific access controls, proper key rotation, and secure distribution mechanisms to protect sensitive data."
+    },
+    {
+      "id": 5,
+      "question": "How should deployment failures be handled?",
+      "options": [
+        "Ignore and continue",
+        "Through automated rollback mechanisms and immediate alerting",
+        "Manual restart only",
+        "Wait for user complaints"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Deployment failures should trigger automated rollback mechanisms, immediate alerting, and comprehensive logging to ensure rapid recovery and minimize business impact."
+    },
+    {
+      "id": 6,
+      "question": "What is the purpose of blue-green deployment strategy?",
+      "options": [
+        "To complicate deployments",
+        "To achieve zero-downtime deployments with instant rollback capability",
+        "To increase deployment time",
+        "To reduce testing requirements"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Blue-green deployment strategy enables zero-downtime deployments by maintaining two identical production environments, allowing instant rollback if issues arise."
+    },
+    {
+      "id": 7,
+      "question": "How should monitoring be implemented in production?",
+      "options": [
+        "Manual checking only",
+        "Comprehensive monitoring with real-time dashboards, alerting, and performance metrics",
+        "No monitoring needed",
+        "Database queries only"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Production monitoring requires comprehensive real-time dashboards, automated alerting, performance metrics, and observability tools to ensure application health and performance."
+    },
+    {
+      "id": 8,
+      "question": "What is essential for configuration management?",
+      "options": [
+        "Hard-coded values",
+        "Environment-specific configuration files with version control and validation",
+        "Manual configuration changes",
+        "No configuration management"
+      ],
+      "correct_answer": 1,
+      "type": "multiple-choice",
+      "difficulty": "intermediate",
+      "explanation": "Configuration management requires environment-specific configuration files under version control with proper validation, testing, and deployment automation."
+    }
+  ]
+}

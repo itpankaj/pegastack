@@ -1,0 +1,123 @@
+{
+  "id": "advanced-performance-tuning",
+  "title": "Advanced Performance Tuning - Quiz",
+  "description": "Test your expertise in enterprise-level PEGA performance optimization and scalability",
+  "level": "advanced",
+  "lesson_reference": "/tutorials/advanced/advanced-performance-tuning",
+  "passing_score": 80,
+  "time_limit": 30,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "What is the most critical component of a multi-tier performance monitoring strategy for enterprise PEGA applications?",
+      "options": [
+        "Monitoring only application response times",
+        "Comprehensive monitoring across application, database, and infrastructure tiers",
+        "Focusing exclusively on database performance",
+        "Using only built-in PEGA monitoring tools"
+      ],
+      "correct_answer": 1,
+      "explanation": "Comprehensive monitoring across all tiers enables identification of bottlenecks whether they originate from application logic, database queries, or infrastructure constraints.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "For high-volume enterprise PEGA deployments, what load balancing algorithm provides the best performance?",
+      "options": [
+        "Simple round-robin",
+        "Weighted round-robin with intelligent health checks",
+        "Random distribution",
+        "First-available server"
+      ],
+      "correct_answer": 1,
+      "explanation": "Weighted round-robin with intelligent health checks ensures optimal distribution based on server capacity and current health status, providing better performance than simple algorithms.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "What is the recommended garbage collector for production PEGA applications with large heaps?",
+      "options": [
+        "Serial GC",
+        "G1 Garbage Collector with optimized pause time settings",
+        "Parallel GC",
+        "CMS Collector"
+      ],
+      "correct_answer": 1,
+      "explanation": "G1GC with optimized settings provides excellent performance for PEGA applications, minimizing pause times while efficiently managing large heaps common in enterprise deployments.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "In enterprise PEGA deployments, what is the optimal approach for database connection pooling?",
+      "options": [
+        "Unlimited connections",
+        "Adaptive pool sizing with comprehensive validation and timeout management",
+        "Single connection per user",
+        "Minimum possible connections"
+      ],
+      "correct_answer": 1,
+      "explanation": "Adaptive pool sizing with validation and timeout management ensures optimal resource utilization while preventing connection exhaustion and maintaining performance.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "What is the most effective caching strategy for distributed PEGA environments?",
+      "options": [
+        "Local caching only",
+        "Multi-layered caching with application, database, and CDN levels",
+        "No caching to avoid complexity",
+        "Database caching only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multi-layered caching across application, database, and CDN levels provides optimal performance by caching at appropriate levels based on data characteristics and access patterns.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "When optimizing JVM heap size for production PEGA applications, what is the key consideration?",
+      "options": [
+        "Always maximize heap size",
+        "Balance heap size with GC pause times and application memory patterns",
+        "Use minimum heap size for efficiency",
+        "Heap size doesn't matter"
+      ],
+      "correct_answer": 1,
+      "explanation": "Optimal heap sizing requires balancing memory needs with GC pause times, considering application memory patterns and performance requirements.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "What is the primary risk of optimizing for synthetic benchmarks rather than real-world usage?",
+      "options": [
+        "Better performance in production",
+        "Optimizations may not translate to actual user performance improvements",
+        "Increased development time",
+        "Higher resource consumption"
+      ],
+      "correct_answer": 1,
+      "explanation": "Synthetic benchmarks may not reflect real-world usage patterns, leading to optimizations that don't improve actual user experience or may even degrade performance under realistic conditions.",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "For enterprise PEGA applications, what should be the primary focus of performance SLA establishment?",
+      "options": [
+        "Server uptime only",
+        "End-to-end user experience metrics including response times and throughput",
+        "Database query performance only",
+        "Infrastructure metrics only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Performance SLAs should focus on end-to-end user experience metrics that directly impact business operations, rather than individual component metrics alone.",
+      "difficulty": "advanced"
+    }
+  ]
+}
