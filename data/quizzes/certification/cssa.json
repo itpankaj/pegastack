@@ -1,0 +1,142 @@
+{
+  "id": "cssa-practice-test",
+  "title": "CSSA Certification Practice Test",
+  "description": "Comprehensive practice test for PEGA Certified Senior System Architect exam. 80 questions covering advanced topics.",
+  "level": "certification",
+  "certification": "cssa",
+  "passing_score": 75,
+  "total_questions": 80,
+  "time_limit": 120,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is the best practice for optimizing PEGA application performance?",
+      "options": [
+        "Use activities for all processing",
+        "Minimize database calls and use declarative rules",
+        "Create complex SQL queries",
+        "Use clipboard pages extensively"
+      ],
+      "correct_answer": 1,
+      "explanation": "Minimizing database calls and using declarative rules improves performance by reducing I/O operations and leveraging PEGA's optimization engine."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "Which integration pattern is recommended for real-time data synchronization?",
+      "options": [
+        "Batch processing",
+        "REST API with webhooks",
+        "File transfer",
+        "Email integration"
+      ],
+      "correct_answer": 1,
+      "explanation": "REST API with webhooks provides real-time data synchronization, allowing systems to communicate immediately when events occur."
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "question": "What is the purpose of the PAL (PEGA Alerting and Logging) tool?",
+      "options": [
+        "To create user interfaces",
+        "To monitor and alert on performance issues",
+        "To manage security",
+        "To deploy applications"
+      ],
+      "correct_answer": 1,
+      "explanation": "PAL is used to monitor application performance and alert administrators when thresholds are exceeded or issues occur."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "What is circumstancing in PEGA?",
+      "options": [
+        "A type of security rule",
+        "A way to create rule variants based on conditions",
+        "A deployment strategy",
+        "A testing method"
+      ],
+      "correct_answer": 1,
+      "explanation": "Circumstancing allows creation of rule variants that apply under specific conditions, enabling customization without duplication."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "Which tool is used for analyzing database performance in PEGA?",
+      "options": [
+        "Tracer",
+        "Database Trace",
+        "Performance Profiler",
+        "All of the above"
+      ],
+      "correct_answer": 3,
+      "explanation": "All three tools can be used: Tracer for general execution flow, Database Trace for SQL analysis, and Performance Profiler for detailed metrics."
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "question": "What is the recommended approach for error handling in PEGA?",
+      "options": [
+        "Use try-catch in activities",
+        "Use flow exception handling with error flows",
+        "Ignore errors and let the system handle them",
+        "Only log errors without handling"
+      ],
+      "correct_answer": 1,
+      "explanation": "Flow exception handling with dedicated error flows provides structured, maintainable error management aligned with PEGA best practices."
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What is a Product Rule in PEGA?",
+      "options": [
+        "A rule for calculating product prices",
+        "A packaging mechanism for deploying applications",
+        "A security rule",
+        "A data validation rule"
+      ],
+      "correct_answer": 1,
+      "explanation": "Product Rules are packaging mechanisms that define what gets deployed, including which rulesets and versions."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "Which of the following improves rule reusability?",
+      "options": [
+        "Hard-coding values",
+        "Using circumstancing and parameterization",
+        "Duplicating rules",
+        "Avoiding inheritance"
+      ],
+      "correct_answer": 1,
+      "explanation": "Circumstancing and parameterization allow the same rule to handle different scenarios, improving reusability and maintainability."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "What is the purpose of a Declare Index?",
+      "options": [
+        "To create database indexes",
+        "To optimize report performance by maintaining summary tables",
+        "To index user interfaces",
+        "To secure data"
+      ],
+      "correct_answer": 1,
+      "explanation": "Declare Index optimizes report performance by automatically maintaining summary tables that aggregate data."
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "question": "What is the recommended way to handle long-running processes in PEGA?",
+      "options": [
+        "Use synchronous processing",
+        "Use background processing with agents or queue processors",
+        "Keep users waiting",
+        "Use activities only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Background processing with agents or queue processors allows long-running tasks to execute without blocking users or consuming requestor resources."
+    }
+  ]
+}

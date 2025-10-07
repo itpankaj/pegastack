@@ -1,0 +1,142 @@
+{
+  "id": "lsa-practice-test",
+  "title": "LSA Certification Practice Test",
+  "description": "Comprehensive practice test for PEGA Lead System Architect exam. 100 questions covering expert-level topics.",
+  "level": "certification",
+  "certification": "lsa",
+  "passing_score": 80,
+  "total_questions": 100,
+  "time_limit": 150,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is the recommended approach for enterprise-scale PEGA implementations?",
+      "options": [
+        "Single monolithic application",
+        "Microservices architecture with PEGA DX API",
+        "Multiple isolated applications",
+        "Traditional SOA approach"
+      ],
+      "correct_answer": 1,
+      "explanation": "Microservices architecture with PEGA DX API provides scalability, flexibility, and modern integration patterns for enterprise implementations."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "What is the purpose of the Pega Deployment Manager?",
+      "options": [
+        "To manage user deployments",
+        "To automate application deployment across environments",
+        "To deploy database changes only",
+        "To manage security deployments"
+      ],
+      "correct_answer": 1,
+      "explanation": "Deployment Manager automates application deployment across environments, supporting CI/CD practices and reducing deployment risks."
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "question": "Which approach is best for handling multi-tenant PEGA applications?",
+      "options": [
+        "Separate instances for each tenant",
+        "Use organization layering and data isolation",
+        "Single shared database with no separation",
+        "Manual tenant management"
+      ],
+      "correct_answer": 1,
+      "explanation": "Organization layering with data isolation provides secure multi-tenancy while maintaining shared infrastructure and reducing costs."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "What is the recommended strategy for PEGA application versioning?",
+      "options": [
+        "Never version applications",
+        "Use ruleset versioning with minor and major versions",
+        "Version only at deployment",
+        "Manual versioning without structure"
+      ],
+      "correct_answer": 1,
+      "explanation": "Ruleset versioning with minor and major versions provides structured change management and supports parallel development."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "What is the purpose of PEGA's decisioning framework?",
+      "options": [
+        "To make database decisions",
+        "To provide AI-powered next-best-action recommendations",
+        "To decide on security policies",
+        "To manage user decisions"
+      ],
+      "correct_answer": 1,
+      "explanation": "PEGA's decisioning framework uses AI and business rules to provide personalized next-best-action recommendations in real-time."
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "question": "What is the recommended approach for PEGA cloud deployment?",
+      "options": [
+        "On-premises only",
+        "Pega Cloud or containerized deployment on Kubernetes",
+        "Desktop deployment",
+        "Mobile-only deployment"
+      ],
+      "correct_answer": 1,
+      "explanation": "Pega Cloud or containerized deployment on Kubernetes provides scalability, reliability, and modern cloud-native architecture."
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What is the purpose of the Guardrails score in PEGA?",
+      "options": [
+        "To score user performance",
+        "To measure application quality and adherence to best practices",
+        "To calculate security levels",
+        "To rate database performance"
+      ],
+      "correct_answer": 1,
+      "explanation": "The Guardrails score measures how well an application follows PEGA best practices, helping ensure maintainability and performance."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "What is split-schema architecture in PEGA?",
+      "options": [
+        "Splitting the user interface",
+        "Separating rules and data into different databases",
+        "Dividing security rules",
+        "Splitting workflows"
+      ],
+      "correct_answer": 1,
+      "explanation": "Split-schema separates rules and data into different databases, enabling better scalability, backup strategies, and performance optimization."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "What is the recommended pattern for external system integration?",
+      "options": [
+        "Direct database access",
+        "Service-oriented architecture with well-defined APIs",
+        "File sharing only",
+        "No integration"
+      ],
+      "correct_answer": 1,
+      "explanation": "Service-oriented architecture with well-defined APIs provides loose coupling, maintainability, and scalability for integrations."
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "question": "What is the purpose of PEGA Constellation UI?",
+      "options": [
+        "A legacy UI framework",
+        "A modern, React-based UI framework for better UX",
+        "A reporting tool",
+        "A security framework"
+      ],
+      "correct_answer": 1,
+      "explanation": "Constellation UI is PEGA's modern, React-based UI framework that provides better performance, flexibility, and user experience."
+    }
+  ]
+}

@@ -34,11 +34,11 @@ function QuizPage({ quiz }: QuizPageProps) {
       <div className="py-8">
         <div className="max-w-4xl mx-auto px-4 mb-6">
           <Link
-            href={`/tutorials/${quiz.level}/${quiz.lesson}`}
+            href={quiz.level === 'certification' ? `/certifications/${quiz.lesson}` : `/tutorials/${quiz.level}/${quiz.lesson}`}
             className="inline-flex items-center text-pega-blue hover:text-pega-dark"
           >
             <ArrowLeftIcon className="w-4 h-4 mr-2" />
-            Back to Tutorial
+            {quiz.level === 'certification' ? 'Back to Certification' : 'Back to Tutorial'}
           </Link>
         </div>
         
@@ -54,6 +54,11 @@ function QuizPage({ quiz }: QuizPageProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   // Define all available quiz paths
   const paths = [
+    // Certification quizzes
+    { params: { slug: ['certification', 'csa'] } },
+    { params: { slug: ['certification', 'cssa'] } },
+    { params: { slug: ['certification', 'lsa'] } },
+    
     // Beginner quizzes (12 lessons)
     { params: { slug: ['beginner', 'what-is-pega-bpm'] } },
     { params: { slug: ['beginner', 'prpc-overview'] } },

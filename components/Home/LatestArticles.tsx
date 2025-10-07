@@ -11,7 +11,7 @@ const LatestArticles = () => {
       category: 'News',
       publishDate: '2024-01-15',
       readTime: '5 min read',
-      href: '/blog/pega-24-1-new-features',
+      href: '/blog/1',
       featured: true
     },
     {
@@ -21,7 +21,7 @@ const LatestArticles = () => {
       category: 'Tutorial',
       publishDate: '2024-01-12',
       readTime: '8 min read',
-      href: '/blog/pega-performance-optimization'
+      href: '/blog/2'
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ const LatestArticles = () => {
       category: 'Certification',
       publishDate: '2024-01-10',
       readTime: '6 min read',
-      href: '/blog/csa-exam-mistakes'
+      href: '/blog/3'
     },
     {
       id: 4,
@@ -39,7 +39,7 @@ const LatestArticles = () => {
       category: 'Advanced',
       publishDate: '2024-01-08',
       readTime: '12 min read',
-      href: '/blog/pega-dx-api-microservices'
+      href: '/blog/4'
     }
   ];
 

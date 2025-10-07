@@ -1,0 +1,142 @@
+{
+  "id": "csa-practice-test",
+  "title": "CSA Certification Practice Test",
+  "description": "Comprehensive practice test for PEGA Certified System Architect exam. 60 questions covering all exam topics.",
+  "level": "certification",
+  "certification": "csa",
+  "passing_score": 70,
+  "total_questions": 60,
+  "time_limit": 90,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is the primary purpose of a Case Type in PEGA?",
+      "options": [
+        "To define database tables",
+        "To represent a business transaction or process",
+        "To create user interfaces",
+        "To manage security settings"
+      ],
+      "correct_answer": 1,
+      "explanation": "A Case Type represents a business transaction or process from start to finish. It defines the lifecycle of work as it moves through various stages and processes."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "Which rule type is used to define business logic in PEGA?",
+      "options": [
+        "Flow Rules only",
+        "Decision Rules only",
+        "Declare Expression only",
+        "All of the above"
+      ],
+      "correct_answer": 3,
+      "explanation": "PEGA uses multiple rule types for business logic: Flow Rules for process flows, Decision Rules for decision logic, and Declare Expressions for calculations and derived values."
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "question": "What is the purpose of a Data Page in PEGA?",
+      "options": [
+        "To store user interface components",
+        "To cache and manage data efficiently",
+        "To define security rules",
+        "To create reports"
+      ],
+      "correct_answer": 1,
+      "explanation": "Data Pages are used to cache and manage data efficiently. They load data once and reuse it, improving application performance."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "In PEGA, what does SLA stand for?",
+      "options": [
+        "System Level Agreement",
+        "Service Level Agreement",
+        "Standard Logic Application",
+        "Security Level Access"
+      ],
+      "correct_answer": 1,
+      "explanation": "SLA stands for Service Level Agreement. It defines goals and deadlines for completing work within a case."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "Which studio is recommended for business users to build applications?",
+      "options": [
+        "Dev Studio",
+        "Admin Studio",
+        "App Studio",
+        "Prediction Studio"
+      ],
+      "correct_answer": 2,
+      "explanation": "App Studio is designed for business users and system architects to build applications with a simplified interface."
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "question": "What is the purpose of a Flow rule?",
+      "options": [
+        "To define data structure",
+        "To orchestrate the sequence of steps in a process",
+        "To create user interfaces",
+        "To manage security"
+      ],
+      "correct_answer": 1,
+      "explanation": "Flow rules orchestrate the sequence of steps in a process, defining how work moves through different stages and assignments."
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What is the recommended way to validate data in PEGA?",
+      "options": [
+        "Using activities",
+        "Using validate rules and edit validate rules",
+        "Using when rules only",
+        "Manual validation by users"
+      ],
+      "correct_answer": 1,
+      "explanation": "PEGA provides validate rules and edit validate rules for data validation, which are declarative and maintainable."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "What is a Stage in PEGA case management?",
+      "options": [
+        "A database table",
+        "A major milestone in case processing",
+        "A type of security rule",
+        "A reporting tool"
+      ],
+      "correct_answer": 1,
+      "explanation": "A Stage represents a major milestone or phase in the case lifecycle, containing one or more processes."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "Which of the following is a declarative rule?",
+      "options": [
+        "Activity",
+        "Declare Expression",
+        "Flow",
+        "Section"
+      ],
+      "correct_answer": 1,
+      "explanation": "Declare Expression is a declarative rule that automatically calculates values when inputs change, without requiring explicit execution."
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "question": "What is the purpose of class inheritance in PEGA?",
+      "options": [
+        "To improve performance",
+        "To reuse rules and data structures",
+        "To create security policies",
+        "To generate reports"
+      ],
+      "correct_answer": 1,
+      "explanation": "Class inheritance allows reuse of rules and data structures, promoting consistency and reducing duplication across applications."
+    }
+  ]
+}
