@@ -15,6 +15,7 @@ export default function Home() {
           content="Complete PEGA BPM learning path from Beginner to LSA certification. Interactive tutorials, hands-on projects, and certification prep all in one place."
         />
         <meta name="keywords" content="PEGA, BPM, CSA, CSSA, LSA, tutorials, certification, training" />
+        <meta name="google-site-verification" content="n6T129r6PJxRP0WyLmzy22JIvcA27jxPBoKC3goZa38" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
